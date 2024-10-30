@@ -37,7 +37,7 @@
     "csv-stringify": "^6.2.3",
     "jsforce": "^2.0.0-beta.24",
     "luxon": "^3.2.1",
-    "node-fetch": "^2.7.0",
+    "node-fetch": "^3.3.2",
     "semver": "^7.6.2",
     "throng": "^5.0.0",
     "whatwg-mimetype": "^3.0.0"
