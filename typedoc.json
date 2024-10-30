@@ -1,0 +1,11 @@
+{
+  "entryPoints": ["src/index.ts"],
+  "includeVersion": true,
+  "plugin": ["typedoc-plugin-markdown"],
+  "readme": "none",
+  "out": "./docs",
+  "textContentMappings": {
+    "header.title": "{projectName} {version}"
+  },
+  "useCodeBlocks": true
+}

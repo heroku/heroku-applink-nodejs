@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "target": "es2020",
+    "outDir": "./dist",
+    "baseUrl": ".",
+    "rootDir": "./src",
+    "lib": ["es2017", "dom"],
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitReturns": true,
+    "pretty": true,
+    "removeComments": true,
+    "declaration": true,
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    }
+  },
+  "exclude": ["node_modules", "test", "fixtures", "dist"]
+}

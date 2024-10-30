@@ -1,0 +1,10 @@
+package-lock.json
+npm-shrinkwrap.json
+package.json
+*.md
+
+dist/
+docs/
+node_modules/
+scripts/
+resources/license-header.js

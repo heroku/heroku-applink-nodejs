@@ -1,0 +1,7 @@
+/dist/
+node_modules/
+tsconfig.tsbuildinfo
+.idea
+.DS_Store
+src/**/*.js
+src/**/*.js.map
