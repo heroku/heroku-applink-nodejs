@@ -1,8 +1,8 @@
-# Heroku Integration - Salesforce SDK for Node.js
+# Node.js SDK for Heroku AppLink
 
-Use the Salesforce SDK for Node.js to develop [Heroku Integration](https://devcenter.heroku.com/articles/heroku-integration) managed apps that interact with Salesforce and Data Cloud orgs.
+Use the Node.js SDK for Heroku AppLink to develop [Heroku AppLink](https://devcenter.heroku.com/articles/applink) managed apps that interact with Salesforce and Data Cloud orgs.
 
-Salesforce SDK for Node.js provides:
+ Node.js SDK for Heroku AppLink provides:
 - Utilities to parse requests from Salesforce Heroku-type [External Services](https://help.salesforce.com/s/articleView?id=sf.external_services.htm&type=5) and Data Cloud [Data Action Targets](https://help.salesforce.com/s/articleView?id=sf.c360_a_create_a_data_action_target_of_webhook_type.htm&type=5) 
 hydrating SDK objects that response the request: [InvocationEvent](docs/interfaces/InvocationEvent.md) and [Context](docs/interfaces/Context.md).
 - Objects that encapsulate the requesting Salesforce or Data Cloud [Org](docs/interfaces/Org.md) and [User](docs/interfaces/User.md).
@@ -14,7 +14,7 @@ And much more!
 For more information, see [API docs](docs/README.md).
 
 ## Example
-Example use of the Salesforce SDK for Node.js provided as part of the [Heroku Integration CLI Plugin's](https://github.com/heroku/heroku-cli-plugin-integration) `integration:project` template:  
+Example use of the Node.js SDK for Heroku AppLink provided as part of the [Heroku AppLink CLI Plugin's](https://github.com/heroku/heroku-cli-plugin-applnk) `applink:project` template:  
 ```javascript
 fastify.get('/accounts', async function (request, reply) {
     const {event, context, logger} = request.sdk;
@@ -26,10 +26,10 @@ fastify.get('/accounts', async function (request, reply) {
     if (process.env.SALESFORCE_ORG_NAME) {
         // If an org reference is set, query Accounts in that org
         const orgName = process.env.SALESFORCE_ORG_NAME;
-        const herokuIntegrationAddon = request.sdk.addons.herokuIntegration;
+        const applinkAddon = request.sdk.addons.applink;
 
-        logger.info(`Getting org '${orgName}' connection from Heroku Integration add-on...`);
-        const anotherOrg = await herokuIntegrationAddon.getConnection(orgName);
+        logger.info(`Getting org '${orgName}' connection from Heroku Applink add-on...`);
+        const anotherOrg = await applinkAddon.getConnection(orgName);
 
         logger.info(`Querying org '${orgName}' (${anotherOrg.id}) Accounts...`);
         try {

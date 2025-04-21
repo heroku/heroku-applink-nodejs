@@ -21,14 +21,14 @@ export async function getConnection(name: string): Promise<Org> {
     throw Error(`Connection name not provided`);
   }
 
-  const addonEndpoint = process.env.HEROKU_INTEGRATION_API_URL || process.env.HEROKU_INTEGRATION_STAGING_API_URL;
+  const addonEndpoint = process.env.HEROKU_APPLINK_API_URL || process.env.HEROKU_APPLINK_STAGING_API_URL;
   if (!addonEndpoint) {
-    throw Error(`Heroku Integration add-on not provisioned on app or endpoint not provided`);
+    throw Error(`Heroku Applink add-on not provisioned on app or endpoint not provided`);
   }
 
-  const addonAuthToken = process.env.HEROKU_INTEGRATION_TOKEN;
+  const addonAuthToken = process.env.HEROKU_APPLINK_TOKEN;
   if (!addonAuthToken) {
-    throw Error(`Heroku Integration add-on not provisioned on app or authorization token not found`);
+    throw Error(`Heroku Applink add-on not provisioned on app or authorization token not found`);
   }
 
   const authUrl = `${addonEndpoint}/invocations/authorization`;
