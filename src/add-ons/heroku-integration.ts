@@ -21,31 +21,36 @@ export async function getConnection(name: string): Promise<Org> {
     throw Error(`Connection name not provided`);
   }
 
-  const addonEndpoint = process.env.HEROKU_INTEGRATION_API_URL || process.env.HEROKU_INTEGRATION_STAGING_API_URL;
+  const addonEndpoint =
+    process.env.HEROKU_INTEGRATION_API_URL ||
+    process.env.HEROKU_INTEGRATION_STAGING_API_URL;
   if (!addonEndpoint) {
-    throw Error(`Heroku Integration add-on not provisioned on app or endpoint not provided`);
+    throw Error(
+      `Heroku Integration add-on not provisioned on app or endpoint not provided`
+    );
   }
 
   const addonAuthToken = process.env.HEROKU_INTEGRATION_TOKEN;
   if (!addonAuthToken) {
-    throw Error(`Heroku Integration add-on not provisioned on app or authorization token not found`);
+    throw Error(
+      `Heroku Integration add-on not provisioned on app or authorization token not found`
+    );
   }
 
   const authUrl = `${addonEndpoint}/invocations/authorization`;
   const opts = {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Authorization': `Bearer ${addonAuthToken}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${addonAuthToken}`,
+      "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      'org_name': name
+      org_name: name,
     }),
     retry: {
-      limit: 1
-    }
+      limit: 1,
+    },
   };
-
 
   let response;
   try {

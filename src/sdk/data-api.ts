@@ -28,9 +28,7 @@ export class DataApiImpl implements DataApi {
   private conn: Connection;
   private readonly domainUrl: string;
 
-  constructor(accessToken: string,
-              apiVersion: string,
-              domainUrl: string) {
+  constructor(accessToken: string, apiVersion: string, domainUrl: string) {
     this.accessToken = accessToken;
     this.apiVersion = apiVersion;
     this.domainUrl = domainUrl;
@@ -41,7 +39,7 @@ export class DataApiImpl implements DataApi {
       this.conn = new Connection({
         accessToken: this.accessToken,
         instanceUrl: this.domainUrl,
-        version: this.apiVersion
+        version: this.apiVersion,
       });
     }
 
