@@ -22,13 +22,13 @@ Functional organized modules having helper methods for addons, Data Cloud, and S
 addons: object;
 ```
 
-### addons.herokuIntegration
+### addons.applink
 
 ```ts
-herokuIntegration: object;
+applink: object;
 ```
 
-### addons.herokuIntegration.getConnection()
+### addons.applink.getConnection()
 
 ```ts
 getConnection: (name) => Promise<Org>;
