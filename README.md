@@ -50,3 +50,18 @@ fastify.get('/accounts', async function (request, reply) {
     return accounts;
 });
 ```
+
+## Testing
+This project has CI tests to ensure quality.
+
+In addition, to test changes in a deployed Heroku app, you can use `yarn pack` to create a tar ball. This can be consumed in a Heroku node app by committing it to source and referencing it in `package.json`:
+
+```
+{
+    ...
+    "dependencies": {
+        "@heroku/salesforce-sdk-nodejs": "file:./src/heroku-salesforce-sdk-nodejs-v0.3.4-ea.tgz",
+    }
+    ...
+}
+```
