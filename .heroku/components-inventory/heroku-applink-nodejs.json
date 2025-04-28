@@ -23,7 +23,7 @@
     "team_name": "EDIT",
     "planned_maintenance_severity": null,
     "gus_team": "https://gus.lightning.force.com/lightning/r/a00B0000003X1mkIAC/view",
-    "pci_tier": "TBD",
+    "pci_tier": "3",
     "consumer_type": "N/A",
     "content_cacheable": "N/A",
     "blast_radius": "Some Customers",
