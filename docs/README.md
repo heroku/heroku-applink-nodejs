@@ -1,8 +1,8 @@
-**@heroku/salesforce-sdk-nodejs v0.3.4-ea** • **Docs**
+**@heroku/heroku_applink v1.0.0** • **Docs**
 
 ***
 
-# @heroku/salesforce-sdk-nodejs v0.3.4-ea
+# @heroku/heroku_applink v1.0.0
 
 ## Interfaces
 
