@@ -10,7 +10,7 @@
     "lint:fix": "npm run lint -- --fix",
     "wiremock": "wiremock --port 8080 --bind-address 127.0.0.1 --disable-banner",
     "mocha": "mocha",
-    "test": "TS_NODE_PROJECT=tsconfig.test.json concurrently -k -s first \"npm run wiremock\" \"mocha\"",
+    "test": "TS_NODE_PROJECT=tsconfig.test.json concurrently -k -s first \"wiremock\" \"mocha\"",
     "format": "npm run format:write && npm run format:check",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
