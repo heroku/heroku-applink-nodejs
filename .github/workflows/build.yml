@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [22, 20, 18, 16, 14]
+        version: [24, 22, 20]
         os:
           [sfdc-hk-ubuntu-latest, sfdc-hk-macos-latest, sfdc-hk-windows-latest]
     name: Node ${{ matrix.version }} on ${{ matrix.os }}
