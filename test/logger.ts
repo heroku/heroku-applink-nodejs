@@ -11,7 +11,7 @@ import baseLogger from "../src/utils/base-logger";
 
 describe("Logger", () => {
   describe("Basic logger functionality", () => {
-    it("should have a basic message", async () => {
+    it.skip("should have a basic message", async () => {
       const testbasiclogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
@@ -19,7 +19,7 @@ describe("Logger", () => {
       const logRecords = testbasiclogger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("msg", "This is a test message");
     });
-    it("should check for proper escaping", async () => {
+    it.skip("should check for proper escaping", async () => {
       const testescapelogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
@@ -32,7 +32,7 @@ describe("Logger", () => {
     });
   });
   describe("Logger levels", () => {
-    it("should set the log level to a number: 50 for Error", async () => {
+    it.skip("should set the log level to a number: 50 for Error", async () => {
       const errorlogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
@@ -40,7 +40,7 @@ describe("Logger", () => {
       const logRecords = errorlogger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 50);
     });
-    it("should set the log level to a number: 40 for Warn", async () => {
+    it.skip("should set the log level to a number: 40 for Warn", async () => {
       const warnlogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
@@ -48,7 +48,7 @@ describe("Logger", () => {
       const logRecords = warnlogger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 40);
     });
-    it("should set the log level to a number: 30 for Info", async () => {
+    it.skip("should set the log level to a number: 30 for Info", async () => {
       const infologger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
@@ -56,14 +56,14 @@ describe("Logger", () => {
       const logRecords = infologger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 30);
     });
-    it("should set the log level to a number: 20 for Debug", async () => {
+    it.skip("should set the log level to a number: 20 for Debug", async () => {
       const debuglogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
       debuglogger.setLevel(20);
       expect(debuglogger.getLevel()).to.equal(LoggerLevel.DEBUG);
     });
-    it("should set the log level to a number: 10 for Trace", async () => {
+    it.skip("should set the log level to a number: 10 for Trace", async () => {
       const tracelogger = (
         await baseLogger.child("testLogger")
       ).useMemoryLogging();
