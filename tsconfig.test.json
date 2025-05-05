@@ -5,7 +5,7 @@
     "experimentalResolver": true,
     "transpileOnly": false,
     "esm": true,
-    "logError": true,
+    "logError": true
   },
   "include": "test/**/*.ts"
 }

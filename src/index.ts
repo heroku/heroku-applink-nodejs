@@ -25,11 +25,11 @@ export function init() {
   return {
     addons: {
       applink: {
-        getConnection
-      }
+        getConnection,
+      },
     },
     dataCloud: {
-      parseDataActionEvent
+      parseDataActionEvent,
     },
     salesforce: {
       parseRequest,
@@ -100,7 +100,7 @@ export function parseRequest(
  * @property body The request's body
  * @returns {DataCloudActionEvent}
  */
-export function parseDataActionEvent(payload: any) : DataCloudActionEvent {
+export function parseDataActionEvent(payload: any): DataCloudActionEvent {
   return payload as DataCloudActionEvent;
 }
 
@@ -1100,7 +1100,6 @@ export interface DataCloudUpsertResponse {
 }
 
 export interface DataCloudApi {
-
   /**
    * {@link https://developer.salesforce.com/docs/atlas.en-us.c360a_api.meta/c360a_api/c360a_api_query_v2.htm | Data Cloud Query API}   *
    * @param sql
