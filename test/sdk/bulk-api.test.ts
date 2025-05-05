@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { createBulkApi } from "../../src/sdk/bulk-api.js";
+import { createBulkApi } from "../../src/sdk/bulk-api.ts";
 import {
   BulkApi,
   DataTable,

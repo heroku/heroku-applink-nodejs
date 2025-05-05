@@ -5,12 +5,12 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { BulkApi, DataApi, DataCloudApi, Org, User } from "../index.js";
+import { BulkApi, DataApi, DataCloudApi, Org, User } from "../index";
 import { createBulkApi } from "./bulk-api";
-import { DataApiImpl } from "./data-api.js";
-import { DataCloudApiImpl } from "./data-cloud-api.js";
+import { DataApiImpl } from "./data-api";
+import { DataCloudApiImpl } from "./data-cloud-api";
 import { HttpRequestUtil } from "../utils/request";
-import { UserImpl } from "./user.js";
+import { UserImpl } from "./user";
 
 const HTTP_REQUEST = new HttpRequestUtil();
 

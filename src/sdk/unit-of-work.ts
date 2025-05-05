@@ -11,13 +11,13 @@ import {
   RecordForCreate,
   RecordForUpdate,
   RecordModificationResult,
-} from "../index.js";
+} from "../index";
 import {
   CompositeSubRequest,
   CreateRecordSubRequest,
   DeleteRecordSubRequest,
   UpdateRecordSubRequest,
-} from "./sub-request.js";
+} from "./sub-request";
 
 export class ReferenceIdImpl implements ReferenceId {
   readonly id: string;

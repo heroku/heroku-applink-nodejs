@@ -6,9 +6,10 @@
  */
 
 import { expect } from "chai";
-import { DataApiImpl } from "../../src/sdk/data-api.js";
+import { DataApiImpl } from "../../src/sdk/data-api";
 import stub from "sinon/lib/sinon/stub.js";
 import fs from "fs";
+import path from "path";
 import { Record } from "../../src";
 
 const uri = "http://127.0.0.1:8080";
@@ -180,7 +181,7 @@ describe("DataApi Class", async () => {
           type: "ContentVersion",
           binaryFields: {
             VersionData: fs.readFileSync(
-              new URL("../../fixtures/salesforce-tiny.png", import.meta.url)
+              path.join(__dirname, "../../fixtures/salesforce-tiny.png")
             ),
           },
           fields: {
@@ -574,7 +575,7 @@ describe("DataApi Class", async () => {
           },
           binaryFields: {
             VersionData: fs.readFileSync(
-              new URL("../../fixtures/salesforce-tiny.png", import.meta.url)
+              path.join(__dirname, "../../fixtures/salesforce-tiny.png")
             ),
           },
         });

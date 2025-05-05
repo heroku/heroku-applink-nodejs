@@ -4,7 +4,6 @@
   "description": "Salesforce SDK for Heroku Apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "type": "module",
   "scripts": {
     "build": "tsc -b",
     "lint": "eslint . --ext .ts --max-warnings 0 --report-unused-disable-directives --format codeframe",

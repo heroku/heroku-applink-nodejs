@@ -1,11 +1,10 @@
 {
   "extends": "./tsconfig.json",
   "ts-node": {
-    "experimentalSpecifierResolution": "node",
-    "experimentalResolver": true,
-    "transpileOnly": false,
-    "esm": true,
-    "logError": true
+    "transpileOnly": true,
+    "compilerOptions": {
+      "module": "commonjs"
+    }
   },
-  "include": "test/**/*.ts"
+  "include": ["test/**/*.ts"]
 }

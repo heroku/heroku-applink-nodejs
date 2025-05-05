@@ -6,7 +6,7 @@
  */
 
 import { expect } from "chai";
-import { createCaseInsensitiveMap } from "../../src/utils/maps.js";
+import { createCaseInsensitiveMap } from "../../src/utils/maps";
 
 describe("createCaseInsensitiveMap", async () => {
   const object = {

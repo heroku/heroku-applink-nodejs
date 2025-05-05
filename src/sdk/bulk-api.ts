@@ -24,11 +24,11 @@ import {
   IngestJobState,
   GetQueryJobResultsOptions,
   QueryJobOptions,
-} from "../index.js";
+} from "../index";
 import {
   createConnection,
   CreateConnectionOptions,
-} from "../utils/create-connections.js";
+} from "../utils/create-connections";
 import {
   IngestJobV2,
   IngestJobV2FailedResults,
@@ -36,7 +36,7 @@ import {
   IngestJobV2UnprocessedRecords,
   JobInfoV2,
   QueryJobV2,
-} from "jsforce/lib/api/bulk.js";
+} from "jsforce/lib/api/bulk";
 import {
   HttpResponse,
   Schema,
@@ -44,8 +44,8 @@ import {
 } from "jsforce/lib/types";
 import { stringify } from "csv-stringify/sync";
 import { stringify as stringifyStream } from "csv-stringify";
-import { HttpApi } from "jsforce/lib/http-api.js";
-import { Connection } from "jsforce/lib/connection.js";
+import { HttpApi } from "jsforce/lib/http-api";
+import { Connection } from "jsforce/lib/connection";
 import { parse } from "csv-parse/sync";
 import { DateTime } from "luxon";
 
