@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 import { DataApiImpl } from "../../src/sdk/data-api";
-import stub from "sinon/lib/sinon/stub.js";
+import { stub } from "sinon";
 import fs from "fs";
 import path from "path";
 import { Record } from "../../src";
