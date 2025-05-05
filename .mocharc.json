@@ -4,5 +4,9 @@
   "loader": "ts-node/esm",
   "recursive": true,
   "require": ["test/setup.ts"],
-  "timeout": 4000
+  "timeout": 4000,
+  "node-option": [
+		"experimental-specifier-resolution=node",
+		"loader=ts-node/esm"
+	]
 }

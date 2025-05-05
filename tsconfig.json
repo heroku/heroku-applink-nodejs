@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "incremental": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
     "target": "es2020",
     "outDir": "./dist",
     "baseUrl": ".",

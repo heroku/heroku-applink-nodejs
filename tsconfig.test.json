@@ -1,0 +1,11 @@
+{
+  "extends": "./tsconfig.json",
+  "ts-node": {
+    "experimentalSpecifierResolution": "node",
+    "experimentalResolver": true,
+    "transpileOnly": false,
+    "esm": true,
+    "logError": true,
+  },
+  "include": "test/**/*.ts"
+}
