@@ -33,30 +33,40 @@ describe("Logger", () => {
   });
   describe("Logger levels", () => {
     it("should set the log level to a number: 50 for Error", async () => {
-      const errorlogger = (await baseLogger.child("testLogger")).useMemoryLogging();
+      const errorlogger = (
+        await baseLogger.child("testLogger")
+      ).useMemoryLogging();
       errorlogger.error("test Error");
       const logRecords = errorlogger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 50);
     });
     it("should set the log level to a number: 40 for Warn", async () => {
-      const warnlogger = (await baseLogger.child("testLogger")).useMemoryLogging();
+      const warnlogger = (
+        await baseLogger.child("testLogger")
+      ).useMemoryLogging();
       warnlogger.warn("test warn");
       const logRecords = warnlogger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 40);
     });
     it("should set the log level to a number: 30 for Info", async () => {
-      const infologger = (await baseLogger.child("testLogger")).useMemoryLogging();
+      const infologger = (
+        await baseLogger.child("testLogger")
+      ).useMemoryLogging();
       infologger.info("test info");
       const logRecords = infologger.getBufferedRecords();
       expect(logRecords[0]).to.have.property("level", 30);
     });
     it("should set the log level to a number: 20 for Debug", async () => {
-      const debuglogger = (await baseLogger.child("testLogger")).useMemoryLogging();
+      const debuglogger = (
+        await baseLogger.child("testLogger")
+      ).useMemoryLogging();
       debuglogger.setLevel(20);
       expect(debuglogger.getLevel()).to.equal(LoggerLevel.DEBUG);
     });
     it("should set the log level to a number: 10 for Trace", async () => {
-      const tracelogger = (await baseLogger.child("testLogger")).useMemoryLogging();
+      const tracelogger = (
+        await baseLogger.child("testLogger")
+      ).useMemoryLogging();
       tracelogger.setLevel(10);
       expect(tracelogger.getLevel()).to.equal(LoggerLevel.TRACE);
     });

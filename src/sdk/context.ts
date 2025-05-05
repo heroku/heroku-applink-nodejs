@@ -20,7 +20,7 @@ export class ContextImpl implements Context {
     orgId: string,
     orgDomainUrl: string,
     userId: string,
-    username: string,
+    username: string
   ) {
     this.id = id;
     this.org = new OrgImpl(
