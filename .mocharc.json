@@ -1,8 +1,8 @@
 {
   "extension": ["ts"],
   "test": "test/**/*.test.ts",
-  "loader": "ts-node/esm",
+  "loader": "ts-node",
   "recursive": true,
-  "require": ["test/setup.ts"],
+  "require": ["ts-node/register", "test/setup.ts"],
   "timeout": 4000
 }

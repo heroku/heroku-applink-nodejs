@@ -5,8 +5,8 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { Connection } from "jsforce/lib/connection.js";
-import { UnitOfWorkImpl } from "./unit-of-work.js";
+import { Connection } from "jsforce/lib/connection";
+import { UnitOfWorkImpl } from "./unit-of-work";
 import {
   DataApi,
   Record,
@@ -17,8 +17,8 @@ import {
   QueriedRecord,
   ReferenceId,
   UnitOfWork,
-} from "../index.js";
-import { createCaseInsensitiveMap } from "../utils/maps.js";
+} from "../index";
+import { createCaseInsensitiveMap } from "../utils/maps";
 
 const knownBinaryFields = { ContentVersion: ["VersionData"] };
 
@@ -28,9 +28,7 @@ export class DataApiImpl implements DataApi {
   private conn: Connection;
   private readonly domainUrl: string;
 
-  constructor(accessToken: string,
-              apiVersion: string,
-              domainUrl: string) {
+  constructor(accessToken: string, apiVersion: string, domainUrl: string) {
     this.accessToken = accessToken;
     this.apiVersion = apiVersion;
     this.domainUrl = domainUrl;
@@ -41,7 +39,7 @@ export class DataApiImpl implements DataApi {
       this.conn = new Connection({
         accessToken: this.accessToken,
         instanceUrl: this.domainUrl,
-        version: this.apiVersion
+        version: this.apiVersion,
       });
     }
 

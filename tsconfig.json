@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "esModuleInterop": true,
     "incremental": true,
     "module": "CommonJS",
     "moduleResolution": "node",
@@ -17,9 +18,7 @@
     "removeComments": true,
     "declaration": true,
     "paths": {
-      "~/*": [
-        "./src/*"
-      ]
+      "~/*": ["./src/*"]
     }
   },
   "exclude": ["node_modules", "test", "fixtures", "dist"]
