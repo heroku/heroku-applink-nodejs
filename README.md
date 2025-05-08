@@ -29,7 +29,7 @@ fastify.get('/accounts', async function (request, reply) {
         const applinkAddon = request.sdk.addons.applink;
 
         logger.info(`Getting org '${orgName}' connection from Heroku Applink add-on...`);
-        const anotherOrg = await applinkAddon.getConnection(orgName);
+        const anotherOrg = await applinkAddon.getAuthorization(orgName);
 
         logger.info(`Querying org '${orgName}' (${anotherOrg.id}) Accounts...`);
         try {

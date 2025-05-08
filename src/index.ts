@@ -9,7 +9,7 @@ import { ContextImpl } from "./sdk/context.js";
 import { InvocationEventImpl } from "./sdk/invocation-event.js";
 import { LoggerImpl } from "./sdk/logger.js";
 import { QueryOperation } from "jsforce/lib/api/bulk";
-import { getConnection } from "./add-ons/heroku-applink.js";
+import { getAuthorization } from "./add-ons/heroku-applink.js";
 
 const CONTENT_TYPE_HEADER = "Content-Type";
 const X_CLIENT_CONTEXT_HEADER = "x-client-context";
@@ -25,7 +25,7 @@ export function init() {
   return {
     addons: {
       applink: {
-        getConnection,
+        getAuthorization,
       },
     },
     dataCloud: {
