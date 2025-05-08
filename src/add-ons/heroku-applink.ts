@@ -8,44 +8,49 @@
 import { HttpRequestUtil } from "../utils/request";
 import { OrgImpl } from "../sdk/org";
 import { Org } from "../index";
+import {
+  resolveAddonConfigByAttachment,
+  resolveAddonConfigByUrl,
+} from "~/utils/addon-config";
 
 const HTTP_REQUEST = new HttpRequestUtil();
 
 /**
  * Get stored Salesforce or Data Cloud org user credentials for given name or alias.
  * @param name or alias
+ * @param attachmentNameOrUrl Either an attachment name (e.g. "APPLINK") or a full URL
  * @returns Org
  */
-export async function getConnection(name: string): Promise<Org> {
+export async function getAuthorization(
+  name: string,
+  attachmentNameOrUrl = "APPLINK"
+): Promise<Org> {
   if (!name) {
     throw Error(`Connection name not provided`);
   }
 
-  const addonEndpoint =
-    process.env.HEROKU_APPLINK_API_URL ||
-    process.env.HEROKU_APPLINK_STAGING_API_URL;
-  if (!addonEndpoint) {
-    throw Error(
-      `Heroku Applink add-on not provisioned on app or endpoint not provided`
-    );
+  // Check if the attachmentNameOrUrl is a URL by attempting to parse it
+  let resolveConfigByUrl = false;
+  try {
+    new URL(attachmentNameOrUrl);
+    resolveConfigByUrl = true;
+  } catch {
+    resolveConfigByUrl = false;
   }
 
-  const addonAuthToken = process.env.HEROKU_APPLINK_TOKEN;
-  if (!addonAuthToken) {
-    throw Error(
-      `Heroku Applink add-on not provisioned on app or authorization token not found`
-    );
-  }
+  const config = resolveConfigByUrl
+    ? resolveAddonConfigByUrl(attachmentNameOrUrl)
+    : resolveAddonConfigByAttachment(attachmentNameOrUrl);
 
-  const authUrl = `${addonEndpoint}/invocations/authorization`;
+  const authUrl = `${config.apiUrl}/invocations/authorization`;
   const opts = {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${addonAuthToken}`,
+      Authorization: `Bearer ${config.token}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      org_name: name,
+      developer_name: name,
     }),
     retry: {
       limit: 1,
