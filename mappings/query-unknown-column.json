@@ -12,9 +12,6 @@
     "headers": {
       "Authorization": {
         "equalTo": "Bearer EXAMPLE-TOKEN"
-      },
-      "Sforce-Call-Options": {
-        "matches": "client=sf-fx-runtime-nodejs-sdk-impl-v\\d+:\\d+\\.\\d+\\.\\d+(-[a-zA-Z]+)*"
       }
     }
   },

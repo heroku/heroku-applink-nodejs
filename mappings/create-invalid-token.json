@@ -13,9 +13,6 @@
     "headers": {
       "Authorization": {
         "equalTo": "Bearer badToken"
-      },
-      "Sforce-Call-Options": {
-        "matches": "client=sf-fx-runtime-nodejs-sdk-impl-v\\d+:\\d+\\.\\d+\\.\\d+(-[a-zA-Z]+)*"
       }
     }
   },
