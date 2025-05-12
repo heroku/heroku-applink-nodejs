@@ -1,6 +1,5 @@
 {
   "extension": ["ts"],
-  "test": "test/**/*.test.ts",
   "loader": "ts-node",
   "recursive": true,
   "require": ["ts-node/register", "test/setup.ts"],

@@ -11,6 +11,7 @@
     "wiremock": "wiremock --port 8080 --bind-address 127.0.0.1 --disable-banner",
     "mocha": "mocha",
     "test": "cross-env TS_NODE_PROJECT=tsconfig.test.json concurrently -k -s first \"wiremock\" \"mocha\"",
+    "coverage": "nyc --reporter=lcov --reporter=text-summary yarn test",
     "format": "npm run format:write && npm run format:check",
     "format:check": "prettier --check .",
     "format:write": "prettier --write .",
@@ -38,6 +39,7 @@
     "jsforce": "^2.0.0-beta.24",
     "luxon": "^3.2.1",
     "node-fetch": "^2.7.0",
+    "nyc": "^17.1.0",
     "semver": "^7.6.2",
     "throng": "^5.0.0",
     "whatwg-mimetype": "^3.0.0"
