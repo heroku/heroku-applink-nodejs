@@ -11,10 +11,10 @@ interface AddonConfig {
 }
 
 export function resolveAddonConfigByAttachment(
-  attachment = "HEROKU_APPLINK"
+  attachment: string
 ): AddonConfig {
-  const apiUrl = process.env[`${attachment}_API_URL`];
-  const token = process.env[`${attachment}_TOKEN`];
+  const apiUrl = process.env[`${attachment.toUpperCase()}_API_URL`];
+  const token = process.env[`${attachment.toUpperCase()}_TOKEN`];
 
   if (!apiUrl || !token) {
     throw Error(
@@ -32,7 +32,7 @@ export function resolveAddonConfigByUrl(url: string): AddonConfig {
   // Find the environment variable ending with _API_URL that matches the given URL
   const envVarEntries = Object.entries(process.env);
   const matchingApiUrlEntry = envVarEntries.find(
-    ([key, value]) => key.endsWith("_API_URL") && value === url
+    ([key, value]) => key.endsWith("_API_URL") && value.toLowerCase() === url.toLowerCase()
   );
 
   if (!matchingApiUrlEntry) {
@@ -46,11 +46,11 @@ export function resolveAddonConfigByUrl(url: string): AddonConfig {
   // Look for corresponding token
   const token = process.env[`${prefix}_TOKEN`];
   if (!token) {
-    throw Error(`Heroku Applink config not found for API URL: ${url}`);
+    throw Error(`Heroku Applink token not found for API URL: ${url}`);
   }
 
   return {
-    apiUrl: url,
+    apiUrl: matchingApiUrlEntry[1],
     token,
   };
 }

@@ -16,17 +16,17 @@ import {
 const HTTP_REQUEST = new HttpRequestUtil();
 
 /**
- * Get stored Salesforce or Data Cloud org user credentials for given name or alias.
- * @param name or alias
- * @param attachmentNameOrUrl Either an attachment name (e.g. "APPLINK") or a full URL
+ * Get stored Salesforce or Data Cloud org user credentials for given developer name or alias.
+ * @param developerName or alias
+ * @param attachmentNameOrUrl Either an attachment name (e.g. "HEROKU_APPLINK") or a full URL. Defaults to "HEROKU_APPLINK"
  * @returns Org
  */
 export async function getAuthorization(
-  name: string,
-  attachmentNameOrUrl = "APPLINK"
+  developerName: string,
+  attachmentNameOrUrl = "HEROKU_APPLINK"
 ): Promise<Org> {
-  if (!name) {
-    throw Error(`Connection name not provided`);
+  if (!developerName) {
+    throw Error(`Developer name not provided`);
   }
 
   // Check if the attachmentNameOrUrl is a URL by attempting to parse it
@@ -50,7 +50,7 @@ export async function getAuthorization(
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      developer_name: name,
+      developer_name: developerName,
     }),
     retry: {
       limit: 1,
