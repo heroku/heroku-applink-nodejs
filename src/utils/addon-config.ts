@@ -32,7 +32,8 @@ export function resolveAddonConfigByUrl(url: string): AddonConfig {
   // Find the environment variable ending with _API_URL that matches the given URL
   const envVarEntries = Object.entries(process.env);
   const matchingApiUrlEntry = envVarEntries.find(
-    ([key, value]) => key.endsWith("_API_URL") && value.toLowerCase() === url.toLowerCase()
+    ([key, value]) =>
+      key.endsWith("_API_URL") && value.toLowerCase() === url.toLowerCase()
   );
 
   if (!matchingApiUrlEntry) {

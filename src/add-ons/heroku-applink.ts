@@ -42,16 +42,13 @@ export async function getAuthorization(
     ? resolveAddonConfigByUrl(attachmentNameOrUrl)
     : resolveAddonConfigByAttachment(attachmentNameOrUrl);
 
-  const authUrl = `${config.apiUrl}/invocations/authorization`;
+  const authUrl = `${config.apiUrl}/authorizations/${developerName}`;
   const opts = {
-    method: "POST",
+    method: "GET",
     headers: {
       Authorization: `Bearer ${config.token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      developer_name: developerName,
-    }),
     retry: {
       limit: 1,
     },
