@@ -11,6 +11,8 @@ import {
   resolveAddonConfigByUrl,
 } from "../../src/utils/addon-config";
 
+const ATTACHMENT = "HEROKU_APPLINK";
+
 describe("resolveAddonConfigByAttachment", () => {
   let originalEnv: NodeJS.ProcessEnv;
 
@@ -22,29 +24,29 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env = originalEnv;
   });
 
-  it("gets config for default HEROKU_APPLINK attachment", () => {
+  it("finds config for specified attachment", () => {
     process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
     process.env.HEROKU_APPLINK_TOKEN = "default-token";
 
-    const config = resolveAddonConfigByAttachment();
+    const config = resolveAddonConfigByAttachment(ATTACHMENT);
     expect(config.apiUrl).to.equal("https://api.example.com");
     expect(config.token).to.equal("default-token");
   });
 
-  it("gets config for specified attachment", () => {
-    process.env.CUSTOM_API_URL = "https://custom.example.com";
-    process.env.CUSTOM_TOKEN = "custom-token";
+  it("finds config ignoring case of attachment name", () => {
+    process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
+    process.env.HEROKU_APPLINK_TOKEN = "default-token";
 
-    const config = resolveAddonConfigByAttachment("CUSTOM");
-    expect(config.apiUrl).to.equal("https://custom.example.com");
-    expect(config.token).to.equal("custom-token");
+    const config = resolveAddonConfigByAttachment(ATTACHMENT.toLowerCase());
+    expect(config.apiUrl).to.equal("https://api.example.com");
+    expect(config.token).to.equal("default-token");
   });
 
   it("throws if API_URL config not found", () => {
-    process.env.APPLINK_TOKEN = "token";
+    process.env.HEROKU_APPLINK_TOKEN = "token";
     // APPLINK_API_URL intentionally not set
 
-    expect(() => resolveAddonConfigByAttachment()).to.throw(
+    expect(() => resolveAddonConfigByAttachment(ATTACHMENT)).to.throw(
       "Heroku Applink config not found under attachment HEROKU_APPLINK"
     );
   });
@@ -53,7 +55,7 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
     // APPLINK_TOKEN intentionally not set
 
-    expect(() => resolveAddonConfigByAttachment()).to.throw(
+    expect(() => resolveAddonConfigByAttachment(ATTACHMENT)).to.throw(
       "Heroku Applink config not found under attachment HEROKU_APPLINK"
     );
   });
@@ -80,7 +82,17 @@ describe("resolveAddonConfigByUrl", () => {
     expect(config.token).to.equal("test-token");
   });
 
-  it("finds config for matching URL with custom prefix", () => {
+  it("finds config ignoring url case", () => {
+    const testUrl = "https://api.example.com";
+    process.env.HEROKU_APPLINK_API_URL = testUrl;
+    process.env.HEROKU_APPLINK_TOKEN = "test-token";
+
+    const config = resolveAddonConfigByUrl(testUrl.toUpperCase());
+    expect(config.apiUrl).to.equal(testUrl);
+    expect(config.token).to.equal("test-token");
+  });
+
+  it("finds custom prefix config for matching URL", () => {
     const testUrl = "https://custom.example.com";
     process.env.CUSTOM_ATTACHMENT_API_URL = testUrl;
     process.env.CUSTOM_ATTACHMENT_TOKEN = "custom-token";
@@ -104,7 +116,7 @@ describe("resolveAddonConfigByUrl", () => {
     // SOME_TOKEN intentionally not set
 
     expect(() => resolveAddonConfigByUrl(testUrl)).to.throw(
-      `Heroku Applink config not found for API URL: ${testUrl}`
+      `Heroku Applink token not found for API URL: ${testUrl}`
     );
   });
 });
