@@ -1,7 +1,6 @@
 {
   "scenarioName": "BULK_API_INGEST_S04",
   "requiredScenarioState": "start",
-  "newScenarioState": "Started",
   "request": {
     "method": "POST",
     "urlPath": "/services/data/v56.0/jobs/ingest"
