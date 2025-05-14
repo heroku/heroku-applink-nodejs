@@ -1,0 +1,29 @@
+{
+  "scenarioName": "BULK_API_INGEST_S04",
+  "requiredScenarioState": "start",
+  "newScenarioState": "Started",
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/ingest"
+  },
+  "response": {
+    "status": 202,
+    "jsonBody": {
+      "id": "1"
+    }
+  }
+},
+{
+  "scenarioName": "BULK_API_INGEST_S04",
+  "requiredScenarioState": "Started",
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/ingest/1/batches"
+  },
+  "response": {
+    "status": 400,
+    "jsonBody": {
+      "id": "1"
+    }
+  }
+}

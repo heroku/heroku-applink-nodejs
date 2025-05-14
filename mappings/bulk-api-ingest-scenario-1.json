@@ -1,0 +1,13 @@
+{
+  "scenarioName": "BULK_API_INGEST_S01",
+  "requiredScenarioState": "Started",
+  "newScenarioState": "start",
+  "request": {
+    "method": "POST",
+    "url": "/bulk-ingest"
+  },
+  "response": {
+    "status": 202,
+    "body": "Job started"
+  }
+}
