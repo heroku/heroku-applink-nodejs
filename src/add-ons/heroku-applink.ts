@@ -11,7 +11,7 @@ import { Org } from "../index";
 import {
   resolveAddonConfigByAttachment,
   resolveAddonConfigByUrl,
-} from "~/utils/addon-config";
+} from "../utils/addon-config";
 
 const HTTP_REQUEST = new HttpRequestUtil();
 
@@ -42,13 +42,16 @@ export async function getAuthorization(
     ? resolveAddonConfigByUrl(attachmentNameOrUrl)
     : resolveAddonConfigByAttachment(attachmentNameOrUrl);
 
-  const authUrl = `${config.apiUrl}/authorizations/${developerName}`;
+  const authUrl = `${config.apiUrl}/invocations/authorization`;
   const opts = {
-    method: "GET",
+    method: "POST",
     headers: {
       Authorization: `Bearer ${config.token}`,
       "Content-Type": "application/json",
     },
+    body: JSON.stringify({
+      org_name: developerName,
+    }),
     retry: {
       limit: 1,
     },
