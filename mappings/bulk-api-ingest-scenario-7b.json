@@ -3,13 +3,10 @@
   "requiredScenarioState": "start",
   "newScenarioState": "start",
   "request": {
-    "method": "POST",
-    "urlPath": "/services/data/v56.0/jobs/ingest"
+    "method": "PUT",
+    "urlPath": "/services/data/v56.0/jobs/ingest/1/batches"
   },
   "response": {
-    "status": 200,
-    "jsonBody": {
-      "id": "1"
-    }
+    "status": 500
   }
 }
