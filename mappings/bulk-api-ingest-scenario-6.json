@@ -1,13 +1,14 @@
 {
   "scenarioName": "BULK_API_INGEST_S06",
-  "requiredScenarioState": "Started",
-  "newScenarioState": "start",
+  "requiredScenarioState": "start",
   "request": {
     "method": "POST",
-    "urlPath": "/bulk-api/ingest/bulk_api_ingest_s06"
+    "urlPath": "/services/data/v56.0/jobs/ingest"
   },
   "response": {
-    "status": 202,
-    "body": "Stub for server error during job upload"
+    "status": 200,
+    "jsonBody": {
+      "id": "1"
+    }
   }
 }
