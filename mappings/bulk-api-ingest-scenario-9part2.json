@@ -1,7 +1,7 @@
 {
-  "scenarioName": "BULK_API_INGEST_S09_JOB9",
+  "scenarioName": "BULK_API_INGEST_S09_JOB7",
   "requiredScenarioState": "start",
-  "newScenarioState": "9",
+  "newScenarioState": "9part2",
   "request": {
     "method": "POST",
     "urlPath": "/services/data/v56.0/jobs/ingest"
@@ -9,7 +9,7 @@
   "response": {
     "status": 202,
     "jsonBody": {
-      "id": "9"
+      "id": "7"
     }
   }
 }

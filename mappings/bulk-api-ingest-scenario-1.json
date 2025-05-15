@@ -1,6 +1,6 @@
 {
   "scenarioName": "BULK_API_INGEST_S01",
-  "requiredScenarioState": "Started",
+  "requiredScenarioState": "start",
   "newScenarioState": "start",
   "request": {
     "method": "POST",
