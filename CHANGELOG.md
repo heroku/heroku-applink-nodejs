@@ -10,3 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.1.0-ea] - 2024-08-12
 
 - Initial
+
+## [1.0.0]
+
+- Rename `getConnection(name: string)` -> `getAuthorization(developerName: string, attachmentNameOrUrl = "HEROKU_APPLINK")`, accepting a new attachmentNameOrUrl to use a specific Applink addon's config.
