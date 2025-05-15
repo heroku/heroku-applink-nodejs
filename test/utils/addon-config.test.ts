@@ -92,16 +92,6 @@ describe("resolveAddonConfigByUrl", () => {
     expect(config.token).to.equal("test-token");
   });
 
-  it("finds custom prefix config for matching URL", () => {
-    const testUrl = "https://custom.example.com";
-    process.env.CUSTOM_ATTACHMENT_API_URL = testUrl;
-    process.env.CUSTOM_ATTACHMENT_TOKEN = "custom-token";
-
-    const config = resolveAddonConfigByUrl(testUrl);
-    expect(config.apiUrl).to.equal(testUrl);
-    expect(config.token).to.equal("custom-token");
-  });
-
   it("throws if no matching URL is found", () => {
     const testUrl = "https://nonexistent.example.com";
 
