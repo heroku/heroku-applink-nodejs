@@ -29,7 +29,6 @@ export async function getAuthorization(
     throw Error(`Developer name not provided`);
   }
 
-  // Check if the attachmentNameOrUrl is a URL by attempting to parse it
   let resolveConfigByUrl = false;
   try {
     new URL(attachmentNameOrUrl);
