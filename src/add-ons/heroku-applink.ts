@@ -18,7 +18,7 @@ const HTTP_REQUEST = new HttpRequestUtil();
 /**
  * Get stored Salesforce or Data Cloud org user credentials for given developer name or alias.
  * @param developerName or alias
- * @param attachmentNameOrUrl Either an attachment name (e.g. "HEROKU_APPLINK") or a full URL. Defaults to "HEROKU_APPLINK"
+ * @param attachmentNameOrUrl Either an attachment name (e.g. "HEROKU_APPLINK") or the value of the attachment's API_URL config. Defaults to "HEROKU_APPLINK"
  * @returns Org
  */
 export async function getAuthorization(
