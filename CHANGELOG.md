@@ -13,4 +13,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0]
 
-- Rename `getConnection(name: string)` -> `getAuthorization(developerName: string, attachmentNameOrColorUrl = "HEROKU_APPLINK")`, accepting a new attachmentNameOrColorUrl to use a specific Applink addon's config.
+- Rename `getConnection(name: string)` -> `getAuthorization(developerName: string, attachmentNameOrColorUrl = "HEROKU_APPLINK")`, accepting a new attachmentNameOrColorOrUrl to use a specific Applink addon's config.

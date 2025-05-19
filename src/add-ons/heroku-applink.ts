@@ -60,7 +60,7 @@ export async function getAuthorization(
   try {
     response = await HTTP_REQUEST.request(authUrl, opts);
   } catch (err) {
-    throw new Error(`Unable to get connection ${name}: ${err.message}`);
+    throw new Error(`Unable to get connection ${developerName}: ${err.message}`);
   }
 
   if (response.message) {
