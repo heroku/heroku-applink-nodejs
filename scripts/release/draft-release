@@ -1,0 +1,78 @@
+#!/bin/bash
+set -eu
+set -o pipefail
+
+# Script to create a draft release branch and PR
+#
+# Usage:
+#   ./scripts/release/draft-release [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+#
+# This will:
+#   1. Run npm version with the provided version type
+#   2. Create a release branch named release-v{version}
+#   3. Update CHANGELOG.md using update-changelog.sh
+#   4. Create a draft PR from the release branch to main
+
+usage() {
+    echo "Usage: $0 [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]"
+    echo "  newversion: The new version to release (e.g., 1.2.3)"
+    echo "  major: Bump major version (1.0.0 -> 2.0.0)"
+    echo "  minor: Bump minor version (1.0.0 -> 1.1.0)"
+    echo "  patch: Bump patch version (1.0.0 -> 1.0.1)"
+    echo "  premajor: Bump major version with prerelease (1.0.0 -> 2.0.0-0)"
+    echo "  preminor: Bump minor version with prerelease (1.0.0 -> 1.1.0-0)"
+    echo "  prepatch: Bump patch version with prerelease (1.0.0 -> 1.0.1-0)"
+    echo "  prerelease: Bump prerelease version (1.0.0 -> 1.0.0-0)"
+    echo "  from-git: Use version from git tags"
+    exit 1
+}
+
+# Check if version type is provided
+if [ "$#" -ne 1 ]; then
+    usage
+fi
+
+VERSION_TYPE=$1
+
+# Run npm version and capture the new version
+echo "Running npm version $VERSION_TYPE..."
+NEW_VERSION=$(npm version "$VERSION_TYPE" --no-git-tag-version)
+# Remove the 'v' prefix that npm version adds
+NEW_VERSION=${NEW_VERSION#v}
+
+# Create release branch with actual version number
+echo "Creating release branch..."
+git checkout -b "release-v${NEW_VERSION}"
+
+# Update changelog
+echo "Updating changelog..."
+./scripts/release/update-changelog "$NEW_VERSION"
+
+# Create commit for changelog update
+git add CHANGELOG.md
+git commit -m "docs: update changelog for v$NEW_VERSION"
+
+echo "Created commits for version bump and changelog update"
+
+# Push the release branch
+git push origin "release-v${NEW_VERSION}"
+
+# Create draft PR
+PR_BODY=$(cat << EOF
+This is a draft release PR. Please review the changes:
+
+- Version bump in package.json
+- Changelog updates
+
+Once approved, this PR can be merged to trigger the release process.
+EOF
+)
+
+gh pr create \
+  --base main \
+  --head "release-v${NEW_VERSION}" \
+  --title "Release v$NEW_VERSION" \
+  --body "$PR_BODY" \
+  --draft
+
+echo "Created draft PR for release v$NEW_VERSION" 
