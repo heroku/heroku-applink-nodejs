@@ -44,6 +44,10 @@ NEW_VERSION=${NEW_VERSION#v}
 echo "Creating release branch..."
 git checkout -b "release-v${NEW_VERSION}"
 
+# Commit the version change
+git add package.json
+git commit -m "chore: bump version to v$NEW_VERSION"
+
 # Update changelog
 echo "Updating changelog..."
 ./scripts/release/update-changelog "$NEW_VERSION"
