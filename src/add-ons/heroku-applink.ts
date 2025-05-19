@@ -9,7 +9,7 @@ import { HttpRequestUtil } from "../utils/request";
 import { OrgImpl } from "../sdk/org";
 import { Org } from "../index";
 import {
-  resolveAddonConfigByAttachment,
+  resolveAddonConfigByAttachmentOrColor,
   resolveAddonConfigByUrl,
 } from "../utils/addon-config";
 
@@ -18,12 +18,12 @@ const HTTP_REQUEST = new HttpRequestUtil();
 /**
  * Get stored Salesforce or Data Cloud org user credentials for given developer name or alias.
  * @param developerName or alias
- * @param attachmentNameOrUrl Either an attachment name (e.g. "HEROKU_APPLINK") or the value of the attachment's API_URL config. Defaults to "HEROKU_APPLINK"
+ * @param attachmentNameOrColorOrUrl Either an attachment name, (e.g. "HEROKU_APPLINK"), color (e.g. "purple" in "HEROKU_APPLINK_PURPLE") or the value of the attachment's API_URL config. Defaults to "HEROKU_APPLINK"
  * @returns Org
  */
 export async function getAuthorization(
   developerName: string,
-  attachmentNameOrUrl = "HEROKU_APPLINK"
+  attachmentNameOrColorOrUrl = "HEROKU_APPLINK"
 ): Promise<Org> {
   if (!developerName) {
     throw Error(`Developer name not provided`);
@@ -31,15 +31,15 @@ export async function getAuthorization(
 
   let resolveConfigByUrl = false;
   try {
-    new URL(attachmentNameOrUrl);
+    new URL(attachmentNameOrColorOrUrl);
     resolveConfigByUrl = true;
   } catch {
     resolveConfigByUrl = false;
   }
 
   const config = resolveConfigByUrl
-    ? resolveAddonConfigByUrl(attachmentNameOrUrl)
-    : resolveAddonConfigByAttachment(attachmentNameOrUrl);
+    ? resolveAddonConfigByUrl(attachmentNameOrColorOrUrl)
+    : resolveAddonConfigByAttachmentOrColor(attachmentNameOrColorOrUrl);
 
   const authUrl = `${config.apiUrl}/invocations/authorization`;
   const opts = {

@@ -7,13 +7,13 @@
 
 import { expect } from "chai";
 import {
-  resolveAddonConfigByAttachment,
+  resolveAddonConfigByAttachmentOrColor,
   resolveAddonConfigByUrl,
 } from "../../src/utils/addon-config";
 
 const ATTACHMENT = "HEROKU_APPLINK";
 
-describe("resolveAddonConfigByAttachment", () => {
+describe("resolveAddonConfigByAttachmentOrColor", () => {
   let originalEnv: NodeJS.ProcessEnv;
 
   beforeEach(() => {
@@ -28,7 +28,7 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
     process.env.HEROKU_APPLINK_TOKEN = "default-token";
 
-    const config = resolveAddonConfigByAttachment(ATTACHMENT);
+    const config = resolveAddonConfigByAttachmentOrColor(ATTACHMENT);
     expect(config.apiUrl).to.equal("https://api.example.com");
     expect(config.token).to.equal("default-token");
   });
@@ -37,7 +37,18 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
     process.env.HEROKU_APPLINK_TOKEN = "default-token";
 
-    const config = resolveAddonConfigByAttachment(ATTACHMENT.toLowerCase());
+    const config = resolveAddonConfigByAttachmentOrColor(
+      ATTACHMENT.toLowerCase()
+    );
+    expect(config.apiUrl).to.equal("https://api.example.com");
+    expect(config.token).to.equal("default-token");
+  });
+
+  it("finds config for specified color", () => {
+    process.env.HEROKU_APPLINK_PURPLE_API_URL = "https://api.example.com";
+    process.env.HEROKU_APPLINK_PURPLE_TOKEN = "default-token";
+
+    const config = resolveAddonConfigByAttachmentOrColor("purple");
     expect(config.apiUrl).to.equal("https://api.example.com");
     expect(config.token).to.equal("default-token");
   });
@@ -46,8 +57,8 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env.HEROKU_APPLINK_TOKEN = "token";
     // APPLINK_API_URL intentionally not set
 
-    expect(() => resolveAddonConfigByAttachment(ATTACHMENT)).to.throw(
-      "Heroku Applink config not found under attachment HEROKU_APPLINK"
+    expect(() => resolveAddonConfigByAttachmentOrColor(ATTACHMENT)).to.throw(
+      "Heroku Applink config not found under attachment or color HEROKU_APPLINK"
     );
   });
 
@@ -55,8 +66,8 @@ describe("resolveAddonConfigByAttachment", () => {
     process.env.HEROKU_APPLINK_API_URL = "https://api.example.com";
     // APPLINK_TOKEN intentionally not set
 
-    expect(() => resolveAddonConfigByAttachment(ATTACHMENT)).to.throw(
-      "Heroku Applink config not found under attachment HEROKU_APPLINK"
+    expect(() => resolveAddonConfigByAttachmentOrColor(ATTACHMENT)).to.throw(
+      "Heroku Applink config not found under attachment or color HEROKU_APPLINK"
     );
   });
 });

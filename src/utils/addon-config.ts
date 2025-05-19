@@ -10,15 +10,27 @@ interface AddonConfig {
   token: string;
 }
 
-export function resolveAddonConfigByAttachment(
-  attachment: string
+export function resolveAddonConfigByAttachmentOrColor(
+  attachmentOrColor: string
 ): AddonConfig {
-  const apiUrl = process.env[`${attachment.toUpperCase()}_API_URL`];
-  const token = process.env[`${attachment.toUpperCase()}_TOKEN`];
+  let apiUrl;
+  let token;
+
+  // lookup by attachment
+  apiUrl = process.env[`${attachmentOrColor.toUpperCase()}_API_URL`];
+  token = process.env[`${attachmentOrColor.toUpperCase()}_TOKEN`];
+
+  // if not found, lookup by color using HEROKU_APPLINK prefix for attachment name
+  if (!apiUrl || !token) {
+    apiUrl =
+      process.env[`HEROKU_APPLINK_${attachmentOrColor.toUpperCase()}_API_URL`];
+    token =
+      process.env[`HEROKU_APPLINK_${attachmentOrColor.toUpperCase()}_TOKEN`];
+  }
 
   if (!apiUrl || !token) {
     throw Error(
-      `Heroku Applink config not found under attachment ${attachment}`
+      `Heroku Applink config not found under attachment or color ${attachmentOrColor}`
     );
   }
 
