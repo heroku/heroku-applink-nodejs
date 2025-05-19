@@ -53,6 +53,17 @@ describe("resolveAddonConfigByAttachmentOrColor", () => {
     expect(config.token).to.equal("default-token");
   });
 
+  it("finds config for specified color for STAGING addon", () => {
+    process.env.HEROKU_APPLINK_ADDON_NAME = "HEROKU_APPLINK_STAGING";
+    process.env.HEROKU_APPLINK_STAGING_PURPLE_API_URL =
+      "https://api.example.com";
+    process.env.HEROKU_APPLINK_STAGING_PURPLE_TOKEN = "default-token";
+
+    const config = resolveAddonConfigByAttachmentOrColor("purple");
+    expect(config.apiUrl).to.equal("https://api.example.com");
+    expect(config.token).to.equal("default-token");
+  });
+
   it("throws if API_URL config not found", () => {
     process.env.HEROKU_APPLINK_TOKEN = "token";
     // APPLINK_API_URL intentionally not set

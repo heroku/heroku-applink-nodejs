@@ -23,7 +23,8 @@ const HTTP_REQUEST = new HttpRequestUtil();
  */
 export async function getAuthorization(
   developerName: string,
-  attachmentNameOrColorOrUrl = "HEROKU_APPLINK"
+  attachmentNameOrColorOrUrl = process.env.HEROKU_APPLINK_ADDON_NAME ||
+    "HEROKU_APPLINK"
 ): Promise<Org> {
   if (!developerName) {
     throw Error(`Developer name not provided`);
@@ -60,7 +61,9 @@ export async function getAuthorization(
   try {
     response = await HTTP_REQUEST.request(authUrl, opts);
   } catch (err) {
-    throw new Error(`Unable to get connection ${developerName}: ${err.message}`);
+    throw new Error(
+      `Unable to get connection ${developerName}: ${err.message}`
+    );
   }
 
   if (response.message) {

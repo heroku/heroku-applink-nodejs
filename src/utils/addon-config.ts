@@ -13,6 +13,8 @@ interface AddonConfig {
 export function resolveAddonConfigByAttachmentOrColor(
   attachmentOrColor: string
 ): AddonConfig {
+  const addon = process.env.HEROKU_APPLINK_ADDON_NAME || "HEROKU_APPLINK";
+
   let apiUrl;
   let token;
 
@@ -22,10 +24,8 @@ export function resolveAddonConfigByAttachmentOrColor(
 
   // if not found, lookup by color using HEROKU_APPLINK prefix for attachment name
   if (!apiUrl || !token) {
-    apiUrl =
-      process.env[`HEROKU_APPLINK_${attachmentOrColor.toUpperCase()}_API_URL`];
-    token =
-      process.env[`HEROKU_APPLINK_${attachmentOrColor.toUpperCase()}_TOKEN`];
+    apiUrl = process.env[`${addon}_${attachmentOrColor.toUpperCase()}_API_URL`];
+    token = process.env[`${addon}_${attachmentOrColor.toUpperCase()}_TOKEN`];
   }
 
   if (!apiUrl || !token) {
