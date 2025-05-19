@@ -17,30 +17,55 @@ usage() {
     exit 1
 }
 
-# Function to categorize commits based on conventional commit types
-categorize_commit() {
-    local message=$1
-    local hash=$2
-    local body=$3
-
-    # Check for conventional commit types
-    if [[ "$message" =~ ^feat(\([a-z-]+\))?: ]]; then
-        echo "Features"
-    elif [[ "$message" =~ ^fix(\([a-z-]+\))?: ]]; then
-        echo "Fixes"
-    elif [[ "$message" =~ ^docs(\([a-z-]+\))?: ]]; then
-        echo "Docs"
-    else
-        echo "Other"
-    fi
-}
-
 # Check if version is provided
 if [ "$#" -ne 1 ]; then
     usage
 fi
 
 NEW_VERSION=$1
+
+# Function to categorize commit message
+categorize_commit() {
+    local message=$1
+    local hash=$2
+    local body=$3
+
+    # First try conventional commit format
+    if [[ "$message" =~ ^(feat|fix|docs|style|refactor|perf|test|build|ci|chore|revert)(\([a-z-]+\))?: ]]; then
+        local type="${BASH_REMATCH[1]}"
+        case "$type" in
+            feat) echo "Features" ;;
+            fix) echo "Fixes" ;;
+            docs) echo "Docs" ;;
+            *) echo "Other" ;;
+        esac
+        return
+    fi
+
+    # If not conventional, analyze message content
+    message_lower=$(echo "$message" | tr '[:upper:]' '[:lower:]')
+    
+    # Features
+    if [[ "$message_lower" =~ ^(add|create|implement|new|update|upgrade|enhance|improve|support|adds|creates|implements|updates|upgrades|enhances|improves|supports) ]]; then
+        echo "Features"
+        return
+    fi
+
+    # Bug Fixes
+    if [[ "$message_lower" =~ ^(fix|fixes|fixed|resolve|resolves|resolved|correct|corrects|corrected|bug|issue|error|err|typo) ]]; then
+        echo "Fixes"
+        return
+    fi
+
+    # Documentation
+    if [[ "$message_lower" =~ ^(doc|docs|document|documentation|readme|comment|comments|note|notes|changelog) ]]; then
+        echo "Docs"
+        return
+    fi
+
+    # Default to other
+    echo "Other"
+}
 
 # Get the last tag (sorted by creation date)
 LAST_TAG=$(git tag --sort=creatordate | tail -n 1 2>/dev/null || echo "")
@@ -73,7 +98,7 @@ fi
 if [ -n "$LAST_TAG" ]; then
     VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/$LAST_TAG...$NEW_VERSION) - $(date +%Y-%m-%d)"
 else
-    VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/HEAD...$NEW_VERSION) - $(date +%Y-%m-%d)"
+    VERSION_HEADER="# [$NEW_VERSION] - $(date +%Y-%m-%d)"
 fi
 
 echo "Version header: $VERSION_HEADER"
@@ -137,11 +162,11 @@ echo "$COMMITS" | while IFS='|' read -r message hash; do
             *) tmp_file="$OTHER_TMP" ;;
         esac
 
-        # Add the commit to the appropriate category file
+        # Add the commit to the appropriate category file with commit hash link
         if [ -n "$ref_number" ]; then
-            echo "* $formatted_message ([#$ref_number]($REPO_URL/$ref_type/$ref_number))" >> "$tmp_file"
+            echo "* $formatted_message ([#$ref_number]($REPO_URL/$ref_type/$ref_number)) ([${hash:0:7}]($REPO_URL/commit/$hash))" >> "$tmp_file"
         else
-            echo "* $formatted_message" >> "$tmp_file"
+            echo "* $formatted_message ([${hash:0:7}]($REPO_URL/commit/$hash))" >> "$tmp_file"
         fi
     fi
 done
