@@ -1,5 +1,4 @@
 {
-  "priority": 1,
   "request": {
     "method": "POST",
     "urlPath": "/services/data/v56.0/jobs/query",
@@ -9,17 +8,12 @@
       }
     },
     "bodyPatterns": [
-      {
-        "matchesJsonPath": "$[?(@.operation == 'queryAll')]"
-      }
+      {"equalTo": "{\"operation\":\"query\",\"query\":\"SELECT Id FROM ClientError\"}"}
     ]
   },
   "response": {
-    "status": 200,
-    "jsonBody": {
-      "id": "7508Z00000lTrkSQAS",
-      "type": "queryJob"
-    },
+    "status": 400,
+    "body": "[{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]",
     "headers": {
       "Content-Type": "application/json;charset=UTF-8"
     }
