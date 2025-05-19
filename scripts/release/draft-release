@@ -5,7 +5,7 @@ set -o pipefail
 # Script to create a draft release branch and PR
 #
 # Usage:
-#   ./scripts/release/draft-release [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
+#   ./scripts/release/draft-release [ | major | minor | patch | ]
 #
 # This will:
 #   1. Run npm version with the provided version type
@@ -14,16 +14,10 @@ set -o pipefail
 #   4. Create a draft PR from the release branch to main
 
 usage() {
-    echo "Usage: $0 [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]"
-    echo "  newversion: The new version to release (e.g., 1.2.3)"
+    echo "Usage: $0 [ | major | minor | patch | ]"
     echo "  major: Bump major version (1.0.0 -> 2.0.0)"
     echo "  minor: Bump minor version (1.0.0 -> 1.1.0)"
     echo "  patch: Bump patch version (1.0.0 -> 1.0.1)"
-    echo "  premajor: Bump major version with prerelease (1.0.0 -> 2.0.0-0)"
-    echo "  preminor: Bump minor version with prerelease (1.0.0 -> 1.1.0-0)"
-    echo "  prepatch: Bump patch version with prerelease (1.0.0 -> 1.0.1-0)"
-    echo "  prerelease: Bump prerelease version (1.0.0 -> 1.0.0-0)"
-    echo "  from-git: Use version from git tags"
     exit 1
 }
 
