@@ -1,9 +1,8 @@
-name: Build
+name: Package Library
+
 on:
   push:
-    # Avoid duplicate builds on PRs.
-    branches:
-      - main
+    branches: [main]
   pull_request:
 permissions:
   contents: read
@@ -33,3 +32,10 @@ jobs:
       - run: npm run lint
       - run: npm run test
       - run: npm run build
+      - name: Upload artifacts
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'Merge pull request') && contains(github.event.head_commit.message, 'release')
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.ref_name }}
+          path: dist/
+          retention-days: 90

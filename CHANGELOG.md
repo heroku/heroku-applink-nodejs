@@ -1,12 +1,13 @@
 # Changelog
+
 All notable changes to this project will be documented in this file.
+See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+# [0.3.4-ea] - 2024-03-21
 
-## Unreleased
-- Update CODEOWNERS
 
-## [0.1.0-ea] - 2024-08-12
+### Changes
 
-- Initial
+### Features
+* Initial release ([c5d593f](https://github.com/heroku/heroku-applink-nodejs/commit/c5d593fa3c0f37607239e3ded7c2c24d7354383c))
+
