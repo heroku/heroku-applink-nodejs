@@ -94,12 +94,8 @@ if [ -f "CHANGELOG.md" ]; then
     cp "CHANGELOG.md" "$OLD_CONTENT"
 fi
 
-# Create the new version content
-if [ -n "$LAST_TAG" ]; then
-    VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/$LAST_TAG...$NEW_VERSION) - $(date +%Y-%m-%d)"
-else
-    VERSION_HEADER="# [$NEW_VERSION] - $(date +%Y-%m-%d)"
-fi
+# Create the new version content with comparison to HEAD
+VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/HEAD...$NEW_VERSION) - $(date +%Y-%m-%d)"
 
 echo "Version header: $VERSION_HEADER"
 
