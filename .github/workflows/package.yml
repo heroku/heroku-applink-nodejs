@@ -4,40 +4,38 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
-
+permissions:
+  contents: read
 jobs:
   build:
-    runs-on: ubuntu-latest
     strategy:
+      fail-fast: false
       matrix:
-        node-version: [18.x, 20.x]
-
+        version: [22, 20, 18]
+        os:
+          [sfdc-hk-ubuntu-latest, sfdc-hk-macos-latest, sfdc-hk-windows-latest]
+    name: Node ${{ matrix.version }} on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
     steps:
-    - uses: actions/checkout@v4
-    
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-        node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    
-    - name: Install dependencies
-      run: npm ci
-    
-    - name: Lint
-      run: npm run lint
-    
-    - name: Test
-      run: npm run test
-    
-    - name: Build
-      run: npm run build
-    
-    - name: Upload artifacts
-      if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'Merge pull request') && contains(github.event.head_commit.message, 'release')
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ github.ref_name }}
-        path: dist/
-        retention-days: 90
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4 # java required for testing with wiremock
+        with:
+          java-package: jre
+          java-version: "11"
+          distribution: "zulu"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.version }}
+          cache: "npm"
+      - run: npm install
+      - run: npm run format:check
+      - run: npm run lint
+      - run: npm run test
+      - run: npm run build
+      - name: Upload artifacts
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'Merge pull request') && contains(github.event.head_commit.message, 'release')
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ github.ref_name }}
+          path: dist/
+          retention-days: 90
