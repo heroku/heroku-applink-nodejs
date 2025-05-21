@@ -22,19 +22,16 @@ export class OrgImpl implements Org {
   readonly dataCloudApi?: DataCloudApi;
   readonly domainUrl: string;
   readonly id: string;
-  readonly namespace: string;
   readonly user: User;
 
   constructor(
     accessToken: string,
     apiVersion: string,
-    namespace: string,
     orgId: string,
     orgDomainUrl: string,
     userId: string,
     username: string,
-    dataCloudAccessToken?: string,
-    dataCloudInstanceUrl?: string
+    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg" // DatacloudOrg for legacy Pilot/Ruby
   ) {
     this.accessToken = accessToken;
     this.apiVersion = apiVersion.startsWith("v")
@@ -44,8 +41,6 @@ export class OrgImpl implements Org {
       ? orgDomainUrl
       : `https://${orgDomainUrl}`;
     this.id = orgId;
-    this.namespace =
-      namespace === null || namespace === "null" ? "" : namespace;
 
     this.bulkApi = createBulkApi({
       instanceUrl: this.domainUrl,
@@ -59,11 +54,8 @@ export class OrgImpl implements Org {
       this.domainUrl
     );
 
-    if (dataCloudAccessToken && dataCloudInstanceUrl) {
-      this.dataCloudApi = new DataCloudApiImpl(
-        dataCloudAccessToken,
-        dataCloudInstanceUrl
-      );
+    if (orgType === "DataCloudOrg" || orgType === "DatacloudOrg") {
+      this.dataCloudApi = new DataCloudApiImpl(accessToken, orgDomainUrl);
     }
 
     this.user = new UserImpl(userId, username);

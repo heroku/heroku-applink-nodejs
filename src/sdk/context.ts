@@ -16,21 +16,21 @@ export class ContextImpl implements Context {
     accessToken: string,
     apiVersion: string,
     id: string,
-    namespace: string,
     orgId: string,
     orgDomainUrl: string,
     userId: string,
-    username: string
+    username: string,
+    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg" // DatacloudOrg for legacy Pilot/Ruby
   ) {
     this.id = id;
     this.org = new OrgImpl(
       accessToken,
       apiVersion,
-      namespace,
       orgId,
       orgDomainUrl,
       userId,
-      username
+      username,
+      orgType
     );
   }
 }

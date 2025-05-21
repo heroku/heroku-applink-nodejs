@@ -73,11 +73,11 @@ export function parseRequest(
     clientContext.accessToken,
     clientContext.apiVersion,
     clientContext.requestId,
-    clientContext.namespace,
     clientContext.orgId,
     clientContext.orgDomainUrl,
     clientContext.userContext.userId,
-    clientContext.userContext.username
+    clientContext.userContext.username,
+    clientContext.orgType
   );
 
   const invocationEvent = new InvocationEventImpl(
@@ -152,7 +152,6 @@ export interface Org {
   readonly dataCloudApi?: DataCloudApi;
   readonly domainUrl: string;
   readonly id: string;
-  readonly namespace: string;
   readonly user: User;
 
   request(fullUrlOrUrlPart: string, opts: any, json: boolean);

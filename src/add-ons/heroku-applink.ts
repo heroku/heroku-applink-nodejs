@@ -42,16 +42,13 @@ export async function getAuthorization(
     ? resolveAddonConfigByUrl(attachmentNameOrColorOrUrl)
     : resolveAddonConfigByAttachmentOrColor(attachmentNameOrColorOrUrl);
 
-  const authUrl = `${config.apiUrl}/invocations/authorization`;
+  const authUrl = `${config.apiUrl}/invocations/authorization/${developerName}`;
   const opts = {
-    method: "POST",
+    method: "GET",
     headers: {
       Authorization: `Bearer ${config.token}`,
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({
-      org_name: developerName,
-    }),
     retry: {
       limit: 1,
     },
@@ -66,19 +63,18 @@ export async function getAuthorization(
     );
   }
 
-  if (response.message) {
-    throw new Error(response.message);
+  // error response
+  if (response.title && response.detail) {
+    throw new Error(`${response.title} - ${response.detail}`);
   }
 
   return new OrgImpl(
-    response.access_token,
-    response.api_version,
-    response.namespace,
-    response.org_id,
-    response.org_domain_url,
-    response.user_id,
-    response.username,
-    response.datacloud_token,
-    response.datacloud_instance_url
+    response.org.user_auth.access_token,
+    response.org.api_version,
+    response.org.id,
+    response.org.instance_url,
+    response.org.user_auth.user_id,
+    response.org.user_auth.username,
+    response.org.type
   );
 }
