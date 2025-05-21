@@ -42,7 +42,7 @@ export async function getAuthorization(
     ? resolveAddonConfigByUrl(attachmentNameOrColorOrUrl)
     : resolveAddonConfigByAttachmentOrColor(attachmentNameOrColorOrUrl);
 
-  const authUrl = `${config.apiUrl}/invocations/authorization/${developerName}`;
+  const authUrl = `${config.apiUrl}/authorizations/${developerName}`;
   const opts = {
     method: "GET",
     headers: {
