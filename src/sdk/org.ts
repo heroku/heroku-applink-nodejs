@@ -22,11 +22,13 @@ export class OrgImpl implements Org {
   readonly dataCloudApi?: DataCloudApi;
   readonly domainUrl: string;
   readonly id: string;
+  readonly namespace: string;
   readonly user: User;
 
   constructor(
     accessToken: string,
     apiVersion: string,
+    namespace: string,
     orgId: string,
     orgDomainUrl: string,
     userId: string,
@@ -41,6 +43,8 @@ export class OrgImpl implements Org {
       ? orgDomainUrl
       : `https://${orgDomainUrl}`;
     this.id = orgId;
+    this.namespace =
+      namespace === null || namespace === "null" ? "" : namespace;
 
     this.bulkApi = createBulkApi({
       instanceUrl: this.domainUrl,

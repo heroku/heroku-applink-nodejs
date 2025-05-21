@@ -16,6 +16,7 @@ export class ContextImpl implements Context {
     accessToken: string,
     apiVersion: string,
     id: string,
+    namespace: string,
     orgId: string,
     orgDomainUrl: string,
     userId: string,
@@ -26,6 +27,7 @@ export class ContextImpl implements Context {
     this.org = new OrgImpl(
       accessToken,
       apiVersion,
+      namespace,
       orgId,
       orgDomainUrl,
       userId,

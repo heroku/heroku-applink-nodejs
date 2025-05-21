@@ -71,6 +71,7 @@ export async function getAuthorization(
   return new OrgImpl(
     response.org.user_auth.access_token,
     response.org.api_version,
+    null, // null namespace until post ga
     response.org.id,
     response.org.instance_url,
     response.org.user_auth.user_id,
