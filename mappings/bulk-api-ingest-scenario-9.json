@@ -1,0 +1,15 @@
+{
+  "scenarioName": "BULK_API_INGEST_S09_JOB9",
+  "requiredScenarioState": "start",
+  "newScenarioState": "9",
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/ingest"
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "9"
+    }
+  }
+}

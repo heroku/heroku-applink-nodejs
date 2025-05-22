@@ -31,6 +31,7 @@ function getloglevel() {
 const baseLogger = new Logger({
   name: "appLogger",
   level: getloglevel(),
+  useMemoryLogger: process.env.NODE_ENV === "test",
 });
 
 export default baseLogger;

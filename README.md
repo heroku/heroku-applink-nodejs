@@ -53,3 +53,10 @@ fastify.get('/accounts', async function (request, reply) {
 
 ## Configuration
 * `HEROKU_APPLINK_ADDON_NAME` - For development, configures the SDK to use a different addon name in place of "HEROKU_APPLINK". Used when fetching config vars.
+
+## Testing
+### Dependency
+You will need java installed to run wiremock.
+
+### Running tests
+To test with coverage run `yarn test:coverage`

@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/query/7508Z00000lTqQCQA0/results",
+    "queryParameters": {
+      "locator": {
+        "equalTo": "MjAwMOMG"
+      },
+      "maxRecords": {
+        "equalTo": "2"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/csv",
+      "Sforce-NumberOfRecords": "2"
+    },
+    "body": "Id\n005R0000000UyrWIAv\n005R0000000GiwjIxx\n"
+  }
+}

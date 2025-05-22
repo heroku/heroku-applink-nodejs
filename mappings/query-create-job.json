@@ -1,0 +1,21 @@
+{
+  "priority": 10,
+  "request": {
+    "urlPath": "/services/data/v56.0/jobs/query",
+    "method": "POST",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "jsonBody": {
+      "id": "7508Z00000lTqQCQA0"
+    },
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG/failedResults"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/csv"
+    },
+    "body": "sf__Id,sf__Error,Name,Description,NumberOfEmployees\n,REQUIRED_FIELD_MISSING:Required fields are missing: [Name]:Name --,,Description of TestAccount1,30\n,REQUIRED_FIELD_MISSING:Required fields are missing: [Name]:Name --,,Another description,40"
+  }
+}

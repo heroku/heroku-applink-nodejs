@@ -1,0 +1,16 @@
+{
+  "scenarioName": "BULK_API_INGEST_S02",
+  "requiredScenarioState": "start",
+  "newScenarioState": "start",
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/ingest"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json"
+    },
+    "body": "testErrorMessage"
+  }
+}

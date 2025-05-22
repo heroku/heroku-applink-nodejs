@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "DELETE",
+    "urlPath": "/services/data/v56.0/jobs/query/7508Z00000lTqQCQA0"
+  },
+  "response": {
+    "status": 200
+  }
+}

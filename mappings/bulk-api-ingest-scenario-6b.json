@@ -1,0 +1,11 @@
+{
+  "scenarioName": "BULK_API_INGEST_S06",
+  "requiredScenarioState": "start",
+  "request": {
+    "method": "PUT",
+    "urlPath": "/services/data/v56.0/jobs/ingest/1/batches"
+  },
+  "response": {
+    "status": 500
+  }
+}

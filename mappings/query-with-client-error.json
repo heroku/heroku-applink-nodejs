@@ -1,0 +1,23 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/query",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "equalTo": "{\"operation\":\"query\",\"query\":\"SELECT Id FROM ClientError\"}"
+      }
+    ]
+  },
+  "response": {
+    "status": 400,
+    "body": "[{\"errorCode\":\"NOT_FOUND\",\"message\":\"The requested resource does not exist\"}]",
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

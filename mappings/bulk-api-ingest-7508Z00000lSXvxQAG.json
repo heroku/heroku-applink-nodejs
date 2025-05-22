@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG/successfulResults"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/csv"
+    },
+    "body": "sf__Id,sf__Created,Name,Description,NumberOfEmployees\n0018Z00002rGc7YQAS,true,TestAccount1,Description of TestAccount1,30\n0018Z00002rGc7ZQAS,true,TestAccount2,Another description,40\n0018Z00002rGc7aQAC,true,TestAccount3,Yet another description,50"
+  }
+}
