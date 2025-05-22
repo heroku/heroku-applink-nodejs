@@ -32,4 +32,10 @@ jobs:
       - run: yarn format:check
       - run: yarn lint
       - run: yarn test:coverage
+        if: runner.os != 'macOS'
+
+      - run: yarn test:coverage
+        if: runner.os == 'macOS'
+        env:
+          JAVA_TOOL_OPTIONS: "-Xmx2g"
       - run: yarn build
