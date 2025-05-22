@@ -21,6 +21,7 @@
     "status": 400,
     "body": "[{\"message\":\"No such column 'FavoritePet__c' on sobject of type Account\",\"errorCode\":\"INVALID_FIELD\"}]",
     "headers": {
+      "Content-Type": "application/json",
       "Date": "Wed, 14 Apr 2024 14:35:57 GMT",
       "Strict-Transport-Security": "max-age=31536000; includeSubDomains",
       "X-Content-Type-Options": "nosniff",
