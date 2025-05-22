@@ -8,7 +8,7 @@ on:
 
 jobs:
   test:
-    runs-on: sfdc-hk-ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -30,9 +30,8 @@ jobs:
         run: |
           java -jar wiremock.jar --port 8080 &
           echo $! > wiremock.pid
-        timeout-minutes: 1
 
-  - name: Wait for WireMock to be ready
+      - name: Wait for WireMock to be ready
         run: |
           for i in {1..10}; do
             if curl --silent http://localhost:8080/__admin; then
@@ -41,7 +40,6 @@ jobs:
             fi
             sleep 1
           done
-
           echo "WireMock did not start in time" >&2
           exit 1
 
@@ -55,16 +53,35 @@ jobs:
       - name: Enforce ≥80% coverage
         run: |
           node -e "
-          const { readFileSync } = require('fs');
-          const { total } = JSON.parse(readFileSync('./coverage/coverage-summary.json', 'utf8'));
-          const thresholds = { lines: 80, statements: 80, functions: 80, branches: 80 };
-          const failed = Object.entries(thresholds)
-            .filter(([metric, threshold]) => total[metric].pct < threshold)
-            .map(([metric]) => metric);
-          if (failed.length > 0) {
-            console.error('❌ Coverage below 80% for:', failed.join(', '));
-            process.exit(1);
-          } else {
-            console.log('✅ Coverage check passed.');
-          }
+            const { readFileSync } = require('fs');
+            const { total } = JSON.parse(
+              readFileSync('./coverage/coverage-summary.json', 'utf8')
+            );
+            const thresholds = {
+              lines: 80,
+              statements: 80,
+              functions: 80,
+              branches: 80,
+            };
+            console.log('Coverage Report:');
+            Object.entries(total).forEach(([metric, data]) => {
+              console.log(`${metric}: ${data.pct}%`);
+            });
+            const failed = Object.entries(thresholds)
+              .filter(([metric, threshold]) => total[metric].pct < threshold)
+              .map(([metric]) => metric);
+            if (failed.length > 0) {
+              console.error('❌ Coverage below 80% for:', failed.join(', '));
+              process.exit(1);
+            } else {
+              console.log('✅ Coverage check passed.');
+            }
           "
+        timeout-minutes: 1
+
+      - name: Upload coverage report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 7
