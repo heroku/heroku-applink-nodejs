@@ -1,4 +1,4 @@
-name: Test and Coverage
+name: Test and Coverage (with WireMock)
 
 on:
   push:
@@ -22,8 +22,31 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Download WireMock standalone jar
+        run: |
+          curl -L -o wiremock.jar https://repo1.maven.org/maven2/com/github/tomakehurst/wiremock-jre8-standalone/2.35.0/wiremock-jre8-standalone-2.35.0.jar
+
+      - name: Start WireMock
+        run: |
+          java -jar wiremock.jar --port 8080 &
+          echo $! > wiremock.pid
+        timeout-minutes: 1
+
+      - name: Wait for WireMock to be ready
+        run: |
+          for i in {1..10}; do
+            if curl --silent http://localhost:8080/__admin; then exit 0; fi
+            sleep 1
+          done
+          echo "WireMock did not start in time" >&2
+          exit 1
+
       - name: Run tests with coverage
         run: yarn test:coverage
+
+      - name: Stop WireMock
+        run: |
+          kill $(cat wiremock.pid)
 
       - name: Enforce ≥80% coverage
         run: |
