@@ -32,12 +32,16 @@ jobs:
           echo $! > wiremock.pid
         timeout-minutes: 1
 
-      - name: Wait for WireMock to be ready
+  - name: Wait for WireMock to be ready
         run: |
           for i in {1..10}; do
-            if curl --silent http://localhost:8080/__admin; then exit 0; fi
+            if curl --silent http://localhost:8080/__admin; then
+              echo "WireMock is ready"
+              exit 0
+            fi
             sleep 1
           done
+
           echo "WireMock did not start in time" >&2
           exit 1
 
