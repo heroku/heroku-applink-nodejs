@@ -707,7 +707,7 @@ describe("bulkApi", function () {
 
       it("should be possible to get more results for a query job and specify the maximum records to return", async () => {
         const currentResults: QueryJobResults = {
-          locator: "MjAwMDAW",
+          locator: "MjAwMOMG",
           done: false,
           numberOfRecords: 50000,
           dataTable: bulkApi.createDataTableBuilder(["Id"]).build(),
