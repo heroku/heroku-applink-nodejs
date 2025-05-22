@@ -6,7 +6,7 @@
     "method": "POST",
     "bodyPatterns": [
       {
-        "equalToJson": "{\n    \"FavoritePet__c\": \"Dog\"\n}",
+        "equalToJson": "{\"FavoritePet__c\": \"Dog\"}",
         "ignoreArrayOrder": true,
         "ignoreExtraElements": true
       }
