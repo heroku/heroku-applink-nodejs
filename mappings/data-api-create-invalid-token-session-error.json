@@ -1,0 +1,16 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v51.0/sobjects/Account"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "jsonBody": {
+      "errorCode": "NOT_FOUND",
+      "message": "blah"
+    }
+  }
+}

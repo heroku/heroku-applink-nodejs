@@ -1,0 +1,9 @@
+{
+  "extension": [".ts"],
+  "include": ["src/**/*.ts"],
+  "exclude": ["test/**"],
+  "reporter": ["text", "html", "json-summary"],
+  "all": true,
+  "check-coverage": true,
+  "lines": 80
+}

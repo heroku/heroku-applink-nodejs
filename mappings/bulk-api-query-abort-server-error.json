@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/query/serverError"
+  },
+  "response": {
+    "status": 500
+  }
+}

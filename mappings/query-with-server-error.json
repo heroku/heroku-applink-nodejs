@@ -1,0 +1,22 @@
+{
+  "request": {
+    "method": "POST",
+    "urlPath": "/services/data/v56.0/jobs/query",
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer testAccessToken"
+      }
+    },
+    "bodyPatterns": [
+      {
+        "equalTo": "{\"operation\":\"query\",\"query\":\"SELECT Id FROM ServerError\"}"
+      }
+    ]
+  },
+  "response": {
+    "status": 500,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  }
+}

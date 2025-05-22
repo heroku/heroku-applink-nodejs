@@ -5,3 +5,5 @@ tsconfig.tsbuildinfo
 .DS_Store
 src/**/*.js
 src/**/*.js.map
+**/coverage/
+**/.nyc_output

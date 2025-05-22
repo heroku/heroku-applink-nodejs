@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/query/empty/results"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/csv",
+      "Sforce-NumberOfRecords": "0"
+    },
+    "body": "Id\n"
+  }
+}

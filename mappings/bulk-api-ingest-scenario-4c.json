@@ -1,0 +1,12 @@
+{
+  "scenarioName": "BULK_API_INGEST_S04",
+  "requiredScenarioState": "start",
+  "request": {
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/ingest/1"
+  },
+  "response": {
+    "status": 400,
+    "body": "testErrorMessage"
+  }
+}

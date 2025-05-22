@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG"
+  },
+  "response": {
+    "status": 200
+  }
+}

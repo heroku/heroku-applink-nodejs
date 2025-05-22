@@ -1,0 +1,33 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "jsonBody": {
+      "id": "7508Z00000lSXvxQAG",
+      "operation": "insert",
+      "object": "Account",
+      "createdById": "0058Z000007lKMAQA2",
+      "createdDate": "2023-01-17T14:20:03.000+0000",
+      "systemModstamp": "2023-01-17T14:20:47.000+0000",
+      "state": "JobComplete",
+      "concurrencyMode": "Parallel",
+      "contentType": "CSV",
+      "apiVersion": 53,
+      "jobType": "V2Ingest",
+      "lineEnding": "LF",
+      "columnDelimiter": "COMMA",
+      "numberRecordsProcessed": 3,
+      "numberRecordsFailed": 0,
+      "retries": 0,
+      "totalProcessingTime": 374,
+      "apiActiveProcessingTime": 283,
+      "apexProcessingTime": 0
+    }
+  }
+}

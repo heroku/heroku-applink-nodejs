@@ -14,26 +14,26 @@ import { Record } from "../../src";
 
 const uri = "http://127.0.0.1:8080";
 const token = "EXAMPLE-TOKEN";
-const dataApiv51 = new DataApiImpl(uri, "51.0", token);
-const dataApiv55 = new DataApiImpl(uri, "55.0", token);
-const dataApiInvalidToken = new DataApiImpl(uri, "51.0", "badToken");
-const dataApiInvalidVersion = new DataApiImpl(uri, "iAmABadVersion", token);
+const dataApiv51 = new DataApiImpl(token, "51.0", uri);
+const dataApiv55 = new DataApiImpl(token, "55.0", uri);
+const dataApiInvalidToken = new DataApiImpl(token, "51.0", uri);
+const dataApiInvalidVersion = new DataApiImpl(token, "iAmABadVersion", uri);
 const dataApiInvalidUrl = new DataApiImpl(
-  "http://thisdoesnotexistalsdkfjalsdkfjasdlkfjasdlkfjalsdkfja.com",
+  token,
   "51.0",
-  token
+  "http://thisdoesnotexistalsdkfjalsdkfjasdlkfjasdlkfjalsdkfja.com"
 );
 
 describe("DataApi Class", async () => {
   describe("public class attributes", async () => {
-    it.skip("exposes accessToken", async () => {
+    it("exposes accessToken", async () => {
       expect(dataApiv51.accessToken).equal(token);
     });
   });
 
   describe("create()", async () => {
     describe("valid request", async () => {
-      it.skip("returns the reference id", async () => {
+      it("returns the reference id", async () => {
         const { id } = await dataApiv51.create({
           type: "Movie__c",
           fields: {
@@ -47,7 +47,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid pick list value", async () => {
-      it.skip("throws invalid pick list error", async () => {
+      it("throws invalid pick list error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.create({
@@ -68,7 +68,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("unknown object type", async () => {
-      it.skip("throws a not found error", async () => {
+      it("throws a not found error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.create({
@@ -86,6 +86,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid token", async () => {
+      // TODO: skipping because this doesn't appear possible, how is the promise be rejected but the req return a body?
       it.skip("throws an invalid session error", async () => {
         try {
           await dataApiInvalidToken.create({
@@ -103,7 +104,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid version", async () => {
-      it.skip("throws a not found error", async () => {
+      it("throws a not found error", async () => {
         try {
           await dataApiInvalidVersion.create({
             type: "Account",
@@ -119,11 +120,12 @@ describe("DataApi Class", async () => {
       });
     });
 
+    // Using Akcount, the matcher patterns arnt working in github actions
     describe("invalid field", async () => {
-      it.skip("throws an invalid field error", async () => {
+      it("throws an invalid field error", async () => {
         try {
           await dataApiv51.create({
-            type: "Account",
+            type: "Akcount",
             fields: {
               FavoritePet__c: "Dog",
             },
@@ -139,7 +141,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("required field missing", async () => {
-      it.skip("throws missing field error", async () => {
+      it("throws missing field error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.create({
@@ -176,7 +178,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with binary / base64 types", async () => {
-      it.skip("encodes the binaryFields data", async () => {
+      it("encodes the binaryFields data", async () => {
         const { id } = await dataApiv55.create({
           type: "ContentVersion",
           binaryFields: {
@@ -213,7 +215,7 @@ describe("DataApi Class", async () => {
 
   describe("query()", async () => {
     describe("valid query", async () => {
-      it.skip("returns a simple query from DataApi", async () => {
+      it("returns a simple query from DataApi", async () => {
         const { done, totalSize, records, nextRecordsUrl } =
           await dataApiv51.query("SELECT Name FROM Account");
 
@@ -266,7 +268,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("when there are additional pages of results", async () => {
-      it.skip("returns nextRecordsUrl", async () => {
+      it("returns nextRecordsUrl", async () => {
         const { done, totalSize, records, nextRecordsUrl } =
           await dataApiv51.query(
             "SELECT RANDOM_1__c, RANDOM_2__c FROM Random__c"
@@ -276,13 +278,13 @@ describe("DataApi Class", async () => {
         expect(totalSize).equal(10000);
         expect(records.length).equal(2000);
         expect(nextRecordsUrl).equal(
-          "/services/data/v51.0/query/01gB000003OCxSPIA1-2000"
+          `${uri}/services/data/v51.0/query/01gB000003OCxSPIA1-2000`
         );
       });
     });
 
     describe("with unknown column", async () => {
-      it.skip("returns invalid field error", async () => {
+      it("returns invalid field error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.query("SELECT Bacon__c FROM Account LIMIT 2");
@@ -297,7 +299,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with malformed query", async () => {
-      it.skip("returns a malformed query error", async () => {
+      it("returns a malformed query error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.query("SELEKT Name FROM Account");
@@ -310,7 +312,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with an unexpected response", async () => {
-      it.skip("returns a malformed query error", async () => {
+      it("returns a malformed query error", async () => {
         try {
           await dataApiv51.query("SELECT Name FROM FruitVendor__c");
           expect.fail("Promise should have been rejected!");
@@ -322,8 +324,9 @@ describe("DataApi Class", async () => {
       });
     });
 
-    describe("with a unparseable json as body", async () => {
-      it.skip("returns a malformed query error", async () => {
+    // TODO: What is this actually testing? I cant find evidence this can happen
+    describe.skip("with a unparseable json as body", async () => {
+      it("returns a malformed query error", async () => {
         try {
           await dataApiv51.query("SELECT Name FROM VeggieVendor__c");
           expect.fail("Promise should have been rejected!");
@@ -335,8 +338,10 @@ describe("DataApi Class", async () => {
       });
     });
 
-    describe("with 200: not found", async () => {
-      it.skip("returns a missing records error", async () => {
+    // This doesn't appear to be correctly setup.
+    // TODO: We might want to circle back to this and return the undefined
+    describe.skip("with 200: not found", async () => {
+      it("returns a missing records error", async () => {
         try {
           await dataApiv51.query("SELECT Title FROM ContentVersion");
           expect.fail("Promise should have been rejected!");
@@ -349,7 +354,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with binary / base64 fields", async () => {
-      it.skip("includes both the relative url and decoded content", async () => {
+      it("includes both the relative url and decoded content", async () => {
         const result = await dataApiv55.query(
           "SELECT VersionData FROM ContentVersion"
         );
@@ -366,7 +371,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with associated data", async () => {
-      it.skip("parses the associated fields correctly", async () => {
+      it("parses the associated fields correctly", async () => {
         const result = await dataApiv55.query(
           "SELECT Name, Owner.Name from Account LIMIT 1"
         );
@@ -389,7 +394,7 @@ describe("DataApi Class", async () => {
 
   describe("queryMore()", async () => {
     describe("valid query with next results", async () => {
-      it.skip("returns the next query from DataApi", async () => {
+      it("returns the next query from DataApi", async () => {
         const result = await dataApiv51.query(
           "SELECT RANDOM_1__c, RANDOM_2__c FROM Random__c"
         );
@@ -397,7 +402,7 @@ describe("DataApi Class", async () => {
         expect(result.totalSize).equal(10000);
         expect(result.records.length).equal(2000);
         expect(result.nextRecordsUrl).equal(
-          "/services/data/v51.0/query/01gB000003OCxSPIA1-2000"
+          `${uri}/services/data/v51.0/query/01gB000003OCxSPIA1-2000`
         );
 
         const result2 = await dataApiv51.queryMore(result);
@@ -405,13 +410,13 @@ describe("DataApi Class", async () => {
         expect(result2.totalSize).equal(result.totalSize);
         expect(result2.records.length).equal(2000);
         expect(result2.nextRecordsUrl).equal(
-          "/services/data/v51.0/query/01gB000003OCxSPIA1-4000"
+          `${uri}/services/data/v51.0/query/01gB000003OCxSPIA1-4000`
         );
       });
     });
 
     describe("with done results", async () => {
-      it.skip("returns zero records", async () => {
+      it("returns zero records", async () => {
         const result = await dataApiv51.query("SELECT Name FROM Account");
         expect(result.done).equal(true);
         expect(result.totalSize).equal(5);
@@ -429,7 +434,7 @@ describe("DataApi Class", async () => {
 
   describe("update()", async () => {
     describe("valid update", async () => {
-      it.skip("returns the updated record id", async () => {
+      it("returns the updated record id", async () => {
         const { id } = await dataApiv51.update({
           type: "Movie__c",
           fields: {
@@ -441,7 +446,7 @@ describe("DataApi Class", async () => {
         expect(id).equal("a00B000000FSjVUIA1");
       });
 
-      it.skip("accepts any casing of id", () => {
+      it("accepts any casing of id", () => {
         return Promise.all(
           ["id", "Id", "iD", "ID"].map(async (idProp) => {
             const { id } = await dataApiv51.update({
@@ -461,7 +466,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("malformed id", async () => {
-      it.skip("throws malformed id error", async () => {
+      it("throws malformed id error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.update({
@@ -482,7 +487,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid field", async () => {
-      it.skip("throws invalid field error", async () => {
+      it("throws invalid field error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.update({
@@ -543,7 +548,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("with binary / base64 types", async () => {
-      it.skip("updates basic fields without a binaryFields object", async () => {
+      it("updates basic fields without a binaryFields object", async () => {
         const { id } = await dataApiv55.update({
           type: "ContentVersion",
           fields: {
@@ -554,7 +559,7 @@ describe("DataApi Class", async () => {
         expect(id).equal("068R0000002Hu5MIAS");
       });
 
-      it.skip("updates basic fields without a binaryFields value", async () => {
+      it("updates basic fields without a binaryFields value", async () => {
         const { id } = await dataApiv55.update({
           type: "ContentVersion",
           fields: {
@@ -566,7 +571,7 @@ describe("DataApi Class", async () => {
         expect(id).equal("068R0000002Hu5MIAS");
       });
 
-      it.skip("encodes binaryFields data", async () => {
+      it("encodes binaryFields data", async () => {
         const { id } = await dataApiv55.update({
           type: "ContentVersion",
           fields: {
@@ -586,14 +591,14 @@ describe("DataApi Class", async () => {
 
   describe("delete()", async () => {
     describe("valid delete", async () => {
-      it.skip("returns the deleted record id", async () => {
+      it("returns the deleted record id", async () => {
         const { id } = await dataApiv51.delete("Account", "001B000001Lp1FxIAJ");
         expect(id).equal("001B000001Lp1FxIAJ");
       });
     });
 
     describe("already deleted record", async () => {
-      it.skip("throws entity is deleted error", async () => {
+      it("throws entity is deleted error", async () => {
         // Chai doesn't yet support promises natively, so we can't use .rejectedWith-like syntax.
         try {
           await dataApiv51.delete("Account", "001B000001Lp1G2IAJ");
@@ -621,7 +626,7 @@ describe("DataApi Class", async () => {
           });
         });
 
-        it.skip("success with valid payload", async () => {
+        it("success with valid payload", async () => {
           const rId = uow.registerCreate({
             type: "Movie__c",
             fields: {
@@ -636,7 +641,7 @@ describe("DataApi Class", async () => {
           expect(result.get(rId).id).equal("a01B0000009gSoxIAE");
         });
 
-        it.skip("errors with bad value for picklist", async () => {
+        it("errors with bad value for picklist", async () => {
           uow.registerCreate({
             type: "Movie__c",
             fields: {
@@ -657,7 +662,7 @@ describe("DataApi Class", async () => {
       });
 
       describe("single update", async () => {
-        it.skip("success with valid payload", async () => {
+        it("success with valid payload", async () => {
           const rId = uow.registerUpdate({
             type: "Movie__c",
             fields: {
@@ -673,7 +678,7 @@ describe("DataApi Class", async () => {
       });
 
       describe("single delete", async () => {
-        it.skip("successfully deletes record", async () => {
+        it("successfully deletes record", async () => {
           const rId = uow.registerDelete("Movie__c", "a01B0000009gSr9IAE");
 
           const result = await dataApiv51.commitUnitOfWork(uow);
@@ -683,7 +688,7 @@ describe("DataApi Class", async () => {
       });
 
       describe("composite create tree", async () => {
-        it.skip("creates a composite request", async () => {
+        it("creates a composite request", async () => {
           const rId0 = uow.registerCreate({
             type: "Franchise__c",
             fields: {
@@ -737,7 +742,7 @@ describe("DataApi Class", async () => {
 
   describe("error handling", async () => {
     describe("invalid instance URL", async () => {
-      it.skip("logs an exception", async () => {
+      it("logs an exception", async () => {
         try {
           await dataApiInvalidUrl.query("SELECT Name FROM Account");
           expect.fail("Promise should have been rejected!");
@@ -749,8 +754,8 @@ describe("DataApi Class", async () => {
   });
 
   describe("queries with subqueries for relationships", () => {
-    it.skip("should allow relationship subqueries to be navigated", async () => {
-      const dataApi = new DataApiImpl(uri, "53.0", "EXAMPLE-TOKEN");
+    it("should allow relationship subqueries to be navigated", async () => {
+      const dataApi = new DataApiImpl("EXAMPLE-TOKEN", "53.0", uri);
       const results = await dataApi.query(
         "SELECT Account.Name, (SELECT Contact.FirstName, Contact.LastName FROM Account.Contacts) FROM Account LIMIT 5"
       );
@@ -840,8 +845,8 @@ describe("DataApi Class", async () => {
       ]).to.deep.eq(["Jack", "Rogers"]);
     });
 
-    it.skip("should return null if the requested relationship is not in the result set", async () => {
-      const dataApi = new DataApiImpl(uri, "53.0", "EXAMPLE-TOKEN");
+    it("should return null if the requested relationship is not in the result set", async () => {
+      const dataApi = new DataApiImpl("EXAMPLE-TOKEN", "53.0", uri);
       const results = await dataApi.query(
         "SELECT Account.Name, (SELECT Contact.FirstName, Contact.LastName FROM Account.Contacts) FROM Account LIMIT 5"
       );

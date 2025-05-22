@@ -1,0 +1,14 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/query/7508Z00000lTqQCQA0/results"
+  },
+  "response": {
+    "status": 200,
+    "headers": {
+      "Content-Type": "text/csv",
+      "Sforce-NumberOfRecords": "3"
+    },
+    "body": "Id\n0018Z00002eGbDRQA0\n0018Z00002f1vW4QAI\n0018Z00002f1vW5QAI\n"
+  }
+}

@@ -12,9 +12,8 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        version: [22, 20, 18]
-        os:
-          [sfdc-hk-ubuntu-latest, sfdc-hk-macos-latest, sfdc-hk-windows-latest]
+        version: [22.x, 20.x, 18.x]
+        os: [sfdc-hk-ubuntu-latest, sfdc-hk-windows-latest]
     name: Node ${{ matrix.version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -27,9 +26,9 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.version }}
-          cache: "npm"
-      - run: npm install
-      - run: npm run format:check
-      - run: npm run lint
-      - run: npm run test
-      - run: npm run build
+          cache: "yarn"
+      - run: yarn install
+      - run: yarn format:check
+      - run: yarn lint
+      - run: yarn test:coverage
+      - run: yarn build

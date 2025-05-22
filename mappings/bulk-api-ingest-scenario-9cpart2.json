@@ -1,0 +1,11 @@
+{
+  "scenarioName": "BULK_API_INGEST_S09_JOB7",
+  "requiredScenarioState": "9bpart2",
+  "request": {
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7"
+  },
+  "response": {
+    "status": 500
+  }
+}
