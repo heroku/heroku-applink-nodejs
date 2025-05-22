@@ -59,4 +59,4 @@ fastify.get('/accounts', async function (request, reply) {
 You will need java installed to run wiremock.
 
 ### Running tests
-To test with coverage run `yarn coverage`
+To test with coverage run `yarn test:coverage`
