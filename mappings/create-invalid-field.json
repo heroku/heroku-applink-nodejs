@@ -6,9 +6,9 @@
     "method": "POST",
     "bodyPatterns": [
       {
-        "equalToJson": "{\"FavoritePet__c\": \"Dog\"}",
-        "ignoreArrayOrder": true,
-        "ignoreExtraElements": true
+        "equalToJson": {
+          "FavoritePet__c": "Dog"
+        }
       }
     ],
     "headers": {
