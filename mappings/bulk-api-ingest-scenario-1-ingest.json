@@ -3,8 +3,8 @@
   "requiredScenarioState": "start",
   "newScenarioState": "start",
   "request": {
-    "method": "POST",
-    "urlPath": "/services/data/v56.0/jobs/ingest"
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/ingest/1"
   },
   "response": {
     "status": 202,
