@@ -124,7 +124,7 @@ describe("DataApi Class", async () => {
       it("throws an invalid field error", async () => {
         try {
           await dataApiv51.create({
-            type: "Account",
+            type: "Akcount",
             fields: {
               FavoritePet__c: "Dog",
             },
