@@ -1,0 +1,43 @@
+name: Test and Coverage
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    types: [edited, opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  test:
+    runs-on: sfdc-hk-ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Run tests with coverage
+        run: yarn test:coverage
+
+      - name: Enforce ≥80% coverage
+        run: |
+          node -e "
+          const { readFileSync } = require('fs');
+          const { total } = JSON.parse(readFileSync('./coverage/coverage-summary.json', 'utf8'));
+          const thresholds = { lines: 80, statements: 80, functions: 80, branches: 80 };
+          const failed = Object.entries(thresholds)
+            .filter(([metric, threshold]) => total[metric].pct < threshold)
+            .map(([metric]) => metric);
+          if (failed.length > 0) {
+            console.error('❌ Coverage below 80% for:', failed.join(', '));
+            process.exit(1);
+          } else {
+            console.log('✅ Coverage check passed.');
+          }
+          "
