@@ -337,7 +337,8 @@ describe("DataApi Class", async () => {
       });
     });
 
-    // This doesn't appear to be correctly setup. It doesnt appear that SF will return a 200 without the records: [] for this call
+    // This doesn't appear to be correctly setup.
+    // We might want to circle back to this and return the undefined
     describe.skip("with 200: not found", async () => {
       it("returns a missing records error", async () => {
         try {
