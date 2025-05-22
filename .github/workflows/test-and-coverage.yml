@@ -9,9 +9,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: "/home/runner/work"
 
     steps:
       - name: Checkout code
