@@ -4,7 +4,7 @@
     "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG/failedResults"
   },
   "response": {
-    "status": 202,
+    "status": 200,
     "headers": {
       "Content-Type": "text/csv"
     },
