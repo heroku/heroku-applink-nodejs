@@ -86,7 +86,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid token", async () => {
-      // skipping because this doesn't appear possible, how is the promise be rejected but the req return a body?
+      // TODO: skipping because this doesn't appear possible, how is the promise be rejected but the req return a body?
       it.skip("throws an invalid session error", async () => {
         try {
           await dataApiInvalidToken.create({
@@ -324,7 +324,7 @@ describe("DataApi Class", async () => {
       });
     });
 
-    // What is this actually testing? I cant find evidence this can happen
+    // TODO: What is this actually testing? I cant find evidence this can happen
     describe.skip("with a unparseable json as body", async () => {
       it("returns a malformed query error", async () => {
         try {
@@ -339,7 +339,7 @@ describe("DataApi Class", async () => {
     });
 
     // This doesn't appear to be correctly setup.
-    // We might want to circle back to this and return the undefined
+    // TODO: We might want to circle back to this and return the undefined
     describe.skip("with 200: not found", async () => {
       it("returns a missing records error", async () => {
         try {
