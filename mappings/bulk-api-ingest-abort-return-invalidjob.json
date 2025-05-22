@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "PATCH",
+    "urlPath": "/services/data/v56.0/jobs/ingest/clientError"
+  },
+  "response": {
+    "status": 400,
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    },
+    "body": "[{\"errorCode\":\"INVALIDJOBSTATE\",\"message\":\"Aborting already Completed Job not allowed\"}]"
+  }
+}
