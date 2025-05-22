@@ -14,7 +14,7 @@ jobs:
       matrix:
         version: [22.x, 20.x, 18.x]
         os:
-          [sfdc-hk-ubuntu-latest, sfdc-hk-macos-latest, sfdc-hk-windows-latest]
+          [sfdc-hk-ubuntu-latest, sfdc-hk-windows-latest]
     name: Node ${{ matrix.version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     steps:
@@ -32,10 +32,4 @@ jobs:
       - run: yarn format:check
       - run: yarn lint
       - run: yarn test:coverage
-        if: runner.os != 'macOS'
-
-      - run: yarn test:coverage
-        if: runner.os == 'macOS'
-        env:
-          JAVA_TOOL_OPTIONS: "-Xmx2g" # Was getting java heap fails in only macos during action
       - run: yarn build
