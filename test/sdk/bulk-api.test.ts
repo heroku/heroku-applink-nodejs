@@ -209,7 +209,8 @@ describe("bulkApi", function () {
           .otherwise(fail("third result was not a successful job reference"));
       });
 
-      it("ingesting a large dataset - single failure in a set of jobs", async () => {
+      // TODO: Skipping this because its causing a heap issue in macOS github tests
+      it.skip("ingesting a large dataset - single failure in a set of jobs", async () => {
         await useScenario("BULK_API_INGEST_S09_JOB9");
         await useScenario("BULK_API_INGEST_S09_JOB7");
         await useScenario("BULK_API_INGEST_S09_JOB5");
