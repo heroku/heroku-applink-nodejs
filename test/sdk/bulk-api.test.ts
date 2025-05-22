@@ -220,9 +220,13 @@ describe("bulkApi", function () {
         });
         expect(results).to.have.length(3);
 
-        const successResult5 = results.find(result => 'id' in result && result.id == "5");
-        const successResult9 = results.find(result => 'id' in result && result.id == "9");
-        const failedResult = results.find(result => !('id' in result));
+        const successResult5 = results.find(
+          (result) => "id" in result && result.id == "5"
+        );
+        const successResult9 = results.find(
+          (result) => "id" in result && result.id == "9"
+        );
+        const failedResult = results.find((result) => !("id" in result));
 
         match(successResult5)
           .with({ type: "ingestJob" }, expectValidIngestJobReference)

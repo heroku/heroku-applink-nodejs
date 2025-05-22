@@ -8,7 +8,9 @@
       }
     },
     "bodyPatterns": [
-      {"equalTo": "{\"operation\":\"query\",\"query\":\"SELECT Id FROM ClientError\"}"}
+      {
+        "equalTo": "{\"operation\":\"query\",\"query\":\"SELECT Id FROM ClientError\"}"
+      }
     ]
   },
   "response": {
