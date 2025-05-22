@@ -5,6 +5,9 @@
     "queryParameters": {
       "locator": {
         "equalTo": "MjAwMDAw"
+      },
+      "maxRecords": {
+        "equalTo": "2"
       }
     }
   },
@@ -12,8 +15,8 @@
     "status": 200,
     "headers": {
       "Content-Type": "text/csv",
-      "Sforce-NumberOfRecords": "1"
+      "Sforce-NumberOfRecords": "2"
     },
-    "body": "Id\n005R0000000UyrWIAv\n"
+    "body": "Id\n005R0000000UyrWIAv\n005R0000000GiwjIxx\n"
   }
 }
