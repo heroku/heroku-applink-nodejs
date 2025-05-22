@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/empty/successfulResults"
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "Content-Type": "text/csv"
+    },
+    "body": "sf__Id,sf__Created,Name,Description,NumberOfEmployees\n"
+  }
+}
