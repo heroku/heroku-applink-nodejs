@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/7508Z00000lSXvxQAG/unprocessedrecords"
+  },
+  "response": {
+    "status": 202,
+    "headers": {
+      "Content-Type": "text/csv"
+    },
+    "body": "Name,Description,NumberOfEmployees\nTestAccount3,Yet another description,50"
+  }
+}
