@@ -1,0 +1,9 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/services/data/v56.0/jobs/ingest/serverError/unprocessedrecords"
+  },
+  "response": {
+    "status": 500
+  }
+}
