@@ -30,9 +30,11 @@ describe("getAuthorization", () => {
       },
     },
     created_at: "2025-03-06T18:20:42.226577Z",
-    last_modified_at: "2025-03-09T18:20:42.226577Z",
     created_by: "foo@heroku.com",
+    created_via_app: "test-app",
+    last_modified_at: "2025-03-09T18:20:42.226577Z",
     last_modified_by: "foo@heroku.com",
+    redirect_uri: "https://test-app.herokuapp.com",
   };
 
   beforeEach(() => {
