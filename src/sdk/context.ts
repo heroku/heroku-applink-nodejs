@@ -20,7 +20,8 @@ export class ContextImpl implements Context {
     orgId: string,
     orgDomainUrl: string,
     userId: string,
-    username: string
+    username: string,
+    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg" // DatacloudOrg for legacy Pilot/Ruby
   ) {
     this.id = id;
     this.org = new OrgImpl(
@@ -30,7 +31,8 @@ export class ContextImpl implements Context {
       orgId,
       orgDomainUrl,
       userId,
-      username
+      username,
+      orgType
     );
   }
 }

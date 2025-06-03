@@ -33,8 +33,7 @@ export class OrgImpl implements Org {
     orgDomainUrl: string,
     userId: string,
     username: string,
-    dataCloudAccessToken?: string,
-    dataCloudInstanceUrl?: string
+    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg" // DatacloudOrg for legacy Pilot/Ruby
   ) {
     this.accessToken = accessToken;
     this.apiVersion = apiVersion.startsWith("v")
@@ -59,11 +58,8 @@ export class OrgImpl implements Org {
       this.domainUrl
     );
 
-    if (dataCloudAccessToken && dataCloudInstanceUrl) {
-      this.dataCloudApi = new DataCloudApiImpl(
-        dataCloudAccessToken,
-        dataCloudInstanceUrl
-      );
+    if (orgType === "DataCloudOrg" || orgType === "DatacloudOrg") {
+      this.dataCloudApi = new DataCloudApiImpl(accessToken, orgDomainUrl);
     }
 
     this.user = new UserImpl(userId, username);

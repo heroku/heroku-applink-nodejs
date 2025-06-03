@@ -6,6 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## Unreleased
 - Update CODEOWNERS
+- Updated `getAuthorization` to use the correct API URL.
 
 ## [0.1.0-ea] - 2024-08-12
 

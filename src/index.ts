@@ -77,7 +77,8 @@ export function parseRequest(
     clientContext.orgId,
     clientContext.orgDomainUrl,
     clientContext.userContext.userId,
-    clientContext.userContext.username
+    clientContext.userContext.username,
+    "SalesforceOrg" // Context will not have an orgType. For now, we can assume it will always be a SalesforceOrg
   );
 
   const invocationEvent = new InvocationEventImpl(
