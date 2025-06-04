@@ -70,13 +70,11 @@ export async function getAuthorization(
         throw new Error(`${errorResponse.title} - ${errorResponse.detail}`);
       }
     }
-    
+
     throw new Error(
       `Unable to get connection ${developerName}: ${err.message}`
     );
   }
-
-
 
   return new OrgImpl(
     response.org.user_auth.access_token,

@@ -8,12 +8,11 @@
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HTTPResponseError extends Error {
   response: any;
-	constructor(response: Response) {
-		super(`HTTP Error Response: ${response.status}: ${response.statusText}`);
-		this.response = response;
-	}
+  constructor(response: Response) {
+    super(`HTTP Error Response: ${response.status}: ${response.statusText}`);
+    this.response = response;
+  }
 }
-
 
 /**
  * Handles HTTP requests.

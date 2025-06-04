@@ -113,7 +113,7 @@ describe("getAuthorization", () => {
     const errorResponse = new Response(
       JSON.stringify({
         title: "Not Found",
-        detail: "Authorization not found"
+        detail: "Authorization not found",
       }),
       { status: 404 }
     );
@@ -128,10 +128,9 @@ describe("getAuthorization", () => {
   });
 
   it("should handle non-JSON error responses gracefully", async () => {
-    const invalidJsonResponse = new Response(
-      "Invalid JSON content",
-      { status: 500 }
-    );
+    const invalidJsonResponse = new Response("Invalid JSON content", {
+      status: 500,
+    });
     httpRequestStub.rejects(new HTTPResponseError(invalidJsonResponse));
 
     try {

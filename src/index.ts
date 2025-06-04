@@ -15,7 +15,6 @@ import { HTTPResponseError } from "./utils/request.js";
 const CONTENT_TYPE_HEADER = "Content-Type";
 const X_CLIENT_CONTEXT_HEADER = "x-client-context";
 
-
 //   F U N C T I O N S
 
 /**
