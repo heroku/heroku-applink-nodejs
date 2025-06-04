@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import { HttpRequestUtil } from "../../src/utils/request";
+import { HttpRequestUtil, HTTPResponseError } from "../../src/utils/request";
 import { getAuthorization } from "../../src/add-ons/heroku-applink";
 import { OrgImpl } from "../../src/sdk/org";
 
@@ -110,16 +110,37 @@ describe("getAuthorization", () => {
   });
 
   it("should throw error when response contains error details", async () => {
-    httpRequestStub.resolves({
-      title: "Not Found",
-      detail: "Authorization not found",
-    });
+    const errorResponse = new Response(
+      JSON.stringify({
+        title: "Not Found",
+        detail: "Authorization not found"
+      }),
+      { status: 404 }
+    );
+    httpRequestStub.rejects(new HTTPResponseError(errorResponse));
 
     try {
       await getAuthorization("testDev");
       expect.fail("Should have thrown an error");
     } catch (error) {
       expect(error.message).to.equal("Not Found - Authorization not found");
+    }
+  });
+
+  it("should handle non-JSON error responses gracefully", async () => {
+    const invalidJsonResponse = new Response(
+      "Invalid JSON content",
+      { status: 500 }
+    );
+    httpRequestStub.rejects(new HTTPResponseError(invalidJsonResponse));
+
+    try {
+      await getAuthorization("testDev");
+      expect.fail("Should have thrown an error");
+    } catch (error) {
+      expect(error.message).to.equal(
+        "Unable to get connection testDev: HTTP Error Response: 500: "
+      );
     }
   });
 });

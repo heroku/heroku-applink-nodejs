@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { HttpRequestUtil } from "../utils/request";
+import { HttpRequestUtil, HTTPResponseError } from "../utils/request";
 import { OrgImpl } from "../sdk/org";
 import { Org } from "../index";
 import {
@@ -58,15 +58,25 @@ export async function getAuthorization(
   try {
     response = await HTTP_REQUEST.request(authUrl, opts);
   } catch (err) {
+    if (err instanceof HTTPResponseError) {
+      let errorResponse;
+      try {
+        errorResponse = await err.response.json();
+      } catch (jsonError) {
+        // If JSON parsing fails, fall through to the generic error
+      }
+
+      if (errorResponse?.title && errorResponse?.detail) {
+        throw new Error(`${errorResponse.title} - ${errorResponse.detail}`);
+      }
+    }
+    
     throw new Error(
       `Unable to get connection ${developerName}: ${err.message}`
     );
   }
 
-  // error response
-  if (response.title && response.detail) {
-    throw new Error(`${response.title} - ${response.detail}`);
-  }
+
 
   return new OrgImpl(
     response.org.user_auth.access_token,
