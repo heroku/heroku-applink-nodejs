@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / IngestJobOperation
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / IngestJobOperation
 
 # Type Alias: IngestJobOperation
 
@@ -19,4 +19,4 @@ The processing operation for an ingest job.
 
 ## Defined in
 
-[src/index.ts:880](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L880)
+[src/index.ts:884](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L884)

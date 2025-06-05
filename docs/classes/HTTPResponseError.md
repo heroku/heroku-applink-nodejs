@@ -1,0 +1,173 @@
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
+
+***
+
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / HTTPResponseError
+
+# Class: HTTPResponseError
+
+Error thrown by the SDK when receiving non-2xx responses on HTTP requests.
+
+## Extends
+
+- `Error`
+
+## Constructors
+
+### new HTTPResponseError()
+
+```ts
+new HTTPResponseError(response): HTTPResponseError
+```
+
+#### Parameters
+
+• **response**: `Response`
+
+#### Returns
+
+[`HTTPResponseError`](HTTPResponseError.md)
+
+#### Overrides
+
+`Error.constructor`
+
+#### Defined in
+
+[src/utils/request.ts:11](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/utils/request.ts#L11)
+
+## Properties
+
+### message
+
+```ts
+message: string;
+```
+
+#### Inherited from
+
+`Error.message`
+
+#### Defined in
+
+node\_modules/typescript/lib/lib.es5.d.ts:1077
+
+***
+
+### name
+
+```ts
+name: string;
+```
+
+#### Inherited from
+
+`Error.name`
+
+#### Defined in
+
+node\_modules/typescript/lib/lib.es5.d.ts:1076
+
+***
+
+### response
+
+```ts
+response: any;
+```
+
+#### Defined in
+
+[src/utils/request.ts:10](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/utils/request.ts#L10)
+
+***
+
+### stack?
+
+```ts
+optional stack: string;
+```
+
+#### Inherited from
+
+`Error.stack`
+
+#### Defined in
+
+node\_modules/typescript/lib/lib.es5.d.ts:1078
+
+***
+
+### prepareStackTrace()?
+
+```ts
+static optional prepareStackTrace: (err, stackTraces) => any;
+```
+
+Optional override for formatting stack traces
+
+#### Parameters
+
+• **err**: `Error`
+
+• **stackTraces**: `CallSite`[]
+
+#### Returns
+
+`any`
+
+#### See
+
+https://v8.dev/docs/stack-trace-api#customizing-stack-traces
+
+#### Inherited from
+
+`Error.prepareStackTrace`
+
+#### Defined in
+
+node\_modules/@types/node/globals.d.ts:98
+
+***
+
+### stackTraceLimit
+
+```ts
+static stackTraceLimit: number;
+```
+
+#### Inherited from
+
+`Error.stackTraceLimit`
+
+#### Defined in
+
+node\_modules/@types/node/globals.d.ts:100
+
+## Methods
+
+### captureStackTrace()
+
+```ts
+static captureStackTrace(targetObject, constructorOpt?): void
+```
+
+Create .stack property on a target object
+
+#### Parameters
+
+• **targetObject**: `object`
+
+• **constructorOpt?**: `Function`
+
+#### Returns
+
+`void`
+
+#### Inherited from
+
+`Error.captureStackTrace`
+
+#### Defined in
+
+node\_modules/@types/node/globals.d.ts:91

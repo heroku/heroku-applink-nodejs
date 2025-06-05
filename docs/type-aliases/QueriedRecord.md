@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / QueriedRecord
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / QueriedRecord
 
 # Type Alias: QueriedRecord
 
@@ -28,4 +28,4 @@ Returns the result of a sub query related to this record. Records can have sub q
 
 ## Defined in
 
-[src/index.ts:193](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L193)
+[src/index.ts:197](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L197)

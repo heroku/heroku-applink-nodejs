@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / InvocationEvent
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / InvocationEvent
 
 # Interface: InvocationEvent\<A\>
 
@@ -25,7 +25,7 @@ The payload of the event
 
 #### Defined in
 
-[src/index.ts:122](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L122)
+[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L126)
 
 ***
 
@@ -39,7 +39,7 @@ The media type of the event payload that is accessible in data
 
 #### Defined in
 
-[src/index.ts:123](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L123)
+[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L127)
 
 ***
 
@@ -53,7 +53,7 @@ The platform event occurrence id for event invocation.
 
 #### Defined in
 
-[src/index.ts:124](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L124)
+[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L128)
 
 ***
 
@@ -71,4 +71,4 @@ the same algorithm to determine the value used.
 
 #### Defined in
 
-[src/index.ts:125](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L125)
+[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L129)

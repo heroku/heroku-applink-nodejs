@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / BulkApi
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / BulkApi
 
 # Interface: BulkApi
 
@@ -37,7 +37,7 @@ The reference of the job to abort
 
 #### Defined in
 
-[src/index.ts:422](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L422)
+[src/index.ts:426](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L426)
 
 ***
 
@@ -61,7 +61,7 @@ The names of the columns to include in the [DataTable](DataTable.md)
 
 #### Defined in
 
-[src/index.ts:429](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L429)
+[src/index.ts:433](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L433)
 
 ***
 
@@ -91,7 +91,7 @@ The reference of the job to delete
 
 #### Defined in
 
-[src/index.ts:439](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L439)
+[src/index.ts:443](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L443)
 
 ***
 
@@ -120,7 +120,7 @@ The Date to convert into the `date` format
 
 #### Defined in
 
-[src/index.ts:456](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L456)
+[src/index.ts:460](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L460)
 
 ***
 
@@ -149,7 +149,7 @@ The Date to convert into the `dateTime` format
 
 #### Defined in
 
-[src/index.ts:465](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L465)
+[src/index.ts:469](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L469)
 
 ***
 
@@ -172,7 +172,7 @@ to `null` use this formatter which will set the field value to `#N/A`.
 
 #### Defined in
 
-[src/index.ts:447](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L447)
+[src/index.ts:451](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L451)
 
 ***
 
@@ -203,7 +203,7 @@ The reference of the job to get the failed results for
 
 #### Defined in
 
-[src/index.ts:476](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L476)
+[src/index.ts:480](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L480)
 
 ***
 
@@ -232,7 +232,7 @@ The reference of the job to fetch information about
 
 #### Defined in
 
-[src/index.ts:485](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L485)
+[src/index.ts:489](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L489)
 
 ***
 
@@ -264,7 +264,7 @@ Optional configuration that can be specified when fetching query results
 
 #### Defined in
 
-[src/index.ts:496](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L496)
+[src/index.ts:500](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L500)
 
 ***
 
@@ -296,7 +296,7 @@ Optional configuration that can be specified when fetching query results
 
 #### Defined in
 
-[src/index.ts:508](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L508)
+[src/index.ts:512](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L512)
 
 ***
 
@@ -327,7 +327,7 @@ The reference of the job to get the successful results for
 
 #### Defined in
 
-[src/index.ts:522](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L522)
+[src/index.ts:526](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L526)
 
 ***
 
@@ -355,7 +355,7 @@ The reference of the job to get the unprocessed records for
 
 #### Defined in
 
-[src/index.ts:530](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L530)
+[src/index.ts:534](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L534)
 
 ***
 
@@ -392,7 +392,7 @@ These are options that can be supplied when creating an ingest job.
 
 #### Defined in
 
-[src/index.ts:547](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L547)
+[src/index.ts:551](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L551)
 
 ***
 
@@ -420,7 +420,7 @@ These are options that can be supplied when creating a query job.
 
 #### Defined in
 
-[src/index.ts:557](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L557)
+[src/index.ts:561](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L561)
 
 ***
 
@@ -449,4 +449,4 @@ The [DataTable](DataTable.md) to split
 
 #### Defined in
 
-[src/index.ts:566](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L566)
+[src/index.ts:570](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L570)

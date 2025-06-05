@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / Record
+[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / Record
 
 # Type Alias: Record
 
@@ -42,4 +42,4 @@ readonly type: string;
 
 ## Defined in
 
-[src/index.ts:184](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L184)
+[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L188)
