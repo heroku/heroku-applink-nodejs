@@ -1,6 +1,6 @@
 {
   "name": "@heroku/salesforce-sdk-nodejs",
-  "version": "0.3.4-ea",
+  "version": "1.0.0-ea",
   "description": "Salesforce SDK for Heroku Apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
