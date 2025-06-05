@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / IngestJobReference
+[@heroku/applink v1.0.0-ea](../README.md) / IngestJobReference
 
 # Interface: IngestJobReference
 
@@ -20,7 +20,7 @@ The id of the ingest job
 
 #### Defined in
 
-[src/index.ts:627](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L627)
+[src/index.ts:631](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L631)
 
 ***
 
@@ -34,4 +34,4 @@ The type for this reference
 
 #### Defined in
 
-[src/index.ts:632](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L632)
+[src/index.ts:636](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L636)

@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / DataCloudActionEventSchema
+[@heroku/applink v1.0.0-ea](../README.md) / DataCloudActionEventSchema
 
 # Interface: DataCloudActionEventSchema
 
@@ -18,7 +18,7 @@ schema: string;
 
 #### Defined in
 
-[src/index.ts:1042](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1042)
+[src/index.ts:1046](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1046)
 
 ***
 
@@ -30,4 +30,4 @@ schemaId: string;
 
 #### Defined in
 
-[src/index.ts:1041](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1041)
+[src/index.ts:1045](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1045)

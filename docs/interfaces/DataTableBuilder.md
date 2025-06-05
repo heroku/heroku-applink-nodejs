@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / DataTableBuilder
+[@heroku/applink v1.0.0-ea](../README.md) / DataTableBuilder
 
 # Interface: DataTableBuilder
 
@@ -35,7 +35,7 @@ The row of data to add
 
 ##### Defined in
 
-[src/index.ts:962](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L962)
+[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L966)
 
 #### addRow(value, fieldValueExtractor)
 
@@ -68,7 +68,7 @@ A function that reads field values from the provided object. It will be called f
 
 ##### Defined in
 
-[src/index.ts:972](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L972)
+[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L976)
 
 ***
 
@@ -97,7 +97,7 @@ The list of rows of data to add
 
 ##### Defined in
 
-[src/index.ts:982](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L982)
+[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L986)
 
 #### addRows(values, fieldValueExtractor)
 
@@ -130,7 +130,7 @@ A function that reads field values from each provided object in the list of valu
 
 ##### Defined in
 
-[src/index.ts:992](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L992)
+[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L996)
 
 ***
 
@@ -148,4 +148,4 @@ Creates a [DataTable](DataTable.md) instance from the columns and rows provided 
 
 #### Defined in
 
-[src/index.ts:1000](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1000)
+[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1004)

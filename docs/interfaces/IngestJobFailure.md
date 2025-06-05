@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / IngestJobFailure
+[@heroku/applink v1.0.0-ea](../README.md) / IngestJobFailure
 
 # Interface: IngestJobFailure
 
@@ -20,7 +20,7 @@ The error that occurred while attempting to construct the ingest job.
 
 #### Defined in
 
-[src/index.ts:1010](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1010)
+[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1014)
 
 ***
 
@@ -36,7 +36,7 @@ the ingest job then a job reference will be present.
 
 #### Defined in
 
-[src/index.ts:1022](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1022)
+[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1026)
 
 ***
 
@@ -50,4 +50,4 @@ The data that would have been uploaded to the ingest job had the operation succe
 
 #### Defined in
 
-[src/index.ts:1015](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1015)
+[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1019)

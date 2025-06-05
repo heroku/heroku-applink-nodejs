@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / DataCloudActionEvent
+[@heroku/applink v1.0.0-ea](../README.md) / DataCloudActionEvent
 
 # Interface: DataCloudActionEvent
 
@@ -18,7 +18,7 @@ count: number;
 
 #### Defined in
 
-[src/index.ts:1069](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1069)
+[src/index.ts:1073](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1073)
 
 ***
 
@@ -30,7 +30,7 @@ creationDateTime: string;
 
 #### Defined in
 
-[src/index.ts:1068](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1068)
+[src/index.ts:1072](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1072)
 
 ***
 
@@ -42,7 +42,7 @@ events: DataObjectDataChgEvent[];
 
 #### Defined in
 
-[src/index.ts:1071](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1071)
+[src/index.ts:1075](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1075)
 
 ***
 
@@ -54,4 +54,4 @@ schemas: DataCloudActionEventSchema[];
 
 #### Defined in
 
-[src/index.ts:1070](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L1070)
+[src/index.ts:1074](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1074)

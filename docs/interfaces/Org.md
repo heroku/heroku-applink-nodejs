@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / Org
+[@heroku/applink v1.0.0-ea](../README.md) / Org
 
 # Interface: Org
 
@@ -20,7 +20,7 @@ The API version the Salesforce organization is currently using.
 
 #### Defined in
 
-[src/index.ts:150](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L150)
+[src/index.ts:154](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L154)
 
 ***
 
@@ -34,7 +34,7 @@ An initialized data API client instance.
 
 #### Defined in
 
-[src/index.ts:151](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L151)
+[src/index.ts:155](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L155)
 
 ***
 
@@ -48,7 +48,7 @@ If instance URL and token are provide, an initialized Data Cloud data API client
 
 #### Defined in
 
-[src/index.ts:152](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L152)
+[src/index.ts:156](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L156)
 
 ***
 
@@ -62,7 +62,7 @@ The domain URL of the Salesforce organization.
 
 #### Defined in
 
-[src/index.ts:153](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L153)
+[src/index.ts:157](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L157)
 
 ***
 
@@ -76,7 +76,7 @@ The Salesforce organization ID.
 
 #### Defined in
 
-[src/index.ts:154](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L154)
+[src/index.ts:158](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L158)
 
 ***
 
@@ -88,7 +88,7 @@ readonly namespace: string;
 
 #### Defined in
 
-[src/index.ts:155](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L155)
+[src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L159)
 
 ***
 
@@ -102,7 +102,7 @@ The currently logged in user
 
 #### Defined in
 
-[src/index.ts:156](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L156)
+[src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L160)
 
 ## Methods
 
@@ -129,4 +129,4 @@ request(
 
 #### Defined in
 
-[src/index.ts:158](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L158)
+[src/index.ts:162](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L162)

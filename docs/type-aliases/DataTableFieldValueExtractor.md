@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / DataTableFieldValueExtractor
+[@heroku/applink v1.0.0-ea](../README.md) / DataTableFieldValueExtractor
 
 # Type Alias: DataTableFieldValueExtractor()\<T\>
 
@@ -33,4 +33,4 @@ the type of the object to extract row data from
 
 ## Defined in
 
-[src/index.ts:945](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L945)
+[src/index.ts:949](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L949)

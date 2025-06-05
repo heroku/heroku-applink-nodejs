@@ -1,7 +1,7 @@
 {
-  "name": "@heroku/salesforce-sdk-nodejs",
-  "version": "0.3.4-ea",
-  "description": "Salesforce SDK for Heroku Apps.",
+  "name": "@heroku/applink",
+  "version": "1.0.0-ea",
+  "description": "Applink SDK for Heroku Apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {

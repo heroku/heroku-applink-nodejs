@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / init
+[@heroku/applink v1.0.0-ea](../README.md) / init
 
 # Function: init()
 
@@ -28,19 +28,23 @@ addons: object;
 applink: object;
 ```
 
-### addons.applink.getConnection()
+### addons.applink.getAuthorization()
 
 ```ts
-getConnection: (name) => Promise<Org>;
+getAuthorization: (developerName, attachmentNameOrColorOrUrl) => Promise<Org>;
 ```
 
-Get stored Salesforce or Data Cloud org user credentials for given name or alias.
+Get stored Salesforce or Data Cloud org user credentials for given developer name or alias.
 
 #### Parameters
 
-• **name**: `string`
+• **developerName**: `string`
 
 or alias
+
+• **attachmentNameOrColorOrUrl**: `string` = `...`
+
+Either an attachment name, (e.g. "HEROKU_APPLINK"), color (e.g. "purple" in "HEROKU_APPLINK_PURPLE") or the value of the attachment's API_URL config. Defaults to "HEROKU_APPLINK"
 
 #### Returns
 
@@ -124,4 +128,4 @@ logger: Logger;
 
 ## Defined in
 
-[src/index.ts:24](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L24)
+[src/index.ts:25](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L25)

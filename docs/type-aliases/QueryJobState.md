@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / QueryJobState
+[@heroku/applink v1.0.0-ea](../README.md) / QueryJobState
 
 # Type Alias: QueryJobState
 
@@ -24,4 +24,4 @@ The state of processing for an query job. Values include:
 
 ## Defined in
 
-[src/index.ts:870](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L870)
+[src/index.ts:874](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L874)

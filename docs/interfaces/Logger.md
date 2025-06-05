@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v0.3.4-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v0.3.4-ea](../README.md) / Logger
+[@heroku/applink v1.0.0-ea](../README.md) / Logger
 
 # Interface: Logger
 
@@ -32,7 +32,7 @@ void
 
 #### Defined in
 
-[src/index.ts:399](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L399)
+[src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L403)
 
 ***
 
@@ -58,7 +58,7 @@ void
 
 #### Defined in
 
-[src/index.ts:378](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L378)
+[src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L382)
 
 ***
 
@@ -84,7 +84,7 @@ void
 
 #### Defined in
 
-[src/index.ts:392](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L392)
+[src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L396)
 
 ***
 
@@ -110,7 +110,7 @@ void
 
 #### Defined in
 
-[src/index.ts:406](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L406)
+[src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L410)
 
 ***
 
@@ -136,4 +136,4 @@ void
 
 #### Defined in
 
-[src/index.ts:385](https://github.com/cwallsfdc/salesforce-sdk-nodejs/blob/59161db9ea389cffac0d54282abb2c1e82011d42/src/index.ts#L385)
+[src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L389)
