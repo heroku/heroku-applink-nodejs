@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / QueryJobReference
+[@heroku/applink v1.0.0-ea](../README.md) / QueryJobReference
 
 # Interface: QueryJobReference
 
@@ -20,7 +20,7 @@ The id of the query job
 
 #### Defined in
 
-[src/index.ts:646](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L646)
+[src/index.ts:646](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L646)
 
 ***
 
@@ -34,4 +34,4 @@ The type for this reference
 
 #### Defined in
 
-[src/index.ts:651](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L651)
+[src/index.ts:651](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L651)

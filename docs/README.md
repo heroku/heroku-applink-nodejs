@@ -1,8 +1,8 @@
-**@heroku/salesforce-sdk-nodejs v1.0.0-ea** • **Docs**
+**@heroku/applink v1.0.0-ea** • **Docs**
 
 ***
 
-# @heroku/salesforce-sdk-nodejs v1.0.0-ea
+# @heroku/applink v1.0.0-ea
 
 ## Classes
 

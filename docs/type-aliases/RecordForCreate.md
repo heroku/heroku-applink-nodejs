@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / RecordForCreate
+[@heroku/applink v1.0.0-ea](../README.md) / RecordForCreate
 
 # Type Alias: RecordForCreate
 
@@ -43,4 +43,4 @@ type: string;
 
 ## Defined in
 
-[src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L245)
+[src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L245)

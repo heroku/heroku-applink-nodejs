@@ -1,8 +1,8 @@
-[**@heroku/salesforce-sdk-nodejs v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
 
 ***
 
-[@heroku/salesforce-sdk-nodejs v1.0.0-ea](../README.md) / QueryJobInfo
+[@heroku/applink v1.0.0-ea](../README.md) / QueryJobInfo
 
 # Interface: QueryJobInfo
 
@@ -30,7 +30,7 @@ asynchronous and batch Apex operations. If there are no triggers, the value is 0
 
 #### Defined in
 
-[src/index.ts:678](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L678)
+[src/index.ts:678](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L678)
 
 ***
 
@@ -50,7 +50,7 @@ to be processed or the time required for serialization and deserialization.
 
 #### Defined in
 
-[src/index.ts:685](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L685)
+[src/index.ts:685](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L685)
 
 ***
 
@@ -68,7 +68,7 @@ The API version that the job was created in.
 
 #### Defined in
 
-[src/index.ts:690](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L690)
+[src/index.ts:690](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L690)
 
 ***
 
@@ -86,7 +86,7 @@ The ID of an assignment rule to run for a Case or a Lead.
 
 #### Defined in
 
-[src/index.ts:771](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L771)
+[src/index.ts:771](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L771)
 
 ***
 
@@ -104,7 +104,7 @@ The column delimiter used for CSV job data.
 
 #### Defined in
 
-[src/index.ts:695](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L695)
+[src/index.ts:695](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L695)
 
 ***
 
@@ -122,7 +122,7 @@ How the request was processed.
 
 #### Defined in
 
-[src/index.ts:700](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L700)
+[src/index.ts:700](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L700)
 
 ***
 
@@ -140,7 +140,7 @@ The format of the data being processed. Only CSV is supported.
 
 #### Defined in
 
-[src/index.ts:705](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L705)
+[src/index.ts:705](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L705)
 
 ***
 
@@ -158,7 +158,7 @@ The URL to use for Upload job Data requests for this job. Only valid if the job 
 
 #### Defined in
 
-[src/index.ts:710](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L710)
+[src/index.ts:710](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L710)
 
 ***
 
@@ -176,7 +176,7 @@ The ID of the user who created the job.
 
 #### Defined in
 
-[src/index.ts:715](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L715)
+[src/index.ts:715](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L715)
 
 ***
 
@@ -194,7 +194,7 @@ The date and time in the UTC time zone when the job was created.
 
 #### Defined in
 
-[src/index.ts:720](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L720)
+[src/index.ts:720](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L720)
 
 ***
 
@@ -212,7 +212,7 @@ The name of the external ID field for an upsert.
 
 #### Defined in
 
-[src/index.ts:776](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L776)
+[src/index.ts:776](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L776)
 
 ***
 
@@ -230,7 +230,7 @@ Unique ID for this job.
 
 #### Defined in
 
-[src/index.ts:725](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L725)
+[src/index.ts:725](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L725)
 
 ***
 
@@ -248,7 +248,7 @@ The job’s type.
 
 #### Defined in
 
-[src/index.ts:836](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L836)
+[src/index.ts:836](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L836)
 
 ***
 
@@ -266,7 +266,7 @@ The line ending used for CSV job data.
 
 #### Defined in
 
-[src/index.ts:735](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L735)
+[src/index.ts:735](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L735)
 
 ***
 
@@ -284,7 +284,7 @@ The number of records that were not processed successfully in this job.
 
 #### Defined in
 
-[src/index.ts:781](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L781)
+[src/index.ts:781](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L781)
 
 ***
 
@@ -302,7 +302,7 @@ The number of records already processed.
 
 #### Defined in
 
-[src/index.ts:786](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L786)
+[src/index.ts:786](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L786)
 
 ***
 
@@ -320,7 +320,7 @@ The object type for the data being processed.
 
 #### Defined in
 
-[src/index.ts:740](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L740)
+[src/index.ts:740](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L740)
 
 ***
 
@@ -338,7 +338,7 @@ The processing operation for the job.
 
 #### Defined in
 
-[src/index.ts:841](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L841)
+[src/index.ts:841](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L841)
 
 ***
 
@@ -357,7 +357,7 @@ operation. The repeated attempts are due to a problem, such as a lock contention
 
 #### Defined in
 
-[src/index.ts:751](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L751)
+[src/index.ts:751](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L751)
 
 ***
 
@@ -375,7 +375,7 @@ The current state of processing for the job.
 
 #### Defined in
 
-[src/index.ts:846](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L846)
+[src/index.ts:846](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L846)
 
 ***
 
@@ -393,7 +393,7 @@ Date and time in the UTC time zone when the job finished.
 
 #### Defined in
 
-[src/index.ts:761](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L761)
+[src/index.ts:761](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L761)
 
 ***
 
@@ -411,4 +411,4 @@ The number of milliseconds taken to process the job.
 
 #### Defined in
 
-[src/index.ts:766](https://github.com/heroku/heroku-applink-nodejs/blob/964a49b1b7eff1b886f572faf2baab589b474aff/src/index.ts#L766)
+[src/index.ts:766](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L766)
