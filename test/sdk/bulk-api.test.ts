@@ -705,8 +705,7 @@ describe("bulkApi", function () {
         ]);
       });
 
-      // TODO: This is getting skipped because it only fails in ubuntu, it falls back incorrectly.
-      it.skip("should be possible to get more results for a query job and specify the maximum records to return", async () => {
+      it("should be possible to get more results for a query job and specify the maximum records to return", async () => {
         const currentResults: QueryJobResults = {
           locator: "MjAwMOMG",
           done: false,
