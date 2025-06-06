@@ -19,7 +19,13 @@ export class HTTPResponseError extends Error {
  */
 export class HttpRequestUtil {
   async request(url: string, opts: any, json = true) {
-    const response = await fetch(url, opts);
+    const defaultOpts = {
+      headers: {
+        "User-Agent": `heroku-applink-node-sdk/1.0`,
+      },
+    };
+
+    const response = await fetch(url, { ...defaultOpts, ...opts });
 
     if (!response.ok) {
       throw new HTTPResponseError(response);
