@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.0](../README.md) / BulkApi
+[@heroku/applink v1.0.0-ea.1](../README.md) / BulkApi
 
 # Interface: BulkApi
 
@@ -37,7 +37,7 @@ The reference of the job to abort
 
 #### Defined in
 
-[src/index.ts:426](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L426)
+[src/index.ts:426](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L426)
 
 ***
 
@@ -61,7 +61,7 @@ The names of the columns to include in the [DataTable](DataTable.md)
 
 #### Defined in
 
-[src/index.ts:433](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L433)
+[src/index.ts:433](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L433)
 
 ***
 
@@ -91,7 +91,7 @@ The reference of the job to delete
 
 #### Defined in
 
-[src/index.ts:443](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L443)
+[src/index.ts:443](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L443)
 
 ***
 
@@ -120,7 +120,7 @@ The Date to convert into the `date` format
 
 #### Defined in
 
-[src/index.ts:460](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L460)
+[src/index.ts:460](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L460)
 
 ***
 
@@ -149,7 +149,7 @@ The Date to convert into the `dateTime` format
 
 #### Defined in
 
-[src/index.ts:469](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L469)
+[src/index.ts:469](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L469)
 
 ***
 
@@ -172,7 +172,7 @@ to `null` use this formatter which will set the field value to `#N/A`.
 
 #### Defined in
 
-[src/index.ts:451](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L451)
+[src/index.ts:451](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L451)
 
 ***
 
@@ -203,7 +203,7 @@ The reference of the job to get the failed results for
 
 #### Defined in
 
-[src/index.ts:480](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L480)
+[src/index.ts:480](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L480)
 
 ***
 
@@ -232,7 +232,7 @@ The reference of the job to fetch information about
 
 #### Defined in
 
-[src/index.ts:489](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L489)
+[src/index.ts:489](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L489)
 
 ***
 
@@ -264,7 +264,7 @@ Optional configuration that can be specified when fetching query results
 
 #### Defined in
 
-[src/index.ts:500](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L500)
+[src/index.ts:500](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L500)
 
 ***
 
@@ -296,7 +296,7 @@ Optional configuration that can be specified when fetching query results
 
 #### Defined in
 
-[src/index.ts:512](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L512)
+[src/index.ts:512](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L512)
 
 ***
 
@@ -327,7 +327,7 @@ The reference of the job to get the successful results for
 
 #### Defined in
 
-[src/index.ts:526](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L526)
+[src/index.ts:526](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L526)
 
 ***
 
@@ -355,7 +355,7 @@ The reference of the job to get the unprocessed records for
 
 #### Defined in
 
-[src/index.ts:534](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L534)
+[src/index.ts:534](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L534)
 
 ***
 
@@ -392,7 +392,7 @@ These are options that can be supplied when creating an ingest job.
 
 #### Defined in
 
-[src/index.ts:551](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L551)
+[src/index.ts:551](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L551)
 
 ***
 
@@ -420,7 +420,7 @@ These are options that can be supplied when creating a query job.
 
 #### Defined in
 
-[src/index.ts:561](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L561)
+[src/index.ts:561](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L561)
 
 ***
 
@@ -449,4 +449,4 @@ The [DataTable](DataTable.md) to split
 
 #### Defined in
 
-[src/index.ts:570](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L570)
+[src/index.ts:570](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L570)
