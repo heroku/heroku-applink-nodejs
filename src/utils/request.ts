@@ -5,6 +5,9 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+import fs from "fs";
+import path from "path";
+
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HTTPResponseError extends Error {
   response: any;
@@ -19,7 +22,19 @@ export class HTTPResponseError extends Error {
  */
 export class HttpRequestUtil {
   async request(url: string, opts: any, json = true) {
-    const response = await fetch(url, opts);
+    const pjson = fs.readFileSync(
+      path.join(__dirname, "..", "package.json"),
+      "utf8"
+    );
+    const pkg = JSON.parse(pjson);
+
+    const defaultOpts = {
+      headers: {
+        "User-Agent": `heroku-applink-node-sdk/${pkg.version}`,
+      },
+    };
+
+    const response = await fetch(url, { ...defaultOpts, ...opts });
 
     if (!response.ok) {
       throw new HTTPResponseError(response);
