@@ -18,14 +18,30 @@ export class HTTPResponseError extends Error {
  * Handles HTTP requests.
  */
 export class HttpRequestUtil {
-  async request(url: string, opts: any, json = true) {
-    const defaultOpts = {
-      headers: {
-        "User-Agent": `heroku-applink-node-sdk/1.0`,
-      },
-    };
+  /**
+   * Makes an HTTP request
+   * 
+   * @param url - The URL to make the request to
+   * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged 
+   *               with default headers `{ "User-Agent: heroku-applink-node-sdk/1.0" }`
 
-    const response = await fetch(url, { ...defaultOpts, ...opts });
+   * @param json - Whether to parse the response as JSON (default: true). If false, 
+   *               returns the raw Response object
+   * @returns Promise that resolves to the parsed JSON response (if json=true) or 
+   *          the raw Response object (if json=false)
+   * @throws {HTTPResponseError} When the response status is not in the 2xx range
+   */
+  async request(url: string, opts: any, json = true) {
+
+    const mergedOpts = {
+      ...opts,
+      headers: {
+        "User-Agent": "heroku-applink-node-sdk/1.0",
+        ...(opts?.headers ?? {}),
+      }
+    };
+ 
+    const response = await fetch(url, mergedOpts);
 
     if (!response.ok) {
       throw new HTTPResponseError(response);
