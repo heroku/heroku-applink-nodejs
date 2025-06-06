@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / DataCloudActionEventSchema
+[@heroku/applink v1.0.0-ea.0](../README.md) / DataCloudActionEventSchema
 
 # Interface: DataCloudActionEventSchema
 
@@ -18,7 +18,7 @@ schema: string;
 
 #### Defined in
 
-[src/index.ts:1046](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1046)
+[src/index.ts:1046](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L1046)
 
 ***
 
@@ -30,4 +30,4 @@ schemaId: string;
 
 #### Defined in
 
-[src/index.ts:1045](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1045)
+[src/index.ts:1045](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L1045)

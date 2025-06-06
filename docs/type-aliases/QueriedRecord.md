@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / QueriedRecord
+[@heroku/applink v1.0.0-ea.0](../README.md) / QueriedRecord
 
 # Type Alias: QueriedRecord
 
@@ -28,4 +28,4 @@ Returns the result of a sub query related to this record. Records can have sub q
 
 ## Defined in
 
-[src/index.ts:197](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L197)
+[src/index.ts:197](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L197)
