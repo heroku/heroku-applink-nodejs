@@ -8,7 +8,7 @@
     "build": "tsc -b",
     "lint": "eslint . --ext .ts --max-warnings 0 --report-unused-disable-directives --format codeframe",
     "lint:fix": "npm run lint -- --fix",
-    "wiremock": "java -Xmx1024m -Xms512m -jar $(which wiremock) --port 8080 --bind-address 127.0.0.1 --disable-banner",
+    "wiremock": "JAVA_OPTS='-Xmx1024m -Xms512m' wiremock --port 8080 --bind-address 127.0.0.1 --disable-banner",
     "mocha": "mocha",
     "test": "cross-env NODE_ENV=test TS_NODE_PROJECT=tsconfig.test.json concurrently -k -s first \"wiremock\" \"mocha\"",
     "test:coverage": "nyc --reporter=lcov --reporter=text-summary yarn test",
