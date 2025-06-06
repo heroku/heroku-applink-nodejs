@@ -22,15 +22,9 @@ export class HTTPResponseError extends Error {
  */
 export class HttpRequestUtil {
   async request(url: string, opts: any, json = true) {
-    const pjson = fs.readFileSync(
-      path.join(__dirname, "..", "package.json"),
-      "utf8"
-    );
-    const pkg = JSON.parse(pjson);
-
     const defaultOpts = {
       headers: {
-        "User-Agent": `heroku-applink-node-sdk/${pkg.version}`,
+        "User-Agent": `heroku-applink-node-sdk/1.0`,
       },
     };
 
