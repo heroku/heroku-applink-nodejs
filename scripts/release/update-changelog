@@ -94,8 +94,12 @@ if [ -f "CHANGELOG.md" ]; then
     cp "CHANGELOG.md" "$OLD_CONTENT"
 fi
 
-# Create the new version content with comparison to HEAD
-VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/HEAD...$NEW_VERSION) - $(date +%Y-%m-%d)"
+# Create the new version content
+if [ -n "$LAST_TAG" ]; then
+    VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/$LAST_TAG...$NEW_VERSION) - $(date +%Y-%m-%d)"
+else
+    VERSION_HEADER="# [$NEW_VERSION]($REPO_URL/compare/HEAD...$NEW_VERSION) - $(date +%Y-%m-%d)"
+fi
 
 echo "Version header: $VERSION_HEADER"
 
@@ -137,18 +141,6 @@ echo "$COMMITS" | while IFS='|' read -r message hash; do
             formatted_message="$formatted_message (BREAKING CHANGE)"
         fi
 
-        # Extract PR or issue number if present in the message
-        ref_number=""
-        ref_type=""
-        # Look for (#1234) or #1234 in the message
-        if [[ "$message" =~ \(#([0-9]+)\) ]]; then
-            ref_number="${BASH_REMATCH[1]}"
-            ref_type="pull"
-        elif [[ "$message" =~ \#([0-9]+) ]]; then
-            ref_number="${BASH_REMATCH[1]}"
-            ref_type="issues"
-        fi
-
         # Get the category for this commit
         category=$(categorize_commit "$message" "$hash" "")
         case "$category" in
@@ -158,12 +150,8 @@ echo "$COMMITS" | while IFS='|' read -r message hash; do
             *) tmp_file="$OTHER_TMP" ;;
         esac
 
-        # Add the commit to the appropriate category file with commit hash link
-        if [ -n "$ref_number" ]; then
-            echo "* $formatted_message ([#$ref_number]($REPO_URL/$ref_type/$ref_number)) ([${hash:0:7}]($REPO_URL/commit/$hash))" >> "$tmp_file"
-        else
-            echo "* $formatted_message ([${hash:0:7}]($REPO_URL/commit/$hash))" >> "$tmp_file"
-        fi
+        # Add the commit to the appropriate category file with commit hash
+        echo "* $formatted_message ([${hash:0:7}]($REPO_URL/commit/$hash))" >> "$tmp_file"
     fi
 done
 
@@ -189,6 +177,7 @@ if [ -f "$OLD_CONTENT" ]; then
         awk '/^# \[/ {exit} {print}' "$OLD_CONTENT"
         # Add the new version section
         cat "$NEW_CONTENT"
+        # Add a blank line before the next version
         echo
         # Add all existing content after the header
         awk '/^# \[/ {p=1} p {print}' "$OLD_CONTENT"

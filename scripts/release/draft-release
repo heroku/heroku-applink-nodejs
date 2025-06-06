@@ -2,37 +2,63 @@
 set -eu
 set -o pipefail
 
-# Script to create a draft release branch and PR
+# draft-release
+# Script to create a release branch and PR for a new version
 #
 # Usage:
-#   ./scripts/release/draft-release [ | major | minor | patch | ]
+#   ./release/draft-release <bump_type>
+#   bump_type: major, minor, or patch
 #
-# This will:
-#   1. Run npm version with the provided version type
-#   2. Create a release branch named release-v{version}
-#   3. Update CHANGELOG.md using update-changelog.sh
-#   4. Create a draft PR from the release branch to main
+# Example:
+#   ./scripts/release/draft-release minor
+#   ./scripts/release/draft-release patch
 
+
+# Function to display usage
 usage() {
-    echo "Usage: $0 [ | major | minor | patch | ]"
-    echo "  major: Bump major version (1.0.0 -> 2.0.0)"
-    echo "  minor: Bump minor version (1.0.0 -> 1.1.0)"
-    echo "  patch: Bump patch version (1.0.0 -> 1.0.1)"
+    echo "Usage: $0 <bump_type>"
+    echo "  bump_type: major, minor, or patch"
     exit 1
 }
 
-# Check if version type is provided
-if [ "$#" -ne 1 ]; then
+# Function to handle errors
+handle_error() {
+    local line_no=$1
+    local error_code=$2
+    local error_command=$3
+    echo "Error occurred in line $line_no (exit code $error_code): $error_command"
+    exit 1
+}
+
+# Set up error handling
+trap 'handle_error ${LINENO} $? "$BASH_COMMAND"' ERR
+
+# Check if required arguments are provided
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
     usage
 fi
 
-VERSION_TYPE=$1
+BUMP_TYPE=$1
+
+# Validate bump type
+if [[ ! "$BUMP_TYPE" =~ ^(major|minor|patch)$ ]]; then
+    echo "Error: bump_type must be major, minor, or patch"
+    usage
+fi
 
 # Run npm version and capture the new version
 echo "Running npm version $VERSION_TYPE..."
 NEW_VERSION=$(npm version "$VERSION_TYPE" --no-git-tag-version)
+
 # Remove the 'v' prefix that npm version adds
 NEW_VERSION=${NEW_VERSION#v}
+
+# Validate semver format
+if ! [[ $NEW_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*)?$ ]]; then
+    echo "Error: Invalid semver format: $NEW_VERSION"
+    echo "Please use a valid numeric semver string: https://semver.org/"
+    exit 1
+fi
 
 # Create release branch with actual version number
 echo "Creating release branch..."

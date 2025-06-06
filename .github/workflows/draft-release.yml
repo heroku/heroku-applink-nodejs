@@ -12,6 +12,10 @@ on:
           - minor
           - patch
 
+permissions:
+  contents: write
+  pull-requests: write
+
 jobs:
   draft-release-branch:
     runs-on: ubuntu-latest
@@ -19,19 +23,26 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20.x"
-
-      - name: Make scripts executable
-        run: |
-          chmod +x scripts/release/draft-release
-          chmod +x scripts/release/update-changelog
-
-      - name: Run release script
-        run: ./scripts/release/draft-release "${{ github.event.inputs.bump_type }}"
+      - name: Authenticate GitHub CLI
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if ! gh auth status; then
+            echo "GitHub CLI authentication failed"
+            exit 1
+          fi
+
+      - name: Configure Git
+        run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+
+      - name: Create release branch
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          ./scripts/release/draft-release "${{ github.event.inputs.bump_type }}"
