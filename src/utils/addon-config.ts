@@ -16,7 +16,7 @@ interface AddonConfig {
 export function resolveAddonConfigByAttachmentOrColor(
   attachmentOrColor: string
 ): AddonConfig {
-  const appUuid = process.env.HEROKU_APP_ID
+  const appUuid = process.env.HEROKU_APP_ID;
 
   if (!appUuid) {
     throw Error(`Heroku Applink app UUID not found`);
@@ -51,7 +51,7 @@ export function resolveAddonConfigByAttachmentOrColor(
 }
 
 export function resolveAddonConfigByUrl(url: string): AddonConfig {
-  const appUuid = process.env.HEROKU_APP_ID
+  const appUuid = process.env.HEROKU_APP_ID;
 
   if (!appUuid) {
     throw Error(`Heroku Applink app UUID not found`);
