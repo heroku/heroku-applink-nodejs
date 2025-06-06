@@ -1081,9 +1081,7 @@ async function clearScenarioMemory() {
   });
 
   if (!res.ok) {
-    throw new Error(
-      `could not clear wiremock scenario memory`
-    );
+    throw new Error(`could not clear wiremock scenario memory`);
   }
 }
 
