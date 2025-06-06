@@ -1,6 +1,6 @@
 {
   "name": "@heroku/applink",
-  "version": "1.0.0-ea",
+  "version": "1.0.0-ea.0",
   "description": "Applink SDK for Heroku Apps.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

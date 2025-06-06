@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / DataCloudApi
+[@heroku/applink v1.0.0-ea.0](../README.md) / DataCloudApi
 
 # Interface: DataCloudApi
 
@@ -26,7 +26,7 @@ query(sql): Promise<DataCloudQueryResponse>
 
 #### Defined in
 
-[src/index.ts:1111](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1111)
+[src/index.ts:1111](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L1111)
 
 ***
 
@@ -48,7 +48,7 @@ queryNextBatch(nextBatchId): Promise<DataCloudQueryResponse>
 
 #### Defined in
 
-[src/index.ts:1117](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1117)
+[src/index.ts:1117](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L1117)
 
 ***
 
@@ -77,4 +77,4 @@ data): Promise<DataCloudUpsertResponse>
 
 #### Defined in
 
-[src/index.ts:1125](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L1125)
+[src/index.ts:1125](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L1125)

@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / HTTPResponseError
+[@heroku/applink v1.0.0-ea.0](../README.md) / HTTPResponseError
 
 # Class: HTTPResponseError
 
@@ -34,7 +34,7 @@ new HTTPResponseError(response): HTTPResponseError
 
 #### Defined in
 
-[src/utils/request.ts:11](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/utils/request.ts#L11)
+[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/utils/request.ts#L14)
 
 ## Properties
 
@@ -78,7 +78,7 @@ response: any;
 
 #### Defined in
 
-[src/utils/request.ts:10](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/utils/request.ts#L10)
+[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/utils/request.ts#L13)
 
 ***
 

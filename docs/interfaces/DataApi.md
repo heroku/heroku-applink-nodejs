@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / DataApi
+[@heroku/applink v1.0.0-ea.0](../README.md) / DataApi
 
 # Interface: DataApi
 
@@ -21,7 +21,7 @@ third-party API client or to perform custom API calls with a HTTP library.
 
 #### Defined in
 
-[src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L306)
+[src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L306)
 
 ## Methods
 
@@ -50,7 +50,7 @@ A map of [RecordModificationResult](RecordModificationResult.md)s, indexed by th
 
 #### Defined in
 
-[src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L358)
+[src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L358)
 
 ***
 
@@ -76,7 +76,7 @@ A [RecordModificationResult](RecordModificationResult.md) that contains the crea
 
 #### Defined in
 
-[src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L327)
+[src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L327)
 
 ***
 
@@ -106,7 +106,7 @@ A [RecordModificationResult](RecordModificationResult.md) that contains the dele
 
 #### Defined in
 
-[src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L342)
+[src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L342)
 
 ***
 
@@ -126,7 +126,7 @@ An empty [UnitOfWork](UnitOfWork.md).
 
 #### Defined in
 
-[src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L348)
+[src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L348)
 
 ***
 
@@ -152,7 +152,7 @@ A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapp
 
 #### Defined in
 
-[src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L313)
+[src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L313)
 
 ***
 
@@ -178,7 +178,7 @@ A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapp
 
 #### Defined in
 
-[src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L320)
+[src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L320)
 
 ***
 
@@ -204,4 +204,4 @@ A [RecordModificationResult](RecordModificationResult.md) that contains the upda
 
 #### Defined in
 
-[src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L334)
+[src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L334)
