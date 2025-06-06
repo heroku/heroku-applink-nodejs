@@ -86,8 +86,7 @@ describe("DataApi Class", async () => {
     });
 
     describe("invalid token", async () => {
-      // TODO: skipping because this doesn't appear possible, how is the promise be rejected but the req return a body?
-      it.skip("throws an invalid session error", async () => {
+      it("throws an invalid session error", async () => {
         try {
           await dataApiInvalidToken.create({
             type: "Account",

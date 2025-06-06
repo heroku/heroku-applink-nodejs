@@ -4,13 +4,13 @@
     "urlPath": "/services/data/v51.0/sobjects/Account"
   },
   "response": {
-    "status": 400,
+    "status": 401,
     "headers": {
       "Content-Type": "application/json;charset=UTF-8"
     },
     "jsonBody": {
-      "errorCode": "NOT_FOUND",
-      "message": "blah"
+      "errorCode": "INVALID_SESSION_ID",
+      "message": "Session expired or invalid"
     }
   }
 }
