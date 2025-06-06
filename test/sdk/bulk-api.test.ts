@@ -72,6 +72,7 @@ describe("bulkApi", function () {
     describe("ingest", () => {
       beforeEach(async () => {
         await resetScenarios();
+        await clearScenarioMemory();
       });
 
       it("ingesting a small dataset", async () => {
@@ -1054,7 +1055,7 @@ function createSmallDataset(bulkApi: BulkApi) {
 }
 
 function createLargeDataset(bulkApi: BulkApi) {
-  return createDataTableUpToSizeInBytes(bulkApi, 100 * SIZE_1_MB);
+  return createDataTableUpToSizeInBytes(bulkApi, 200 * SIZE_1_MB);
 }
 
 async function useScenario(name: string) {
@@ -1072,6 +1073,12 @@ async function setScenarioState(name: string, state: string): Promise<void> {
       `could not set wiremock scenario "${name}" to state "${state}"`
     );
   }
+}
+
+async function clearScenarioMemory() {
+  const res = await fetch(`${WIREMOCK_URL}/__admin/requests`, {
+    method: "DELETE",
+  });
 }
 
 async function resetScenarios() {
