@@ -32,15 +32,14 @@ export class HttpRequestUtil {
    * @throws {HTTPResponseError} When the response status is not in the 2xx range
    */
   async request(url: string, opts: any, json = true) {
-
     const mergedOpts = {
       ...opts,
       headers: {
         "User-Agent": "heroku-applink-node-sdk/1.0",
         ...(opts?.headers ?? {}),
-      }
+      },
     };
- 
+
     const response = await fetch(url, mergedOpts);
 
     if (!response.ok) {

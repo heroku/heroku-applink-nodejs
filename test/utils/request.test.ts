@@ -29,55 +29,66 @@ describe("HttpRequestUtil", () => {
         ok: true,
         status: 200,
         statusText: "OK",
-        json: sinon.stub().resolves(mockResponseData)
+        json: sinon.stub().resolves(mockResponseData),
       };
       fetchStub.resolves(mockResponse);
 
-      const result = await httpRequestUtil.request("https://api.example.com/test", {
-        method: "GET"
-      });
+      const result = await httpRequestUtil.request(
+        "https://api.example.com/test",
+        {
+          method: "GET",
+        }
+      );
 
       expect(result).to.deep.equal(mockResponseData);
       expect(fetchStub.calledOnce).to.be.true;
-      
+
       const [url, options] = fetchStub.getCall(0).args;
       expect(url).to.equal("https://api.example.com/test");
       expect(options.method).to.equal("GET");
-      expect(options.headers["User-Agent"]).to.equal("heroku-applink-node-sdk/1.0");
+      expect(options.headers["User-Agent"]).to.equal(
+        "heroku-applink-node-sdk/1.0"
+      );
     });
 
     it("should make successful request with non-JSON response", async () => {
-       const mockResponse = {
-         ok: true,
-         status: 200,
-         statusText: "OK",
-         text: sinon.stub().resolves("plain text response"),
-         json: sinon.stub()
-       };
-       fetchStub.resolves(mockResponse);
+      const mockResponse = {
+        ok: true,
+        status: 200,
+        statusText: "OK",
+        text: sinon.stub().resolves("plain text response"),
+        json: sinon.stub(),
+      };
+      fetchStub.resolves(mockResponse);
 
-       const result = await httpRequestUtil.request("https://api.example.com/test", {
-         method: "GET"
-       }, false);
+      const result = await httpRequestUtil.request(
+        "https://api.example.com/test",
+        {
+          method: "GET",
+        },
+        false
+      );
 
-       expect(result).to.equal(mockResponse);
-       expect(fetchStub.calledOnce).to.be.true;
-       expect(mockResponse.json.called).to.be.false;
-     });
+      expect(result).to.equal(mockResponse);
+      expect(fetchStub.calledOnce).to.be.true;
+      expect(mockResponse.json.called).to.be.false;
+    });
 
     it("should include default User-Agent header", async () => {
       const mockResponse = {
         ok: true,
         status: 200,
         statusText: "OK",
-        json: sinon.stub().resolves({})
+        json: sinon.stub().resolves({}),
       };
       fetchStub.resolves(mockResponse);
 
       await httpRequestUtil.request("https://api.example.com/test", {});
 
       const [, options] = fetchStub.getCall(0).args;
-      expect(options.headers["User-Agent"]).to.equal("heroku-applink-node-sdk/1.0");
+      expect(options.headers["User-Agent"]).to.equal(
+        "heroku-applink-node-sdk/1.0"
+      );
     });
 
     it("should merge custom headers with default headers", async () => {
@@ -85,7 +96,7 @@ describe("HttpRequestUtil", () => {
         ok: true,
         status: 200,
         statusText: "OK",
-        json: sinon.stub().resolves({})
+        json: sinon.stub().resolves({}),
       };
       fetchStub.resolves(mockResponse);
 
@@ -93,15 +104,17 @@ describe("HttpRequestUtil", () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "Authorization": "Bearer token123"
-        }
+          Authorization: "Bearer token123",
+        },
       };
 
       await httpRequestUtil.request("https://api.example.com/test", customOpts);
 
       const [, options] = fetchStub.getCall(0).args;
       expect(options.method).to.equal("POST");
-      expect(options.headers["User-Agent"]).to.equal("heroku-applink-node-sdk/1.0");
+      expect(options.headers["User-Agent"]).to.equal(
+        "heroku-applink-node-sdk/1.0"
+      );
       expect(options.headers["Content-Type"]).to.equal("application/json");
       expect(options.headers["Authorization"]).to.equal("Bearer token123");
     });
@@ -111,14 +124,14 @@ describe("HttpRequestUtil", () => {
         ok: true,
         status: 200,
         statusText: "OK",
-        json: sinon.stub().resolves({})
+        json: sinon.stub().resolves({}),
       };
       fetchStub.resolves(mockResponse);
 
       const customOpts = {
         headers: {
-          "User-Agent": "custom-agent/1.0"
-        }
+          "User-Agent": "custom-agent/1.0",
+        },
       };
 
       await httpRequestUtil.request("https://api.example.com/test", customOpts);
@@ -131,7 +144,7 @@ describe("HttpRequestUtil", () => {
       const mockResponse = {
         ok: false,
         status: 404,
-        statusText: "Not Found"
+        statusText: "Not Found",
       };
       fetchStub.resolves(mockResponse);
 
@@ -149,7 +162,7 @@ describe("HttpRequestUtil", () => {
       const mockResponse = {
         ok: false,
         status: 500,
-        statusText: "Internal Server Error"
+        statusText: "Internal Server Error",
       };
       fetchStub.resolves(mockResponse);
 
@@ -158,7 +171,9 @@ describe("HttpRequestUtil", () => {
         expect.fail("Should have thrown HTTPResponseError");
       } catch (error) {
         expect(error).to.be.instanceOf(HTTPResponseError);
-        expect(error.message).to.equal("HTTP Error Response: 500: Internal Server Error");
+        expect(error.message).to.equal(
+          "HTTP Error Response: 500: Internal Server Error"
+        );
         expect(error.response).to.equal(mockResponse);
       }
     });
@@ -179,7 +194,7 @@ describe("HttpRequestUtil", () => {
     it("should create error with correct message and response", () => {
       const mockResponse = {
         status: 403,
-        statusText: "Forbidden"
+        statusText: "Forbidden",
       } as Response;
 
       const error = new HTTPResponseError(mockResponse);
@@ -192,7 +207,7 @@ describe("HttpRequestUtil", () => {
     it("should handle response with empty statusText", () => {
       const mockResponse = {
         status: 422,
-        statusText: ""
+        statusText: "",
       } as Response;
 
       const error = new HTTPResponseError(mockResponse);
@@ -201,4 +216,4 @@ describe("HttpRequestUtil", () => {
       expect(error.response).to.equal(mockResponse);
     });
   });
-}); 
+});
