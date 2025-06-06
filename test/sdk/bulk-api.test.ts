@@ -1079,6 +1079,12 @@ async function clearScenarioMemory() {
   const res = await fetch(`${WIREMOCK_URL}/__admin/requests`, {
     method: "DELETE",
   });
+
+  if (!res.ok) {
+    throw new Error(
+      `could not clear wiremock scenario memory`
+    );
+  }
 }
 
 async function resetScenarios() {
