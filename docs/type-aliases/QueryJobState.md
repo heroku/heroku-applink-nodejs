@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.0](../README.md) / QueryJobState
+[@heroku/applink v1.0.0-ea.1](../README.md) / QueryJobState
 
 # Type Alias: QueryJobState
 
@@ -24,4 +24,4 @@ The state of processing for an query job. Values include:
 
 ## Defined in
 
-[src/index.ts:874](https://github.com/heroku/heroku-applink-nodejs/blob/87c92510086d403ff167f2c2ca165bec2e25023f/src/index.ts#L874)
+[src/index.ts:874](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L874)

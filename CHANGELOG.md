@@ -17,3 +17,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.0-ea.0] - 2025-06-06
 - Add `X-App-UUID` header, `heroku-applink-node-sdk` UA.
+
+## [1.0.0-ea.1] - 2025-06-06
+- Remove dynamic UA.
