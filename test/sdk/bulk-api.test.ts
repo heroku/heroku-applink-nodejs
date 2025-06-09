@@ -72,6 +72,7 @@ describe("bulkApi", function () {
     describe("ingest", () => {
       beforeEach(async () => {
         await resetScenarios();
+        await clearScenarioMemory();
       });
 
       it("ingesting a small dataset", async () => {
@@ -705,8 +706,7 @@ describe("bulkApi", function () {
         ]);
       });
 
-      // TODO: This is getting skipped because it only fails in ubuntu, it falls back incorrectly.
-      it.skip("should be possible to get more results for a query job and specify the maximum records to return", async () => {
+      it("should be possible to get more results for a query job and specify the maximum records to return", async () => {
         const currentResults: QueryJobResults = {
           locator: "MjAwMOMG",
           done: false,
@@ -1072,6 +1072,16 @@ async function setScenarioState(name: string, state: string): Promise<void> {
     throw new Error(
       `could not set wiremock scenario "${name}" to state "${state}"`
     );
+  }
+}
+
+async function clearScenarioMemory() {
+  const res = await fetch(`${WIREMOCK_URL}/__admin/requests`, {
+    method: "DELETE",
+  });
+
+  if (!res.ok) {
+    throw new Error(`could not clear wiremock scenario memory`);
   }
 }
 
