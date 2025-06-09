@@ -6,7 +6,7 @@ on:
 
 jobs:
   check-changelog:
-    runs-on: sfdc-hk-ubuntu-latest # TODO: change to ubuntu-latest when public
+    runs-on: ubuntu-latest
     if: |
       !contains(github.event.pull_request.body, '[skip changelog]') &&
       !contains(github.event.pull_request.body, '[changelog skip]') &&
