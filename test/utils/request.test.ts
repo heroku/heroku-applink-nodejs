@@ -7,15 +7,17 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import { HttpRequestUtil, HTTPResponseError } from "../../src/utils/request";
+import { HttpRequestUtil, HTTPResponseError, uuidGenerator } from "../../src/utils/request";
 
 describe("HttpRequestUtil", () => {
   let httpRequestUtil: HttpRequestUtil;
   let fetchStub: sinon.SinonStub;
+  let uuidGeneratorStub: sinon.SinonStub;
 
   beforeEach(() => {
     httpRequestUtil = new HttpRequestUtil();
     fetchStub = sinon.stub(global, "fetch");
+    uuidGeneratorStub = sinon.stub(uuidGenerator, "generate");
   });
 
   afterEach(() => {
@@ -91,7 +93,54 @@ describe("HttpRequestUtil", () => {
       );
     });
 
+    it("should include default request-id header", async () => {
+      const mockUUID = "test-uuid-1234-5678-9abc";
+      uuidGeneratorStub.returns(mockUUID);
+      
+      const mockResponse = {
+        ok: true,
+        status: 200,
+        statusText: "OK",
+        json: sinon.stub().resolves({}),
+      };
+      fetchStub.resolves(mockResponse);
+
+      await httpRequestUtil.request("https://api.example.com/test", {});
+
+      const [, options] = fetchStub.getCall(0).args;
+      expect(options.headers["X-Request-Id"]).to.equal(mockUUID);
+      expect(uuidGeneratorStub.calledOnce).to.be.true;
+    });
+
+    it("should generate unique request-id for each request", async () => {
+      const mockUUID1 = "test-uuid-1111-1111-1111";
+      const mockUUID2 = "test-uuid-2222-2222-2222";
+      uuidGeneratorStub.onFirstCall().returns(mockUUID1);
+      uuidGeneratorStub.onSecondCall().returns(mockUUID2);
+      
+      const mockResponse = {
+        ok: true,
+        status: 200,
+        statusText: "OK",
+        json: sinon.stub().resolves({}),
+      };
+      fetchStub.resolves(mockResponse);
+
+      await httpRequestUtil.request("https://api.example.com/test1", {});
+      await httpRequestUtil.request("https://api.example.com/test2", {});
+
+      const [, options1] = fetchStub.getCall(0).args;
+      const [, options2] = fetchStub.getCall(1).args;
+      
+      expect(options1.headers["X-Request-Id"]).to.equal(mockUUID1);
+      expect(options2.headers["X-Request-Id"]).to.equal(mockUUID2);
+      expect(uuidGeneratorStub.calledTwice).to.be.true;
+    });
+
     it("should merge custom headers with default headers", async () => {
+      const mockUUID = "test-uuid-merge-test";
+      uuidGeneratorStub.returns(mockUUID);
+      
       const mockResponse = {
         ok: true,
         status: 200,
@@ -115,11 +164,15 @@ describe("HttpRequestUtil", () => {
       expect(options.headers["User-Agent"]).to.equal(
         "heroku-applink-node-sdk/1.0"
       );
+      expect(options.headers["X-Request-Id"]).to.equal(mockUUID);
       expect(options.headers["Content-Type"]).to.equal("application/json");
       expect(options.headers["Authorization"]).to.equal("Bearer token123");
     });
 
     it("should allow custom headers to override User-Agent", async () => {
+      const mockUUID = "test-uuid-override-test";
+      uuidGeneratorStub.returns(mockUUID);
+      
       const mockResponse = {
         ok: true,
         status: 200,
@@ -138,6 +191,35 @@ describe("HttpRequestUtil", () => {
 
       const [, options] = fetchStub.getCall(0).args;
       expect(options.headers["User-Agent"]).to.equal("custom-agent/1.0");
+      expect(options.headers["X-Request-Id"]).to.equal(mockUUID);
+    });
+
+    it("should allow custom headers to override request-id", async () => {
+      // UUID generator should still be called since it's called before merging custom headers
+      uuidGeneratorStub.returns("generated-uuid-that-gets-overridden");
+      
+      const mockResponse = {
+        ok: true,
+        status: 200,
+        statusText: "OK",
+        json: sinon.stub().resolves({}),
+      };
+      fetchStub.resolves(mockResponse);
+
+      const customRequestId = "custom-request-id-123";
+      const customOpts = {
+        headers: {
+          "X-Request-Id": customRequestId,
+        },
+      };
+
+      await httpRequestUtil.request("https://api.example.com/test", customOpts);
+
+      const [, options] = fetchStub.getCall(0).args;
+      expect(options.headers["X-Request-Id"]).to.equal(customRequestId);
+      expect(options.headers["User-Agent"]).to.equal("heroku-applink-node-sdk/1.0");
+      // UUID generator should still be called since it's called before merging custom headers
+      expect(uuidGeneratorStub.calledOnce).to.be.true;
     });
 
     it("should throw HTTPResponseError for 4xx status codes", async () => {
