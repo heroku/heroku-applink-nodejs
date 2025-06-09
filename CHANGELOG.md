@@ -24,3 +24,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 - Update `HttpRequestUtil.request` documentation
 - Update license year
+- Add `X-Request-Id` header

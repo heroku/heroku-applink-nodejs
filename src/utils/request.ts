@@ -5,6 +5,8 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+import { randomUUID } from "node:crypto";
+
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HTTPResponseError extends Error {
   response: any;
@@ -15,6 +17,13 @@ export class HTTPResponseError extends Error {
 }
 
 /**
+ * UUID generator utility wrapping node:crypto's randomUUID for stubbing in tests
+ */
+export const uuidGenerator = {
+  generate: () => randomUUID(),
+};
+
+/**
  * Handles HTTP requests.
  */
 export class HttpRequestUtil {
@@ -23,7 +32,7 @@ export class HttpRequestUtil {
    * 
    * @param url - The URL to make the request to
    * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged 
-   *               with default headers `{ "User-Agent: heroku-applink-node-sdk/1.0" }`
+   *               with default User-Agent and X-Request-ID headers.
 
    * @param json - Whether to parse the response as JSON (default: true). If false, 
    *               returns the raw Response object
@@ -36,6 +45,7 @@ export class HttpRequestUtil {
       ...opts,
       headers: {
         "User-Agent": "heroku-applink-node-sdk/1.0",
+        "X-Request-Id": uuidGenerator.generate(),
         ...(opts?.headers ?? {}),
       },
     };
