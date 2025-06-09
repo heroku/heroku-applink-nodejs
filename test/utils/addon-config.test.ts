@@ -18,6 +18,7 @@ describe("resolveAddonConfigByAttachmentOrColor", () => {
 
   beforeEach(() => {
     originalEnv = { ...process.env };
+    process.env.HEROKU_APP_ID = "d52a726b-11a4-47a1-a4b6-2e18a771c2ac";
   });
 
   afterEach(() => {
@@ -81,6 +82,14 @@ describe("resolveAddonConfigByAttachmentOrColor", () => {
       "Heroku Applink config not found under attachment or color HEROKU_APPLINK"
     );
   });
+
+  it("throws if HEROKU_APP_ID is not set", () => {
+    delete process.env.HEROKU_APP_ID;
+
+    expect(() => resolveAddonConfigByAttachmentOrColor(ATTACHMENT)).to.throw(
+      "Heroku Applink app UUID not found"
+    );
+  });
 });
 
 describe("resolveAddonConfigByUrl", () => {
@@ -88,6 +97,7 @@ describe("resolveAddonConfigByUrl", () => {
 
   beforeEach(() => {
     originalEnv = { ...process.env };
+    process.env.HEROKU_APP_ID = "d52a726b-11a4-47a1-a4b6-2e18a771c2ac";
   });
 
   afterEach(() => {
@@ -129,6 +139,14 @@ describe("resolveAddonConfigByUrl", () => {
 
     expect(() => resolveAddonConfigByUrl(testUrl)).to.throw(
       `Heroku Applink token not found for API URL: ${testUrl}`
+    );
+  });
+
+  it("throws if HEROKU_APP_ID is not set", () => {
+    delete process.env.HEROKU_APP_ID;
+
+    expect(() => resolveAddonConfigByUrl("https://api.example.com")).to.throw(
+      "Heroku Applink app UUID not found"
     );
   });
 });

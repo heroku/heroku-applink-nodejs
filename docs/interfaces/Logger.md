@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea](../README.md) / Logger
+[@heroku/applink v1.0.0-ea.1](../README.md) / Logger
 
 # Interface: Logger
 
@@ -32,7 +32,7 @@ void
 
 #### Defined in
 
-[src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L403)
+[src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L403)
 
 ***
 
@@ -58,7 +58,7 @@ void
 
 #### Defined in
 
-[src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L382)
+[src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L382)
 
 ***
 
@@ -84,7 +84,7 @@ void
 
 #### Defined in
 
-[src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L396)
+[src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L396)
 
 ***
 
@@ -110,7 +110,7 @@ void
 
 #### Defined in
 
-[src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L410)
+[src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L410)
 
 ***
 
@@ -136,4 +136,4 @@ void
 
 #### Defined in
 
-[src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/e2c7093bff3682e3a10211f985cb37467f6d2de7/src/index.ts#L389)
+[src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L389)

@@ -47,6 +47,7 @@ export async function getAuthorization(
     method: "GET",
     headers: {
       Authorization: `Bearer ${config.token}`,
+      "X-App-UUID": config.appUuid,
       "Content-Type": "application/json",
     },
     retry: {

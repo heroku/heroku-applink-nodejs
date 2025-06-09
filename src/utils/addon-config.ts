@@ -5,14 +5,23 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
+type AppUuid = string;
+
 interface AddonConfig {
   apiUrl: string;
   token: string;
+  appUuid: AppUuid;
 }
 
 export function resolveAddonConfigByAttachmentOrColor(
   attachmentOrColor: string
 ): AddonConfig {
+  const appUuid = process.env.HEROKU_APP_ID;
+
+  if (!appUuid) {
+    throw Error(`Heroku Applink app UUID not found`);
+  }
+
   const addon = process.env.HEROKU_APPLINK_ADDON_NAME || "HEROKU_APPLINK";
 
   let apiUrl;
@@ -37,10 +46,17 @@ export function resolveAddonConfigByAttachmentOrColor(
   return {
     apiUrl,
     token,
+    appUuid,
   };
 }
 
 export function resolveAddonConfigByUrl(url: string): AddonConfig {
+  const appUuid = process.env.HEROKU_APP_ID;
+
+  if (!appUuid) {
+    throw Error(`Heroku Applink app UUID not found`);
+  }
+
   // Find the environment variable ending with _API_URL that matches the given URL
   const envVarEntries = Object.entries(process.env);
   const matchingApiUrlEntry = envVarEntries.find(
@@ -65,5 +81,6 @@ export function resolveAddonConfigByUrl(url: string): AddonConfig {
   return {
     apiUrl: matchingApiUrlEntry[1],
     token,
+    appUuid,
   };
 }

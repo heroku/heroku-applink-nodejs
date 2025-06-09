@@ -45,6 +45,7 @@ describe("getAuthorization", () => {
     process.env.HEROKU_APPLINK_PURPLE_API_URL =
       "https://applink.staging.herokudev.com/addons/536c15d8-c2c1-47f7-a582-76f5aae385e0";
     process.env.HEROKU_APPLINK_PURPLE_TOKEN = "purple-token";
+    process.env.HEROKU_APP_ID = "d52a726b-11a4-47a1-a4b6-2e18a771c2ac";
     httpRequestStub = sinon.stub(HttpRequestUtil.prototype, "request");
   });
 
