@@ -60,3 +60,6 @@ You will need java installed to run wiremock.
 
 ### Running tests
 To test with coverage run `yarn test:coverage`
+
+## Publishing
+`yarn release` will release the current version. `yarn release:dry-run` can be used to dry-run a release. The npm distribution tag is based on the pre-release semver suffix (1.0.0-ea would) release with the tag `ea`. If no pre-release suffix exists, releases are published with the `latest` tag.
