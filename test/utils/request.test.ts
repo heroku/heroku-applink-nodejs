@@ -7,7 +7,11 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import { HttpRequestUtil, HTTPResponseError, uuidGenerator } from "../../src/utils/request";
+import {
+  HttpRequestUtil,
+  HTTPResponseError,
+  uuidGenerator,
+} from "../../src/utils/request";
 
 describe("HttpRequestUtil", () => {
   let httpRequestUtil: HttpRequestUtil;
@@ -96,7 +100,7 @@ describe("HttpRequestUtil", () => {
     it("should include default request-id header", async () => {
       const mockUUID = "test-uuid-1234-5678-9abc";
       uuidGeneratorStub.returns(mockUUID);
-      
+
       const mockResponse = {
         ok: true,
         status: 200,
@@ -117,7 +121,7 @@ describe("HttpRequestUtil", () => {
       const mockUUID2 = "test-uuid-2222-2222-2222";
       uuidGeneratorStub.onFirstCall().returns(mockUUID1);
       uuidGeneratorStub.onSecondCall().returns(mockUUID2);
-      
+
       const mockResponse = {
         ok: true,
         status: 200,
@@ -131,7 +135,7 @@ describe("HttpRequestUtil", () => {
 
       const [, options1] = fetchStub.getCall(0).args;
       const [, options2] = fetchStub.getCall(1).args;
-      
+
       expect(options1.headers["X-Request-Id"]).to.equal(mockUUID1);
       expect(options2.headers["X-Request-Id"]).to.equal(mockUUID2);
       expect(uuidGeneratorStub.calledTwice).to.be.true;
@@ -140,7 +144,7 @@ describe("HttpRequestUtil", () => {
     it("should merge custom headers with default headers", async () => {
       const mockUUID = "test-uuid-merge-test";
       uuidGeneratorStub.returns(mockUUID);
-      
+
       const mockResponse = {
         ok: true,
         status: 200,
@@ -172,7 +176,7 @@ describe("HttpRequestUtil", () => {
     it("should allow custom headers to override User-Agent", async () => {
       const mockUUID = "test-uuid-override-test";
       uuidGeneratorStub.returns(mockUUID);
-      
+
       const mockResponse = {
         ok: true,
         status: 200,
@@ -197,7 +201,7 @@ describe("HttpRequestUtil", () => {
     it("should allow custom headers to override request-id", async () => {
       // UUID generator should still be called since it's called before merging custom headers
       uuidGeneratorStub.returns("generated-uuid-that-gets-overridden");
-      
+
       const mockResponse = {
         ok: true,
         status: 200,
@@ -217,7 +221,9 @@ describe("HttpRequestUtil", () => {
 
       const [, options] = fetchStub.getCall(0).args;
       expect(options.headers["X-Request-Id"]).to.equal(customRequestId);
-      expect(options.headers["User-Agent"]).to.equal("heroku-applink-node-sdk/1.0");
+      expect(options.headers["User-Agent"]).to.equal(
+        "heroku-applink-node-sdk/1.0"
+      );
       // UUID generator should still be called since it's called before merging custom headers
       expect(uuidGeneratorStub.calledOnce).to.be.true;
     });

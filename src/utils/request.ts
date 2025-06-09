@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { randomUUID } from 'node:crypto';
+import { randomUUID } from "node:crypto";
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HTTPResponseError extends Error {
@@ -20,7 +20,7 @@ export class HTTPResponseError extends Error {
  * UUID generator utility wrapping node:crypto's randomUUID for stubbing in tests
  */
 export const uuidGenerator = {
-  generate: () => randomUUID()
+  generate: () => randomUUID(),
 };
 
 /**
