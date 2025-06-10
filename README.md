@@ -14,7 +14,7 @@ And much more!
 For more information, see [API docs](docs/README.md).
 
 ## Example
-Example use of the Node.js SDK for Heroku AppLink provided as part of the [Heroku AppLink CLI Plugin's](https://github.com/heroku/heroku-cli-plugin-applnk) `applink:project` template:  
+Example use of the Node.js SDK for Heroku AppLink provided as part of the [Heroku AppLink CLI Plugin's](https://github.com/heroku/heroku-cli-plugin-applink) `applink:project` template:
 ```javascript
 fastify.get('/accounts', async function (request, reply) {
     const {event, context, logger} = request.sdk;
