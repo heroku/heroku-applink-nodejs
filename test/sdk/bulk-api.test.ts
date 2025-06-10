@@ -199,7 +199,7 @@ describe("bulkApi", function () {
           dataTable: createLargeDataset(bulkApi),
         });
         expect(results).to.have.length(3);
-        console.log(results)
+        console.log(results);
         match(results[0])
           .with({ type: "ingestJob" }, expectValidIngestJobReference)
           .otherwise(fail("first result was not a successful job reference"));
@@ -221,7 +221,7 @@ describe("bulkApi", function () {
           dataTable: createLargeDataset(bulkApi),
         });
         expect(results).to.have.length(3);
-        console.log(results)
+        console.log(results);
 
         const successResult5 = results.find(
           (result) => "id" in result && result.id == "5"
