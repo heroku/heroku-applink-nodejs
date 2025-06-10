@@ -199,6 +199,7 @@ describe("bulkApi", function () {
           dataTable: createLargeDataset(bulkApi),
         });
         expect(results).to.have.length(3);
+
         match(results[0])
           .with({ type: "ingestJob" }, expectValidIngestJobReference)
           .otherwise(fail("first result was not a successful job reference"));
