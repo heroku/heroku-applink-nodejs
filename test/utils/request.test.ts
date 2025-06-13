@@ -114,7 +114,6 @@ describe("HttpRequestUtil", () => {
       };
       fetchStub.resolves(mockResponse);
 
-      // Make multiple requests
       await httpRequestUtil.request("https://api.example.com/test1", {});
       await httpRequestUtil.request("https://api.example.com/test2", {});
 
