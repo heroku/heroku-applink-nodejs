@@ -10,7 +10,7 @@ import { InvocationEventImpl } from "./sdk/invocation-event.js";
 import { LoggerImpl } from "./sdk/logger.js";
 import { QueryOperation } from "jsforce/lib/api/bulk";
 import { getAuthorization } from "./add-ons/heroku-applink.js";
-import { HTTPResponseError } from "./utils/request.js";
+import { HttpResponseError } from "./utils/request.js";
 
 const CONTENT_TYPE_HEADER = "Content-Type";
 const X_CLIENT_CONTEXT_HEADER = "x-client-context";
@@ -106,7 +106,7 @@ export function parseDataActionEvent(payload: any): DataCloudActionEvent {
   return payload as DataCloudActionEvent;
 }
 
-export { HTTPResponseError };
+export { HttpResponseError };
 
 //  T Y P E S
 

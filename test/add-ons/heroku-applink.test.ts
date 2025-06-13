@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import { HttpRequestUtil, HTTPResponseError } from "../../src/utils/request";
+import { HttpRequestUtil, HttpResponseError } from "../../src/utils/request";
 import { getAuthorization } from "../../src/add-ons/heroku-applink";
 import { OrgImpl } from "../../src/sdk/org";
 
@@ -118,7 +118,7 @@ describe("getAuthorization", () => {
       }),
       { status: 404 }
     );
-    httpRequestStub.rejects(new HTTPResponseError(errorResponse));
+    httpRequestStub.rejects(new HttpResponseError(errorResponse));
 
     try {
       await getAuthorization("testDev");
@@ -132,7 +132,7 @@ describe("getAuthorization", () => {
     const invalidJsonResponse = new Response("Invalid JSON content", {
       status: 500,
     });
-    httpRequestStub.rejects(new HTTPResponseError(invalidJsonResponse));
+    httpRequestStub.rejects(new HttpResponseError(invalidJsonResponse));
 
     try {
       await getAuthorization("testDev");

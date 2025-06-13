@@ -6,9 +6,10 @@
  */
 
 import { randomUUID } from "node:crypto";
+import packageJson from "../../package.json";
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
-export class HTTPResponseError extends Error {
+export class HttpResponseError extends Error {
   response: any;
   constructor(response: Response) {
     super(`HTTP Error Response: ${response.status}: ${response.statusText}`);
@@ -29,22 +30,21 @@ export const uuidGenerator = {
 export class HttpRequestUtil {
   /**
    * Makes an HTTP request
-   * 
+   *
    * @param url - The URL to make the request to
-   * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged 
+   * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged
    *               with default User-Agent and X-Request-ID headers.
-
-   * @param json - Whether to parse the response as JSON (default: true). If false, 
+   * @param json - Whether to parse the response as JSON (default: true). If false,
    *               returns the raw Response object
-   * @returns Promise that resolves to the parsed JSON response (if json=true) or 
+   * @returns Promise that resolves to the parsed JSON response (if json=true) or
    *          the raw Response object (if json=false)
-   * @throws {HTTPResponseError} When the response status is not in the 2xx range
+   * @throws {HttpResponseError} When the response status is not in the 2xx range
    */
   async request(url: string, opts: any, json = true) {
     const mergedOpts = {
       ...opts,
       headers: {
-        "User-Agent": "heroku-applink-node-sdk/1.0",
+        "User-Agent": `${packageJson.name}/${packageJson.version}`,
         "X-Request-Id": uuidGenerator.generate(),
         ...(opts?.headers ?? {}),
       },
@@ -53,7 +53,7 @@ export class HttpRequestUtil {
     const response = await fetch(url, mergedOpts);
 
     if (!response.ok) {
-      throw new HTTPResponseError(response);
+      throw new HttpResponseError(response);
     }
 
     return json ? response.json() : response;
