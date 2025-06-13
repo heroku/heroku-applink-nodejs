@@ -7,6 +7,7 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
+import * as fs from "node:fs";
 import {
   HttpRequestUtil,
   HTTPResponseError,
@@ -17,11 +18,18 @@ describe("HttpRequestUtil", () => {
   let httpRequestUtil: HttpRequestUtil;
   let fetchStub: sinon.SinonStub;
   let uuidGeneratorStub: sinon.SinonStub;
+  let readFileSyncStub: sinon.SinonStub;
 
   beforeEach(() => {
     httpRequestUtil = new HttpRequestUtil();
     fetchStub = sinon.stub(global, "fetch");
     uuidGeneratorStub = sinon.stub(uuidGenerator, "generate");
+    readFileSyncStub = sinon.stub(fs, "readFileSync");
+    
+    readFileSyncStub.returns(JSON.stringify({
+      name: "@heroku/applink",
+      version: "1.0.0-ea.1"
+    }));
   });
 
   afterEach(() => {
@@ -53,7 +61,7 @@ describe("HttpRequestUtil", () => {
       expect(url).to.equal("https://api.example.com/test");
       expect(options.method).to.equal("GET");
       expect(options.headers["User-Agent"]).to.equal(
-        "heroku-applink-node-sdk/1.0"
+        "@heroku/applink/1.0.0-ea.1"
       );
     });
 
@@ -80,7 +88,7 @@ describe("HttpRequestUtil", () => {
       expect(mockResponse.json.called).to.be.false;
     });
 
-    it("should include default User-Agent header", async () => {
+    it("should include User-Agent header from package.json", async () => {
       const mockResponse = {
         ok: true,
         status: 200,
@@ -93,8 +101,29 @@ describe("HttpRequestUtil", () => {
 
       const [, options] = fetchStub.getCall(0).args;
       expect(options.headers["User-Agent"]).to.equal(
-        "heroku-applink-node-sdk/1.0"
+        "@heroku/applink/1.0.0-ea.1"
       );
+    });
+
+    it("should cache User-Agent and only read package.json once", async () => {
+      const mockResponse = {
+        ok: true,
+        status: 200,
+        statusText: "OK",
+        json: sinon.stub().resolves({}),
+      };
+      fetchStub.resolves(mockResponse);
+
+      // Make multiple requests
+      await httpRequestUtil.request("https://api.example.com/test1", {});
+      await httpRequestUtil.request("https://api.example.com/test2", {});
+
+      const [, options1] = fetchStub.getCall(0).args;
+      const [, options2] = fetchStub.getCall(1).args;
+      
+      expect(readFileSyncStub.calledOnce).to.be.true;
+      expect(options1.headers["User-Agent"]).to.equal("@heroku/applink/1.0.0-ea.1");
+      expect(options2.headers["User-Agent"]).to.equal("@heroku/applink/1.0.0-ea.1");
     });
 
     it("should include default request-id header", async () => {
@@ -166,7 +195,7 @@ describe("HttpRequestUtil", () => {
       const [, options] = fetchStub.getCall(0).args;
       expect(options.method).to.equal("POST");
       expect(options.headers["User-Agent"]).to.equal(
-        "heroku-applink-node-sdk/1.0"
+        "@heroku/applink/1.0.0-ea.1"
       );
       expect(options.headers["X-Request-Id"]).to.equal(mockUUID);
       expect(options.headers["Content-Type"]).to.equal("application/json");
@@ -222,7 +251,7 @@ describe("HttpRequestUtil", () => {
       const [, options] = fetchStub.getCall(0).args;
       expect(options.headers["X-Request-Id"]).to.equal(customRequestId);
       expect(options.headers["User-Agent"]).to.equal(
-        "heroku-applink-node-sdk/1.0"
+        "@heroku/applink/1.0.0-ea.1"
       );
       // UUID generator should still be called since it's called before merging custom headers
       expect(uuidGeneratorStub.calledOnce).to.be.true;

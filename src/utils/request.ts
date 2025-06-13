@@ -6,6 +6,19 @@
  */
 
 import { randomUUID } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+let cachedUserAgent: string;
+
+function getUserAgent(): string {
+  if (cachedUserAgent === null) {
+    const packageJsonPath = join(__dirname, "..", "..", "package.json");
+    const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
+    cachedUserAgent = `${packageJson.name}/${packageJson.version}`;
+  }
+  return cachedUserAgent;
+}
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HTTPResponseError extends Error {
@@ -44,7 +57,7 @@ export class HttpRequestUtil {
     const mergedOpts = {
       ...opts,
       headers: {
-        "User-Agent": "heroku-applink-node-sdk/1.0",
+        "User-Agent": getUserAgent(),
         "X-Request-Id": uuidGenerator.generate(),
         ...(opts?.headers ?? {}),
       },
