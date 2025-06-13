@@ -21,7 +21,7 @@ function getUserAgent(): string {
 }
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
-export class HTTPResponseError extends Error {
+export class HttpResponseError extends Error {
   response: any;
   constructor(response: Response) {
     super(`HTTP Error Response: ${response.status}: ${response.statusText}`);
@@ -51,7 +51,7 @@ export class HttpRequestUtil {
    *               returns the raw Response object
    * @returns Promise that resolves to the parsed JSON response (if json=true) or 
    *          the raw Response object (if json=false)
-   * @throws {HTTPResponseError} When the response status is not in the 2xx range
+   * @throws {HttpResponseError} When the response status is not in the 2xx range
    */
   async request(url: string, opts: any, json = true) {
     const mergedOpts = {
@@ -66,7 +66,7 @@ export class HttpRequestUtil {
     const response = await fetch(url, mergedOpts);
 
     if (!response.ok) {
-      throw new HTTPResponseError(response);
+      throw new HttpResponseError(response);
     }
 
     return json ? response.json() : response;

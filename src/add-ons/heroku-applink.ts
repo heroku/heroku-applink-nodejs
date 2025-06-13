@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { HttpRequestUtil, HTTPResponseError } from "../utils/request";
+import { HttpRequestUtil, HttpResponseError } from "../utils/request";
 import { OrgImpl } from "../sdk/org";
 import { Org } from "../index";
 import {
@@ -59,7 +59,7 @@ export async function getAuthorization(
   try {
     response = await HTTP_REQUEST.request(authUrl, opts);
   } catch (err) {
-    if (err instanceof HTTPResponseError) {
+    if (err instanceof HttpResponseError) {
       let errorResponse;
       try {
         errorResponse = await err.response.json();

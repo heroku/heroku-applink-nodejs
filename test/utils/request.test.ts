@@ -10,7 +10,7 @@ import sinon from "sinon";
 import * as fs from "node:fs";
 import {
   HttpRequestUtil,
-  HTTPResponseError,
+  HttpResponseError,
   uuidGenerator,
 } from "../../src/utils/request";
 
@@ -257,7 +257,7 @@ describe("HttpRequestUtil", () => {
       expect(uuidGeneratorStub.calledOnce).to.be.true;
     });
 
-    it("should throw HTTPResponseError for 4xx status codes", async () => {
+    it("should throw HttpResponseError for 4xx status codes", async () => {
       const mockResponse = {
         ok: false,
         status: 404,
@@ -267,15 +267,15 @@ describe("HttpRequestUtil", () => {
 
       try {
         await httpRequestUtil.request("https://api.example.com/test", {});
-        expect.fail("Should have thrown HTTPResponseError");
+        expect.fail("Should have thrown HttpResponseError");
       } catch (error) {
-        expect(error).to.be.instanceOf(HTTPResponseError);
+        expect(error).to.be.instanceOf(HttpResponseError);
         expect(error.message).to.equal("HTTP Error Response: 404: Not Found");
         expect(error.response).to.equal(mockResponse);
       }
     });
 
-    it("should throw HTTPResponseError for 5xx status codes", async () => {
+    it("should throw HttpResponseError for 5xx status codes", async () => {
       const mockResponse = {
         ok: false,
         status: 500,
@@ -285,9 +285,9 @@ describe("HttpRequestUtil", () => {
 
       try {
         await httpRequestUtil.request("https://api.example.com/test", {});
-        expect.fail("Should have thrown HTTPResponseError");
+        expect.fail("Should have thrown HttpResponseError");
       } catch (error) {
-        expect(error).to.be.instanceOf(HTTPResponseError);
+        expect(error).to.be.instanceOf(HttpResponseError);
         expect(error.message).to.equal(
           "HTTP Error Response: 500: Internal Server Error"
         );
@@ -307,14 +307,14 @@ describe("HttpRequestUtil", () => {
     });
   });
 
-  describe("HTTPResponseError", () => {
+  describe("HttpResponseError", () => {
     it("should create error with correct message and response", () => {
       const mockResponse = {
         status: 403,
         statusText: "Forbidden",
       } as Response;
 
-      const error = new HTTPResponseError(mockResponse);
+      const error = new HttpResponseError(mockResponse);
 
       expect(error.message).to.equal("HTTP Error Response: 403: Forbidden");
       expect(error.response).to.equal(mockResponse);
@@ -327,7 +327,7 @@ describe("HttpRequestUtil", () => {
         statusText: "",
       } as Response;
 
-      const error = new HTTPResponseError(mockResponse);
+      const error = new HttpResponseError(mockResponse);
 
       expect(error.message).to.equal("HTTP Error Response: 422: ");
       expect(error.response).to.equal(mockResponse);
