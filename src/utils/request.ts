@@ -6,19 +6,7 @@
  */
 
 import { randomUUID } from "node:crypto";
-import { readFileSync } from "node:fs";
-import { join } from "node:path";
-
-let cachedUserAgent: string;
-
-function getUserAgent(): string {
-  if (cachedUserAgent === null) {
-    const packageJsonPath = join(__dirname, "..", "..", "package.json");
-    const packageJson = JSON.parse(readFileSync(packageJsonPath, "utf8"));
-    cachedUserAgent = `${packageJson.name}/${packageJson.version}`;
-  }
-  return cachedUserAgent;
-}
+import packageJson from "../../package.json";
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HttpResponseError extends Error {
@@ -42,14 +30,13 @@ export const uuidGenerator = {
 export class HttpRequestUtil {
   /**
    * Makes an HTTP request
-   * 
+   *
    * @param url - The URL to make the request to
-   * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged 
+   * @param opts - Fetch request options (method, headers, body, etc.). Headers will be merged
    *               with default User-Agent and X-Request-ID headers.
-
-   * @param json - Whether to parse the response as JSON (default: true). If false, 
+   * @param json - Whether to parse the response as JSON (default: true). If false,
    *               returns the raw Response object
-   * @returns Promise that resolves to the parsed JSON response (if json=true) or 
+   * @returns Promise that resolves to the parsed JSON response (if json=true) or
    *          the raw Response object (if json=false)
    * @throws {HttpResponseError} When the response status is not in the 2xx range
    */
@@ -57,7 +44,7 @@ export class HttpRequestUtil {
     const mergedOpts = {
       ...opts,
       headers: {
-        "User-Agent": getUserAgent(),
+        "User-Agent": `${packageJson.name}/${packageJson.version}`,
         "X-Request-Id": uuidGenerator.generate(),
         ...(opts?.headers ?? {}),
       },
