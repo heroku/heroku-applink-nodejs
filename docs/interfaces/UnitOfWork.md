@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.1](../README.md) / UnitOfWork
+[@heroku/applink v1.0.0-ea.2](../README.md) / UnitOfWork
 
 # Interface: UnitOfWork
 
@@ -33,7 +33,7 @@ The ReferenceId for the created record.
 
 #### Defined in
 
-[src/index.ts:279](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L279)
+[src/index.ts:279](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L279)
 
 ***
 
@@ -63,7 +63,7 @@ The ReferenceId for the deleted record.
 
 #### Defined in
 
-[src/index.ts:297](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L297)
+[src/index.ts:297](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L297)
 
 ***
 
@@ -90,4 +90,4 @@ The ReferenceId for the updated record.
 
 #### Defined in
 
-[src/index.ts:288](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L288)
+[src/index.ts:288](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L288)

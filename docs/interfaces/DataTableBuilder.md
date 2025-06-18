@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.1](../README.md) / DataTableBuilder
+[@heroku/applink v1.0.0-ea.2](../README.md) / DataTableBuilder
 
 # Interface: DataTableBuilder
 
@@ -35,7 +35,7 @@ The row of data to add
 
 ##### Defined in
 
-[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L966)
+[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L966)
 
 #### addRow(value, fieldValueExtractor)
 
@@ -68,7 +68,7 @@ A function that reads field values from the provided object. It will be called f
 
 ##### Defined in
 
-[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L976)
+[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L976)
 
 ***
 
@@ -97,7 +97,7 @@ The list of rows of data to add
 
 ##### Defined in
 
-[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L986)
+[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L986)
 
 #### addRows(values, fieldValueExtractor)
 
@@ -130,7 +130,7 @@ A function that reads field values from each provided object in the list of valu
 
 ##### Defined in
 
-[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L996)
+[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L996)
 
 ***
 
@@ -148,4 +148,4 @@ Creates a [DataTable](DataTable.md) instance from the columns and rows provided 
 
 #### Defined in
 
-[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L1004)
+[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L1004)

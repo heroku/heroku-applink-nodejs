@@ -1,12 +1,12 @@
-**@heroku/applink v1.0.0-ea.1** • **Docs**
+**@heroku/applink v1.0.0-ea.2** • **Docs**
 
 ***
 
-# @heroku/applink v1.0.0-ea.1
+# @heroku/applink v1.0.0-ea.2
 
 ## Classes
 
-- [HTTPResponseError](classes/HTTPResponseError.md)
+- [HttpResponseError](classes/HttpResponseError.md)
 
 ## Interfaces
 
