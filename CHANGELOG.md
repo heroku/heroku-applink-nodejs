@@ -27,3 +27,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `X-Request-Id` header
 - Extract `User-Agent` header from package.json
 - Rename `HTTPResponseError` -> `HttpResponseError`
+- Fix Java heap memory test issue
