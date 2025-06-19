@@ -43,17 +43,28 @@ jobs:
           node-version: "20.x"
           registry-url: "https://registry.npmjs.org"
 
-      - name: Get workflow run ID
+      - name: Get latest build workflow run
         id: get_workflow
+        env:
+          GH_TOKEN: ${{ github.token }}
         run: |
-          echo "run_id=${{ github.event.workflow_run.id }}" >> $GITHUB_OUTPUT
+          # Get the most recent successful build workflow run for this commit
+          RUN_ID=$(gh run list --workflow "test-lint-build.yml" --branch main --json databaseId,conclusion,headSha --jq ".[] | select(.headSha == \"${{ github.sha }}\" and .conclusion == \"success\") | .databaseId" | head -n 1)
+          
+          if [ -z "$RUN_ID" ]; then
+            echo "No successful build found for commit ${{ github.sha }}"
+            exit 1
+          fi
+          
+          echo "run_id=$RUN_ID" >> $GITHUB_OUTPUT
+          echo "Found build workflow run: $RUN_ID"
 
       - name: Download build artifacts
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p dist
-          gh run download ${{ steps.get_workflow.outputs.run_id }} --name release-artifacts-main --dir dist/
+          gh run download ${{ steps.get_workflow.outputs.run_id }} --name heroku-applink-nodejs --dir dist/
 
       - name: Install dependencies
         run: npm ci
@@ -62,3 +73,11 @@ jobs:
         run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_RELEASE_AUTOMATION_TOKEN }}
+
+      - name: Publish To Change Management
+        env:
+          ACTOR_EMAIL: ${{ secrets.TPS_API_RELEASE_ACTOR_EMAIL }}
+          TPS_API_TOKEN: ${{ secrets.TPS_API_TOKEN_PARAM }}
+        # Failure to record the release should not fail the workflow for now.
+        continue-on-error: true
+        run: ./scripts/release/tps-record-release heroku-applink-nodejs ${{ github.sha }}

@@ -36,6 +36,6 @@ jobs:
         if: github.event_name == 'push' && github.ref == 'refs/heads/main' && contains(github.event.head_commit.message, 'Merge pull request') && contains(github.event.head_commit.message, 'release')
         uses: actions/upload-artifact@v4
         with:
-          name: release-artifacts-main
+          name: heroku-applink-nodejs
           path: dist/
           retention-days: 90

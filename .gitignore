@@ -5,3 +5,10 @@ tsconfig.tsbuildinfo
 .DS_Store
 src/**/*.js
 src/**/*.js.map
+
+# Salesforce
+.codegenie/
+
+# Heroku TPS TEMP
+tpsGetLock_response.txt
+tpsRecordRelease_response.txt
