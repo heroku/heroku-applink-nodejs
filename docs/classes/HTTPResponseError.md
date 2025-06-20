@@ -1,10 +1,10 @@
-[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.1](../README.md) / HTTPResponseError
+[@heroku/applink v1.0.0-ea.2](../README.md) / HttpResponseError
 
-# Class: HTTPResponseError
+# Class: HttpResponseError
 
 Error thrown by the SDK when receiving non-2xx responses on HTTP requests.
 
@@ -14,10 +14,10 @@ Error thrown by the SDK when receiving non-2xx responses on HTTP requests.
 
 ## Constructors
 
-### new HTTPResponseError()
+### new HttpResponseError()
 
 ```ts
-new HTTPResponseError(response): HTTPResponseError
+new HttpResponseError(response): HttpResponseError
 ```
 
 #### Parameters
@@ -26,7 +26,7 @@ new HTTPResponseError(response): HTTPResponseError
 
 #### Returns
 
-[`HTTPResponseError`](HTTPResponseError.md)
+[`HttpResponseError`](HttpResponseError.md)
 
 #### Overrides
 
@@ -34,7 +34,7 @@ new HTTPResponseError(response): HTTPResponseError
 
 #### Defined in
 
-[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/utils/request.ts#L14)
+[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/utils/request.ts#L14)
 
 ## Properties
 
@@ -78,7 +78,7 @@ response: any;
 
 #### Defined in
 
-[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/utils/request.ts#L13)
+[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/utils/request.ts#L13)
 
 ***
 

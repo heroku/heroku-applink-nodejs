@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.1](../README.md) / Record
+[@heroku/applink v1.0.0-ea.2](../README.md) / Record
 
 # Type Alias: Record
 
@@ -42,4 +42,4 @@ readonly type: string;
 
 ## Defined in
 
-[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/2642d389dda315880ee5a3612d84ccbd71f43b77/src/index.ts#L188)
+[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L188)

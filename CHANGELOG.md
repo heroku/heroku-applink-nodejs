@@ -21,10 +21,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [1.0.0-ea.1] - 2025-06-06
 - Remove dynamic UA.
 
-## [Unreleased]
+## [1.0.0-ea.2] - 2025-06-20
 - Update `HttpRequestUtil.request` documentation
 - Update license year
 - Add `X-Request-Id` header
 - Extract `User-Agent` header from package.json
 - Rename `HTTPResponseError` -> `HttpResponseError`
+- Add GitHub pull request template
 - Fix Java heap memory test issue
