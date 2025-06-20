@@ -32,7 +32,7 @@ void
 
 #### Defined in
 
-[src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L403)
+[src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L403)
 
 ***
 
@@ -58,7 +58,7 @@ void
 
 #### Defined in
 
-[src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L382)
+[src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L382)
 
 ***
 
@@ -84,7 +84,7 @@ void
 
 #### Defined in
 
-[src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L396)
+[src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L396)
 
 ***
 
@@ -110,7 +110,7 @@ void
 
 #### Defined in
 
-[src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L410)
+[src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L410)
 
 ***
 
@@ -136,4 +136,4 @@ void
 
 #### Defined in
 
-[src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L389)
+[src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L389)

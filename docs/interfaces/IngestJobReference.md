@@ -20,7 +20,7 @@ The id of the ingest job
 
 #### Defined in
 
-[src/index.ts:631](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L631)
+[src/index.ts:631](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L631)
 
 ***
 
@@ -34,4 +34,4 @@ The type for this reference
 
 #### Defined in
 
-[src/index.ts:636](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L636)
+[src/index.ts:636](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L636)

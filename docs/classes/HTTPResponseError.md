@@ -34,7 +34,7 @@ new HttpResponseError(response): HttpResponseError
 
 #### Defined in
 
-[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/utils/request.ts#L14)
+[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/utils/request.ts#L14)
 
 ## Properties
 
@@ -78,7 +78,7 @@ response: any;
 
 #### Defined in
 
-[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/utils/request.ts#L13)
+[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/utils/request.ts#L13)
 
 ***
 

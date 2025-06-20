@@ -42,4 +42,4 @@ readonly type: string;
 
 ## Defined in
 
-[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L188)
+[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L188)

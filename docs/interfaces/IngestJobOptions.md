@@ -23,7 +23,7 @@ Platform SOAP API or the Lightning Platform REST API to query the AssignmentRule
 
 #### Defined in
 
-[src/index.ts:604](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L604)
+[src/index.ts:604](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L604)
 
 ***
 
@@ -37,7 +37,7 @@ The data table to be ingested
 
 #### Defined in
 
-[src/index.ts:581](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L581)
+[src/index.ts:581](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L581)
 
 ***
 
@@ -52,7 +52,7 @@ operations. Field values must also exist in CSV job data.
 
 #### Defined in
 
-[src/index.ts:597](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L597)
+[src/index.ts:597](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L597)
 
 ***
 
@@ -66,7 +66,7 @@ The object type for the data being processed. Use only a single object type per 
 
 #### Defined in
 
-[src/index.ts:586](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L586)
+[src/index.ts:586](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L586)
 
 ***
 
@@ -80,4 +80,4 @@ The processing operation for the job
 
 #### Defined in
 
-[src/index.ts:591](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L591)
+[src/index.ts:591](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L591)

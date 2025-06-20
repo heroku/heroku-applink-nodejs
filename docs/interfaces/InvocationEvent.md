@@ -25,7 +25,7 @@ The payload of the event
 
 #### Defined in
 
-[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L126)
+[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L126)
 
 ***
 
@@ -39,7 +39,7 @@ The media type of the event payload that is accessible in data
 
 #### Defined in
 
-[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L127)
+[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L127)
 
 ***
 
@@ -53,7 +53,7 @@ The platform event occurrence id for event invocation.
 
 #### Defined in
 
-[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L128)
+[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L128)
 
 ***
 
@@ -71,4 +71,4 @@ the same algorithm to determine the value used.
 
 #### Defined in
 
-[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L129)
+[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L129)

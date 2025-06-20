@@ -20,7 +20,7 @@ The error that occurred while attempting to construct the ingest job.
 
 #### Defined in
 
-[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L1014)
+[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L1014)
 
 ***
 
@@ -36,7 +36,7 @@ the ingest job then a job reference will be present.
 
 #### Defined in
 
-[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L1026)
+[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L1026)
 
 ***
 
@@ -50,4 +50,4 @@ The data that would have been uploaded to the ingest job had the operation succe
 
 #### Defined in
 
-[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/3fb51da43e4d04227af35a3ae6f0781c0baa825b/src/index.ts#L1019)
+[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L1019)
