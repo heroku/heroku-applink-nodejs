@@ -5,5 +5,5 @@ echo "Running npm publish..."
 npm publish
 
 echo "Creating git tag..."
-git tag "v${version}"
+git tag -s "v${version}"
 git push --tags

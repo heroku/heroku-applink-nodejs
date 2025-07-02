@@ -7,3 +7,10 @@ src/**/*.js
 src/**/*.js.map
 **/coverage/
 **/.nyc_output
+
+# Salesforce
+.codegenie/
+
+# Heroku TPS TEMP
+tpsGetLock_response.txt
+tpsRecordRelease_response.txt
