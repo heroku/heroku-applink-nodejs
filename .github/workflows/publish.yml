@@ -1,0 +1,72 @@
+name: Publish to NPM and Change Management
+
+on:
+  workflow_run:
+    workflows: ["Create Github Tag and Release"]
+    types:
+      - completed
+    branches:
+      - main
+
+permissions:
+  contents: write
+  actions: read
+  id-token: write
+
+jobs:
+  check_for_moratorium:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    environment: change_management
+    steps:
+      - uses: actions/checkout@v4
+      - env:
+          TPS_API_TOKEN: ${{ secrets.TPS_API_TOKEN_PARAM }}
+        run: ./scripts/release/tps-check-lock heroku-applink-nodejs ${{ github.sha }}
+
+  publish:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    needs: check_for_moratorium
+    runs-on: ubuntu-latest
+    environment: change_management
+    permissions:
+      id-token: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20.x"
+          registry-url: "https://registry.npmjs.org"
+
+      - name: Get the latest tag
+        id: get_tag
+        run: |
+          TAG=$(git describe --tags --abbrev=0)
+          echo "tag=$TAG" >> $GITHUB_OUTPUT
+          echo "Using tag: $TAG"
+
+      - name: Checkout the tagged version
+        run: |
+          git checkout ${{ steps.get_tag.outputs.tag }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build the project
+        run: npm run build
+
+      - name: Publish to npm
+        run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_RELEASE_AUTOMATION_TOKEN }}
+
+      - name: Publish To Change Management
+        env:
+          ACTOR_EMAIL: ${{ secrets.TPS_API_RELEASE_ACTOR_EMAIL }}
+          TPS_API_TOKEN: ${{ secrets.TPS_API_TOKEN_PARAM }}
+        # Failure to record the release should not fail the workflow for now.
+        continue-on-error: true
+        run: ./scripts/release/tps-record-release heroku-applink-nodejs ${{ github.sha }}

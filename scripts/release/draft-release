@@ -1,0 +1,103 @@
+#!/bin/bash
+set -eu
+set -o pipefail
+
+# draft-release
+# Script to create a release branch and PR for a new version
+#
+# Usage:
+#   ./release/draft-release <bump_type>
+#   bump_type: major, minor, or patch
+#
+# Example:
+#   ./scripts/release/draft-release minor
+#   ./scripts/release/draft-release patch
+
+
+# Function to display usage
+usage() {
+    echo "Usage: $0 <bump_type>"
+    echo "  bump_type: major, minor, or patch"
+    exit 1
+}
+
+# Function to handle errors
+handle_error() {
+    local line_no=$1
+    local error_code=$2
+    local error_command=$3
+    echo "Error occurred in line $line_no (exit code $error_code): $error_command"
+    exit 1
+}
+
+# Set up error handling
+trap 'handle_error ${LINENO} $? "$BASH_COMMAND"' ERR
+
+# Check if required arguments are provided
+if [ "$#" -lt 1 ] || [ "$#" -gt 2 ]; then
+    usage
+fi
+
+BUMP_TYPE=$1
+
+# Validate bump type
+if [[ ! "$BUMP_TYPE" =~ ^(major|minor|patch)$ ]]; then
+    echo "Error: bump_type must be major, minor, or patch"
+    usage
+fi
+
+# Run npm version to update package.json and get the new version
+echo "Running npm version $BUMP_TYPE..."
+NEW_VERSION=$(npm version "$BUMP_TYPE" --no-git-tag-version)
+echo "New version: $NEW_VERSION"
+
+# Remove the 'v' prefix that npm version adds
+NEW_VERSION=${NEW_VERSION#v}
+
+# Validate semver format
+if ! [[ $NEW_VERSION =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[0-9a-zA-Z-]+(\.[0-9a-zA-Z-]+)*)?$ ]]; then
+    echo "Error: Invalid semver format: $NEW_VERSION"
+    echo "Please use a valid numeric semver string: https://semver.org/"
+    exit 1
+fi
+
+# Create release branch with actual version number
+echo "Creating release branch..."
+git checkout -b "release-v${NEW_VERSION}"
+
+# Commit the version change
+git add package.json
+git commit -m "chore: bump version to v$NEW_VERSION"
+
+# Update changelog
+echo "Updating changelog..."
+./scripts/release/update-changelog "$NEW_VERSION"
+
+# Create commit for changelog update
+git add CHANGELOG.md
+git commit -m "docs: update changelog for v$NEW_VERSION"
+
+echo "Created commits for version bump and changelog update"
+
+# Push the release branch
+git push origin "release-v${NEW_VERSION}"
+
+# Create draft PR
+PR_BODY=$(cat << EOF
+This is a draft release PR. Please review the changes:
+
+- Version bump in package.json
+- Changelog updates
+
+Once approved, this PR can be merged to trigger the release process.
+EOF
+)
+
+gh pr create \
+  --base main \
+  --head "release-v${NEW_VERSION}" \
+  --title "Release v$NEW_VERSION" \
+  --body "$PR_BODY" \
+  --draft
+
+echo "Created draft PR for release v$NEW_VERSION" 
