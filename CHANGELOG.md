@@ -29,3 +29,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rename `HTTPResponseError` -> `HttpResponseError`
 - Add GitHub pull request template
 - Fix Java heap memory test issue
+
+## [1.0.0] - 2025-07-29
+- Bug fix in the Query and Ingestion calls to Datacloud

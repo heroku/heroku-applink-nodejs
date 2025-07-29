@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.2](../README.md) / DataTable
+[@heroku/applink v1.0.0](../README.md) / DataTable
 
 # Interface: DataTable
 
@@ -259,7 +259,7 @@ A list of one or more column names contained in this data table.
 
 #### Defined in
 
-[src/index.ts:938](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L938)
+[src/index.ts:938](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L938)
 
 ***
 
