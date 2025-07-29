@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.2](../README.md) / DataCloudUpsertResponse
+[@heroku/applink v1.0.0](../README.md) / DataCloudUpsertResponse
 
 # Interface: DataCloudUpsertResponse
 
@@ -18,4 +18,4 @@ accepted: boolean;
 
 #### Defined in
 
-[src/index.ts:1103](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L1103)
+[src/index.ts:1103](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1103)
