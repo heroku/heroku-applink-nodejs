@@ -72,7 +72,7 @@ export class DataCloudApiImpl implements DataCloudApi {
       retry: {
         limit: 1,
       },
-      json: data,
+      body: JSON.stringify(data),
     };
     const response = await this.request.request(url, opts);
     return response as DataCloudUpsertResponse;
