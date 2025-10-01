@@ -36,7 +36,7 @@
     "@salesforce/core": "^8.3.0",
     "csv-parse": "^5.3.3",
     "csv-stringify": "^6.2.3",
-    "jsforce": "^2.0.0-beta.24",
+    "jsforce": "^3.10.7",
     "luxon": "^3.2.1",
     "throng": "^5.0.0",
     "whatwg-mimetype": "^3.0.0"
