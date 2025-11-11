@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / RecordForUpdate
+[@heroku/applink v1.0.1](../README.md) / RecordForUpdate
 
 # Type Alias: RecordForUpdate
 
@@ -49,4 +49,4 @@ type: string;
 
 ## Defined in
 
-[src/index.ts:259](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L259)
+[src/index.ts:259](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L259)
