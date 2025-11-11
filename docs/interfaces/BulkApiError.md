@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.2](../README.md) / BulkApiError
+[@heroku/applink v1.0.0](../README.md) / BulkApiError
 
 # Interface: BulkApiError
 
@@ -24,7 +24,7 @@ An error code indicating the type of error that occurred.
 
 #### Defined in
 
-[src/index.ts:1036](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L1036)
+[src/index.ts:1036](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1036)
 
 ***
 

@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0-ea.2**](../README.md) • **Docs**
+[**@heroku/applink v1.0.0**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0-ea.2](../README.md) / RecordForCreate
+[@heroku/applink v1.0.0](../README.md) / RecordForCreate
 
 # Type Alias: RecordForCreate
 
@@ -43,4 +43,4 @@ type: string;
 
 ## Defined in
 
-[src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/81b4143bb39e9e9309a4571ee63197ea8b696d90/src/index.ts#L245)
+[src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L245)
