@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / QueryJobOptions
+[@heroku/applink v1.0.1](../README.md) / QueryJobOptions
 
 # Interface: QueryJobOptions
 
@@ -22,7 +22,7 @@ operation. If not provided, the default value `query` will be used.
 
 #### Defined in
 
-[src/index.ts:621](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L621)
+[src/index.ts:621](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L621)
 
 ***
 
@@ -36,4 +36,4 @@ The SOQL query to execute
 
 #### Defined in
 
-[src/index.ts:615](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L615)
+[src/index.ts:615](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L615)

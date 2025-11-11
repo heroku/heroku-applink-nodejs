@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / IngestJobFailure
+[@heroku/applink v1.0.1](../README.md) / IngestJobFailure
 
 # Interface: IngestJobFailure
 
@@ -20,7 +20,7 @@ The error that occurred while attempting to construct the ingest job.
 
 #### Defined in
 
-[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1014)
+[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L1014)
 
 ***
 
@@ -36,7 +36,7 @@ the ingest job then a job reference will be present.
 
 #### Defined in
 
-[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1026)
+[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L1026)
 
 ***
 
@@ -50,4 +50,4 @@ The data that would have been uploaded to the ingest job had the operation succe
 
 #### Defined in
 
-[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1019)
+[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L1019)

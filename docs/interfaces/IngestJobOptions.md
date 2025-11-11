@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / IngestJobOptions
+[@heroku/applink v1.0.1](../README.md) / IngestJobOptions
 
 # Interface: IngestJobOptions
 
@@ -23,7 +23,7 @@ Platform SOAP API or the Lightning Platform REST API to query the AssignmentRule
 
 #### Defined in
 
-[src/index.ts:604](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L604)
+[src/index.ts:604](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L604)
 
 ***
 
@@ -37,7 +37,7 @@ The data table to be ingested
 
 #### Defined in
 
-[src/index.ts:581](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L581)
+[src/index.ts:581](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L581)
 
 ***
 
@@ -52,7 +52,7 @@ operations. Field values must also exist in CSV job data.
 
 #### Defined in
 
-[src/index.ts:597](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L597)
+[src/index.ts:597](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L597)
 
 ***
 
@@ -66,7 +66,7 @@ The object type for the data being processed. Use only a single object type per 
 
 #### Defined in
 
-[src/index.ts:586](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L586)
+[src/index.ts:586](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L586)
 
 ***
 
@@ -80,4 +80,4 @@ The processing operation for the job
 
 #### Defined in
 
-[src/index.ts:591](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L591)
+[src/index.ts:591](https://github.com/heroku/heroku-applink-nodejs/blob/a545e5f1cbfafe769c1c533001128d09d2bc0965/src/index.ts#L591)
