@@ -18,15 +18,6 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v4
-      - name: Debug workspace (Windows only)
-        if: ${{ matrix.os }} == 'windows-latest' && ${{ matrix.version }} == '20.x'
-        run: |
-          Write-Host "PWD: $PWD"
-          Write-Host "Runner workspace: $env:RUNNER_WORKSPACE"
-          Write-Host "Listing D:\\"
-          Get-ChildItem D:\
-          Write-Host "Listing D:\\a"
-          Get-ChildItem D:\a
       - uses: actions/setup-java@v4 # java required for testing with wiremock
         with:
           java-package: jre
