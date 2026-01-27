@@ -73,6 +73,10 @@
     "xml2js": "0.5.0",
     "tough-cookie": "4.1.4"
   },
+  "_resolutions_note": "Force tmp to 0.2.4 due to external-editor@3.1.0 -> tmp@^0.0.33 vulnerability until upstream updates.",
+  "resolutions": {
+    "tmp": "0.2.4"
+  },
   "optionalDependencies": {
     "fsevents": "*"
   },
