@@ -35,3 +35,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.0.1] - 2025-11-10
 - Switch CODEOWNERS to heroku-applink team
+
+## [1.0.2-beta.1] - 2026-01-28
+- Dependabot Security Updates
+    - Bump jws from 3.2.2 to 3.2.3
+    - Bump mdast-util-to-hast from 13.2.0 to 13.2.1
+    - Bump lodash from 4.17.21 to 4.17.23
+    - Bump js-yaml from 3.14.1 to 3.14.2 and 4.1.0 to 4.1.1
