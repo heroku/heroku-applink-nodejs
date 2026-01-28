@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.2-beta.1**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / parseDataActionEvent
+[@heroku/applink v1.0.2-beta.1](../README.md) / parseDataActionEvent
 
 # Function: parseDataActionEvent()
 
@@ -22,4 +22,4 @@ Parse a [Data Action Target](https://help.salesforce.com/s/articleView?id=sf.c36
 
 ## Defined in
 
-[src/index.ts:105](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L105)
+[src/index.ts:105](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L105)
