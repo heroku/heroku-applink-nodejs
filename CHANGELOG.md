@@ -42,3 +42,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Bump mdast-util-to-hast from 13.2.0 to 13.2.1
     - Bump lodash from 4.17.21 to 4.17.23
     - Bump js-yaml from 3.14.1 to 3.14.2 and 4.1.0 to 4.1.1
+
+## [1.0.2] - 2026-01-29
+- Release New Latest Version Based off of beta release 1.0.2-beta.1
