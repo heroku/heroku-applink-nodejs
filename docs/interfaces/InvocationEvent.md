@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.2-beta.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.2-beta.1](../README.md) / InvocationEvent
+[@heroku/applink v1.0.2](../README.md) / InvocationEvent
 
 # Interface: InvocationEvent\<A\>
 
@@ -25,7 +25,7 @@ The payload of the event
 
 #### Defined in
 
-[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L126)
+[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L126)
 
 ***
 
@@ -39,7 +39,7 @@ The media type of the event payload that is accessible in data
 
 #### Defined in
 
-[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L127)
+[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L127)
 
 ***
 
@@ -53,7 +53,7 @@ The platform event occurrence id for event invocation.
 
 #### Defined in
 
-[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L128)
+[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L128)
 
 ***
 
@@ -71,4 +71,4 @@ the same algorithm to determine the value used.
 
 #### Defined in
 
-[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L129)
+[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L129)

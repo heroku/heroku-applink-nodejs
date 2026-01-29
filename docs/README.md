@@ -1,8 +1,8 @@
-**@heroku/applink v1.0.2-beta.1** • **Docs**
+**@heroku/applink v1.0.2** • **Docs**
 
 ***
 
-# @heroku/applink v1.0.2-beta.1
+# @heroku/applink v1.0.2
 
 ## Classes
 

@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.2-beta.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.2-beta.1](../README.md) / QueryJobResults
+[@heroku/applink v1.0.2](../README.md) / QueryJobResults
 
 # Interface: QueryJobResults
 
@@ -22,7 +22,7 @@ A data table containing a set of one or more query results.
 
 #### Defined in
 
-[src/index.ts:907](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L907)
+[src/index.ts:907](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L907)
 
 ***
 
@@ -36,7 +36,7 @@ This flag indicates if this is the final set of query results.
 
 #### Defined in
 
-[src/index.ts:912](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L912)
+[src/index.ts:912](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L912)
 
 ***
 
@@ -50,7 +50,7 @@ The reference of the query job this result set belongs to.
 
 #### Defined in
 
-[src/index.ts:927](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L927)
+[src/index.ts:927](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L927)
 
 ***
 
@@ -64,7 +64,7 @@ A string that identifies a specific set of query results. Providing a value for 
 
 #### Defined in
 
-[src/index.ts:917](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L917)
+[src/index.ts:917](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L917)
 
 ***
 
@@ -78,4 +78,4 @@ The number of records in this set.
 
 #### Defined in
 
-[src/index.ts:922](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L922)
+[src/index.ts:922](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L922)

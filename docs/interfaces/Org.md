@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.2-beta.1**](../README.md) • **Docs**
+[**@heroku/applink v1.0.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.2-beta.1](../README.md) / Org
+[@heroku/applink v1.0.2](../README.md) / Org
 
 # Interface: Org
 
@@ -20,7 +20,7 @@ The API version the Salesforce organization is currently using.
 
 #### Defined in
 
-[src/index.ts:154](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L154)
+[src/index.ts:154](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L154)
 
 ***
 
@@ -34,7 +34,7 @@ An initialized data API client instance.
 
 #### Defined in
 
-[src/index.ts:155](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L155)
+[src/index.ts:155](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L155)
 
 ***
 
@@ -48,7 +48,7 @@ If instance URL and token are provide, an initialized Data Cloud data API client
 
 #### Defined in
 
-[src/index.ts:156](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L156)
+[src/index.ts:156](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L156)
 
 ***
 
@@ -62,7 +62,7 @@ The domain URL of the Salesforce organization.
 
 #### Defined in
 
-[src/index.ts:157](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L157)
+[src/index.ts:157](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L157)
 
 ***
 
@@ -76,7 +76,7 @@ The Salesforce organization ID.
 
 #### Defined in
 
-[src/index.ts:158](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L158)
+[src/index.ts:158](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L158)
 
 ***
 
@@ -88,7 +88,7 @@ readonly namespace: string;
 
 #### Defined in
 
-[src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L159)
+[src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L159)
 
 ***
 
@@ -102,7 +102,7 @@ The currently logged in user
 
 #### Defined in
 
-[src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L160)
+[src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L160)
 
 ## Methods
 
@@ -129,4 +129,4 @@ request(
 
 #### Defined in
 
-[src/index.ts:162](https://github.com/heroku/heroku-applink-nodejs/blob/420cfe8c30aeef16e99ca3a0bc0c93186a9a0ac7/src/index.ts#L162)
+[src/index.ts:162](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L162)
