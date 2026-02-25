@@ -35,8 +35,9 @@ import {
   IngestJobV2SuccessfulResults,
   IngestJobV2UnprocessedRecords,
   JobInfoV2,
+  QueryJobInfoV2,
   QueryJobV2,
-} from "jsforce/lib/api/bulk";
+} from "jsforce/lib/api/bulk2";
 import {
   HttpResponse,
   Schema,
@@ -66,39 +67,34 @@ export function createBulkApi(clientOptions: CreateConnectionOptions): BulkApi {
 
   // NOTE: this is used to reconstruct the http api object that is used internally
   //       by jsforce which attaches its ingest operations to an IngestJobV2 object
-  const getIngestJob = (jobReference: IngestJobReference) => {
-    return new IngestJobV2({
-      connection: connection,
-      jobInfo: {
-        id: jobReference.id,
-      },
+  const getIngestJob = (jobReference: IngestJobReference) =>
+    new IngestJobV2<Schema>(connection, {
+      id: jobReference.id,
       pollingOptions: getDefaultPollingOptions(),
     });
-  };
 
   // NOTE: this is used to reconstruct the http api object that is used internally
   //       by jsforce which attaches its query operations to an QueryJobV2 object
   //       and this one looks extra weird since the job info isn't directly exposed
   //       in the same way the IngestJobV2 allows so we have to muck around manually
   //       with the job info.
-  const getQueryJob = (jobReference: QueryJobReference) => {
-    const job = new QueryJobV2({
-      connection: connection,
-      query: undefined,
-      operation: undefined,
+  const getQueryJob = (jobReference: QueryJobReference) =>
+    new QueryJobV2<Schema>(connection, {
+      id: jobReference.id,
       pollingOptions: getDefaultPollingOptions(),
     });
-    job.jobInfo = Object.assign({}, job.jobInfo, { id: jobReference.id });
-    return job;
-  };
 
   const bulkApi: BulkApi = {
     abort(jobReference: IngestJobReference | QueryJobReference): Promise<void> {
       switch (jobReference.type) {
         case "ingestJob":
-          return getIngestJob(jobReference).abort();
+          return getIngestJob(jobReference)
+            .abort()
+            .then(() => undefined);
         case "queryJob":
-          return getQueryJob(jobReference).abort();
+          return getQueryJob(jobReference)
+            .abort()
+            .then(() => undefined);
       }
     },
 
@@ -107,9 +103,13 @@ export function createBulkApi(clientOptions: CreateConnectionOptions): BulkApi {
     ): Promise<void> {
       switch (jobReference.type) {
         case "ingestJob":
-          return getIngestJob(jobReference).delete();
+          return getIngestJob(jobReference)
+            .delete()
+            .then(() => undefined);
         case "queryJob":
-          return getQueryJob(jobReference).delete();
+          return getQueryJob(jobReference)
+            .delete()
+            .then(() => undefined);
       }
     },
 
@@ -182,7 +182,7 @@ export function createBulkApi(clientOptions: CreateConnectionOptions): BulkApi {
       for await (const ingestDataTablePayload of bulkApi.splitDataTable(
         dataTable
       )) {
-        let job: IngestJobV2<Schema, IngestJobOperation>;
+        let job: IngestJobV2<Schema>;
         try {
           job = connection.bulk2.createJob(options);
           await job.open();
@@ -358,7 +358,7 @@ function isClientError(error: Error): error is BulkApiError {
 }
 
 async function streamDataTableIntoJob(
-  job: IngestJobV2<Schema, IngestJobOperation>,
+  job: IngestJobV2<Schema>,
   dataTable: DataTable
 ) {
   await new Promise<void>((resolve, reject) => {
@@ -375,43 +375,32 @@ async function streamDataTableIntoJob(
 }
 
 function toIngestJobInfo(jobInfo: JobInfoV2): IngestJobInfo {
-  return {
-    ...toJobInfo(jobInfo),
-    jobType: "V2Ingest",
-    operation: jobInfo.operation as IngestJobOperation,
-    state: jobInfo.state as IngestJobState,
-  };
-}
-
-function toQueryJobInfo(jobInfo: JobInfoV2): QueryJobInfo {
-  return {
-    ...toJobInfo(jobInfo),
-    jobType: "V2Query",
-    operation: jobInfo.operation as QueryJobOperation,
-    state: jobInfo.state as QueryJobState,
-  };
-}
-
-function toJobInfo(jobInfo: JobInfoV2): QueryJobInfo | IngestJobInfo {
   if (jobInfo.jobType === "BigObjectIngest" || jobInfo.jobType === "Classic") {
     throw new Error(`JobType "${jobInfo.jobType}" is not supported`);
   }
 
   return {
     ...jobInfo,
+    jobType: "V2Ingest",
     apiVersion: parseInt(`${jobInfo.apiVersion}`, 10),
-    columnDelimiter: "COMMA",
-    concurrencyMode: "Parallel",
-    contentType: "CSV",
-    createdById: jobInfo.createdById,
-    createdDate: jobInfo.createdDate,
-    id: jobInfo.id,
-    lineEnding: "LF",
-    object: jobInfo.object,
     operation: jobInfo.operation as IngestJobOperation,
     state: jobInfo.state as IngestJobState,
-    systemModstamp: jobInfo.systemModstamp,
-    jobType: jobInfo.jobType,
+    columnDelimiter: "COMMA",
+    lineEnding: "LF",
+    contentType: "CSV",
+    concurrencyMode: "Parallel",
+  };
+}
+
+function toQueryJobInfo(jobInfo: QueryJobInfoV2): QueryJobInfo {
+  return {
+    ...jobInfo,
+    jobType: "V2Query",
+    apiVersion: parseInt(`${jobInfo.apiVersion}`, 10),
+    operation: jobInfo.operation as QueryJobOperation,
+    state: jobInfo.state as QueryJobState,
+    columnDelimiter: "COMMA",
+    lineEnding: "LF",
   };
 }
 
@@ -424,10 +413,11 @@ function resultsToDataTable(
   responseColumns: string[]
 ): DataTable {
   const columns = convertToColumns(responseColumns);
+  const iterableResults = Array.isArray(results) ? results : [];
 
-  const rows = results.map((result) => {
+  const rows = iterableResults.map((result) => {
     return columns.reduce((acc, column) => {
-      acc.set(column, result[column]);
+      acc.set(column, (result as any)[column]);
       return acc;
     }, new Map<string, string>());
   });

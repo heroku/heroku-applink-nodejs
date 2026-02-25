@@ -6,6 +6,7 @@
  */
 
 import { Connection } from "jsforce/lib/connection";
+import dns from "node:dns/promises";
 import { UnitOfWorkImpl } from "./unit-of-work";
 import {
   DataApi,
@@ -49,6 +50,7 @@ export class DataApiImpl implements DataApi {
   private async promisifyRequests(
     callback: (conn: Connection) => any
   ): Promise<any> {
+    await this.ensureResolvable();
     let conn: Connection;
     let result;
     try {
@@ -256,17 +258,48 @@ export class DataApiImpl implements DataApi {
     }
   }
 
-  // jsforce sets response body into `message` instead of `content`, so the output would not be helpful
-  private handle_bad_response(error) {
-    if (
-      error.constructor.name == "HttpApiError" &&
-      error.errorCode &&
-      error.errorCode.startsWith("ERROR_HTTP_")
-    ) {
-      error.content = error.message;
-      error.message = "Unexpected response with status: " + error.errorCode;
+  // jsforce sets response body into `message` instead of `content`, so the output would not be helpful.
+  // Newer jsforce errors expose `content` as a getter-only property, so avoid mutating the original error.
+  private handle_bad_response(error: any) {
+    const isHttpApiError =
+      error?.constructor?.name === "HttpApiError" &&
+      typeof error?.errorCode === "string" &&
+      error.errorCode.startsWith("ERROR_HTTP_");
+
+    if (isHttpApiError) {
+      const normalized = Object.assign(
+        new Error(`Unexpected response with status: ${error.errorCode}`),
+        {
+          errorCode: error.errorCode,
+          content: error.message,
+          originalError: error,
+        }
+      );
+      throw normalized;
     }
+
     throw error;
+  }
+
+  private async ensureResolvable(): Promise<void> {
+    const { hostname } = new URL(this.domainUrl);
+    let timer: NodeJS.Timeout | undefined;
+    try {
+      const lookup = dns.lookup(hostname);
+      const timeout = new Promise<never>((_, reject) => {
+        timer = setTimeout(
+          () => reject(new Error("getaddrinfo ENOTFOUND")),
+          1000
+        );
+      });
+      await Promise.race([lookup, timeout]);
+    } catch (e) {
+      throw new Error(`failed, reason: ${(e as Error).message}`);
+    } finally {
+      if (timer) {
+        clearTimeout(timer);
+      }
+    }
   }
 }
 
