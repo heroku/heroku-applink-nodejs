@@ -18,7 +18,7 @@ count: number;
 
 #### Defined in
 
-[src/index.ts:1073](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L1073)
+[src/index.ts:1073](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1073)
 
 ***
 
@@ -30,7 +30,7 @@ creationDateTime: string;
 
 #### Defined in
 
-[src/index.ts:1072](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L1072)
+[src/index.ts:1072](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1072)
 
 ***
 
@@ -42,7 +42,7 @@ events: DataObjectDataChgEvent[];
 
 #### Defined in
 
-[src/index.ts:1075](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L1075)
+[src/index.ts:1075](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1075)
 
 ***
 
@@ -54,4 +54,4 @@ schemas: DataCloudActionEventSchema[];
 
 #### Defined in
 
-[src/index.ts:1074](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L1074)
+[src/index.ts:1074](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1074)

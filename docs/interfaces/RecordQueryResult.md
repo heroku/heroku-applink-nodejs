@@ -21,7 +21,7 @@ If false, one or more records remain to be retrieved.
 
 #### Defined in
 
-[src/index.ts:174](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L174)
+[src/index.ts:174](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L174)
 
 ***
 
@@ -35,7 +35,7 @@ The URL for the next set of records, if any.
 
 #### Defined in
 
-[src/index.ts:177](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L177)
+[src/index.ts:177](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L177)
 
 ***
 
@@ -49,7 +49,7 @@ The records in this query result
 
 #### Defined in
 
-[src/index.ts:176](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L176)
+[src/index.ts:176](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L176)
 
 ***
 
@@ -63,4 +63,4 @@ The total amount of records returned by the query.
 
 #### Defined in
 
-[src/index.ts:175](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L175)
+[src/index.ts:175](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L175)

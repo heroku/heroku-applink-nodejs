@@ -22,4 +22,4 @@ Parse a [Data Action Target](https://help.salesforce.com/s/articleView?id=sf.c36
 
 ## Defined in
 
-[src/index.ts:105](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L105)
+[src/index.ts:105](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L105)
