@@ -88,9 +88,13 @@ export function createBulkApi(clientOptions: CreateConnectionOptions): BulkApi {
     abort(jobReference: IngestJobReference | QueryJobReference): Promise<void> {
       switch (jobReference.type) {
         case "ingestJob":
-          return getIngestJob(jobReference).abort().then(() => undefined);
+          return getIngestJob(jobReference)
+            .abort()
+            .then(() => undefined);
         case "queryJob":
-          return getQueryJob(jobReference).abort().then(() => undefined);
+          return getQueryJob(jobReference)
+            .abort()
+            .then(() => undefined);
       }
     },
 
@@ -99,9 +103,13 @@ export function createBulkApi(clientOptions: CreateConnectionOptions): BulkApi {
     ): Promise<void> {
       switch (jobReference.type) {
         case "ingestJob":
-          return getIngestJob(jobReference).delete().then(() => undefined);
+          return getIngestJob(jobReference)
+            .delete()
+            .then(() => undefined);
         case "queryJob":
-          return getQueryJob(jobReference).delete().then(() => undefined);
+          return getQueryJob(jobReference)
+            .delete()
+            .then(() => undefined);
       }
     },
 
