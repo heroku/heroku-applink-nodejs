@@ -18,4 +18,4 @@ accepted: boolean;
 
 #### Defined in
 
-[src/index.ts:1103](https://github.com/heroku/heroku-applink-nodejs/blob/e24fc5b14590f051e3220a92b49b8c88ab5f4be6/src/index.ts#L1103)
+[src/index.ts:1103](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1103)
