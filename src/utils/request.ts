@@ -6,7 +6,7 @@
  */
 
 import { randomUUID } from "node:crypto";
-import packageJson from "../../package.json";
+import packageJson from "../../package.json" with { type: "json" };
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HttpResponseError extends Error {

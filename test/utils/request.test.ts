@@ -7,7 +7,7 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import packageJson from "../../package.json";
+import packageJson from "../../package.json" with { type: "json" };
 import {
   HttpRequestUtil,
   HttpResponseError,
