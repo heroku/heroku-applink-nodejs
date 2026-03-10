@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / DataTableBuilder
+[@heroku/applink](../README.md) / DataTableBuilder
 
 # Interface: DataTableBuilder
+
+Defined in: [src/index.ts:957](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L957)
 
 A builder object that helps with creating [DataTable](DataTable.md) instances.
 
@@ -12,11 +14,13 @@ A builder object that helps with creating [DataTable](DataTable.md) instances.
 
 ### addRow()
 
-#### addRow(row)
+#### Call Signature
 
 ```ts
-addRow(row): DataTableBuilder
+addRow(row): DataTableBuilder;
 ```
+
+Defined in: [src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L966)
 
 Adds a row of data to the [DataTable](DataTable.md) being constructed. This can be a
 list of string values in the same order as the specified columns or a map of
@@ -25,40 +29,46 @@ will be ignored.
 
 ##### Parameters
 
-• **row**: `Map`\<`string`, `string`\> \| `string`[]
+###### row
 
 The row of data to add
 
+`Map`\<`string`, `string`\> | `string`[]
+
 ##### Returns
 
-[`DataTableBuilder`](DataTableBuilder.md)
+`DataTableBuilder`
 
-##### Defined in
-
-[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L966)
-
-#### addRow(value, fieldValueExtractor)
+#### Call Signature
 
 ```ts
-addRow<T>(value, fieldValueExtractor): any
+addRow<T>(value, fieldValueExtractor): any;
 ```
+
+Defined in: [src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L976)
 
 Adds a row of data to the [DataTable](DataTable.md) being constructed. A [DataTableFieldValueExtractor](../type-aliases/DataTableFieldValueExtractor.md)
 is used to convert the arbitrary value into the required row format.
 
 ##### Type Parameters
 
-• **T**
+###### T
+
+`T`
 
 the type of the object to extract row data from
 
 ##### Parameters
 
-• **value**: `T`
+###### value
+
+`T`
 
 The object to extract row data from
 
-• **fieldValueExtractor**: [`DataTableFieldValueExtractor`](../type-aliases/DataTableFieldValueExtractor.md)\<`T`\>
+###### fieldValueExtractor
+
+[`DataTableFieldValueExtractor`](../type-aliases/DataTableFieldValueExtractor.md)\<`T`\>
 
 A function that reads field values from the provided object. It will be called for each column that is included in the [DataTable](DataTable.md) being constructed.
 
@@ -66,19 +76,17 @@ A function that reads field values from the provided object. It will be called f
 
 `any`
 
-##### Defined in
-
-[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L976)
-
 ***
 
 ### addRows()
 
-#### addRows(rows)
+#### Call Signature
 
 ```ts
-addRows(rows): DataTableBuilder
+addRows(rows): DataTableBuilder;
 ```
+
+Defined in: [src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L986)
 
 Adds multiple rows of data to the [DataTable](DataTable.md) being constructed. This can be a
 list of string values in the same order as the specified columns or a map of
@@ -87,65 +95,65 @@ will be ignored.
 
 ##### Parameters
 
-• **rows**: (`Map`\<`string`, `string`\> \| `string`[])[]
+###### rows
+
+(`Map`\<`string`, `string`\> \| `string`[])[]
 
 The list of rows of data to add
 
 ##### Returns
 
-[`DataTableBuilder`](DataTableBuilder.md)
+`DataTableBuilder`
 
-##### Defined in
-
-[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L986)
-
-#### addRows(values, fieldValueExtractor)
+#### Call Signature
 
 ```ts
-addRows<T>(values, fieldValueExtractor): DataTableBuilder
+addRows<T>(values, fieldValueExtractor): DataTableBuilder;
 ```
+
+Defined in: [src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L996)
 
 Adds multiple rows of data to the [DataTable](DataTable.md) being constructed. A [DataTableFieldValueExtractor](../type-aliases/DataTableFieldValueExtractor.md)
 is used to convert the arbitrary values into the required row format.
 
 ##### Type Parameters
 
-• **T**
+###### T
+
+`T`
 
 the type of the object to extract row data from
 
 ##### Parameters
 
-• **values**: `T`[]
+###### values
+
+`T`[]
 
 The list of objects to extract row data from
 
-• **fieldValueExtractor**: [`DataTableFieldValueExtractor`](../type-aliases/DataTableFieldValueExtractor.md)\<`T`\>
+###### fieldValueExtractor
+
+[`DataTableFieldValueExtractor`](../type-aliases/DataTableFieldValueExtractor.md)\<`T`\>
 
 A function that reads field values from each provided object in the list of values. It will be called for each column that is included in the [DataTable](DataTable.md) being constructed.
 
 ##### Returns
 
-[`DataTableBuilder`](DataTableBuilder.md)
-
-##### Defined in
-
-[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L996)
+`DataTableBuilder`
 
 ***
 
 ### build()
 
 ```ts
-build(): DataTable
+build(): DataTable;
 ```
+
+Defined in: [src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1004)
 
 Creates a [DataTable](DataTable.md) instance from the columns and rows provided to the builder.
 
 #### Returns
 
 [`DataTable`](DataTable.md)
-
-#### Defined in
-
-[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1004)

@@ -1,14 +1,16 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / init
+[@heroku/applink](../README.md) / init
 
 # Function: init()
 
 ```ts
-function init(): object
+function init(): object;
 ```
+
+Defined in: [src/index.ts:25](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L25)
 
 Functional organized modules having helper methods for addons, Data Cloud, and Salesforce.
 
@@ -22,13 +24,13 @@ Functional organized modules having helper methods for addons, Data Cloud, and S
 addons: object;
 ```
 
-### addons.applink
+#### addons.applink
 
 ```ts
 applink: object;
 ```
 
-### addons.applink.getAuthorization()
+#### addons.applink.getAuthorization()
 
 ```ts
 getAuthorization: (developerName, attachmentNameOrColorOrUrl) => Promise<Org>;
@@ -36,17 +38,21 @@ getAuthorization: (developerName, attachmentNameOrColorOrUrl) => Promise<Org>;
 
 Get stored Salesforce or Data Cloud org user credentials for given developer name or alias.
 
-#### Parameters
+##### Parameters
 
-• **developerName**: `string`
+###### developerName
+
+`string`
 
 or alias
 
-• **attachmentNameOrColorOrUrl**: `string` = `...`
+###### attachmentNameOrColorOrUrl?
+
+`string` = `...`
 
 Either an attachment name, (e.g. "HEROKU_APPLINK"), color (e.g. "purple" in "HEROKU_APPLINK_PURPLE") or the value of the attachment's API_URL config. Defaults to "HEROKU_APPLINK"
 
-#### Returns
+##### Returns
 
 `Promise`\<[`Org`](../interfaces/Org.md)\>
 
@@ -58,7 +64,7 @@ Org
 dataCloud: object;
 ```
 
-### dataCloud.parseDataActionEvent()
+#### dataCloud.parseDataActionEvent()
 
 ```ts
 parseDataActionEvent: (payload) => DataCloudActionEvent;
@@ -66,11 +72,13 @@ parseDataActionEvent: (payload) => DataCloudActionEvent;
 
 Parse a [Data Action Target](https://help.salesforce.com/s/articleView?id=sf.c360_a_create_a_data_action_target_of_webhook_type.htm&type=5) request.
 
-#### Parameters
+##### Parameters
 
-• **payload**: `any`
+###### payload
 
-#### Returns
+`any`
+
+##### Returns
 
 [`DataCloudActionEvent`](../interfaces/DataCloudActionEvent.md)
 
@@ -80,7 +88,7 @@ Parse a [Data Action Target](https://help.salesforce.com/s/articleView?id=sf.c36
 salesforce: object;
 ```
 
-### salesforce.parseRequest()
+#### salesforce.parseRequest()
 
 ```ts
 parseRequest: (headers, body, log) => object;
@@ -88,44 +96,46 @@ parseRequest: (headers, body, log) => object;
 
 Parse a request from a Heroku-typed [External Service](https://help.salesforce.com/s/articleView?id=sf.external_services.htm&type=5).
 
-#### Parameters
+##### Parameters
 
-• **headers**: `any`
+###### headers
+
+`any`
 
 The request's headers
 
-• **body**: `any`
+###### body
+
+`any`
 
 The request's body
 
-• **log**: `any`
+###### log
+
+`any`
 
 A logger instance
 
-#### Returns
+##### Returns
 
 `object`
 
 Object containing InvocationEvent,Context,Logger instances hydrated from the request
 
-##### context
+###### context
 
 ```ts
 context: Context;
 ```
 
-##### event
+###### event
 
 ```ts
 event: InvocationEvent<any>;
 ```
 
-##### logger
+###### logger
 
 ```ts
 logger: Logger;
 ```
-
-## Defined in
-
-[src/index.ts:25](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L25)

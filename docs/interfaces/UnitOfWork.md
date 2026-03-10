@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / UnitOfWork
+[@heroku/applink](../README.md) / UnitOfWork
 
 # Interface: UnitOfWork
+
+Defined in: [src/index.ts:271](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L271)
 
 Represents a UnitOfWork.  The UnitOfWork API is a wrapper around Salesforce's [Composite Graph API](https://developer.salesforce.com/docs/atlas.en-us.api_rest.meta/api_rest/resources_composite_graph.htm).
 
@@ -13,15 +15,19 @@ Represents a UnitOfWork.  The UnitOfWork API is a wrapper around Salesforce's [C
 ### registerCreate()
 
 ```ts
-registerCreate(record): ReferenceId
+registerCreate(record): ReferenceId;
 ```
 
-Registers a [RecordForCreate](../type-aliases/RecordForCreate.md) for the [UnitOfWork](UnitOfWork.md) and returns a [ReferenceId](ReferenceId.md) that
+Defined in: [src/index.ts:279](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L279)
+
+Registers a [RecordForCreate](../type-aliases/RecordForCreate.md) for the UnitOfWork and returns a [ReferenceId](ReferenceId.md) that
 can be used to refer to the created record in subsequent operations in this UnitOfWork.
 
 #### Parameters
 
-• **record**: [`RecordForCreate`](../type-aliases/RecordForCreate.md)
+##### record
+
+[`RecordForCreate`](../type-aliases/RecordForCreate.md)
 
 The record to create.
 
@@ -31,27 +37,29 @@ The record to create.
 
 The ReferenceId for the created record.
 
-#### Defined in
-
-[src/index.ts:279](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L279)
-
 ***
 
 ### registerDelete()
 
 ```ts
-registerDelete(type, id): ReferenceId
+registerDelete(type, id): ReferenceId;
 ```
+
+Defined in: [src/index.ts:297](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L297)
 
 Registers a deletion of an existing record of the given type and id.
 
 #### Parameters
 
-• **type**: `string`
+##### type
+
+`string`
 
 The object type of the record to delete.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the record to delete.
 
@@ -61,24 +69,24 @@ The id of the record to delete.
 
 The ReferenceId for the deleted record.
 
-#### Defined in
-
-[src/index.ts:297](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L297)
-
 ***
 
 ### registerUpdate()
 
 ```ts
-registerUpdate(record): ReferenceId
+registerUpdate(record): ReferenceId;
 ```
 
-Registers a [RecordForUpdate](../type-aliases/RecordForUpdate.md) for the [UnitOfWork](UnitOfWork.md) and returns a [ReferenceId](ReferenceId.md) that can
+Defined in: [src/index.ts:288](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L288)
+
+Registers a [RecordForUpdate](../type-aliases/RecordForUpdate.md) for the UnitOfWork and returns a [ReferenceId](ReferenceId.md) that can
 be used to refer to the updated record in subsequent operations in this UnitOfWork.
 
 #### Parameters
 
-• **record**: [`RecordForUpdate`](../type-aliases/RecordForUpdate.md)
+##### record
+
+[`RecordForUpdate`](../type-aliases/RecordForUpdate.md)
 
 The record to update.
 
@@ -87,7 +95,3 @@ The record to update.
 [`ReferenceId`](ReferenceId.md)
 
 The ReferenceId for the updated record.
-
-#### Defined in
-
-[src/index.ts:288](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L288)

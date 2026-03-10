@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / IngestJobReference
+[@heroku/applink](../README.md) / IngestJobReference
 
 # Interface: IngestJobReference
+
+Defined in: [src/index.ts:627](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L627)
 
 A reference to an ingest job
 
@@ -16,11 +18,9 @@ A reference to an ingest job
 id: string;
 ```
 
+Defined in: [src/index.ts:631](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L631)
+
 The id of the ingest job
-
-#### Defined in
-
-[src/index.ts:631](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L631)
 
 ***
 
@@ -30,8 +30,6 @@ The id of the ingest job
 type: "ingestJob";
 ```
 
+Defined in: [src/index.ts:636](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L636)
+
 The type for this reference
-
-#### Defined in
-
-[src/index.ts:636](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L636)

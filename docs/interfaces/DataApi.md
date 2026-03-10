@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / DataApi
+[@heroku/applink](../README.md) / DataApi
 
 # Interface: DataApi
+
+Defined in: [src/index.ts:305](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L305)
 
 Data API client to interact with data in a Salesforce org.
 
@@ -16,20 +18,20 @@ Data API client to interact with data in a Salesforce org.
 readonly accessToken: string;
 ```
 
+Defined in: [src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L306)
+
 The access token used by this API client. Can be used to initialize a
 third-party API client or to perform custom API calls with a HTTP library.
-
-#### Defined in
-
-[src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L306)
 
 ## Methods
 
 ### commitUnitOfWork()
 
 ```ts
-commitUnitOfWork(unitOfWork): Promise<Map<ReferenceId, RecordModificationResult>>
+commitUnitOfWork(unitOfWork): Promise<Map<ReferenceId, RecordModificationResult>>;
 ```
+
+Defined in: [src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L358)
 
 Commits a [UnitOfWork](UnitOfWork.md), executing all operations registered with it. If any of these
 operations fail, the whole unit is rolled back. To examine results for a single operation,
@@ -38,7 +40,9 @@ inspect the returned map (which is keyed with [ReferenceId](ReferenceId.md) retu
 
 #### Parameters
 
-• **unitOfWork**: [`UnitOfWork`](UnitOfWork.md)
+##### unitOfWork
+
+[`UnitOfWork`](UnitOfWork.md)
 
 The [UnitOfWork](UnitOfWork.md) to commit.
 
@@ -48,23 +52,23 @@ The [UnitOfWork](UnitOfWork.md) to commit.
 
 A map of [RecordModificationResult](RecordModificationResult.md)s, indexed by their [ReferenceId](ReferenceId.md)s.
 
-#### Defined in
-
-[src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L358)
-
 ***
 
 ### create()
 
 ```ts
-create(record): Promise<RecordModificationResult>
+create(record): Promise<RecordModificationResult>;
 ```
+
+Defined in: [src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L327)
 
 Creates a new record described by the given [RecordForCreate](../type-aliases/RecordForCreate.md).
 
 #### Parameters
 
-• **record**: [`RecordForCreate`](../type-aliases/RecordForCreate.md)
+##### record
+
+[`RecordForCreate`](../type-aliases/RecordForCreate.md)
 
 The record create description.
 
@@ -74,27 +78,29 @@ The record create description.
 
 A [RecordModificationResult](RecordModificationResult.md) that contains the created data wrapped in a Promise.
 
-#### Defined in
-
-[src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L327)
-
 ***
 
 ### delete()
 
 ```ts
-delete(type, id): Promise<RecordModificationResult>
+delete(type, id): Promise<RecordModificationResult>;
 ```
+
+Defined in: [src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L342)
 
 Deletes a record, based on the given type and id.
 
 #### Parameters
 
-• **type**: `string`
+##### type
+
+`string`
 
 The object type of the record to delete.
 
-• **id**: `string`
+##### id
+
+`string`
 
 The id of the record to delete.
 
@@ -104,17 +110,15 @@ The id of the record to delete.
 
 A [RecordModificationResult](RecordModificationResult.md) that contains the deleted data wrapped in a Promise.
 
-#### Defined in
-
-[src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L342)
-
 ***
 
 ### newUnitOfWork()
 
 ```ts
-newUnitOfWork(): UnitOfWork
+newUnitOfWork(): UnitOfWork;
 ```
+
+Defined in: [src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L348)
 
 Creates a new and empty [UnitOfWork](UnitOfWork.md).
 
@@ -124,23 +128,23 @@ Creates a new and empty [UnitOfWork](UnitOfWork.md).
 
 An empty [UnitOfWork](UnitOfWork.md).
 
-#### Defined in
-
-[src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L348)
-
 ***
 
 ### query()
 
 ```ts
-query(soql): Promise<RecordQueryResult>
+query(soql): Promise<RecordQueryResult>;
 ```
+
+Defined in: [src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L313)
 
 Queries for records with a given SOQL string.
 
 #### Parameters
 
-• **soql**: `string`
+##### soql
+
+`string`
 
 The SOQL string.
 
@@ -150,23 +154,23 @@ The SOQL string.
 
 A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapped in a Promise.
 
-#### Defined in
-
-[src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L313)
-
 ***
 
 ### queryMore()
 
 ```ts
-queryMore(recordQueryResult): Promise<RecordQueryResult>
+queryMore(recordQueryResult): Promise<RecordQueryResult>;
 ```
+
+Defined in: [src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L320)
 
 Queries for more records, based on the given [RecordQueryResult](RecordQueryResult.md).
 
 #### Parameters
 
-• **recordQueryResult**: [`RecordQueryResult`](RecordQueryResult.md)
+##### recordQueryResult
+
+[`RecordQueryResult`](RecordQueryResult.md)
 
 The query result to query more data for.
 
@@ -176,23 +180,23 @@ The query result to query more data for.
 
 A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapped in a Promise.
 
-#### Defined in
-
-[src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L320)
-
 ***
 
 ### update()
 
 ```ts
-update(update): Promise<RecordModificationResult>
+update(update): Promise<RecordModificationResult>;
 ```
+
+Defined in: [src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L334)
 
 Updates an existing record described by the given [RecordForUpdate](../type-aliases/RecordForUpdate.md).
 
 #### Parameters
 
-• **update**: [`RecordForUpdate`](../type-aliases/RecordForUpdate.md)
+##### update
+
+[`RecordForUpdate`](../type-aliases/RecordForUpdate.md)
 
 The record update description.
 
@@ -201,7 +205,3 @@ The record update description.
 `Promise`\<[`RecordModificationResult`](RecordModificationResult.md)\>
 
 A [RecordModificationResult](RecordModificationResult.md) that contains the updated data wrapped in a Promise.
-
-#### Defined in
-
-[src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L334)

@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / RecordModificationResult
+[@heroku/applink](../README.md) / RecordModificationResult
 
 # Interface: RecordModificationResult
+
+Defined in: [src/index.ts:211](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L211)
 
 Represents the result of a record modification such as a create, delete, or insert.
 
@@ -16,8 +18,6 @@ Represents the result of a record modification such as a create, delete, or inse
 readonly id: string;
 ```
 
+Defined in: [src/index.ts:212](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L212)
+
 The ID of the modified record.
-
-#### Defined in
-
-[src/index.ts:212](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L212)
