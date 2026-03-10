@@ -1,8 +1,8 @@
-[**@heroku/applink v1.0.0**](../README.md) • **Docs**
+[**@heroku/applink v1.0.2**](../README.md) • **Docs**
 
 ***
 
-[@heroku/applink v1.0.0](../README.md) / DataTableBuilder
+[@heroku/applink v1.0.2](../README.md) / DataTableBuilder
 
 # Interface: DataTableBuilder
 
@@ -25,7 +25,7 @@ will be ignored.
 
 ##### Parameters
 
-• **row**: `string`[] \| `Map`\<`string`, `string`\>
+• **row**: `Map`\<`string`, `string`\> \| `string`[]
 
 The row of data to add
 
@@ -35,7 +35,7 @@ The row of data to add
 
 ##### Defined in
 
-[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L966)
+[src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L966)
 
 #### addRow(value, fieldValueExtractor)
 
@@ -68,7 +68,7 @@ A function that reads field values from the provided object. It will be called f
 
 ##### Defined in
 
-[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L976)
+[src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L976)
 
 ***
 
@@ -87,7 +87,7 @@ will be ignored.
 
 ##### Parameters
 
-• **rows**: (`string`[] \| `Map`\<`string`, `string`\>)[]
+• **rows**: (`Map`\<`string`, `string`\> \| `string`[])[]
 
 The list of rows of data to add
 
@@ -97,7 +97,7 @@ The list of rows of data to add
 
 ##### Defined in
 
-[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L986)
+[src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L986)
 
 #### addRows(values, fieldValueExtractor)
 
@@ -130,7 +130,7 @@ A function that reads field values from each provided object in the list of valu
 
 ##### Defined in
 
-[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L996)
+[src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L996)
 
 ***
 
@@ -148,4 +148,4 @@ Creates a [DataTable](DataTable.md) instance from the columns and rows provided 
 
 #### Defined in
 
-[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/8285fe9db0bc3fb84b8b357e7da6a6202f07286d/src/index.ts#L1004)
+[src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1004)
