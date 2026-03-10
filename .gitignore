@@ -3,6 +3,7 @@ node_modules/
 tsconfig.tsbuildinfo
 .idea
 .DS_Store
+.cursor/
 src/**/*.js
 src/**/*.js.map
 **/coverage/
