@@ -6,7 +6,12 @@
  */
 
 import { randomUUID } from "node:crypto";
-import packageJson from "../../package.json" with { type: "json" };
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
+const packageJson = JSON.parse(
+  readFileSync(join(__dirname, "../../package.json"), "utf-8")
+) as { name: string; version: string };
 
 /** Error thrown by the SDK when receiving non-2xx responses on HTTP requests. */
 export class HttpResponseError extends Error {
