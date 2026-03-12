@@ -1,19 +1,21 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / RecordForCreate
+[@heroku/applink](../README.md) / RecordForCreate
 
 # Type Alias: RecordForCreate
 
 ```ts
-type RecordForCreate: object;
+type RecordForCreate = object;
 ```
+
+Defined in: [src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L245)
 
 Creates a single record for create or registers a record creation for the [UnitOfWork](../interfaces/UnitOfWork.md)
 and returns a [ReferenceId](../interfaces/ReferenceId.md).
 
-## Type declaration
+## Properties
 
 ### binaryFields?
 
@@ -21,9 +23,18 @@ and returns a [ReferenceId](../interfaces/ReferenceId.md).
 optional binaryFields: object;
 ```
 
+Defined in: [src/index.ts:248](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L248)
+
+An optional JavaScript Object with unencoded binary content buffers to create the record with. Values will be automatically base64 encoded.
+The keys in fields and binaryFields are case insensitive.
+
 #### Index Signature
 
- \[`key`: `string`\]: `Buffer`
+```ts
+[key: string]: Buffer
+```
+
+***
 
 ### fields
 
@@ -31,9 +42,17 @@ optional binaryFields: object;
 fields: object;
 ```
 
+Defined in: [src/index.ts:247](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L247)
+
+A JavaScript Object for the fields that the record will be created with.
+
 #### Index Signature
 
- \[`key`: `string`\]: `unknown`
+```ts
+[key: string]: unknown
+```
+
+***
 
 ### type
 
@@ -41,6 +60,6 @@ fields: object;
 type: string;
 ```
 
-## Defined in
+Defined in: [src/index.ts:246](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L246)
 
-[src/index.ts:245](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L245)
+The Salesforce Object type

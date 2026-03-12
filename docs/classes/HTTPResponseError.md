@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / HttpResponseError
+[@heroku/applink](../README.md) / HttpResponseError
 
 # Class: HttpResponseError
+
+Defined in: [src/utils/request.ts:12](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/utils/request.ts#L12)
 
 Error thrown by the SDK when receiving non-2xx responses on HTTP requests.
 
@@ -14,27 +16,29 @@ Error thrown by the SDK when receiving non-2xx responses on HTTP requests.
 
 ## Constructors
 
-### new HttpResponseError()
+### Constructor
 
 ```ts
-new HttpResponseError(response): HttpResponseError
+new HttpResponseError(response): HttpResponseError;
 ```
+
+Defined in: [src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/utils/request.ts#L14)
 
 #### Parameters
 
-• **response**: `Response`
+##### response
+
+`Response`
 
 #### Returns
 
-[`HttpResponseError`](HttpResponseError.md)
+`HttpResponseError`
 
 #### Overrides
 
-`Error.constructor`
-
-#### Defined in
-
-[src/utils/request.ts:14](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/utils/request.ts#L14)
+```ts
+Error.constructor
+```
 
 ## Properties
 
@@ -44,13 +48,13 @@ new HttpResponseError(response): HttpResponseError
 message: string;
 ```
 
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1077
+
 #### Inherited from
 
-`Error.message`
-
-#### Defined in
-
-node\_modules/typescript/lib/lib.es5.d.ts:1077
+```ts
+Error.message
+```
 
 ***
 
@@ -60,13 +64,13 @@ node\_modules/typescript/lib/lib.es5.d.ts:1077
 name: string;
 ```
 
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1076
+
 #### Inherited from
 
-`Error.name`
-
-#### Defined in
-
-node\_modules/typescript/lib/lib.es5.d.ts:1076
+```ts
+Error.name
+```
 
 ***
 
@@ -76,9 +80,7 @@ node\_modules/typescript/lib/lib.es5.d.ts:1076
 response: any;
 ```
 
-#### Defined in
-
-[src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/utils/request.ts#L13)
+Defined in: [src/utils/request.ts:13](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/utils/request.ts#L13)
 
 ***
 
@@ -88,13 +90,13 @@ response: any;
 optional stack: string;
 ```
 
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1078
+
 #### Inherited from
 
-`Error.stack`
-
-#### Defined in
-
-node\_modules/typescript/lib/lib.es5.d.ts:1078
+```ts
+Error.stack
+```
 
 ***
 
@@ -104,13 +106,19 @@ node\_modules/typescript/lib/lib.es5.d.ts:1078
 static optional prepareStackTrace: (err, stackTraces) => any;
 ```
 
+Defined in: node\_modules/@types/node/globals.d.ts:98
+
 Optional override for formatting stack traces
 
 #### Parameters
 
-• **err**: `Error`
+##### err
 
-• **stackTraces**: `CallSite`[]
+`Error`
+
+##### stackTraces
+
+`CallSite`[]
 
 #### Returns
 
@@ -122,11 +130,9 @@ https://v8.dev/docs/stack-trace-api#customizing-stack-traces
 
 #### Inherited from
 
-`Error.prepareStackTrace`
-
-#### Defined in
-
-node\_modules/@types/node/globals.d.ts:98
+```ts
+Error.prepareStackTrace
+```
 
 ***
 
@@ -136,29 +142,35 @@ node\_modules/@types/node/globals.d.ts:98
 static stackTraceLimit: number;
 ```
 
+Defined in: node\_modules/@types/node/globals.d.ts:100
+
 #### Inherited from
 
-`Error.stackTraceLimit`
-
-#### Defined in
-
-node\_modules/@types/node/globals.d.ts:100
+```ts
+Error.stackTraceLimit
+```
 
 ## Methods
 
 ### captureStackTrace()
 
 ```ts
-static captureStackTrace(targetObject, constructorOpt?): void
+static captureStackTrace(targetObject, constructorOpt?): void;
 ```
+
+Defined in: node\_modules/@types/node/globals.d.ts:91
 
 Create .stack property on a target object
 
 #### Parameters
 
-• **targetObject**: `object`
+##### targetObject
 
-• **constructorOpt?**: `Function`
+`object`
+
+##### constructorOpt?
+
+`Function`
 
 #### Returns
 
@@ -166,8 +178,6 @@ Create .stack property on a target object
 
 #### Inherited from
 
-`Error.captureStackTrace`
-
-#### Defined in
-
-node\_modules/@types/node/globals.d.ts:91
+```ts
+Error.captureStackTrace
+```

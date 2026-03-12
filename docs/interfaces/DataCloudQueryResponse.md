@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / DataCloudQueryResponse
+[@heroku/applink](../README.md) / DataCloudQueryResponse
 
 # Interface: DataCloudQueryResponse
+
+Defined in: [src/index.ts:1088](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1088)
 
 Represents a [Data Cloud Query API](https://developer.salesforce.com/docs/atlas.en-us.c360a_api.meta/c360a_api/c360a_api_query_v2.htm) response.
 
@@ -16,9 +18,7 @@ Represents a [Data Cloud Query API](https://developer.salesforce.com/docs/atlas.
 data: any[];
 ```
 
-#### Defined in
-
-[src/index.ts:1089](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1089)
+Defined in: [src/index.ts:1089](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1089)
 
 ***
 
@@ -28,9 +28,7 @@ data: any[];
 done: boolean;
 ```
 
-#### Defined in
-
-[src/index.ts:1095](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1095)
+Defined in: [src/index.ts:1095](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1095)
 
 ***
 
@@ -40,9 +38,7 @@ done: boolean;
 endTime: string;
 ```
 
-#### Defined in
-
-[src/index.ts:1091](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1091)
+Defined in: [src/index.ts:1091](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1091)
 
 ***
 
@@ -52,9 +48,7 @@ endTime: string;
 metadata: any;
 ```
 
-#### Defined in
-
-[src/index.ts:1096](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1096)
+Defined in: [src/index.ts:1096](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1096)
 
 ***
 
@@ -64,9 +58,7 @@ metadata: any;
 nextBatchId: string;
 ```
 
-#### Defined in
-
-[src/index.ts:1094](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1094)
+Defined in: [src/index.ts:1094](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1094)
 
 ***
 
@@ -76,9 +68,7 @@ nextBatchId: string;
 queryId: string;
 ```
 
-#### Defined in
-
-[src/index.ts:1093](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1093)
+Defined in: [src/index.ts:1093](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1093)
 
 ***
 
@@ -88,9 +78,7 @@ queryId: string;
 rowCount: number;
 ```
 
-#### Defined in
-
-[src/index.ts:1092](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1092)
+Defined in: [src/index.ts:1092](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1092)
 
 ***
 
@@ -100,6 +88,4 @@ rowCount: number;
 startTime: string;
 ```
 
-#### Defined in
-
-[src/index.ts:1090](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1090)
+Defined in: [src/index.ts:1090](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1090)

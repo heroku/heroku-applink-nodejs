@@ -1,17 +1,21 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / InvocationEvent
+[@heroku/applink](../README.md) / InvocationEvent
 
 # Interface: InvocationEvent\<A\>
+
+Defined in: [src/index.ts:125](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L125)
 
 An InvocationEvent is representative of the data associated with the occurrence of an event,
 and supporting metadata about the source of that occurrence.
 
 ## Type Parameters
 
-• **A**
+### A
+
+`A`
 
 ## Properties
 
@@ -21,11 +25,9 @@ and supporting metadata about the source of that occurrence.
 readonly data: A;
 ```
 
+Defined in: [src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L126)
+
 The payload of the event
-
-#### Defined in
-
-[src/index.ts:126](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L126)
 
 ***
 
@@ -35,11 +37,9 @@ The payload of the event
 readonly optional dataContentType: string;
 ```
 
+Defined in: [src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L127)
+
 The media type of the event payload that is accessible in data
-
-#### Defined in
-
-[src/index.ts:127](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L127)
 
 ***
 
@@ -49,11 +49,9 @@ The media type of the event payload that is accessible in data
 readonly id: string;
 ```
 
+Defined in: [src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L128)
+
 The platform event occurrence id for event invocation.
-
-#### Defined in
-
-[src/index.ts:128](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L128)
 
 ***
 
@@ -63,12 +61,10 @@ The platform event occurrence id for event invocation.
 readonly optional time: string;
 ```
 
+Defined in: [src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L129)
+
 The timestamp of when the occurrence happened. If the time of the occurrence
 cannot be determined then this attribute may be set to some other time
 (such as the current time), however all producers for the same source must be consistent in this
 respect. In other words, either they all use the actual time of the occurrence or they all use
 the same algorithm to determine the value used.
-
-#### Defined in
-
-[src/index.ts:129](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L129)
