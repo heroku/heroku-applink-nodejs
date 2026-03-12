@@ -27,7 +27,15 @@ jobs:
         with:
           node-version: ${{ matrix.version }}
           cache: "yarn"
-      - run: yarn install
+      - name: Install dependencies
+        run: |
+          if [[ "${{ matrix.version }}" == "18.x" ]]; then
+            # Node 18 requires --ignore-engines for serialize-javascript@7.0.4
+            # which fixes high-severity RCE but declares engines.node >=20
+            yarn install --ignore-engines
+          else
+            yarn install
+          fi
       - run: yarn format:check
       - run: yarn lint
       - run: yarn test:coverage
