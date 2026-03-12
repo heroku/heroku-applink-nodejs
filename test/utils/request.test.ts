@@ -15,7 +15,9 @@ import {
   uuidGenerator,
 } from "../../src/utils/request";
 
-const packageJson = JSON.parse(readFileSync(join(__dirname, "../../package.json"), "utf-8")) as { name: string; version: string };
+const packageJson = JSON.parse(
+  readFileSync(join(__dirname, "../../package.json"), "utf-8")
+) as { name: string; version: string };
 
 describe("HttpRequestUtil", () => {
   let httpRequestUtil: HttpRequestUtil;
