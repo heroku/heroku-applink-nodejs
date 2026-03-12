@@ -25,9 +25,7 @@ export interface CompositeSubRequest<T> {
   ): Promise<T>;
 }
 
-export class DeleteRecordSubRequest
-  implements CompositeSubRequest<RecordModificationResult>
-{
+export class DeleteRecordSubRequest implements CompositeSubRequest<RecordModificationResult> {
   readonly body = undefined;
   readonly httpMethod = "DELETE";
   private readonly type: string;
@@ -55,9 +53,7 @@ export class DeleteRecordSubRequest
   }
 }
 
-export class UpdateRecordSubRequest
-  implements CompositeSubRequest<RecordModificationResult>
-{
+export class UpdateRecordSubRequest implements CompositeSubRequest<RecordModificationResult> {
   readonly body: any;
   readonly httpMethod = "PATCH";
   private readonly record: RecordForUpdate;
@@ -87,9 +83,7 @@ export class UpdateRecordSubRequest
   }
 }
 
-export class CreateRecordSubRequest
-  implements CompositeSubRequest<RecordModificationResult>
-{
+export class CreateRecordSubRequest implements CompositeSubRequest<RecordModificationResult> {
   readonly body: any;
   readonly httpMethod = "POST";
   private readonly record: RecordForCreate;
