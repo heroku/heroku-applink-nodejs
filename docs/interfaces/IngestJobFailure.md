@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / IngestJobFailure
+[@heroku/applink](../README.md) / IngestJobFailure
 
 # Interface: IngestJobFailure
+
+Defined in: [src/index.ts:1010](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1010)
 
 Represent a failure result from calling [BulkApi.ingest](BulkApi.md#ingest).
 
@@ -16,11 +18,9 @@ Represent a failure result from calling [BulkApi.ingest](BulkApi.md#ingest).
 error: BulkApiError;
 ```
 
+Defined in: [src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1014)
+
 The error that occurred while attempting to construct the ingest job.
-
-#### Defined in
-
-[src/index.ts:1014](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1014)
 
 ***
 
@@ -30,13 +30,11 @@ The error that occurred while attempting to construct the ingest job.
 optional jobReference: IngestJobReference;
 ```
 
+Defined in: [src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1026)
+
 A reference to the ingest job created. If the failure occurs when attempting to open
 an ingest job there will be no reference. If the failure occurs when uploading or closing
 the ingest job then a job reference will be present.
-
-#### Defined in
-
-[src/index.ts:1026](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1026)
 
 ***
 
@@ -46,8 +44,6 @@ the ingest job then a job reference will be present.
 unprocessedRecords: DataTable;
 ```
 
+Defined in: [src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1019)
+
 The data that would have been uploaded to the ingest job had the operation succeeded.
-
-#### Defined in
-
-[src/index.ts:1019](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L1019)

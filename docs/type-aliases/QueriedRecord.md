@@ -1,18 +1,20 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / QueriedRecord
+[@heroku/applink](../README.md) / QueriedRecord
 
 # Type Alias: QueriedRecord
 
 ```ts
-type QueriedRecord: Record & object;
+type QueriedRecord = Record & object;
 ```
+
+Defined in: [src/index.ts:197](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L197)
 
 Records returned from a query or queryMore request
 
-## Type declaration
+## Type Declaration
 
 ### subQueryResults
 
@@ -24,8 +26,6 @@ Returns the result of a sub query related to this record. Records can have sub q
 
 #### Index Signature
 
- \[`sObjectName`: `string`\]: [`RecordQueryResult`](../interfaces/RecordQueryResult.md)
-
-## Defined in
-
-[src/index.ts:197](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L197)
+```ts
+[sObjectName: string]: RecordQueryResult
+```

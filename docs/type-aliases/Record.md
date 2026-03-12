@@ -1,18 +1,20 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / Record
+[@heroku/applink](../README.md) / Record
 
 # Type Alias: Record
 
 ```ts
-type Record: object;
+type Record = object;
 ```
+
+Defined in: [src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L188)
 
 The base record type representing an SObject
 
-## Type declaration
+## Properties
 
 ### binaryFields?
 
@@ -20,9 +22,19 @@ The base record type representing an SObject
 readonly optional binaryFields: object;
 ```
 
+Defined in: [src/index.ts:191](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L191)
+
+An optional JavaScript object with any eagerly-loaded base64 decoded binary content.
+Each key in fields and binaryFields is case insensitive; the getters and setters for each
+key/value pair will ignore casing when getting and setting fields.
+
 #### Index Signature
 
- \[`key`: `string`\]: `Buffer`
+```ts
+[key: string]: Buffer
+```
+
+***
 
 ### fields
 
@@ -30,9 +42,17 @@ readonly optional binaryFields: object;
 readonly fields: object;
 ```
 
+Defined in: [src/index.ts:190](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L190)
+
+A JavaScript object with all fields from the returned records.
+
 #### Index Signature
 
- \[`key`: `string`\]: `unknown`
+```ts
+[key: string]: unknown
+```
+
+***
 
 ### type
 
@@ -40,6 +60,6 @@ readonly fields: object;
 readonly type: string;
 ```
 
-## Defined in
+Defined in: [src/index.ts:189](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L189)
 
-[src/index.ts:188](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L188)
+The Salesforce Object type

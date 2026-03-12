@@ -1,10 +1,12 @@
-[**@heroku/applink v1.0.2**](../README.md) • **Docs**
+[**@heroku/applink v1.1.0**](../README.md)
 
 ***
 
-[@heroku/applink v1.0.2](../README.md) / ReferenceId
+[@heroku/applink](../README.md) / ReferenceId
 
 # Interface: ReferenceId
+
+Defined in: [src/index.ts:219](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L219)
 
 References a modification, creation, or deletion of an object that may
 occur as a part of a UnitOfWork.
@@ -14,8 +16,10 @@ occur as a part of a UnitOfWork.
 ### toApiString()
 
 ```ts
-toApiString(): string
+toApiString(): string;
 ```
+
+Defined in: [src/index.ts:234](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L234)
 
 Get a reference to a record's ID that may be created, deleted, or modified
 as part of a UnitOfWork.
@@ -26,17 +30,15 @@ as part of a UnitOfWork.
 
 A string reference to a record id
 
-#### Defined in
-
-[src/index.ts:234](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L234)
-
 ***
 
 ### toString()
 
 ```ts
-toString(): string
+toString(): string;
 ```
+
+Defined in: [src/index.ts:226](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L226)
 
 Get a reference to a record modification, creation, or deletion that may
 occur as a part of a UnitOfWork.
@@ -46,7 +48,3 @@ occur as a part of a UnitOfWork.
 `string`
 
 A string identifier
-
-#### Defined in
-
-[src/index.ts:226](https://github.com/heroku/heroku-applink-nodejs/blob/31981721b825d45f2df33fe0866b8893464786ca/src/index.ts#L226)
