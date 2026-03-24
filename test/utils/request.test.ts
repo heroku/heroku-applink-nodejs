@@ -7,12 +7,17 @@
 
 import { expect } from "chai";
 import sinon from "sinon";
-import packageJson from "../../package.json";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import {
   HttpRequestUtil,
   HttpResponseError,
   uuidGenerator,
 } from "../../src/utils/request";
+
+const packageJson = JSON.parse(
+  readFileSync(join(__dirname, "../../package.json"), "utf-8")
+) as { name: string; version: string };
 
 describe("HttpRequestUtil", () => {
   let httpRequestUtil: HttpRequestUtil;
