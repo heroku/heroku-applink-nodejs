@@ -18,6 +18,7 @@
     "prepack": "tsc -b --clean && tsc -b --force",
     "bump": "node bin/bump-version.js",
     "release": "bin/publish.sh",
+    "release:dry-run": "bin/publish.sh -d",
     "docs": "typedoc"
   },
   "files": [
