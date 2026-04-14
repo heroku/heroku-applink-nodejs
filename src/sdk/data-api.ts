@@ -201,9 +201,7 @@ export class DataApiImpl implements DataApi {
         );
       }
 
-      const subrequestResults: Promise<
-        [ReferenceId, RecordModificationResult][]
-      > = Promise.all(
+      const settled = await Promise.allSettled(
         requestResult.graphs[0].graphResponse.compositeResponse.map(
           (compositeResponse) => {
             const subrequest = subrequests.find(
@@ -225,7 +223,18 @@ export class DataApiImpl implements DataApi {
         )
       );
 
-      return subrequestResults.then((keyValues) => new Map(keyValues));
+      const failures = settled.filter((r) => r.status === "rejected");
+      if (failures.length > 0) {
+        throw new Error(
+          failures
+            .map((r) => (r as PromiseRejectedResult).reason.message)
+            .join("\n")
+        );
+      }
+
+      return new Map(
+        settled.map((r) => (r as PromiseFulfilledResult<any>).value)
+      );
     });
   }
 
