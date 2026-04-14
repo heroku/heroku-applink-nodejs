@@ -1,0 +1,28 @@
+{
+  "id": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+  "name": "services_data_v510_composite_graph_multiple_errors",
+  "request": {
+    "url": "/services/data/v51.0/composite/graph",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "equalToJson": "{\n    \"graphs\": [\n        {\n            \"graphId\": \"graph0\",\n            \"compositeRequest\": [\n                {\n                    \"url\": \"/services/data/v51.0/sobjects/Account\",\n                    \"method\": \"POST\",\n                    \"referenceId\": \"referenceId0\",\n                    \"body\": {\n                        \"Name\": \"Acme Corp\"\n                    }\n                },\n                {\n                    \"url\": \"/services/data/v51.0/sobjects/Contact\",\n                    \"method\": \"POST\",\n                    \"referenceId\": \"referenceId1\",\n                    \"body\": {\n                        \"LastName\": \"Smith\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+      }
+    ],
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer EXAMPLE-TOKEN"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"graphs\":[{\"graphId\":\"graph0\",\"graphResponse\":{\"compositeResponse\":[{\"body\":[{\"errorCode\":\"PROCESSING_HALTED\",\"message\":\"The transaction was rolled back since another operation in the same transaction failed\"}],\"httpHeaders\":{},\"httpStatusCode\":400,\"referenceId\":\"referenceId0\"},{\"body\":[{\"errorCode\":\"INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY\",\"message\":\"insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access\"}],\"httpHeaders\":{},\"httpStatusCode\":403,\"referenceId\":\"referenceId1\"}]},\"isSuccessful\":false}]}",
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  },
+  "uuid": "b2c3d4e5-f6a7-8901-bcde-f12345678901",
+  "persistent": true,
+  "insertionIndex": 5
+}

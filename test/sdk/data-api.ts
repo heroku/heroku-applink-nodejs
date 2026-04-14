@@ -736,6 +736,76 @@ describe("DataApi Class", async () => {
           expect(result.size).to.equal(0);
         });
       });
+
+      describe("docs example: account, contact, and opportunity", async () => {
+        beforeEach(() => {
+          const genRefId = stub(uow, "generateReferenceId");
+          genRefId.onFirstCall().returns("reference_id_account_1");
+          genRefId.onSecondCall().returns("reference_id_contact_1");
+          genRefId.onThirdCall().returns("reference_id_opportunity_1");
+        });
+
+        it("returns all record ids on success", async () => {
+          const accountRId = uow.registerCreate({
+            type: "Account",
+            fields: {
+              Name: "Acme Corp",
+            },
+          });
+
+          const contactRId = uow.registerCreate({
+            type: "Contact",
+            fields: {
+              LastName: "Smith",
+            },
+          });
+
+          const opportunityRId = uow.registerCreate({
+            type: "Opportunity",
+            fields: {
+              Name: "Big Deal",
+              StageName: "Prospecting",
+              CloseDate: "2024-01-01",
+            },
+          });
+
+          const result = await dataApiv51.commitUnitOfWork(uow);
+          expect(result.size).equal(3);
+          expect(result.get(accountRId).id).equal("001R00000064wc7IAA");
+          expect(result.get(contactRId).id).equal("003R000000DDMlTIAX");
+          expect(result.get(opportunityRId).id).equal("006R0000003FPYxIAO");
+        });
+      });
+
+      describe("multiple errors", async () => {
+        it("throws an error containing all error messages", async () => {
+          uow.registerCreate({
+            type: "Account",
+            fields: {
+              Name: "Acme Corp",
+            },
+          });
+
+          uow.registerCreate({
+            type: "Contact",
+            fields: {
+              LastName: "Smith",
+            },
+          });
+
+          try {
+            await dataApiv51.commitUnitOfWork(uow);
+            expect.fail("Promise should have been rejected!");
+          } catch (e) {
+            expect(e.message).to.include(
+              "PROCESSING_HALTED: The transaction was rolled back since another operation in the same transaction failed"
+            );
+            expect(e.message).to.include(
+              "INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY: insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access"
+            );
+          }
+        });
+      });
     });
   });
 
