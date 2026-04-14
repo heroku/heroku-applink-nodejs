@@ -1,0 +1,28 @@
+{
+  "id": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "name": "services_data_v510_composite_graph_account_contact_opportunity",
+  "request": {
+    "url": "/services/data/v51.0/composite/graph",
+    "method": "POST",
+    "bodyPatterns": [
+      {
+        "equalToJson": "{\n    \"graphs\": [\n        {\n            \"graphId\": \"graph0\",\n            \"compositeRequest\": [\n                {\n                    \"url\": \"/services/data/v51.0/sobjects/Account\",\n                    \"method\": \"POST\",\n                    \"referenceId\": \"reference_id_account_1\",\n                    \"body\": {\n                        \"Name\": \"Acme Corp\"\n                    }\n                },\n                {\n                    \"url\": \"/services/data/v51.0/sobjects/Contact\",\n                    \"method\": \"POST\",\n                    \"referenceId\": \"reference_id_contact_1\",\n                    \"body\": {\n                        \"LastName\": \"Smith\"\n                    }\n                },\n                {\n                    \"url\": \"/services/data/v51.0/sobjects/Opportunity\",\n                    \"method\": \"POST\",\n                    \"referenceId\": \"reference_id_opportunity_1\",\n                    \"body\": {\n                        \"Name\": \"Big Deal\",\n                        \"StageName\": \"Prospecting\",\n                        \"CloseDate\": \"2024-01-01\"\n                    }\n                }\n            ]\n        }\n    ]\n}"
+      }
+    ],
+    "headers": {
+      "Authorization": {
+        "equalTo": "Bearer EXAMPLE-TOKEN"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": "{\"graphs\":[{\"graphId\":\"1\",\"graphResponse\":{\"compositeResponse\":[{\"body\":{\"id\":\"001R00000064wc7IAA\",\"success\":true,\"errors\":[]},\"httpHeaders\":{\"Location\":\"/services/data/v66.0/sobjects/Account/001R00000064wc7IAA\"},\"httpStatusCode\":201,\"referenceId\":\"reference_id_account_1\"},{\"body\":{\"id\":\"003R000000DDMlTIAX\",\"success\":true,\"errors\":[]},\"httpHeaders\":{\"Location\":\"/services/data/v66.0/sobjects/Contact/003R000000DDMlTIAX\"},\"httpStatusCode\":201,\"referenceId\":\"reference_id_contact_1\"},{\"body\":{\"id\":\"006R0000003FPYxIAO\",\"success\":true,\"errors\":[]},\"httpHeaders\":{\"Location\":\"/services/data/v66.0/sobjects/Opportunity/006R0000003FPYxIAO\"},\"httpStatusCode\":201,\"referenceId\":\"reference_id_opportunity_1\"}]},\"isSuccessful\":true}]}",
+    "headers": {
+      "Content-Type": "application/json;charset=UTF-8"
+    }
+  },
+  "uuid": "a1b2c3d4-e5f6-7890-abcd-ef1234567890",
+  "persistent": true,
+  "insertionIndex": 4
+}
