@@ -57,7 +57,7 @@
     "eslint-formatter-codeframe": "^7.32.1",
     "eslint-plugin-license-header": "^0.6.1",
     "mocha": "^11.7.5",
-    "nyc": "^17.1.0",
+    "nyc": "^18.0.0",
     "prettier": "^3.2.5",
     "semver": "^7.7.2",
     "sinon": "^21.0.3",
