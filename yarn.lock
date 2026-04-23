@@ -1240,10 +1240,15 @@ csprng@*:
   dependencies:
     sequin "*"
 
-csv-parse@^5.3.3, csv-parse@^5.5.2:
+csv-parse@^5.5.2:
   version "5.6.0"
   resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-5.6.0.tgz#219beace2a3e9f28929999d2aa417d3fb3071c7f"
   integrity sha512-l3nz3euub2QMg5ouu5U09Ew9Wf6/wQ8I++ch1loQ0ljmzhmfZYrH9fflS22i/PQEvsPvxCwxgz5q7UB8K1JO4Q==
+
+csv-parse@^6.2.1:
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-6.2.1.tgz#325c5adb126b1ad07fa68077c3dc739ccfc12cf5"
+  integrity sha512-LRLMV+UCyfMokp8Wb411duBf1gaBKJfOfBWU9eHMJ+b+cJYZsNu3AFmjJf3+yPGd59Exz1TsMjaSFyxnYB9+IQ==
 
 csv-stringify@^6.2.3, csv-stringify@^6.6.0:
   version "6.6.0"
