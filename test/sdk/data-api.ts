@@ -778,6 +778,12 @@ describe("DataApi Class", async () => {
       });
 
       describe("multiple errors", async () => {
+        beforeEach(() => {
+          const genRefId = stub(uow, "generateReferenceId");
+          genRefId.onFirstCall().returns("referenceId0");
+          genRefId.onSecondCall().returns("referenceId1");
+        });
+
         it("throws an error containing all error messages", async () => {
           uow.registerCreate({
             type: "Account",
@@ -797,11 +803,9 @@ describe("DataApi Class", async () => {
             await dataApiv51.commitUnitOfWork(uow);
             expect.fail("Promise should have been rejected!");
           } catch (e) {
-            expect(e.message).to.include(
-              "PROCESSING_HALTED: The transaction was rolled back since another operation in the same transaction failed"
-            );
-            expect(e.message).to.include(
-              "INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY: insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access"
+            expect(e.message).to.equal(
+              "PROCESSING_HALTED: The transaction was rolled back since another operation in the same transaction failed\n" +
+                "INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY: insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access"
             );
           }
         });
