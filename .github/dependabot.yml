@@ -3,7 +3,8 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "cron"
+      cronjob: "0 14 * * MON,WED"
     groups:
       production-dependencies:
         dependency-type: "production"
@@ -36,7 +37,14 @@ updates:
       - dependency-name: "@typescript-eslint/parser"
       # chai hits a parsing issue on node 14 in versions >4.x
       - dependency-name: "chai"
+    labels:
+      - "edit-on-call"
+      - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "monthly"
+      interval: "cron"
+      cronjob: "0 14 * * MON,WED"
+    labels:
+      - "edit-on-call"
+      - "dependencies"
