@@ -58,3 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [1.1.0] - 2026-02-26
 - Release New Latest Version Based off of beta release 1.1.0-beta.1
+
+## [Unreleased]
+- Fix `commitUnitOfWork` to surface all subrequest errors using `Promise.allSettled`; previously `Promise.all` short-circuited on the first rejection and discarded subsequent errors
