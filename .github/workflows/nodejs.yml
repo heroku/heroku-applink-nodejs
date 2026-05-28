@@ -2,8 +2,6 @@ name: Herokunodejsapplicationwithci
 on:
     push:
         branches: ["dev"]
-    pull_request:
-        branches: ["main"]
 jobs:
     build:
       runs-on: ubuntu-latest
