@@ -28,6 +28,9 @@ jobs:
       - name: Install dependencies        
         run: npm install --legacy-peer-deps
 
+      - name: Install wait-on        
+        run: npm install -g wait-on 
+
       # Run build (if you have a build script)
       - name: Build
         run: npm run build --if-present
