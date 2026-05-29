@@ -17,7 +17,7 @@
   },
   "response": {
     "status": 200,
-    "body": "{\"graphs\":[{\"graphId\":\"graph0\",\"graphResponse\":{\"compositeResponse\":[{\"body\":[{\"errorCode\":\"PROCESSING_HALTED\",\"message\":\"The transaction was rolled back since another operation in the same transaction failed\"}],\"httpHeaders\":{},\"httpStatusCode\":400,\"referenceId\":\"referenceId0\"},{\"body\":[{\"errorCode\":\"INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY\",\"message\":\"insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access\"}],\"httpHeaders\":{},\"httpStatusCode\":403,\"referenceId\":\"referenceId1\"}]},\"isSuccessful\":false}]}",
+    "body": "{\"graphs\":[{\"graphId\":\"graph0\",\"graphResponse\":{\"compositeResponse\":[{\"body\":[{\"errorCode\":\"PROCESSING_HALTED\",\"message\":\"We rolled back the transaction since another operation in the same transaction failed.\"}],\"httpHeaders\":{},\"httpStatusCode\":400,\"referenceId\":\"referenceId0\"},{\"body\":[{\"errorCode\":\"INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY\",\"message\":\"You can’t complete this action because you don’t have the required access on the cross-reference ID. Contact your Salesforce admin to gain access.\"}],\"httpHeaders\":{},\"httpStatusCode\":403,\"referenceId\":\"referenceId1\"}]},\"isSuccessful\":false}]}",
     "headers": {
       "Content-Type": "application/json;charset=UTF-8"
     }
