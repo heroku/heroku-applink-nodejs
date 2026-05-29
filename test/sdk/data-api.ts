@@ -804,8 +804,8 @@ describe("DataApi Class", async () => {
             expect.fail("Promise should have been rejected!");
           } catch (e) {
             expect(e.message).to.equal(
-              "PROCESSING_HALTED: The transaction was rolled back since another operation in the same transaction failed\n" +
-                "INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY: insufficient access rights on cross-reference id. You can't complete this action because you don't have the required access"
+              "PROCESSING_HALTED: We rolled back the transaction since another operation in the same transaction failed.\n" +
+                "INSUFFICIENT_ACCESS_ON_CROSS_REFERENCE_ENTITY: You can’t complete this action because you don’t have the required access on the cross-reference ID. Contact your Salesforce admin to gain access."
             );
           }
         });
