@@ -60,4 +60,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Release New Latest Version Based off of beta release 1.1.0-beta.1
 
 ## [Unreleased]
-- Fix `commitUnitOfWork` to surface all subrequest errors using `Promise.allSettled`; previously `Promise.all` short-circuited on the first rejection and discarded subsequent errors
+- Fix `commitUnitOfWork` to surface all subrequest errors. Previously, when multiple subrequests failed, `commitUnitOfWork` only surfaced the first error and discarded subsequent errors.
