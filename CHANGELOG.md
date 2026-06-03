@@ -61,3 +61,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 - Fix `commitUnitOfWork` to surface all subrequest errors. Previously, when multiple subrequests failed, `commitUnitOfWork` only surfaced the first error and discarded subsequent errors.
+- Switch Dependabot to a Mon+Wed cron schedule (11:00 UTC) and standardize PR labels.
