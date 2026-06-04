@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: DataApi
 
-Defined in: [src/index.ts:305](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L305)
+Defined in: [src/index.ts:305](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L305)
 
 Data API client to interact with data in a Salesforce org.
 
@@ -18,7 +18,7 @@ Data API client to interact with data in a Salesforce org.
 readonly accessToken: string;
 ```
 
-Defined in: [src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L306)
+Defined in: [src/index.ts:306](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L306)
 
 The access token used by this API client. Can be used to initialize a
 third-party API client or to perform custom API calls with a HTTP library.
@@ -31,7 +31,7 @@ third-party API client or to perform custom API calls with a HTTP library.
 commitUnitOfWork(unitOfWork): Promise<Map<ReferenceId, RecordModificationResult>>;
 ```
 
-Defined in: [src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L358)
+Defined in: [src/index.ts:358](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L358)
 
 Commits a [UnitOfWork](UnitOfWork.md), executing all operations registered with it. If any of these
 operations fail, the whole unit is rolled back. To examine results for a single operation,
@@ -60,7 +60,7 @@ A map of [RecordModificationResult](RecordModificationResult.md)s, indexed by th
 create(record): Promise<RecordModificationResult>;
 ```
 
-Defined in: [src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L327)
+Defined in: [src/index.ts:327](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L327)
 
 Creates a new record described by the given [RecordForCreate](../type-aliases/RecordForCreate.md).
 
@@ -86,7 +86,7 @@ A [RecordModificationResult](RecordModificationResult.md) that contains the crea
 delete(type, id): Promise<RecordModificationResult>;
 ```
 
-Defined in: [src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L342)
+Defined in: [src/index.ts:342](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L342)
 
 Deletes a record, based on the given type and id.
 
@@ -118,7 +118,7 @@ A [RecordModificationResult](RecordModificationResult.md) that contains the dele
 newUnitOfWork(): UnitOfWork;
 ```
 
-Defined in: [src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L348)
+Defined in: [src/index.ts:348](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L348)
 
 Creates a new and empty [UnitOfWork](UnitOfWork.md).
 
@@ -136,7 +136,7 @@ An empty [UnitOfWork](UnitOfWork.md).
 query(soql): Promise<RecordQueryResult>;
 ```
 
-Defined in: [src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L313)
+Defined in: [src/index.ts:313](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L313)
 
 Queries for records with a given SOQL string.
 
@@ -162,7 +162,7 @@ A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapp
 queryMore(recordQueryResult): Promise<RecordQueryResult>;
 ```
 
-Defined in: [src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L320)
+Defined in: [src/index.ts:320](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L320)
 
 Queries for more records, based on the given [RecordQueryResult](RecordQueryResult.md).
 
@@ -188,7 +188,7 @@ A [RecordQueryResult](RecordQueryResult.md) that contains the queried data wrapp
 update(update): Promise<RecordModificationResult>;
 ```
 
-Defined in: [src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L334)
+Defined in: [src/index.ts:334](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L334)
 
 Updates an existing record described by the given [RecordForUpdate](../type-aliases/RecordForUpdate.md).
 

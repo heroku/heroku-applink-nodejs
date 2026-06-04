@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: BulkApiError
 
-Defined in: [src/index.ts:1032](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1032)
+Defined in: [src/index.ts:1032](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1032)
 
 Represents an error thrown from a Bulk API 2.0 operation.
 
@@ -22,7 +22,7 @@ Represents an error thrown from a Bulk API 2.0 operation.
 errorCode: string;
 ```
 
-Defined in: [src/index.ts:1036](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1036)
+Defined in: [src/index.ts:1036](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1036)
 
 An error code indicating the type of error that occurred.
 

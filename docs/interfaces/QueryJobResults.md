@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: QueryJobResults
 
-Defined in: [src/index.ts:903](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L903)
+Defined in: [src/index.ts:903](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L903)
 
 A paged result set that contains the results of a query job. The results of a query job
 can be retrieved using the [BulkApi.getQueryResults](BulkApi.md#getqueryresults) and [BulkApi.getMoreQueryResults](BulkApi.md#getmorequeryresults)
@@ -20,7 +20,7 @@ methods of [BulkApi](BulkApi.md).
 readonly dataTable: DataTable;
 ```
 
-Defined in: [src/index.ts:907](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L907)
+Defined in: [src/index.ts:907](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L907)
 
 A data table containing a set of one or more query results.
 
@@ -32,7 +32,7 @@ A data table containing a set of one or more query results.
 readonly done: boolean;
 ```
 
-Defined in: [src/index.ts:912](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L912)
+Defined in: [src/index.ts:912](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L912)
 
 This flag indicates if this is the final set of query results.
 
@@ -44,7 +44,7 @@ This flag indicates if this is the final set of query results.
 readonly jobReference: QueryJobReference;
 ```
 
-Defined in: [src/index.ts:927](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L927)
+Defined in: [src/index.ts:927](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L927)
 
 The reference of the query job this result set belongs to.
 
@@ -56,7 +56,7 @@ The reference of the query job this result set belongs to.
 readonly optional locator: string;
 ```
 
-Defined in: [src/index.ts:917](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L917)
+Defined in: [src/index.ts:917](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L917)
 
 A string that identifies a specific set of query results. Providing a value for this parameter returns only that set of results.
 
@@ -68,6 +68,6 @@ A string that identifies a specific set of query results. Providing a value for 
 readonly numberOfRecords: number;
 ```
 
-Defined in: [src/index.ts:922](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L922)
+Defined in: [src/index.ts:922](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L922)
 
 The number of records in this set.

@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: QueryJobInfo
 
-Defined in: [src/index.ts:832](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L832)
+Defined in: [src/index.ts:832](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L832)
 
 Query job information returned when calling [BulkApi.getInfo](BulkApi.md#getinfo) with a [query job reference](QueryJobReference.md)
 
@@ -22,7 +22,7 @@ Query job information returned when calling [BulkApi.getInfo](BulkApi.md#getinfo
 optional apexProcessingTime: number;
 ```
 
-Defined in: [src/index.ts:678](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L678)
+Defined in: [src/index.ts:678](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L678)
 
 The number of milliseconds taken to process triggers and other processes
 related to the job data. This doesn't include the time used for processing
@@ -42,7 +42,7 @@ JobInfo.apexProcessingTime
 optional apiActiveProcessingTime: number;
 ```
 
-Defined in: [src/index.ts:685](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L685)
+Defined in: [src/index.ts:685](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L685)
 
 The number of milliseconds taken to actively process the job and includes
 apexProcessingTime, but doesn't include the time the job waited in the queue
@@ -62,7 +62,7 @@ JobInfo.apiActiveProcessingTime
 apiVersion: number;
 ```
 
-Defined in: [src/index.ts:690](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L690)
+Defined in: [src/index.ts:690](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L690)
 
 The API version that the job was created in.
 
@@ -80,7 +80,7 @@ JobInfo.apiVersion
 optional assignmentRuleId: string;
 ```
 
-Defined in: [src/index.ts:771](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L771)
+Defined in: [src/index.ts:771](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L771)
 
 The ID of an assignment rule to run for a Case or a Lead.
 
@@ -98,7 +98,7 @@ JobInfo.assignmentRuleId
 columnDelimiter: "COMMA";
 ```
 
-Defined in: [src/index.ts:695](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L695)
+Defined in: [src/index.ts:695](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L695)
 
 The column delimiter used for CSV job data.
 
@@ -116,7 +116,7 @@ JobInfo.columnDelimiter
 concurrencyMode: "Parallel";
 ```
 
-Defined in: [src/index.ts:700](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L700)
+Defined in: [src/index.ts:700](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L700)
 
 How the request was processed.
 
@@ -134,7 +134,7 @@ JobInfo.concurrencyMode
 contentType: "CSV";
 ```
 
-Defined in: [src/index.ts:705](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L705)
+Defined in: [src/index.ts:705](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L705)
 
 The format of the data being processed. Only CSV is supported.
 
@@ -152,7 +152,7 @@ JobInfo.contentType
 optional contentUrl: string;
 ```
 
-Defined in: [src/index.ts:710](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L710)
+Defined in: [src/index.ts:710](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L710)
 
 The URL to use for Upload job Data requests for this job. Only valid if the job is in Open state.
 
@@ -170,7 +170,7 @@ JobInfo.contentUrl
 createdById: string;
 ```
 
-Defined in: [src/index.ts:715](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L715)
+Defined in: [src/index.ts:715](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L715)
 
 The ID of the user who created the job.
 
@@ -188,7 +188,7 @@ JobInfo.createdById
 createdDate: string;
 ```
 
-Defined in: [src/index.ts:720](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L720)
+Defined in: [src/index.ts:720](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L720)
 
 The date and time in the UTC time zone when the job was created.
 
@@ -206,7 +206,7 @@ JobInfo.createdDate
 optional externalIdFieldName: string;
 ```
 
-Defined in: [src/index.ts:776](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L776)
+Defined in: [src/index.ts:776](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L776)
 
 The name of the external ID field for an upsert.
 
@@ -224,7 +224,7 @@ JobInfo.externalIdFieldName
 id: string;
 ```
 
-Defined in: [src/index.ts:725](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L725)
+Defined in: [src/index.ts:725](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L725)
 
 Unique ID for this job.
 
@@ -242,7 +242,7 @@ JobInfo.id
 jobType: "V2Query";
 ```
 
-Defined in: [src/index.ts:836](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L836)
+Defined in: [src/index.ts:836](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L836)
 
 The job’s type.
 
@@ -260,7 +260,7 @@ JobInfo.jobType
 lineEnding: "LF";
 ```
 
-Defined in: [src/index.ts:735](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L735)
+Defined in: [src/index.ts:735](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L735)
 
 The line ending used for CSV job data.
 
@@ -278,7 +278,7 @@ JobInfo.lineEnding
 optional numberRecordsFailed: number;
 ```
 
-Defined in: [src/index.ts:781](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L781)
+Defined in: [src/index.ts:781](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L781)
 
 The number of records that were not processed successfully in this job.
 
@@ -296,7 +296,7 @@ JobInfo.numberRecordsFailed
 optional numberRecordsProcessed: number;
 ```
 
-Defined in: [src/index.ts:786](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L786)
+Defined in: [src/index.ts:786](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L786)
 
 The number of records already processed.
 
@@ -314,7 +314,7 @@ JobInfo.numberRecordsProcessed
 object: string;
 ```
 
-Defined in: [src/index.ts:740](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L740)
+Defined in: [src/index.ts:740](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L740)
 
 The object type for the data being processed.
 
@@ -332,7 +332,7 @@ JobInfo.object
 operation: QueryJobOperation;
 ```
 
-Defined in: [src/index.ts:841](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L841)
+Defined in: [src/index.ts:841](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L841)
 
 The processing operation for the job.
 
@@ -350,7 +350,7 @@ JobInfo.operation
 optional retries: number;
 ```
 
-Defined in: [src/index.ts:751](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L751)
+Defined in: [src/index.ts:751](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L751)
 
 The number of times that Salesforce attempted to save the results of an
 operation. The repeated attempts are due to a problem, such as a lock contention.
@@ -369,7 +369,7 @@ JobInfo.retries
 state: QueryJobState;
 ```
 
-Defined in: [src/index.ts:846](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L846)
+Defined in: [src/index.ts:846](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L846)
 
 The current state of processing for the job.
 
@@ -387,7 +387,7 @@ JobInfo.state
 systemModstamp: string;
 ```
 
-Defined in: [src/index.ts:761](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L761)
+Defined in: [src/index.ts:761](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L761)
 
 Date and time in the UTC time zone when the job finished.
 
@@ -405,7 +405,7 @@ JobInfo.systemModstamp
 optional totalProcessingTime: number;
 ```
 
-Defined in: [src/index.ts:766](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L766)
+Defined in: [src/index.ts:766](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L766)
 
 The number of milliseconds taken to process the job.
 

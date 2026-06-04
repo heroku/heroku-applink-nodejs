@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: Logger
 
-Defined in: [src/index.ts:376](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L376)
+Defined in: [src/index.ts:376](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L376)
 
 Represents the logging functionality to log given messages at various levels.
 
@@ -18,7 +18,7 @@ Represents the logging functionality to log given messages at various levels.
 debug(message): void;
 ```
 
-Defined in: [src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L403)
+Defined in: [src/index.ts:403](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L403)
 
 Logs the given message at the 'debug' level.
 
@@ -44,7 +44,7 @@ void
 error(message): void;
 ```
 
-Defined in: [src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L382)
+Defined in: [src/index.ts:382](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L382)
 
 Logs the given message at the 'error' level.
 
@@ -70,7 +70,7 @@ void
 info(message): void;
 ```
 
-Defined in: [src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L396)
+Defined in: [src/index.ts:396](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L396)
 
 Logs the given message at the 'info' level.
 
@@ -96,7 +96,7 @@ void
 trace(message): void;
 ```
 
-Defined in: [src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L410)
+Defined in: [src/index.ts:410](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L410)
 
 Logs the given message at the 'trace' level.
 
@@ -122,7 +122,7 @@ void
 warn(message): void;
 ```
 
-Defined in: [src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L389)
+Defined in: [src/index.ts:389](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L389)
 
 Logs the given message at the 'warn' level.
 

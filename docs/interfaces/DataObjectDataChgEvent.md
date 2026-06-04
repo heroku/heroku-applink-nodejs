@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: DataObjectDataChgEvent
 
-Defined in: [src/index.ts:1052](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1052)
+Defined in: [src/index.ts:1052](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1052)
 
 Represents a [DataObjectDataChgEvent](https://developer.salesforce.com/docs/atlas.en-us.platform_events.meta/platform_events/sforce_api_objects_dataobjectdatachgevent.htm).
 
@@ -18,7 +18,7 @@ Represents a [DataObjectDataChgEvent](https://developer.salesforce.com/docs/atla
 ActionDeveloperName: string;
 ```
 
-Defined in: [src/index.ts:1053](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1053)
+Defined in: [src/index.ts:1053](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1053)
 
 ***
 
@@ -28,7 +28,7 @@ Defined in: [src/index.ts:1053](https://github.com/heroku/heroku-applink-nodejs/
 EventCreationDateTime: string;
 ```
 
-Defined in: [src/index.ts:1054](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1054)
+Defined in: [src/index.ts:1054](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1054)
 
 ***
 
@@ -38,7 +38,7 @@ Defined in: [src/index.ts:1054](https://github.com/heroku/heroku-applink-nodejs/
 EventPrompt: string;
 ```
 
-Defined in: [src/index.ts:1055](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1055)
+Defined in: [src/index.ts:1055](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1055)
 
 ***
 
@@ -48,7 +48,7 @@ Defined in: [src/index.ts:1055](https://github.com/heroku/heroku-applink-nodejs/
 EventPublishDateTime: string;
 ```
 
-Defined in: [src/index.ts:1056](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1056)
+Defined in: [src/index.ts:1056](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1056)
 
 ***
 
@@ -58,7 +58,7 @@ Defined in: [src/index.ts:1056](https://github.com/heroku/heroku-applink-nodejs/
 EventSchemaVersion: string;
 ```
 
-Defined in: [src/index.ts:1057](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1057)
+Defined in: [src/index.ts:1057](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1057)
 
 ***
 
@@ -68,7 +68,7 @@ Defined in: [src/index.ts:1057](https://github.com/heroku/heroku-applink-nodejs/
 EventType: string;
 ```
 
-Defined in: [src/index.ts:1058](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1058)
+Defined in: [src/index.ts:1058](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1058)
 
 ***
 
@@ -78,7 +78,7 @@ Defined in: [src/index.ts:1058](https://github.com/heroku/heroku-applink-nodejs/
 EventUuid: string;
 ```
 
-Defined in: [src/index.ts:1059](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1059)
+Defined in: [src/index.ts:1059](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1059)
 
 ***
 
@@ -88,7 +88,7 @@ Defined in: [src/index.ts:1059](https://github.com/heroku/heroku-applink-nodejs/
 Offset: string;
 ```
 
-Defined in: [src/index.ts:1060](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1060)
+Defined in: [src/index.ts:1060](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1060)
 
 ***
 
@@ -98,7 +98,7 @@ Defined in: [src/index.ts:1060](https://github.com/heroku/heroku-applink-nodejs/
 PayloadCurrentValue: string;
 ```
 
-Defined in: [src/index.ts:1061](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1061)
+Defined in: [src/index.ts:1061](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1061)
 
 ***
 
@@ -108,7 +108,7 @@ Defined in: [src/index.ts:1061](https://github.com/heroku/heroku-applink-nodejs/
 PayloadMetadata: string;
 ```
 
-Defined in: [src/index.ts:1063](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1063)
+Defined in: [src/index.ts:1063](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1063)
 
 ***
 
@@ -118,7 +118,7 @@ Defined in: [src/index.ts:1063](https://github.com/heroku/heroku-applink-nodejs/
 PayloadPrevValue: string;
 ```
 
-Defined in: [src/index.ts:1062](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1062)
+Defined in: [src/index.ts:1062](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1062)
 
 ***
 
@@ -128,7 +128,7 @@ Defined in: [src/index.ts:1062](https://github.com/heroku/heroku-applink-nodejs/
 ReplayId: string;
 ```
 
-Defined in: [src/index.ts:1064](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1064)
+Defined in: [src/index.ts:1064](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1064)
 
 ***
 
@@ -138,4 +138,4 @@ Defined in: [src/index.ts:1064](https://github.com/heroku/heroku-applink-nodejs/
 SourceObjectDeveloperName: string;
 ```
 
-Defined in: [src/index.ts:1065](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1065)
+Defined in: [src/index.ts:1065](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1065)
