@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -10,6 +10,6 @@
 type IngestJobOperation = "insert" | "delete" | "hardDelete" | "update" | "upsert";
 ```
 
-Defined in: [src/index.ts:884](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L884)
+Defined in: [src/index.ts:884](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L884)
 
 The processing operation for an ingest job.

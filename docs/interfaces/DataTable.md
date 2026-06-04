@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: DataTable
 
-Defined in: [src/index.ts:934](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L934)
+Defined in: [src/index.ts:934](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L934)
 
 Represents a CSV-like data table consisting of columns and rows. All the values
 contained must be represented as strings.
@@ -269,7 +269,7 @@ Array.[unscopables]
 columns: [string, ...string[]];
 ```
 
-Defined in: [src/index.ts:938](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L938)
+Defined in: [src/index.ts:938](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L938)
 
 A list of one or more column names contained in this data table.
 
@@ -281,7 +281,7 @@ A list of one or more column names contained in this data table.
 length: number;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1326
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1329
 
 Gets or sets the length of the array. This is a number one higher than the highest index in the array.
 
@@ -349,7 +349,7 @@ Array.at
 concat(...items): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1350
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1353
 
 Combines two or more arrays.
 This method returns a new array without modifying any existing arrays.
@@ -378,7 +378,7 @@ Array.concat
 concat(...items): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1356
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1359
 
 Combines two or more arrays.
 This method returns a new array without modifying any existing arrays.
@@ -483,7 +483,7 @@ Array.entries
 every<S>(predicate, thisArg?): this is S[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1433
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1440
 
 Determines whether all the members of an array satisfy the specified test.
 
@@ -526,7 +526,7 @@ Array.every
 every(predicate, thisArg?): boolean;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1442
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1449
 
 Determines whether all the members of an array satisfy the specified test.
 
@@ -614,7 +614,7 @@ Array.fill
 filter<S>(predicate, thisArg?): S[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1469
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1476
 
 Returns the elements of an array that meet the condition specified in a callback function.
 
@@ -654,7 +654,7 @@ Array.filter
 filter(predicate, thisArg?): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1475
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1482
 
 Returns the elements of an array that meet the condition specified in a callback function.
 
@@ -901,7 +901,7 @@ Array.flatMap
 forEach(callbackfn, thisArg?): void;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1457
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1464
 
 Performs the specified action for each element in an array.
 
@@ -973,7 +973,7 @@ Array.includes
 indexOf(searchElement, fromIndex?): number;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1418
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1425
 
 Returns the index of the first occurrence of a value in an array, or -1 if it is not present.
 
@@ -1009,7 +1009,7 @@ Array.indexOf
 join(separator?): string;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1361
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1364
 
 Adds all the elements of an array into a string, separated by the specified separator string.
 
@@ -1061,7 +1061,7 @@ Array.keys
 lastIndexOf(searchElement, fromIndex?): number;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1424
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1431
 
 Returns the index of the last occurrence of a specified value in an array, or -1 if it is not present.
 
@@ -1097,7 +1097,7 @@ Array.lastIndexOf
 map<U>(callbackfn, thisArg?): U[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1463
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1470
 
 Calls a defined callback function on each element of an array, and returns an array that contains the results.
 
@@ -1139,7 +1139,7 @@ Array.map
 pop(): Map<string, string>;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1339
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1342
 
 Removes the last element from an array and returns it.
 If the array is empty, undefined is returned and the array is not modified.
@@ -1162,7 +1162,7 @@ Array.pop
 push(...items): number;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1344
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1347
 
 Appends new elements to the end of an array, and returns the new length of the array.
 
@@ -1194,7 +1194,7 @@ Array.push
 reduce(callbackfn): Map;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1481
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1488
 
 Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
 
@@ -1222,7 +1222,7 @@ Array.reduce
 reduce(callbackfn, initialValue): Map;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1482
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1489
 
 ##### Parameters
 
@@ -1250,7 +1250,7 @@ Array.reduce
 reduce<U>(callbackfn, initialValue): U;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1488
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1495
 
 Calls the specified callback function for all the elements in an array. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
 
@@ -1294,7 +1294,7 @@ Array.reduce
 reduceRight(callbackfn): Map;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1494
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1501
 
 Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
 
@@ -1322,7 +1322,7 @@ Array.reduceRight
 reduceRight(callbackfn, initialValue): Map;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1495
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1502
 
 ##### Parameters
 
@@ -1350,7 +1350,7 @@ Array.reduceRight
 reduceRight<U>(callbackfn, initialValue): U;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1501
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1508
 
 Calls the specified callback function for all the elements in an array, in descending order. The return value of the callback function is the accumulated result, and is provided as an argument in the next call to the callback function.
 
@@ -1392,7 +1392,7 @@ Array.reduceRight
 reverse(): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1366
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1369
 
 Reverses the elements in an array in place.
 This method mutates the array and returns a reference to the same array.
@@ -1415,7 +1415,7 @@ Array.reverse
 shift(): Map<string, string>;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1371
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1374
 
 Removes the first element from an array and returns it.
 If the array is empty, undefined is returned and the array is not modified.
@@ -1438,7 +1438,7 @@ Array.shift
 slice(start?, end?): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1381
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1384
 
 Returns a copy of a section of an array.
 For both start and end, a negative index can be used to indicate an offset from the end of the array.
@@ -1478,7 +1478,7 @@ Array.slice
 some(predicate, thisArg?): boolean;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1451
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1458
 
 Determines whether the specified callback function returns true for any element of an array.
 
@@ -1517,7 +1517,7 @@ Array.some
 sort(compareFn?): this;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1392
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1395
 
 Sorts an array in place.
 This method mutates the array and returns a reference to the same array.
@@ -1530,7 +1530,7 @@ This method mutates the array and returns a reference to the same array.
 
 Function used to determine the order of the elements. It is expected to return
 a negative value if the first argument is less than the second argument, zero if they're equal, and a positive
-value otherwise. If omitted, the elements are sorted in ascending, ASCII character order.
+value otherwise. If omitted, the elements are sorted in ascending, UTF-16 code unit order.
 ```ts
 [11,2,22,1].sort((a, b) => a - b)
 ```
@@ -1555,7 +1555,7 @@ Array.sort
 splice(start, deleteCount?): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1399
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1404
 
 Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
 
@@ -1571,7 +1571,9 @@ The zero-based location in the array from which to start removing elements.
 
 `number`
 
-The number of elements to remove.
+The number of elements to remove. Omitting this argument will remove all elements from the start
+paramater location to end of the array. If value of this argument is either a negative number, zero, undefined, or a type
+that cannot be converted to an integer, the function will evaluate the argument as zero and not remove any elements.
 
 ##### Returns
 
@@ -1594,7 +1596,7 @@ splice(
    items): Map<string, string>[];
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1407
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1414
 
 Removes elements from an array and, if necessary, inserts new elements in their place, returning the deleted elements.
 
@@ -1610,7 +1612,9 @@ The zero-based location in the array from which to start removing elements.
 
 `number`
 
-The number of elements to remove.
+The number of elements to remove. If value of this argument is either a negative number, zero,
+undefined, or a type that cannot be converted to an integer, the function will evaluate the argument as zero and
+not remove any elements.
 
 ###### items
 
@@ -1640,7 +1644,7 @@ Array.splice
 toLocaleString(): string;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1334
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1337
 
 Returns a string representation of an array. The elements are converted to string using their toLocaleString methods.
 
@@ -1690,7 +1694,7 @@ Array.toLocaleString
 toString(): string;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1330
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1333
 
 Returns a string representation of an array.
 
@@ -1712,7 +1716,7 @@ Array.toString
 unshift(...items): number;
 ```
 
-Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1412
+Defined in: node\_modules/typescript/lib/lib.es5.d.ts:1419
 
 Inserts new elements at the start of an array, and returns the new length of the array.
 

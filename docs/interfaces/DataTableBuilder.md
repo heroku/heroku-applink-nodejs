@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: DataTableBuilder
 
-Defined in: [src/index.ts:957](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L957)
+Defined in: [src/index.ts:957](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L957)
 
 A builder object that helps with creating [DataTable](DataTable.md) instances.
 
@@ -20,7 +20,7 @@ A builder object that helps with creating [DataTable](DataTable.md) instances.
 addRow(row): DataTableBuilder;
 ```
 
-Defined in: [src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L966)
+Defined in: [src/index.ts:966](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L966)
 
 Adds a row of data to the [DataTable](DataTable.md) being constructed. This can be a
 list of string values in the same order as the specified columns or a map of
@@ -45,7 +45,7 @@ The row of data to add
 addRow<T>(value, fieldValueExtractor): any;
 ```
 
-Defined in: [src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L976)
+Defined in: [src/index.ts:976](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L976)
 
 Adds a row of data to the [DataTable](DataTable.md) being constructed. A [DataTableFieldValueExtractor](../type-aliases/DataTableFieldValueExtractor.md)
 is used to convert the arbitrary value into the required row format.
@@ -86,7 +86,7 @@ A function that reads field values from the provided object. It will be called f
 addRows(rows): DataTableBuilder;
 ```
 
-Defined in: [src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L986)
+Defined in: [src/index.ts:986](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L986)
 
 Adds multiple rows of data to the [DataTable](DataTable.md) being constructed. This can be a
 list of string values in the same order as the specified columns or a map of
@@ -111,7 +111,7 @@ The list of rows of data to add
 addRows<T>(values, fieldValueExtractor): DataTableBuilder;
 ```
 
-Defined in: [src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L996)
+Defined in: [src/index.ts:996](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L996)
 
 Adds multiple rows of data to the [DataTable](DataTable.md) being constructed. A [DataTableFieldValueExtractor](../type-aliases/DataTableFieldValueExtractor.md)
 is used to convert the arbitrary values into the required row format.
@@ -150,7 +150,7 @@ A function that reads field values from each provided object in the list of valu
 build(): DataTable;
 ```
 
-Defined in: [src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1004)
+Defined in: [src/index.ts:1004](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1004)
 
 Creates a [DataTable](DataTable.md) instance from the columns and rows provided to the builder.
 

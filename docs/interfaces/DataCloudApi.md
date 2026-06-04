@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: DataCloudApi
 
-Defined in: [src/index.ts:1106](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1106)
+Defined in: [src/index.ts:1106](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1106)
 
 ## Methods
 
@@ -16,7 +16,7 @@ Defined in: [src/index.ts:1106](https://github.com/heroku/heroku-applink-nodejs/
 query(sql): Promise<DataCloudQueryResponse>;
 ```
 
-Defined in: [src/index.ts:1111](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1111)
+Defined in: [src/index.ts:1111](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1111)
 
 [Data Cloud Query API](https://developer.salesforce.com/docs/atlas.en-us.c360a_api.meta/c360a_api/c360a_api_query_v2.htm)   *
 
@@ -38,7 +38,7 @@ Defined in: [src/index.ts:1111](https://github.com/heroku/heroku-applink-nodejs/
 queryNextBatch(nextBatchId): Promise<DataCloudQueryResponse>;
 ```
 
-Defined in: [src/index.ts:1117](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1117)
+Defined in: [src/index.ts:1117](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1117)
 
 [Data Cloud Query Next Batch API](https://developer.salesforce.com/docs/atlas.en-us.c360a_api.meta/c360a_api/c360a_api_get_query_v2.htm)
 
@@ -63,7 +63,7 @@ upsert(
 data): Promise<DataCloudUpsertResponse>;
 ```
 
-Defined in: [src/index.ts:1125](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L1125)
+Defined in: [src/index.ts:1125](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L1125)
 
 [Insert Records API](https://developer.salesforce.com/docs/atlas.en-us.c360a_api.meta/c360a_api/c360a_api_insert_records.htm)
 
