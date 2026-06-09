@@ -1,0 +1,76 @@
+name: Release
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Beta version to publish (e.g. 1.2.0-beta.1)"
+        required: true
+        type: string
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  release-please:
+    if: github.event_name == 'push'
+    runs-on: ubuntu-latest
+    outputs:
+      release_created: ${{ steps.release.outputs.release_created }}
+      tag_name: ${{ steps.release.outputs.tag_name }}
+    steps:
+      - uses: googleapis/release-please-action@v4
+        id: release
+        with:
+          config-file: release-please-config.json
+          manifest-file: .release-please-manifest.json
+
+  publish:
+    needs: release-please
+    if: ${{ needs.release-please.outputs.release_created }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - run: yarn install
+      - run: yarn build
+      - run: npm publish --access public
+
+  publish-beta:
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          registry-url: "https://registry.npmjs.org"
+      - name: Validate version is a pre-release
+        env:
+          BETA_VERSION: ${{ inputs.version }}
+        run: |
+          if [[ ! "${BETA_VERSION}" =~ -.*\. ]]; then
+            echo "Error: Version must be a pre-release (e.g. 1.2.0-beta.1)"
+            exit 1
+          fi
+      - name: Set version
+        env:
+          BETA_VERSION: ${{ inputs.version }}
+        run: npm version "${BETA_VERSION}" --no-git-tag-version
+      - run: yarn install
+      - run: yarn build
+      - run: npm publish --access public --tag beta
