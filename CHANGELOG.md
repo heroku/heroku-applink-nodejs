@@ -5,6 +5,32 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [2.0.0](https://github.com/heroku/heroku-applink-nodejs/compare/applink-v1.1.1...applink-v2.0.0) (2026-06-10)
+
+
+### ⚠ BREAKING CHANGES
+
+* Drop Node.js 18/20 support, add Node.js 26 ([#102](https://github.com/heroku/heroku-applink-nodejs/issues/102))
+
+### Features
+
+* Drop Node.js 18/20 support, add Node.js 26 ([#102](https://github.com/heroku/heroku-applink-nodejs/issues/102)) ([f925c76](https://github.com/heroku/heroku-applink-nodejs/commit/f925c76ea6167db7bc427f832bf7359b4a2d8585))
+
+
+### Dependency Updates
+
+* bump @salesforce/core ([#114](https://github.com/heroku/heroku-applink-nodejs/issues/114)) ([adc1fc3](https://github.com/heroku/heroku-applink-nodejs/commit/adc1fc306a91fc1108314701e6541e25b4f5e4e1))
+* bump amannn/action-semantic-pull-request from 5 to 6 ([#112](https://github.com/heroku/heroku-applink-nodejs/issues/112)) ([bd57b58](https://github.com/heroku/heroku-applink-nodejs/commit/bd57b58d305f1f061ac7d089c08059a5e56671b8))
+* bump csv-parse from 5.6.0 to 6.2.1 ([#90](https://github.com/heroku/heroku-applink-nodejs/issues/90)) ([25536a8](https://github.com/heroku/heroku-applink-nodejs/commit/25536a845e19b0b4b5b6115538e98a90d43e8746))
+* bump googleapis/release-please-action from 4 to 5 ([#109](https://github.com/heroku/heroku-applink-nodejs/issues/109)) ([3c8864d](https://github.com/heroku/heroku-applink-nodejs/commit/3c8864d1f47e9e8efb2a13374168f95c03d56a81))
+* bump nyc from 17.1.0 to 18.0.0 ([#91](https://github.com/heroku/heroku-applink-nodejs/issues/91)) ([16456ed](https://github.com/heroku/heroku-applink-nodejs/commit/16456ed7a97337527098d72726d991c85d00842b))
+* bump picomatch from 2.3.1 to 2.3.2 ([#92](https://github.com/heroku/heroku-applink-nodejs/issues/92)) ([5a68e68](https://github.com/heroku/heroku-applink-nodejs/commit/5a68e6873971bb3260ac78e43e579f0b8e203f2c))
+* bump the dev-dependencies group across 1 directory with 7 updates ([#101](https://github.com/heroku/heroku-applink-nodejs/issues/101)) ([cf15b7c](https://github.com/heroku/heroku-applink-nodejs/commit/cf15b7ce1b568640a2ae16be809911cbfda94fa8))
+* bump the production-dependencies group across 1 directory with 2 updates ([#100](https://github.com/heroku/heroku-applink-nodejs/issues/100)) ([bae3ff7](https://github.com/heroku/heroku-applink-nodejs/commit/bae3ff7b46c66e9917b2bb59c945e7a1335818ee))
+* bump ts-pattern from 4.3.0 to 5.9.0 ([#58](https://github.com/heroku/heroku-applink-nodejs/issues/58)) ([d17e5e1](https://github.com/heroku/heroku-applink-nodejs/commit/d17e5e1b40fa0cdd380a16fdd1d7a4c38d916a5b))
+* fix CVE-2026-34043 serialize-javascript CPU exhaustion DoS ([#117](https://github.com/heroku/heroku-applink-nodejs/issues/117)) ([0ed5071](https://github.com/heroku/heroku-applink-nodejs/commit/0ed50713004caccb775bc4bbc28199b3dcc96cde))
+* fix CVE-2026-9277 shell-quote command injection ([#116](https://github.com/heroku/heroku-applink-nodejs/issues/116)) ([b471d19](https://github.com/heroku/heroku-applink-nodejs/commit/b471d1952035b94527a72fd96742125e214335f8))
+
 ## [0.1.0-ea] - 2024-08-12
 
 - Initial
