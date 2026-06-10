@@ -5,6 +5,21 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 
+## [1.2.0](https://github.com/heroku/heroku-applink-nodejs/compare/applink-v1.1.1...applink-v1.2.0) (2026-06-10)
+
+
+### Features
+
+* add attachment, color, or url scoped authorizations ([30d75ff](https://github.com/heroku/heroku-applink-nodejs/commit/30d75ff27d5ea610f3a800b5b2b1a11dd6190a0b))
+
+
+### Bug Fixes
+
+* don't try and be smart about UA version ([98e76c1](https://github.com/heroku/heroku-applink-nodejs/commit/98e76c167dc5e868d52dd9ebdbc640b44d5698be))
+* don't try and be smart about UA version ([2642d38](https://github.com/heroku/heroku-applink-nodejs/commit/2642d389dda315880ee5a3612d84ccbd71f43b77))
+* ensure x-app-uuid is present when using token ([87c9251](https://github.com/heroku/heroku-applink-nodejs/commit/87c92510086d403ff167f2c2ca165bec2e25023f))
+* ensure x-app-uuid is present when using token ([3a9b965](https://github.com/heroku/heroku-applink-nodejs/commit/3a9b965c91112431a1fb702568062b361520b14d))
+
 ## [0.1.0-ea] - 2024-08-12
 
 - Initial
