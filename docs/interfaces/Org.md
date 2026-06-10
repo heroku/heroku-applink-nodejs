@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: Org
 
-Defined in: [src/index.ts:153](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L153)
+Defined in: [src/index.ts:153](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L153)
 
 Holds information about the invoking Salesforce organization and user.
 
@@ -18,7 +18,7 @@ Holds information about the invoking Salesforce organization and user.
 readonly apiVersion: string;
 ```
 
-Defined in: [src/index.ts:154](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L154)
+Defined in: [src/index.ts:154](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L154)
 
 The API version the Salesforce organization is currently using.
 
@@ -30,7 +30,7 @@ The API version the Salesforce organization is currently using.
 readonly dataApi: DataApi;
 ```
 
-Defined in: [src/index.ts:155](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L155)
+Defined in: [src/index.ts:155](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L155)
 
 An initialized data API client instance.
 
@@ -42,7 +42,7 @@ An initialized data API client instance.
 readonly optional dataCloudApi: DataCloudApi;
 ```
 
-Defined in: [src/index.ts:156](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L156)
+Defined in: [src/index.ts:156](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L156)
 
 If instance URL and token are provide, an initialized Data Cloud data API client instance.
 
@@ -54,7 +54,7 @@ If instance URL and token are provide, an initialized Data Cloud data API client
 readonly domainUrl: string;
 ```
 
-Defined in: [src/index.ts:157](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L157)
+Defined in: [src/index.ts:157](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L157)
 
 The domain URL of the Salesforce organization.
 
@@ -66,7 +66,7 @@ The domain URL of the Salesforce organization.
 readonly id: string;
 ```
 
-Defined in: [src/index.ts:158](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L158)
+Defined in: [src/index.ts:158](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L158)
 
 The Salesforce organization ID.
 
@@ -78,7 +78,7 @@ The Salesforce organization ID.
 readonly namespace: string;
 ```
 
-Defined in: [src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L159)
+Defined in: [src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L159)
 
 ***
 
@@ -88,7 +88,7 @@ Defined in: [src/index.ts:159](https://github.com/heroku/heroku-applink-nodejs/b
 readonly user: User;
 ```
 
-Defined in: [src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L160)
+Defined in: [src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L160)
 
 The currently logged in user
 
@@ -103,7 +103,7 @@ request(
    json): any;
 ```
 
-Defined in: [src/index.ts:162](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L162)
+Defined in: [src/index.ts:162](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L162)
 
 #### Parameters
 

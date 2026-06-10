@@ -1,4 +1,4 @@
-[**@heroku/applink v1.1.0**](../README.md)
+[**@heroku/applink v1.1.1**](../README.md)
 
 ***
 
@@ -6,7 +6,7 @@
 
 # Interface: BulkApi
 
-Defined in: [src/index.ts:417](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L417)
+Defined in: [src/index.ts:417](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L417)
 
 Provides operations that can be used to create and interact with the
 Bulk API 2.0 ingest and query jobs.
@@ -19,7 +19,7 @@ Bulk API 2.0 ingest and query jobs.
 abort(jobReference): Promise<void>;
 ```
 
-Defined in: [src/index.ts:426](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L426)
+Defined in: [src/index.ts:426](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L426)
 
 This operation will set the state of an Ingest or query job to `Aborted`.
 An aborted job will not be queued or processed.
@@ -49,7 +49,7 @@ The reference of the job to abort
 createDataTableBuilder(columns): DataTableBuilder;
 ```
 
-Defined in: [src/index.ts:433](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L433)
+Defined in: [src/index.ts:433](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L433)
 
 Creates a [DataTableBuilder](DataTableBuilder.md) that can be used to construct [DataTable](DataTable.md) instances.
 
@@ -73,7 +73,7 @@ The names of the columns to include in the [DataTable](DataTable.md)
 delete(jobReference): Promise<void>;
 ```
 
-Defined in: [src/index.ts:443](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L443)
+Defined in: [src/index.ts:443](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L443)
 
 Deletes an ingest or query job. The job must have a state of `UploadComplete`,
 `JobComplete`, `Aborted`, or `Failed`
@@ -103,7 +103,7 @@ The reference of the job to delete
 formatDate(value): string;
 ```
 
-Defined in: [src/index.ts:460](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L460)
+Defined in: [src/index.ts:460](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L460)
 
 Produces a formatted `date` field from a JavaScript Date object. Will raise an
 error if the provided Date is invalid.
@@ -132,7 +132,7 @@ The Date to convert into the `date` format
 formatDateTime(value): string;
 ```
 
-Defined in: [src/index.ts:469](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L469)
+Defined in: [src/index.ts:469](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L469)
 
 Produces a formatted `dateTime` field from a JavaScript Date object. Will raise an
 error if the provided Date is invalid.
@@ -161,7 +161,7 @@ The Date to convert into the `dateTime` format
 formatNullValue(): string;
 ```
 
-Defined in: [src/index.ts:451](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L451)
+Defined in: [src/index.ts:451](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L451)
 
 Empty field values are ignored when you update records. To set a field value
 to `null` use this formatter which will set the field value to `#N/A`.
@@ -182,7 +182,7 @@ to `null` use this formatter which will set the field value to `#N/A`.
 getFailedResults(jobReference): Promise<DataTable>;
 ```
 
-Defined in: [src/index.ts:480](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L480)
+Defined in: [src/index.ts:480](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L480)
 
 Retrieve the list of failed records for a completed ingest job. The returned [DataTable](DataTable.md) will contain the following:
 - `sf__Error`: Error code and message, if applicable.
@@ -213,7 +213,7 @@ The reference of the job to get the failed results for
 getInfo(jobReference): Promise<IngestJobInfo | QueryJobInfo>;
 ```
 
-Defined in: [src/index.ts:489](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L489)
+Defined in: [src/index.ts:489](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L489)
 
 Fetches the current information about an ingest or query job.
 
@@ -242,7 +242,7 @@ The reference of the job to fetch information about
 getMoreQueryResults(queryJobResults, getQueryJobResultsOptions?): Promise<QueryJobResults>;
 ```
 
-Defined in: [src/index.ts:500](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L500)
+Defined in: [src/index.ts:500](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L500)
 
 Gets the next set of results for a query job.
 
@@ -276,7 +276,7 @@ Optional configuration that can be specified when fetching query results
 getQueryResults(jobReference, getQueryJobResultsOptions?): Promise<QueryJobResults>;
 ```
 
-Defined in: [src/index.ts:512](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L512)
+Defined in: [src/index.ts:512](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L512)
 
 Gets the results for a query job.  The job must be in a `JobCompleted` state.
 
@@ -310,7 +310,7 @@ Optional configuration that can be specified when fetching query results
 getSuccessfulResults(jobReference): Promise<DataTable>;
 ```
 
-Defined in: [src/index.ts:526](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L526)
+Defined in: [src/index.ts:526](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L526)
 
 Retrieve the list of successfully processed records for a completed ingest job. The returned [DataTable](DataTable.md) will contain the following:
 - `sf__Created`: Indicates if the record was created.
@@ -341,7 +341,7 @@ The reference of the job to get the successful results for
 getUnprocessedRecords(jobReference): Promise<DataTable>;
 ```
 
-Defined in: [src/index.ts:534](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L534)
+Defined in: [src/index.ts:534](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L534)
 
 Retrieve the list of successfully processed records for a completed ingest job. The returned [DataTable](DataTable.md) will contain all the columns from the uploaded data.
 
@@ -371,7 +371,7 @@ ingest(ingestJobOptions): Promise<(
 | IngestJobFailure)[]>;
 ```
 
-Defined in: [src/index.ts:551](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L551)
+Defined in: [src/index.ts:551](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L551)
 
 Handles the process of splitting the [DataTable](DataTable.md) to be ingested into one or more [DataTable](DataTable.md)
 instances that can fit within the request size limit that can be accepted by the Bulk API v2.
@@ -410,7 +410,7 @@ These are options that can be supplied when creating an ingest job.
 query(options): Promise<QueryJobReference>;
 ```
 
-Defined in: [src/index.ts:561](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L561)
+Defined in: [src/index.ts:561](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L561)
 
 Creates a new query job for processing.
 
@@ -438,7 +438,7 @@ These are options that can be supplied when creating a query job.
 splitDataTable(dataTable): DataTable[];
 ```
 
-Defined in: [src/index.ts:570](https://github.com/heroku/heroku-applink-nodejs/blob/f1676b57abf95f048d2affbf5184af7ba68d8a26/src/index.ts#L570)
+Defined in: [src/index.ts:570](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L570)
 
 Splits a [DataTable](DataTable.md) into one or more [DataTable](DataTable.md) instances that are guaranteed
 to fit within the upload size limitation of an ingest job.
