@@ -410,9 +410,9 @@
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
 "@salesforce/core@^8.26.3":
-  version "8.31.0"
-  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.31.0.tgz#153beb193af8fce73d31cc39afee794c4c1ee1c0"
-  integrity sha512-TXQoR7Bs0Dk5AuNY8eaNRhMeLDLcpJ8su7LVxn7VVfnRxITrRh4gkSuOAXdBKAqx0WcjRONDs1twedaOE7Xu4Q==
+  version "8.31.1"
+  resolved "https://registry.yarnpkg.com/@salesforce/core/-/core-8.31.1.tgz#a0057e46568b5aeb6d838c461d7c98105ec11dc2"
+  integrity sha512-dnBfLI0v/Ucsh/QrpYPGeo39qsvvglWMRSifx1lmAwLc9QAnL3Hhp9zUxJyX5icD9jj1uMftsAtIOGyjC2+KXA==
   dependencies:
     "@jsforce/jsforce-node" "^3.10.13"
     "@salesforce/kit" "^3.2.4"
@@ -1270,9 +1270,9 @@ csv-parse@^6.2.1:
   integrity sha512-LRLMV+UCyfMokp8Wb411duBf1gaBKJfOfBWU9eHMJ+b+cJYZsNu3AFmjJf3+yPGd59Exz1TsMjaSFyxnYB9+IQ==
 
 csv-stringify@^6.2.3, csv-stringify@^6.6.0:
-  version "6.7.0"
-  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.7.0.tgz#74c657f278e7ac6ebc8f6812d098dfe0ea0b7e14"
-  integrity sha512-UdtziYp5HuTz7e5j8Nvq+a/3HQo+2/aJZ9xntNTpmRRIg/3YYqDVgiS9fvAhtNbnyfbv2ZBe0bqCHqzhE7FqWQ==
+  version "6.8.0"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.8.0.tgz#2eb74e6823f3d7755548aba38d3d246d8bbbf0bc"
+  integrity sha512-Ya0OOHb6XbgPaZKH7dcdmwXe3azUS0TwmlbVdS75HoAhnHApSkiQcfEJoC/s5WwGsrXwOjBDr3FTmCZPjkssgg==
 
 dateformat@^4.6.3:
   version "4.6.3"
@@ -2261,9 +2261,9 @@ jsesc@^3.0.2:
   integrity sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==
 
 jsforce@^3.10.14:
-  version "3.10.15"
-  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-3.10.15.tgz#418eeae952b7c6e86e719c60a5107c2fd03edbca"
-  integrity sha512-PCepDvkS3046ElmMI5Ft6bI1QzJvMlJ/FDpw4Nk7XWWMDNe3kiFCRlaWnmc58bYtJ4qgx4LSE9BkZe7YUbGEjQ==
+  version "3.10.16"
+  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-3.10.16.tgz#1cc2554d79da79eb8f3bc4702f53413530628201"
+  integrity sha512-lOTRzCAfFZMdXLxR4HB5f6W7B8cY7dG2FXUqJlo64AvgzurQh1bihzBtuBhY6XhOGLCtfI1/6GirpykFDS6Tng==
   dependencies:
     "@babel/runtime" "^7.27.0"
     "@babel/runtime-corejs3" "^7.28.3"
