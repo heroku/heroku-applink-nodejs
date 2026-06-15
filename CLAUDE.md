@@ -50,9 +50,14 @@ A commit without one of these prefixes is effectively a silent commit from relea
 Full runbook: [`docs/RELEASING.md`](docs/RELEASING.md).
 
 Short version:
-- **Stable release:** merge `feat:`/`fix:` commits into `main` → release-please opens a release PR → merge it → publishes as `latest`.
-- **Beta release:** **forward-merge `main` into `next` first** (`git checkout next && git merge main && git push`), then merge feature work into `next` → release-please opens a release PR for `X.Y.Z-beta.N` → merge it → publishes as `beta`.
+- **Stable release:** merge `feat:`/`fix:` commits into `main` (via PR) → release-please opens a release PR → merge it → publishes as `latest`.
+- **Beta release:** open a forward-merge PR carrying `main` into `next` first, merge it; then open feature PRs against `next` → release-please opens a release PR for `X.Y.Z-beta.N` → merge it → publishes as `beta`.
+- **Promotion:** open a PR from a release branch into `main` that merges `next` — **never push directly to `main`**. release-please then opens the clean `X.0.0` release PR.
 - **Prerequisite:** npm Trusted Publishing must be configured on npmjs.com for `@heroku/applink` (Trusted Publisher tied to this repo + `release.yml`). Without it, all `npm publish` calls fail with a misleading `404 Not Found`.
+
+### Never push directly to `main` or `next`
+
+Both are protected release branches. Every change — including forward-merges, promotions, and routine work — goes through a PR. If you find yourself typing `git push` while checked out on `main` or `next`, stop. Open a topic branch, push that, open a PR.
 
 ### `next` is opt-in
 

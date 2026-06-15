@@ -84,18 +84,25 @@ After your PR merges:
 > git checkout -b next
 > git push -u origin next
 > ```
+> This is the **only** time you push directly to `next`. Immediately add branch protection on GitHub (require PR + reviews + status checks) before any further commits land on it.
 
-### Step 1 — forward-merge `main` into `next`
+### Step 1 — forward-merge `main` into `next` (via PR)
 
-If anything has landed on `main` since `next` was last synced (dependabot bumps, hotfixes, infra changes), pull it forward first so the beta line ships with up-to-date deps:
+If anything has landed on `main` since `next` was last synced (dependabot bumps, hotfixes, infra changes), pull it forward first so the beta line ships with up-to-date deps. **`next` is a protected release branch — never push to it directly. Always go through a PR.**
 
 ```bash
+# Start from next's tip, then merge main on top of it
 git checkout next
 git pull
-git merge main
-# resolve any conflicts, then:
-git push
+git checkout -b chore/forward-merge-main-into-next
+git merge main                          # resolve any conflicts here
+git push -u origin chore/forward-merge-main-into-next
+gh pr create --base next \
+  --title "chore: forward-merge main into next" \
+  --body "Carries main's commits forward into the beta line ahead of the next beta cut."
 ```
+
+Get review (or self-approve if your branch protection allows), merge the PR. CI must pass.
 
 This is a **required step before cutting any beta**. Without it, the beta line drifts further out of sync with stable every week, and the eventual promotion to GA becomes a painful merge.
 
@@ -134,22 +141,31 @@ Land more PRs against `next` (`fix:`, `feat:`, etc.) — release-please keeps th
 
 ## Promoting a beta to stable
 
-When the beta line is ready to become the new stable:
+When the beta line is ready to become the new stable, the promotion goes through a PR — **never push directly to `main`**. This is the most consequential merge in the whole flow (it cuts a new major), so it must be reviewed.
 
 ```bash
+# Start from main's tip, then merge next on top of it
 git checkout main
 git pull
-git merge next                  # bring all beta work into main
-git push
+git checkout -b release/promote-next-to-main
+git merge next                  # resolve any conflicts here
+git push -u origin release/promote-next-to-main
+gh pr create --base main \
+  --title "feat!: promote next to stable" \
+  --body "Promotes the beta line to stable. release-please will open a release PR for the new major after this merges."
 ```
 
-release-please on `main` sees the breaking-change history and opens a release PR for the clean stable version (e.g., `2.0.0`, no `-beta` suffix). Merge it → publishes as `latest`.
+Get review, merge the PR.
+
+Once merged, release-please on `main` sees the breaking-change history and opens a release PR for the clean stable version (e.g., `2.0.0`, no `-beta` suffix). Merge that release PR → publishes as `latest`.
 
 After promotion, `next` can be deleted (or left to start the next major's beta line).
 
 ## Keeping `next` in sync with `main`
 
-A **forward-merge** is `git merge main` while checked out on `next`. It carries commits that landed on stable forward into the beta line so dep bumps, hotfixes, and infra changes don't only live on one branch.
+A **forward-merge** is `git merge main` performed on a feature branch off `next`, then opened as a PR back to `next`. It carries commits that landed on stable forward into the beta line so dep bumps, hotfixes, and infra changes don't only live on one branch.
+
+`next` is a protected release branch — never push to it directly. Always go through a PR.
 
 Before:
 ```
@@ -161,10 +177,14 @@ next:          B'---E   (E = "feat!: rewrite data api")
 ```bash
 git checkout next
 git pull
-git merge main
-# resolve any conflicts, run tests, then:
-git push
+git checkout -b chore/forward-merge-main-into-next
+git merge main                          # resolve any conflicts here
+git push -u origin chore/forward-merge-main-into-next
+gh pr create --base next \
+  --title "chore: forward-merge main into next"
 ```
+
+Review and merge the PR.
 
 After:
 ```
