@@ -19,6 +19,18 @@ When you merge a commit to either branch, release-please:
 
 You merge feature work; release-please opens release PRs; you merge those when ready.
 
+## When does `next` exist?
+
+`next` is **opt-in, not always-on**. Open it when you have a major / breaking change in flight. Once that major ships, `next` can be deleted (or left dormant) until the next major.
+
+Don't open `next` just because you can. A beta line that only contains dependency bumps adds noise without giving users anything meaningful to preview.
+
+### Where do dependabot updates go?
+
+Dependabot is configured to target `main` only. Dep bumps land on `main` as `chore:` commits, which under release-please **don't trigger a release** on their own — they accumulate until a `feat:`/`fix:` warrants the next stable patch.
+
+If `next` is open, carry dependabot's work forward by [forward-merging `main` into `next`](#keeping-next-in-sync-with-main) before cutting any beta. We don't run dependabot against `next` directly to avoid doubling the PR review load.
+
 ## Prerequisites (one-time setup)
 
 Before any release will succeed, **npm Trusted Publishing must be configured** for `@heroku/applink` on npmjs.com:
@@ -73,7 +85,23 @@ After your PR merges:
 > git push -u origin next
 > ```
 
-### Step 1 — make your change against `next`
+### Step 1 — forward-merge `main` into `next`
+
+If anything has landed on `main` since `next` was last synced (dependabot bumps, hotfixes, infra changes), pull it forward first so the beta line ships with up-to-date deps:
+
+```bash
+git checkout next
+git pull
+git merge main
+# resolve any conflicts, then:
+git push
+```
+
+This is a **required step before cutting any beta**. Without it, the beta line drifts further out of sync with stable every week, and the eventual promotion to GA becomes a painful merge.
+
+See [Keeping `next` in sync with `main`](#keeping-next-in-sync-with-main) for the full explanation.
+
+### Step 2 — make your change against `next`
 
 ```bash
 git checkout next
@@ -87,11 +115,11 @@ git push -u origin feat/rewrite-data-api
 gh pr create --base next        # <-- IMPORTANT: --base next, not main
 ```
 
-### Step 2 — merge into `next`
+### Step 3 — merge into `next`
 
 Get review, merge the PR. release-please will open a release PR titled like `chore(next): release 2.0.0-beta.0`.
 
-### Step 3 — merge the release PR
+### Step 4 — merge the release PR
 
 Once you're happy with the bump and changelog entry, merge the release PR. The `publish` job runs and publishes to npm with `--tag beta`.
 
@@ -100,9 +128,9 @@ Users install it explicitly:
 npm install @heroku/applink@beta
 ```
 
-### Step 4 — iterate
+### Step 5 — iterate
 
-Land more PRs against `next` (`fix:`, `feat:`, etc.) — release-please keeps the open release PR updated to `beta.1`, `beta.2`, …. Merge whenever you're ready to ship the next beta.
+Land more PRs against `next` (`fix:`, `feat:`, etc.) — release-please keeps the open release PR updated to `beta.1`, `beta.2`, …. Repeat from [Step 1](#step-1--forward-merge-main-into-next) (forward-merge first) before cutting each new beta.
 
 ## Promoting a beta to stable
 
@@ -119,18 +147,45 @@ release-please on `main` sees the breaking-change history and opens a release PR
 
 After promotion, `next` can be deleted (or left to start the next major's beta line).
 
-## Pulling stable hotfixes into `next`
+## Keeping `next` in sync with `main`
 
-If a `fix:` lands on `main` and you want it in the beta line too:
+A **forward-merge** is `git merge main` while checked out on `next`. It carries commits that landed on stable forward into the beta line so dep bumps, hotfixes, and infra changes don't only live on one branch.
+
+Before:
+```
+main:  A---B---C---D    (D = "chore: bump @types/node")
+              \
+next:          B'---E   (E = "feat!: rewrite data api")
+```
 
 ```bash
 git checkout next
 git pull
-git merge main                  # forward-merge stable into beta
+git merge main
+# resolve any conflicts, run tests, then:
 git push
 ```
 
-This keeps `next` ahead of `main` at all times.
+After:
+```
+main:  A---B---C---D
+              \       \
+next:          B'---E---M    (M = merge commit including C and D)
+```
+
+`next` is now ahead of `main` again, with `main`'s changes plus its own beta work.
+
+### When to forward-merge
+
+- **Always before cutting a new beta.** This is [Step 1](#step-1--forward-merge-main-into-next) of the beta release flow.
+- **After a CVE or security fix lands on `main`.** Don't wait for the next beta cycle — pull it forward immediately so beta users aren't running vulnerable code.
+- **After dependabot's scheduled run.** Dep bumps batched on `main` should be forward-merged before the next beta. (Or skip until you're cutting a beta — then it's part of Step 1 anyway.)
+
+### Why we don't automate this
+
+Doing this via a 3rd-party GitHub Action would be the obvious automation, but this repo can't use 3rd-party actions. Writing a 1st-party action for an intermittently-active branch (`next` only exists during major-version work) isn't worth the maintenance overhead. Manual forward-merge is fine; the discipline lives in the runbook.
+
+If forward-merging starts feeling like a chore (you're doing it >2x/week and it's mechanical), revisit the decision.
 
 ## Common pitfalls
 

@@ -51,8 +51,16 @@ Full runbook: [`docs/RELEASING.md`](docs/RELEASING.md).
 
 Short version:
 - **Stable release:** merge `feat:`/`fix:` commits into `main` → release-please opens a release PR → merge it → publishes as `latest`.
-- **Beta release:** merge into `next` → release-please opens a release PR for `X.Y.Z-beta.N` → merge it → publishes as `beta`.
+- **Beta release:** **forward-merge `main` into `next` first** (`git checkout next && git merge main && git push`), then merge feature work into `next` → release-please opens a release PR for `X.Y.Z-beta.N` → merge it → publishes as `beta`.
 - **Prerequisite:** npm Trusted Publishing must be configured on npmjs.com for `@heroku/applink` (Trusted Publisher tied to this repo + `release.yml`). Without it, all `npm publish` calls fail with a misleading `404 Not Found`.
+
+### `next` is opt-in
+
+`next` only exists during major-version development. Don't suggest opening it for routine work, and don't suggest cutting a beta if the only changes are dependency bumps — betas should preview substantive changes that users would want to test.
+
+### Dependabot targets `main`, not `next`
+
+Dependabot opens PRs against `main` only. When `next` is open, dependabot's bumps reach the beta line via forward-merge (`git merge main` from `next`). Don't propose changing this — running dependabot against both branches doubles PR review load and isn't worth it for an intermittently-active branch.
 
 ## Testing
 
