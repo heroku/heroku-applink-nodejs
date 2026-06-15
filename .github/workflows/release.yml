@@ -4,12 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Beta version to publish (e.g. 1.2.0-beta.1)"
-        required: true
-        type: string
+      - next
 
 permissions:
   contents: write
@@ -18,17 +13,18 @@ permissions:
 
 jobs:
   release-please:
-    if: github.event_name == 'push'
     runs-on: pub-hk-ubuntu-24.04-ip
     outputs:
       release_created: ${{ steps.release.outputs.release_created }}
       tag_name: ${{ steps.release.outputs.tag_name }}
+      prerelease: ${{ steps.release.outputs.prerelease }}
     steps:
       - uses: googleapis/release-please-action@v5
         id: release
         with:
-          config-file: release-please-config.json
-          manifest-file: .release-please-manifest.json
+          target-branch: ${{ github.ref_name }}
+          config-file: ${{ github.ref_name == 'next' && 'release-please-config-next.json' || 'release-please-config.json' }}
+          manifest-file: ${{ github.ref_name == 'next' && '.release-please-manifest-next.json' || '.release-please-manifest.json' }}
 
   publish:
     needs: release-please
@@ -37,6 +33,8 @@ jobs:
     permissions:
       contents: read
       id-token: write
+    env:
+      NPM_DIST_TAG: ${{ needs.release-please.outputs.prerelease == 'true' && 'beta' || 'latest' }}
     steps:
       - uses: actions/checkout@v6
       - uses: actions/setup-node@v6
@@ -45,32 +43,5 @@ jobs:
           registry-url: "https://registry.npmjs.org"
       - run: yarn install
       - run: yarn build
-      - run: npm publish --access public
-
-  publish-beta:
-    if: github.event_name == 'workflow_dispatch'
-    runs-on: pub-hk-ubuntu-24.04-ip
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@v6
-      - uses: actions/setup-node@v6
-        with:
-          node-version: "22"
-          registry-url: "https://registry.npmjs.org"
-      - name: Validate version is a pre-release
-        env:
-          BETA_VERSION: ${{ inputs.version }}
-        run: |
-          if [[ ! "${BETA_VERSION}" =~ -.*\. ]]; then
-            echo "Error: Version must be a pre-release (e.g. 1.2.0-beta.1)"
-            exit 1
-          fi
-      - name: Set version
-        env:
-          BETA_VERSION: ${{ inputs.version }}
-        run: npm version "${BETA_VERSION}" --no-git-tag-version
-      - run: yarn install
-      - run: yarn build
-      - run: npm publish --access public --tag beta
+      - name: Publish to npm
+        run: npm publish --access public --tag "$NPM_DIST_TAG"
