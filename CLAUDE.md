@@ -1,0 +1,88 @@
+# CLAUDE.md
+
+Guidance for Claude Code when working in this repository.
+
+## Project type
+
+This is a published npm SDK: `@heroku/applink`. Code shipped from this repo lands in customer environments via npm. Treat changes accordingly — backward compatibility, public API surface, and dependency hygiene matter more than in an internal service.
+
+- Primary language: TypeScript
+- Package manager: Yarn v1
+- Node support: 18.x, 20.x, 22.x (CI matrix)
+- Tests: Mocha + WireMock (requires Java 11+)
+
+Customers only receive `dependencies`, never `devDependencies`. Security findings in dev tooling have zero customer impact.
+
+## Git workflow
+
+This repo has **two release branches**:
+
+- `main` — stable releases, published to npm with dist-tag `latest`.
+- `next` — beta / prerelease line, published with dist-tag `beta`.
+
+When opening a PR, target the right base branch:
+
+| Type of change                                 | Branch from | PR `--base` |
+| ---------------------------------------------- | ----------- | ----------- |
+| Bug fix or feature for current stable          | `main`      | `main`      |
+| Breaking change / work staged for next major   | `next`      | `next`      |
+| Forward-merging stable fixes into the beta line | `main`      | `next`      |
+
+If you're unsure which line a change belongs to, ask before opening the PR.
+
+### Conventional commits are required
+
+release-please derives the next version from commit messages. Always use a conventional prefix:
+
+- `feat:` → minor bump (or beta increment on `next`)
+- `fix:` → patch bump
+- `feat!:` or footer `BREAKING CHANGE:` → major bump
+- `chore:`, `docs:`, `ci:`, `refactor:` → no release
+
+A commit without one of these prefixes is effectively a silent commit from release-please's perspective and won't ship.
+
+### Don't manually edit version numbers
+
+`package.json`'s `version` field, `CHANGELOG.md`, and `.release-please-manifest*.json` are owned by release-please. Don't hand-edit them — your edits will be overwritten by the next release PR.
+
+## Releasing
+
+Full runbook: [`docs/RELEASING.md`](docs/RELEASING.md).
+
+Short version:
+- **Stable release:** merge `feat:`/`fix:` commits into `main` (via PR) → release-please opens a release PR → merge it → publishes as `latest`.
+- **Beta release:** open a forward-merge PR carrying `main` into `next` first, merge it; then open feature PRs against `next` → release-please opens a release PR for `X.Y.Z-beta.N` → merge it → publishes as `beta`.
+- **Promotion:** open a PR from a release branch into `main` that merges `next` — **never push directly to `main`**. release-please then opens the clean `X.0.0` release PR.
+- **Prerequisite:** npm Trusted Publishing must be configured on npmjs.com for `@heroku/applink` (Trusted Publisher tied to this repo + `release.yml`). Without it, all `npm publish` calls fail with a misleading `404 Not Found`.
+
+### Never push directly to `main` or `next`
+
+Both are protected release branches. Every change — including forward-merges, promotions, and routine work — goes through a PR. If you find yourself typing `git push` while checked out on `main` or `next`, stop. Open a topic branch, push that, open a PR.
+
+### `next` is opt-in
+
+`next` only exists during major-version development. Don't suggest opening it for routine work, and don't suggest cutting a beta if the only changes are dependency bumps — betas should preview substantive changes that users would want to test.
+
+### Dependabot targets `main`, not `next`
+
+Dependabot opens PRs against `main` only. When `next` is open, dependabot's bumps reach the beta line via forward-merge (`git merge main` from `next`). Don't propose changing this — running dependabot against both branches doubles PR review load and isn't worth it for an intermittently-active branch.
+
+## Testing
+
+- `yarn test` runs WireMock + Mocha concurrently. WireMock requires Java 11+.
+- Lint: `yarn lint` (max-warnings 0; takes the build down on any warning).
+- Format: `yarn format:check` / `yarn format:write`.
+
+## Security & dependencies
+
+- Use `resolutions` in `package.json` to force secure versions of transitive dependencies.
+- For Node 18.x in CI, install with `--ignore-engines` only when a transitive declares `engines.node >= 20` but is functionally compatible (see `.github/workflows/build.yml`). Don't apply this globally via `.yarnrc`.
+- Don't introduce a new top-level dependency without flagging it — every entry in `dependencies` ships to customers.
+
+## Things to verify before reporting work as done
+
+- `yarn build` passes.
+- `yarn lint` passes with zero warnings.
+- For changes affecting tests, `yarn test` passes locally.
+- The change targets the correct base branch (see Git workflow above).
+- The commit message uses a conventional prefix.
