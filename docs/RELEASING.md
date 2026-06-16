@@ -35,13 +35,7 @@ Merge PR → merge release PR → publishes as `latest`.
 
 ## Beta release
 
-`next` must exist. Bootstrap once if not:
-
-```bash
-git checkout main && git pull
-git checkout -b next && git push -u origin next
-# add branch protection on GitHub immediately
-```
+`next` is the long-lived beta codeline (protected, branched from `main`). Betas ship from it; promote to `main` when ready.
 
 **Step 1 — forward-merge `main` into `next` (required before every beta):**
 
