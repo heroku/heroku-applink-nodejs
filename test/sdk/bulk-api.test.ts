@@ -18,7 +18,7 @@ import {
   QueryJobResults,
   Record as SDKRecord,
 } from "../../src";
-import { expect } from "chai";
+import { expect } from "../chai";
 import { match } from "ts-pattern";
 
 const WIREMOCK_URL = "http://127.0.0.1:8080";

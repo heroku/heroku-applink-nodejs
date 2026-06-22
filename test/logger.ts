@@ -6,7 +6,7 @@
  */
 
 import { LoggerLevel } from "@salesforce/core";
-import { expect } from "chai";
+import { expect } from "./chai";
 import testBaseLogger from "../src/utils/base-logger";
 
 describe("Logger", () => {
