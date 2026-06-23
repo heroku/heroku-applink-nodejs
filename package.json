@@ -56,7 +56,7 @@
     "@types/sinon": "^21.0.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "chai": "^4.4.1",
+    "chai": "^6.2.2",
     "concurrently": "^10.0.3",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
