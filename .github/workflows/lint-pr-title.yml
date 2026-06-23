@@ -1,0 +1,31 @@
+name: Lint PR title
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  pull-requests: read
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        env:
+          PR_TITLE: ${{ github.event.pull_request.title }}
+        with:
+          script: |
+            const title = process.env.PR_TITLE;
+            const re = /^(feat|fix|chore|docs|ci|refactor|test|perf|build|style|revert)(\([^)]+\))?!?: .+/;
+            if (!re.test(title)) {
+              core.setFailed(
+                `PR title "${title}" does not follow Conventional Commits.\n` +
+                `Expected: <type>[scope][!]: <subject>\n` +
+                `Allowed types: feat, fix, chore, docs, ci, refactor, test, perf, build, style, revert\n` +
+                `Examples:\n` +
+                `  feat: add foo\n` +
+                `  fix(client): handle empty response\n` +
+                `  feat!: drop Node 18 support`
+              );
+            }
