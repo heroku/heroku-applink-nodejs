@@ -14,7 +14,7 @@
 | `feat!:` / `BREAKING CHANGE:` footer  | major                 |
 | `chore:`, `docs:`, `ci:`, `refactor:` | none                  |
 
-On `next`, any releasing commit increments `-beta.N`.
+On `next`, any releasing commit increments `-beta.N` (numbering follows `.release-please-manifest-next.json`; the manifest is seeded at `X.0.0-beta.0` for each new major so the first release PR publishes `beta.0` and subsequent ones increment to `beta.1`, `beta.2`, …).
 
 ## Prereq (one-time)
 
@@ -58,6 +58,10 @@ gh pr create --base next   # NOT main
 ```
 
 Merge PR → merge release PR → publishes as `beta`. Install: `npm install @heroku/applink@beta`.
+
+## Starting a new beta line
+
+When opening `next` for a new major (`X.0.0`), seed `.release-please-manifest-next.json` to `"X.0.0-beta.0"` in the same PR that creates the branch. Otherwise release-please's first prerelease bump emits an unnumbered `X.0.0-beta` and only the *second* release lands a number (`X.0.0-beta.1`). Seeding `beta.0` makes the first release PR publish `X.0.0-beta.0` and every subsequent one increment cleanly.
 
 ## Promote `next` → `main`
 
