@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { expect } from "chai";
+import { expect } from "../chai";
 import sinon from "sinon";
 import { HttpRequestUtil, HttpResponseError } from "../../src/utils/request";
 import { getAuthorization } from "../../src/add-ons/heroku-applink";

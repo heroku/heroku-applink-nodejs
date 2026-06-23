@@ -5,7 +5,7 @@
  * For full license text, see the LICENSE file in the repo root or https://opensource.org/licenses/BSD-3-Clause
  */
 
-import { expect } from "chai";
+import { expect } from "../chai";
 import { DataApiImpl } from "../../src/sdk/data-api";
 import { stub } from "sinon";
 import fs from "fs";
