@@ -12,10 +12,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Node 26.x is pinned to 26.3.0; 26.3.1's CVE-2026-48931 http.Agent
-        # patch hangs node-fetch@2.x keep-alive sockets. Unpin once
-        # https://github.com/nodejs/node/issues/63989 is resolved.
-        version: [26.3.0, 24.x, 22.x]
+        # All three lines pinned to the last release before the
+        # CVE-2026-48931 http.Agent patch (in 26.3.1 / 24.17.0 / 22.23.0),
+        # which hangs node-fetch@2.x keep-alive sockets. 24.x and 22.x
+        # manifest as Windows-only hangs; 26.x hangs on all OSes. Unpin
+        # once https://github.com/nodejs/node/issues/63989 is resolved.
+        version: [26.3.0, 24.16.0, 22.22.3]
         os: [ubuntu-latest, macos-14-large, windows-latest]
     name: Node ${{ matrix.version }} on ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
