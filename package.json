@@ -45,20 +45,19 @@
     "csv-stringify": "^6.2.3",
     "jsforce": "^3.10.14",
     "luxon": "^3.2.1",
-    "throng": "^5.0.0",
-    "whatwg-mimetype": "^3.0.0"
+    "throng": "^5.0.0"
   },
   "devDependencies": {
     "@salesforce/ts-sinon": "^1.4.19",
     "@types/chai": "^4.2.21",
     "@types/mocha": "^10.0.10",
-    "@types/node": "^25.9.3",
+    "@types/node": "^26.0.1",
     "@types/semver": "^7.5.8",
     "@types/sinon": "^21.0.0",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "chai": "^4.4.1",
-    "concurrently": "^9.2.1",
+    "concurrently": "^10.0.3",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-formatter-codeframe": "^7.32.1",
