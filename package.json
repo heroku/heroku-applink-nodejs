@@ -57,7 +57,7 @@
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "chai": "^6.2.2",
-    "concurrently": "^10.0.3",
+    "concurrently": "^10.0.4",
     "cross-env": "^10.1.0",
     "eslint": "^8.57.0",
     "eslint-formatter-codeframe": "^7.32.1",
@@ -80,7 +80,7 @@
     "tough-cookie": "4.1.4",
     "serialize-javascript": "7.0.5",
     "cross-spawn": "7.0.6",
-    "shell-quote": "1.8.4"
+    "shell-quote": "1.9.0"
   },
   "optionalDependencies": {
     "fsevents": "*"
