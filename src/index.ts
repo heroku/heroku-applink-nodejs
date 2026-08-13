@@ -872,21 +872,13 @@ export type IngestJobState =
  * - `Failed`: Some records in the job failed. Job data that was successfully processed isn’t rolled back.
  */
 export type QueryJobState =
-  | "UploadComplete"
-  | "InProgress"
-  | "Aborted"
-  | "JobComplete"
-  | "Failed";
+  "UploadComplete" | "InProgress" | "Aborted" | "JobComplete" | "Failed";
 
 /**
  * The processing operation for an ingest job.
  */
 export type IngestJobOperation =
-  | "insert"
-  | "delete"
-  | "hardDelete"
-  | "update"
-  | "upsert";
+  "insert" | "delete" | "hardDelete" | "update" | "upsert";
 
 /**
  * The processing operation for a query job. Possible values are:
