@@ -71,7 +71,7 @@
     "ts-pattern": "^5.9.0",
     "typedoc": "^0.28.17",
     "typedoc-plugin-markdown": "^4.10.0",
-    "typescript": "^5.5.4",
+    "typescript": "^6.0.3",
     "wiremock": "^3.5.4"
   },
   "resolutions": {
