@@ -1290,14 +1290,14 @@ csv-parse@^5.5.2:
   integrity sha512-l3nz3euub2QMg5ouu5U09Ew9Wf6/wQ8I++ch1loQ0ljmzhmfZYrH9fflS22i/PQEvsPvxCwxgz5q7UB8K1JO4Q==
 
 csv-parse@^7.0.0:
-  version "7.0.0"
-  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-7.0.0.tgz#ef2495b2ed6424808defc92d0f40bbe228674447"
-  integrity sha512-CSssqPAK5us09FhMI9juM0jnqXUJP+rtWeIfivTYBLNH/8rnxkQlZvoRemF6MAyfNov9XU8mN2wwF/pP68sxTA==
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/csv-parse/-/csv-parse-7.0.2.tgz#76ff913d5b07d56170e071ebc788f51a21e4b17f"
+  integrity sha512-uKZghv9UmPkMVLYy//KZ9HFAIJsl7wkhoEdIL0+rhuSY9pZQlhaeGEDPIe+/w7eh81MOql8Q/9+inAGWG6ZHYA==
 
 csv-stringify@^6.2.3, csv-stringify@^6.6.0:
-  version "6.8.0"
-  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.8.0.tgz#2eb74e6823f3d7755548aba38d3d246d8bbbf0bc"
-  integrity sha512-Ya0OOHb6XbgPaZKH7dcdmwXe3azUS0TwmlbVdS75HoAhnHApSkiQcfEJoC/s5WwGsrXwOjBDr3FTmCZPjkssgg==
+  version "6.8.3"
+  resolved "https://registry.yarnpkg.com/csv-stringify/-/csv-stringify-6.8.3.tgz#ecaf80acb5fc6deddf3a0c6b2bf2d919ffba382a"
+  integrity sha512-gIeSCvq5F4VtXV3naV3VAewLhBkiZBz+PPhTOA8H3Y8h/ELa+R1ml0GZck/4/Nzo9ep2lvOluilJ6MJlbZsKMA==
 
 dateformat@^4.6.3:
   version "4.6.3"
@@ -2291,9 +2291,9 @@ jsesc@^3.0.2:
   integrity sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==
 
 jsforce@^3.10.14:
-  version "3.10.16"
-  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-3.10.16.tgz#1cc2554d79da79eb8f3bc4702f53413530628201"
-  integrity sha512-lOTRzCAfFZMdXLxR4HB5f6W7B8cY7dG2FXUqJlo64AvgzurQh1bihzBtuBhY6XhOGLCtfI1/6GirpykFDS6Tng==
+  version "3.10.24"
+  resolved "https://registry.yarnpkg.com/jsforce/-/jsforce-3.10.24.tgz#2542c47c1ee124f325f07a856f9e78c45e1809e3"
+  integrity sha512-3nLmTDenNDUD/JSFvDSKGmveFBnFfxD44fIYj/LAShAvDNuANZZQenDPyI2JGrF/oTNe2unNIQcXt/TBY6URog==
   dependencies:
     "@babel/runtime" "^7.27.0"
     "@babel/runtime-corejs3" "^7.28.3"
@@ -2305,11 +2305,10 @@ jsforce@^3.10.14:
     csv-stringify "^6.6.0"
     faye "^1.4.0"
     form-data "^4.0.4"
-    https-proxy-agent "^5.0.0"
     inquirer "^8.2.7"
     multistream "^3.1.0"
-    node-fetch "^2.6.1"
     open "^7.0.0"
+    undici "^8.5.0"
     xml2js "^0.6.2"
 
 json-buffer@3.0.1:
@@ -3733,6 +3732,11 @@ undici-types@~8.3.0:
   version "8.3.0"
   resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-8.3.0.tgz#44e9fc9f3244648cdea35e4f9bb2d681e9410809"
   integrity sha512-j375ScV60dom+YkPFIfTLcOiPxkN/buHz5GobjLhixFuANaNs3C9l4GmrWqejgXWJ7BbJcFYpTEUkS1Ge8bpZQ==
+
+undici@^8.5.0:
+  version "8.10.1"
+  resolved "https://registry.yarnpkg.com/undici/-/undici-8.10.1.tgz#58073af34f5d06aa7a13a27073681299fe266b1d"
+  integrity sha512-YQ3WlbqjYMmNpdvDH64jAgLjxuAR9+649calDWhbshYaeQGO2bR4nI94ORJmwI3J9YhoKQnpyGOK+0zlWS5N5Q==
 
 universalify@^0.2.0:
   version "0.2.0"
