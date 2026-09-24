@@ -80,7 +80,8 @@
     "tough-cookie": "4.1.4",
     "serialize-javascript": "7.0.5",
     "cross-spawn": "7.0.6",
-    "shell-quote": "1.9.0"
+    "shell-quote": "1.9.0",
+    "js-yaml": "^4.3.2"
   },
   "optionalDependencies": {
     "fsevents": "*"
