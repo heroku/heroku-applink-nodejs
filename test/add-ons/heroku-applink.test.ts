@@ -67,6 +67,43 @@ describe("getAuthorization", () => {
     expect(result.user.id).to.equal("005...");
   });
 
+  it("should expose the access token expiration when returned", async () => {
+    const expirationMs = 1893456000000; // 2030-01-01T00:00:00.000Z
+    httpRequestStub.resolves({
+      ...mockResponse,
+      org: {
+        ...mockResponse.org,
+        user_auth: { ...mockResponse.org.user_auth, expiration: expirationMs },
+      },
+    });
+
+    const result = await getAuthorization("testDev");
+
+    expect(result.accessTokenExpiration).to.equal(expirationMs);
+  });
+
+  it("should leave access token expiration undefined when not returned", async () => {
+    httpRequestStub.resolves(mockResponse);
+
+    const result = await getAuthorization("testDev");
+
+    expect(result.accessTokenExpiration).to.be.undefined;
+  });
+
+  it("should leave access token expiration undefined when zero", async () => {
+    httpRequestStub.resolves({
+      ...mockResponse,
+      org: {
+        ...mockResponse.org,
+        user_auth: { ...mockResponse.org.user_auth, expiration: 0 },
+      },
+    });
+
+    const result = await getAuthorization("testDev");
+
+    expect(result.accessTokenExpiration).to.be.undefined;
+  });
+
   it("should successfully get authorization with custom attachment name", async () => {
     httpRequestStub.resolves(mockResponse);
 

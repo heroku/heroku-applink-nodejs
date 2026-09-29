@@ -24,6 +24,7 @@ export class OrgImpl implements Org {
   readonly id: string;
   readonly namespace: string;
   readonly user: User;
+  readonly accessTokenExpiration?: number;
 
   constructor(
     accessToken: string,
@@ -33,9 +34,11 @@ export class OrgImpl implements Org {
     orgDomainUrl: string,
     userId: string,
     username: string,
-    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg" // DatacloudOrg for legacy Pilot/Ruby
+    orgType: "SalesforceOrg" | "DataCloudOrg" | "DatacloudOrg", // DatacloudOrg for legacy Pilot/Ruby
+    accessTokenExpiration?: number
   ) {
     this.accessToken = accessToken;
+    this.accessTokenExpiration = accessTokenExpiration;
     this.apiVersion = apiVersion.startsWith("v")
       ? apiVersion.substring(1)
       : apiVersion;

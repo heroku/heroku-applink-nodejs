@@ -92,6 +92,18 @@ Defined in: [src/index.ts:160](https://github.com/heroku/heroku-applink-nodejs/b
 
 The currently logged in user
 
+***
+
+### accessTokenExpiration?
+
+```ts
+readonly optional accessTokenExpiration: number;
+```
+
+Defined in: [src/index.ts:161](https://github.com/heroku/heroku-applink-nodejs/blob/0a00f88ed00150f9597362d83222d767a5ebdedd/src/index.ts#L161)
+
+The absolute instant the org's access token expires, as Unix epoch milliseconds, or undefined when the expiration is unknown (e.g. the token was decrypted locally). Only populated for authorizations retrieved via `getAuthorization`.
+
 ## Methods
 
 ### request()

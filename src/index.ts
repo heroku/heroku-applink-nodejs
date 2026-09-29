@@ -149,6 +149,9 @@ export interface Context {
  * @property dataApi An initialized data API client instance.
  * @property dataCloudApi If instance URL and token are provide, an initialized Data Cloud data API client instance.
  * @property user The currently logged in user
+ * @property accessTokenExpiration The absolute instant the org's access token expires, as
+ * Unix epoch milliseconds, or undefined when the expiration is unknown (e.g. the token was
+ * decrypted locally). Only populated for authorizations retrieved via {@link getAuthorization}.
  */
 export interface Org {
   readonly apiVersion: string;
@@ -158,6 +161,7 @@ export interface Org {
   readonly id: string;
   readonly namespace: string;
   readonly user: User;
+  readonly accessTokenExpiration?: number;
 
   request(fullUrlOrUrlPart: string, opts: any, json: boolean);
 }

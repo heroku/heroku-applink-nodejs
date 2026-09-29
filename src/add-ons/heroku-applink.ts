@@ -77,6 +77,14 @@ export async function getAuthorization(
     );
   }
 
+  // `expiration` is the absolute instant the access token expires, as Unix epoch
+  // milliseconds. It is omitted (or 0) when unknown, e.g. a locally decrypted token.
+  const expirationMs = response.org.user_auth.expiration;
+  const accessTokenExpiration =
+    typeof expirationMs === "number" && expirationMs > 0
+      ? expirationMs
+      : undefined;
+
   return new OrgImpl(
     response.org.user_auth.access_token,
     response.org.api_version,
@@ -85,6 +93,7 @@ export async function getAuthorization(
     response.org.instance_url,
     response.org.user_auth.user_id,
     response.org.user_auth.username,
-    response.org.type
+    response.org.type,
+    accessTokenExpiration
   );
 }
