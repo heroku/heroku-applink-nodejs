@@ -626,9 +626,9 @@
   integrity sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==
 
 "@types/node@^26.0.1":
-  version "26.6.3"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.3.tgz#411dccb5fc25687c958fe35b6ca3741d48a8d13c"
-  integrity sha512-dsqMQQoeTLqu9wynDD00q573mNzso3IdQOAfHRJqLCcmCFPoGo9A1bDpUcv/9tnKpErQWv9uKeGfl37EIS02Yg==
+  version "26.6.4"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.4.tgz#5aaac1a7337945f7f9a2de4e0d14e7107157e813"
+  integrity sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==
   dependencies:
     undici-types "~8.9.0"
 
@@ -1041,9 +1041,9 @@ capital-case@^1.0.4:
     upper-case-first "^2.0.2"
 
 chai@^6.2.2:
-  version "6.2.2"
-  resolved "https://registry.yarnpkg.com/chai/-/chai-6.2.2.tgz#ae41b52c9aca87734505362717f3255facda360e"
-  integrity sha512-NUPRluOfOiTKBKvWPtSD4PhFvWCqOi0BGStNWs57X9js7XGTprSmFoz5F0tWhR4WPjNeR9jXqdC7/UpSJTnlRg==
+  version "6.3.0"
+  resolved "https://registry.yarnpkg.com/chai/-/chai-6.3.0.tgz#91f89eb789c2bb1ae1787d78c8518e1d3cebfc07"
+  integrity sha512-XWAtwJ6OHO+tj0EKCs0Y2UamnyOxseZWltU4x2U2wh8g4AigdjwvtUjvLP2tqkA/avxHEtzxNaqGq/YGNwckKg==
 
 chalk@5.6.2:
   version "5.6.2"
