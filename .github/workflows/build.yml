@@ -23,7 +23,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-java@v5 # java required for testing with wiremock
+      - uses: actions/setup-java@v6 # java required for testing with wiremock
         with:
           java-package: jre
           java-version: "11"
