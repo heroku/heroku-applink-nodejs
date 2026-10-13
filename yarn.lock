@@ -455,9 +455,9 @@
     "@salesforce/ts-types" "^2.0.12"
 
 "@salesforce/ts-sinon@^1.4.19":
-  version "1.4.37"
-  resolved "https://registry.yarnpkg.com/@salesforce/ts-sinon/-/ts-sinon-1.4.37.tgz#54420fae4c73cd472b0105c0c55e341eb73aad9b"
-  integrity sha512-n8u6lmEn3uISVpDKzJg2YfqaKd0G+bS9/FzzphA4eHz1deTCc69twZteNWiaSQKFao5mt+dqcbBvgvknm4DOAQ==
+  version "1.4.39"
+  resolved "https://registry.yarnpkg.com/@salesforce/ts-sinon/-/ts-sinon-1.4.39.tgz#345edb6edea8e9a9f4f37226bd005b87ec3515c7"
+  integrity sha512-vXTLHIab8vUJVr8Qd05Qh3x+lpRKWxHXTI8o3FXiBxDT10xN8D9Hb7dgSKOKwk445lHzqXOONiV96RfeKXz5Wg==
   dependencies:
     "@salesforce/ts-types" "^2.0.12"
     sinon "^5.1.1"
@@ -617,9 +617,9 @@
   integrity sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==
 
 "@types/node@^26.0.1":
-  version "26.6.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.4.tgz#5aaac1a7337945f7f9a2de4e0d14e7107157e813"
-  integrity sha512-ldVPDCzj7fsaGZrLB0NuHuTvJcsNasysBAqMolr/cgxrLd1xbqxIr3XJiPnHHJUCxj5sNF1vnRj9aWnrVh5Jcg==
+  version "26.6.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-26.6.5.tgz#cb35209e7767c503551b5fa42a48231c7441d979"
+  integrity sha512-uMzsv9stDdofIZBx4UGh4Z9ZgXnGC9seRDscilBcTHAeOFk67MZg/k9bWVfO+bk4qZmG+l52hRnLwUiH2LnJTg==
   dependencies:
     undici-types "~8.9.0"
 
@@ -1178,13 +1178,13 @@ concat-map@0.0.1:
   integrity sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==
 
 concurrently@^10.0.4:
-  version "10.0.5"
-  resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-10.0.5.tgz#5dd22464ad37f77136a02f4d0f05ddd912fe5c80"
-  integrity sha512-JaP/CoftUrCcAFW/g//RbgEGwlelnEae6cfBLgH6ZdO6s8jPkn6p9SB9u6pdVxYXoiSnFqseOlHfrEfF82TVOg==
+  version "10.0.6"
+  resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-10.0.6.tgz#e80e72a091a008d4f6f48b4b631ee2c810556aaf"
+  integrity sha512-qgICXXFp2/3nAebRLmxcINKEXM1mLK3ij/y31P02VTs/KIkddIeC05n73DxOXsXMB9LFSqNU1/na3lDlOhcbIw==
   dependencies:
     chalk "5.6.2"
     rxjs "7.8.2"
-    shell-quote "1.9.0"
+    shell-quote "1.12.0"
     supports-color "10.2.2"
     tree-kill "1.2.2"
     yargs "18.0.0"
@@ -3232,7 +3232,7 @@ shebang-regex@^3.0.0:
   resolved "https://registry.yarnpkg.com/shebang-regex/-/shebang-regex-3.0.0.tgz#ae16f1644d873ecad843b0307b143362d4c42172"
   integrity sha512-7++dFhtcx3353uBaq8DDR4NuxBetBzC7ZQOhmTQInHEd6bSrXdiEyzCvG07Z44UYdLShWUyXt5M/yhz8ekcb1A==
 
-shell-quote@1.9.0:
+shell-quote@1.12.0, shell-quote@1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/shell-quote/-/shell-quote-1.9.0.tgz#e108b1a136586d5964edb3300016d4bedba0fe57"
   integrity sha512-Iov+JwFv/2HcTpcwNMKd8+IWNb8tboQJNQTkAY/LLVK7gGH9jy+LGkVqPxfekHl+yMmiqXszdGWXgkfml7hjqA==
