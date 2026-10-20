@@ -3490,9 +3490,9 @@ ts-node@^10.9.2:
     yn "3.1.1"
 
 ts-pattern@^5.9.0:
-  version "5.9.0"
-  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-5.9.0.tgz#f0fb5205ce0b0c59af72beba62fee7612a61cea4"
-  integrity sha512-6s5V71mX8qBUmlgbrfL33xDUwO0fq48rxAu2LBE11WBeGdpCPOsXksQbZJHvHwhrd3QjUusd3mAOM5Gg0mFBLg==
+  version "5.9.2"
+  resolved "https://registry.yarnpkg.com/ts-pattern/-/ts-pattern-5.9.2.tgz#d2dbf1b4061df9b712068bb962fbe3c5c2998255"
+  integrity sha512-qAf+7M7Jjk7uebZeIo9uEzyintfuRtgHdzM9dqxRKcMi2dt76Ec+FH2wW3bnU9TuGLkZIJLoLs7cCQnU7Tu8ig==
 
 ts-retry-promise@^0.8.1:
   version "0.8.1"
@@ -3563,9 +3563,9 @@ typedarray-to-buffer@^3.1.5:
     is-typedarray "^1.0.0"
 
 typedoc-plugin-markdown@^4.10.0:
-  version "4.13.1"
-  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-4.13.1.tgz#9c5351cfc34ed2c249ffbaf395f6ca8752a5d344"
-  integrity sha512-d3jchJ4CyIrV9w9uozTSkfMYG8IEM1RvvGOaybJ/3rRporzoX7p0lprffo95GOGUviQqP0phjHJE3bY8PQbilA==
+  version "4.14.0"
+  resolved "https://registry.yarnpkg.com/typedoc-plugin-markdown/-/typedoc-plugin-markdown-4.14.0.tgz#1d5215d983e1a3fe2ea9daef68708606193aa72a"
+  integrity sha512-Y2a3oDV9ekrbkk6RBSGH8GyNkh0xIdemIOOTr3tiRN/33nvFGStOs9nw+6Q84gF1XFkcVZrgM4Ckcsf6e/YpKQ==
 
 typedoc@^0.28.17:
   version "0.28.20"
