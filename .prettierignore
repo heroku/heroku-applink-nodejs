@@ -1,10 +1,4 @@
-package-lock.json
-npm-shrinkwrap.json
-package.json
-*.md
-
 dist/
-docs/
-node_modules/
-scripts/
-resources/license-header.js
+CODE_OF_CONDUCT.md
+TERMS_OF_USE.md
+test-vectors/

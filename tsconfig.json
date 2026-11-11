@@ -1,27 +1,18 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "incremental": true,
-    "module": "CommonJS",
-    "moduleResolution": "node",
-    "target": "es2022",
-    "outDir": "./dist",
-    "baseUrl": ".",
-    "rootDir": "./src",
-    "lib": ["es2022", "dom"],
-    "allowSyntheticDefaultImports": true,
-    "alwaysStrict": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noImplicitReturns": true,
-    "pretty": true,
-    "removeComments": true,
-    "declaration": true,
-    "skipLibCheck": true,
-    "resolveJsonModule": true,
-    "paths": {
-      "~/*": ["./src/*"]
-    }
+    "target": "es2024",
+    "lib": ["es2024"],
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "types": ["node"],
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+    "erasableSyntaxOnly": true,
+    "verbatimModuleSyntax": true,
+    "rewriteRelativeImportExtensions": true,
+    "noEmit": true
   },
-  "exclude": ["node_modules", "test", "fixtures", "dist"]
+  "include": ["src", "test"]
 }
