@@ -1,96 +1,39 @@
 {
   "name": "@heroku/applink",
-  "version": "1.2.0",
-  "description": "Applink SDK for Heroku Apps.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc -b",
-    "lint": "eslint . --ext .ts --max-warnings 0 --report-unused-disable-directives --format codeframe",
-    "lint:fix": "npm run lint -- --fix",
-    "wiremock": "JAVA_OPTS='-Xmx1536m -Xms768m' wiremock --port 8080 --bind-address 127.0.0.1 --disable-banner --disable-request-logging --no-request-journal",
-    "mocha": "mocha",
-    "test": "cross-env NODE_ENV=test TS_NODE_PROJECT=tsconfig.test.json concurrently -k -s first \"wiremock\" \"mocha\"",
-    "test:coverage": "nyc --reporter=lcov --reporter=text-summary yarn test",
-    "format": "npm run format:write && npm run format:check",
-    "format:check": "prettier --check .",
-    "format:write": "prettier --write .",
-    "prepack": "tsc -b --clean && tsc -b --force",
-    "bump": "node bin/bump-version.js",
-    "release": "bin/publish.sh",
-    "docs": "typedoc"
-  },
-  "files": [
-    "package.json",
-    "npm-shrinkwrap.json",
-    "README.md",
-    "LICENSE.txt",
-    "CHANGELOG.md",
-    "SECURITY.md",
-    "TERMS_OF_USE.md",
-    "dist"
-  ],
-  "engines": {
-    "node": ">=22.0.0"
-  },
+  "version": "0.1.0",
+  "description": "Heroku AppLink SDK for Node.js",
+  "license": "BSD-3-Clause",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/heroku/heroku-applink-nodejs.git"
   },
-  "author": "heroku",
-  "license": "BSD-3-Clause",
-  "dependencies": {
-    "@salesforce/core": "^8.26.3",
-    "csv-parse": "^7.0.0",
-    "csv-stringify": "^6.2.3",
-    "jsforce": "^3.10.14",
-    "luxon": "^3.2.1",
-    "throng": "^5.0.0"
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "test": "node --test \"test/**/*.test.ts\"",
+    "lint": "eslint . && tsc",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepack": "npm run build"
   },
   "devDependencies": {
-    "@salesforce/ts-sinon": "^1.4.19",
-    "@types/chai": "^5.2.3",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^26.0.1",
-    "@types/semver": "^7.5.8",
-    "@types/sinon": "^22.0.0",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "chai": "^6.2.2",
-    "concurrently": "^10.0.4",
-    "cross-env": "^10.1.0",
-    "eslint": "^8.57.0",
-    "eslint-formatter-codeframe": "^7.32.1",
-    "eslint-plugin-license-header": "^0.9.0",
-    "mocha": "^12.0.3",
-    "nyc": "^18.0.0",
-    "prettier": "^3.2.5",
-    "semver": "^7.7.2",
-    "sinon": "^22.0.0",
-    "ts-node": "^10.9.2",
-    "ts-pattern": "^5.9.0",
-    "typedoc": "^0.28.17",
-    "typedoc-plugin-markdown": "^4.10.0",
-    "typescript": "^5.5.4",
-    "wiremock": "^3.5.4"
-  },
-  "resolutions": {
-    "minimist": "1.2.6",
-    "xml2js": "0.5.0",
-    "tough-cookie": "4.1.4",
-    "serialize-javascript": "7.0.5",
-    "cross-spawn": "7.0.6",
-    "shell-quote": "1.12.0",
-    "js-yaml": "^4.3.2"
-  },
-  "optionalDependencies": {
-    "fsevents": "*"
-  },
-  "directories": {
-    "test": "test"
-  },
-  "keywords": [
-    "Heroku",
-    "Salesforce"
-  ]
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^24.19.2",
+    "eslint": "^10.13.0",
+    "prettier": "^3.9.10",
+    "typescript": "~6.0.3",
+    "typescript-eslint": "^8.72.1"
+  }
 }

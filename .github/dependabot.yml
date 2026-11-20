@@ -1,39 +1,21 @@
 version: 2
 updates:
-  - package-ecosystem: "npm"
-    directory: "/"
-    schedule:
-      interval: "cron"
-      cronjob: "0 11 * * MON,WED"
-    commit-message:
-      prefix: "chore"
-      prefix-development: "chore"
-    groups:
-      production-dependencies:
-        dependency-type: "production"
-        update-types:
-          - "minor"
-          - "patch"
-      dev-dependencies:
-        dependency-type: "development"
-        update-types:
-          - "minor"
-          - "patch"
-    ignore:
-      # updating this dependency has caused issues in the past, we should only touch this if there is an update for security purposes
-      - dependency-name: "cloudevents"
-      # updating this dependency has caused issues in the past, we should only touch this if there is an update for security purposes
-      - dependency-name: "jsforce2"
-    labels:
-      - "edit-on-call"
-      - "dependencies"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "cron"
-      cronjob: "0 11 * * MON,WED"
-    commit-message:
-      prefix: "chore"
-    labels:
-      - "edit-on-call"
-      - "dependencies"
+      interval: "monthly"
+    groups:
+      github-actions:
+        update-types:
+          - "minor"
+          - "patch"
+
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+    groups:
+      nodejs:
+        update-types:
+          - "minor"
+          - "patch"

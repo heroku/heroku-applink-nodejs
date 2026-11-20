@@ -1,62 +1,107 @@
-# Node.js SDK for Heroku AppLink
+# Heroku AppLink SDK for Node.js
 
-Use the Node.js SDK for Heroku AppLink to develop [Heroku AppLink](https://devcenter.heroku.com/articles/applink) managed apps that interact with Salesforce and Data Cloud orgs.
+The Heroku AppLink SDK lets Heroku apps find out who invoked them from Salesforce, and look up the credentials of stored [Heroku AppLink](https://devcenter.heroku.com/articles/heroku-applink) authorizations. Apps call Salesforce APIs with the Salesforce client of their choice, using the org and credentials the SDK returns.
 
- Node.js SDK for Heroku AppLink provides:
-- Utilities to parse requests from Salesforce Heroku-type [External Services](https://help.salesforce.com/s/articleView?id=sf.external_services.htm&type=5) and Data Cloud [Data Action Targets](https://help.salesforce.com/s/articleView?id=sf.c360_a_create_a_data_action_target_of_webhook_type.htm&type=5) 
-hydrating SDK objects that response the request: [InvocationEvent](docs/interfaces/InvocationEvent.md) and [Context](docs/interfaces/Context.md).
-- Objects that encapsulate the requesting Salesforce or Data Cloud [Org](docs/interfaces/Org.md) and [User](docs/interfaces/User.md).
-- Utility objects that wrap Salesforce and Data Cloud APIs to perform simple CRUD operations and complex record manipulations. 
+## Installation
 
-And much more!
+```sh
+npm install @heroku/applink
+```
 
-## Documentation
-For more information, see [API docs](docs/README.md).
+Requires Node.js 24 or newer.
 
-## Example
-Example use of the Node.js SDK for Heroku AppLink provided as part of the [Heroku AppLink CLI Plugin's](https://github.com/heroku/heroku-cli-plugin-applink) `applink:project` template:
-```javascript
-fastify.get('/accounts', async function (request, reply) {
-    const {event, context, logger} = request.sdk;
+## Handling invocations from Salesforce
 
-    logger.info(`GET /accounts: ${JSON.stringify(event.data || {})}`);
+When Salesforce invokes your app through AppLink, `parseInvocationContext` decodes the `x-client-context` header of the request:
 
-    const query = 'SELECT Id, Name FROM Account';
+```ts
+import express from "express";
+import {
+  InvalidInboundDataError,
+  parseInvocationContext,
+} from "@heroku/applink";
 
-    if (process.env.SALESFORCE_ORG_NAME) {
-        // If an org reference is set, query Accounts in that org
-        const orgName = process.env.SALESFORCE_ORG_NAME;
-        const applinkAddon = request.sdk.addons.applink;
+const app = express();
 
-        logger.info(`Getting org '${orgName}' connection from Heroku Applink add-on...`);
-        const anotherOrg = await applinkAddon.getAuthorization(orgName);
-
-        logger.info(`Querying org '${orgName}' (${anotherOrg.id}) Accounts...`);
-        try {
-            const result = await anotherOrg.dataApi.query(query);
-            const accounts = result.records.map(rec => rec.fields);
-            logger.info(`For org '${orgName}' (${anotherOrg.id}), found ${accounts.length} Accounts`);
-        } catch (err) {
-            logger.error(err.message);
-        }
+app.post("/accounts", (req, res) => {
+  let context;
+  try {
+    context = parseInvocationContext((name) => req.get(name));
+  } catch (error) {
+    if (error instanceof InvalidInboundDataError) {
+      return res.status(400).send("Not an AppLink request");
     }
+    throw error;
+  }
 
-    // Query invoking org's Accounts
-    const org = context.org;
-    logger.info(`Querying invoking org (${org.id}) Accounts...`);
-    const result = await org.dataApi.query(query);
-    const accounts = result.records.map(rec => rec.fields);
-    logger.info(`For invoking org (${org.id}), found the following Accounts: ${JSON.stringify(accounts || {})}`);
-    return accounts;
+  console.log(`Invoked by ${context.user.username} in org ${context.org.id}`);
+  res.json({ requestId: context.requestId });
 });
 ```
 
-## Configuration
-* `HEROKU_APPLINK_ADDON_NAME` - For development, configures the SDK to use a different addon name in place of "HEROKU_APPLINK". Used when fetching config vars.
+`context.credentials` holds an access token for the invoking user if the invocation carries one.
 
-## Testing
-### Dependency
-You will need java installed to run wiremock.
+## Looking up an authorization
 
-### Running tests
-To test with coverage run `yarn test:coverage`
+`getAuthorization` looks up a stored authorization through the AppLink API. Pass the org and credentials to a Salesforce client, for example [jsforce](https://jsforce.github.io/):
+
+```ts
+import { getAuthorization } from "@heroku/applink";
+import jsforce from "jsforce";
+
+const context = await getAuthorization("<my-authorization>");
+
+const salesforce = new jsforce.Connection({
+  instanceUrl: context.org.domainUrl,
+  accessToken: context.credentials.accessToken,
+  version: context.org.apiVersion,
+});
+
+const result = await salesforce.query("SELECT Id, Name FROM Account");
+```
+
+To use another AppLink add-on attachment than the default `HEROKU_APPLINK`, pass its name, color, or API URL:
+
+```ts
+// By name, reads HEROKU_APPLINK_PURPLE_API_URL and HEROKU_APPLINK_PURPLE_TOKEN
+const context = await getAuthorization(
+  "<my-authorization>",
+  "HEROKU_APPLINK_PURPLE",
+);
+
+// By color, reads the same config vars as the name
+const context = await getAuthorization("<my-authorization>", "purple");
+
+// By API URL, uses the attachment whose _API_URL config var holds that URL
+const apiUrl = process.env.HEROKU_APPLINK_PURPLE_API_URL;
+if (!apiUrl) throw new Error("HEROKU_APPLINK_PURPLE_API_URL is not set.");
+const context = await getAuthorization("<my-authorization>", apiUrl);
+```
+
+An API URL must match the value of exactly one of the app's config vars ending in `_API_URL`.
+
+Every lookup sends a request to the AppLink API. You can keep a context and reuse it until `context.credentials.expiration`, then look it up again for a new access token.
+
+## Errors
+
+All errors extend `AppLinkError`:
+
+| Error                        | Cause                                                             |
+| ---------------------------- | ----------------------------------------------------------------- |
+| `InvalidInboundDataError`    | The `x-client-context` header is missing or malformed.            |
+| `ConfigurationError`         | The input or the AppLink config vars are missing or invalid.      |
+| `TransportError`             | The request to the AppLink API didn't complete.                   |
+| `HttpError`                  | The AppLink API responded with a non-2xx `status`, such as `404`. |
+| `UnusableAuthorizationError` | The authorization's `status` isn't `authorized`.                  |
+| `UnexpectedResponseError`    | The AppLink API response doesn't have the expected content.       |
+
+## Development
+
+```sh
+npm install
+npm test
+npm run lint
+npm run format
+```
+
+The tests read the shared [test vectors](https://github.com/heroku/heroku-applink-sdks) from the `test-vectors` submodule. Run `git submodule update --init` after cloning to fetch them.

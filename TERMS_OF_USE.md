@@ -1,6 +1,6 @@
-Copyright 2024 [salesforce.com](https://app.salesforceiq.com/r?target=5aa041084cedfd007a609a0c&t=AFwhZf0GOvrkITUEGk_9Frn8rtTOQ_JcR3V1bPtHyKCQMx9cWuf92b6O6w9dz1LpYaK8lPgjNZvweaqC9W9fv2K3zv4BJWd_VftkdaL13QYpqzPyITBhy9poAZwbKc3bge5ItzFU2Lwc), inc. All rights reserved.
+Copyright 2024 [salesforce.com](https://www.salesforce.com), inc. All rights reserved.
 
-These Terms of Use are between **You** (being the Customer that purchased the Services) and [salesforce.com](salesforce.com), inc. or its Affiliate (“**SFDC**”) that entered into an agreement with You that governs Your purchase of the Services (the “**Agreement**”). Capitalized terms not defined herein shall have the meaning defined in the Agreement.
+These Terms of Use are between **You** (being the Customer that purchased the Services) and [salesforce.com](https://www.salesforce.com), inc. or its Affiliate (“**SFDC**”) that entered into an agreement with You that governs Your purchase of the Services (the “**Agreement**”). Capitalized terms not defined herein shall have the meaning defined in the Agreement.
 
 These Terms of Use were last updated on October 1, 2024, and constitute a legally binding agreement between You and SFDC effective upon Your first download, installation or use of the Software Development Kit (SDK), whichever is earliest. If You do not have authority to bind the Customer that entered into the Agreement or You do not agree to these Terms of Use, do not install or use the SDK.
 
@@ -21,4 +21,5 @@ WITHOUT LIMITING THE GENERALITY OF THE FOREGOING, THE SDK IS NOT SUPPORTED, AND 
 These Terms of Use shall be governed exclusively by the internal laws of the State of California, without regard to its conflicts of laws rules. Each party hereby consents to the exclusive jurisdiction of the state and federal courts located in San Francisco County, California to adjudicate any dispute arising out of or relating to these Terms of Use. Except as expressly stated in these Terms of Use, these Terms of Use constitute the entire agreement between the parties, and supersede all prior and contemporaneous agreements, proposals or representations, written or oral, concerning their subject matter. No modification, amendment, or waiver of any provision of these Terms of Use shall be effective unless it is by an update to these Terms of Use that SFDC makes available on this website, or is in writing and signed by the party against whom the modification, amendment or waiver is to be asserted.
 
 #### Data Privacy:
+
 SFDC may collect, process and store device, system, and other information related to Your use of the SDK. This includes, but is not limited to, IP address, user metrics, and other data (“**Usage Data**”). SFDC may use Usage Data for analytics, product development and marketing purposes. You acknowledge that files generated in conjunction with the SDK may contain sensitive or confidential data, and You are solely responsible for anonymizing and protecting such data.
